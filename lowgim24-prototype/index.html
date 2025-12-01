@@ -1,0 +1,1600 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOWGIM24 | El Gimnasio Sin Límites</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <style>
+        /* ========================================
+           VARIABLES Y RESET
+           ======================================== */
+        :root {
+            --bg-void: #050505;
+            --bg-dark: #0a0a0a;
+            --bg-card: #111111;
+            --neon-primary: #00ff88;
+            --neon-secondary: #00f0ff;
+            --accent-hot: #ff0080;
+            --accent-gold: #ffd700;
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255,255,255,0.7);
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: var(--bg-void);
+            color: var(--text-primary);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 0.05em;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ========================================
+           SCROLL PROGRESS BAR
+           ======================================== */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--neon-primary), var(--neon-secondary), var(--accent-hot));
+            z-index: 9999;
+            width: 0%;
+            transition: width 0.1s;
+        }
+
+        /* ========================================
+           NAVBAR
+           ======================================== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            background: rgba(5, 5, 5, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 15px 50px;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.5);
+        }
+
+        .nav-logo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            color: var(--neon-primary);
+            text-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--neon-primary);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            padding: 12px 30px;
+            background: var(--neon-primary);
+            color: #000;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .nav-cta:hover {
+            box-shadow: 0 0 30px rgba(0, 255, 136, 0.5);
+            transform: translateY(-2px);
+        }
+
+        /* ========================================
+           HERO SECTION
+           ======================================== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920') center/cover;
+            filter: brightness(0.3);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                135deg,
+                rgba(0, 255, 136, 0.1) 0%,
+                transparent 50%,
+                rgba(255, 0, 128, 0.1) 100%
+            );
+        }
+
+        .scanlines {
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.1),
+                rgba(0, 0, 0, 0.1) 1px,
+                transparent 1px,
+                transparent 2px
+            );
+            pointer-events: none;
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 1000px;
+            padding: 0 20px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 30px;
+            background: rgba(0, 255, 136, 0.1);
+            border: 1px solid var(--neon-primary);
+            color: var(--neon-primary);
+            font-size: 0.85rem;
+            letter-spacing: 0.3em;
+            margin-bottom: 30px;
+            animation: badge-glow 2s ease-in-out infinite;
+        }
+
+        @keyframes badge-glow {
+            0%, 100% { box-shadow: 0 0 5px rgba(0, 255, 136, 0.3); }
+            50% { box-shadow: 0 0 20px rgba(0, 255, 136, 0.5); }
+        }
+
+        .dot-live {
+            width: 8px;
+            height: 8px;
+            background: var(--neon-primary);
+            border-radius: 50%;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.5); }
+        }
+
+        .hero-title {
+            font-size: clamp(4rem, 12vw, 10rem);
+            line-height: 0.9;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .hero-title .line1 {
+            display: block;
+            color: var(--text-primary);
+        }
+
+        .hero-title .line2 {
+            display: block;
+            background: linear-gradient(135deg, var(--neon-primary), var(--neon-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Glitch Effect */
+        .glitch {
+            position: relative;
+            animation: glitch-skew 1s infinite linear alternate-reverse;
+        }
+
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-void);
+        }
+
+        .glitch::before {
+            left: 2px;
+            text-shadow: -2px 0 var(--accent-hot);
+            clip: rect(24px, 550px, 90px, 0);
+            animation: glitch-anim 3s infinite linear alternate-reverse;
+        }
+
+        .glitch::after {
+            left: -2px;
+            text-shadow: -2px 0 var(--neon-secondary);
+            clip: rect(85px, 550px, 140px, 0);
+            animation: glitch-anim2 2s infinite linear alternate-reverse;
+        }
+
+        @keyframes glitch-anim {
+            0% { clip: rect(42px, 9999px, 44px, 0); }
+            5% { clip: rect(12px, 9999px, 59px, 0); }
+            10% { clip: rect(48px, 9999px, 29px, 0); }
+            15% { clip: rect(42px, 9999px, 73px, 0); }
+            20% { clip: rect(63px, 9999px, 27px, 0); }
+            25% { clip: rect(34px, 9999px, 55px, 0); }
+            30% { clip: rect(86px, 9999px, 73px, 0); }
+            35% { clip: rect(20px, 9999px, 20px, 0); }
+            40% { clip: rect(26px, 9999px, 60px, 0); }
+            45% { clip: rect(25px, 9999px, 66px, 0); }
+            50% { clip: rect(57px, 9999px, 98px, 0); }
+            55% { clip: rect(5px, 9999px, 46px, 0); }
+            60% { clip: rect(82px, 9999px, 31px, 0); }
+            65% { clip: rect(54px, 9999px, 27px, 0); }
+            70% { clip: rect(28px, 9999px, 99px, 0); }
+            75% { clip: rect(45px, 9999px, 69px, 0); }
+            80% { clip: rect(23px, 9999px, 85px, 0); }
+            85% { clip: rect(54px, 9999px, 84px, 0); }
+            90% { clip: rect(45px, 9999px, 47px, 0); }
+            95% { clip: rect(37px, 9999px, 20px, 0); }
+            100% { clip: rect(4px, 9999px, 91px, 0); }
+        }
+
+        @keyframes glitch-anim2 {
+            0% { clip: rect(65px, 9999px, 100px, 0); }
+            5% { clip: rect(52px, 9999px, 74px, 0); }
+            /* ... más frames ... */
+            100% { clip: rect(37px, 9999px, 46px, 0); }
+        }
+
+        @keyframes glitch-skew {
+            0% { transform: skew(0deg); }
+            10% { transform: skew(0deg); }
+            11% { transform: skew(1deg); }
+            12% { transform: skew(0deg); }
+            100% { transform: skew(0deg); }
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
+        }
+
+        .btn-primary {
+            position: relative;
+            padding: 20px 50px;
+            background: var(--neon-primary);
+            color: #000;
+            font-weight: 800;
+            font-size: 1.1rem;
+            letter-spacing: 0.15em;
+            border: none;
+            cursor: pointer;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 40px rgba(0, 255, 136, 0.6);
+        }
+
+        .btn-primary .shimmer {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            100% { left: 100%; }
+        }
+
+        .btn-secondary {
+            padding: 20px 50px;
+            background: transparent;
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 1.1rem;
+            letter-spacing: 0.1em;
+            border: 2px solid var(--glass-border);
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--neon-primary);
+            color: var(--neon-primary);
+        }
+
+        .btn-secondary .arrow {
+            transition: transform 0.3s;
+        }
+
+        .btn-secondary:hover .arrow {
+            transform: translateX(5px);
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            padding-top: 40px;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3rem;
+            color: var(--neon-primary);
+            text-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        .mouse {
+            width: 25px;
+            height: 40px;
+            border: 2px solid var(--glass-border);
+            border-radius: 20px;
+            position: relative;
+        }
+
+        .wheel {
+            width: 4px;
+            height: 8px;
+            background: var(--neon-primary);
+            border-radius: 2px;
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: scroll-wheel 1.5s infinite;
+        }
+
+        @keyframes scroll-wheel {
+            0% { opacity: 1; top: 8px; }
+            100% { opacity: 0; top: 25px; }
+        }
+
+        .scroll-text {
+            font-size: 0.7rem;
+            letter-spacing: 0.3em;
+            color: var(--text-secondary);
+        }
+
+        /* ========================================
+           PRICING SECTION
+           ======================================== */
+        .pricing-section {
+            padding: 150px 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-section::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(0,255,136,0.08) 0%, transparent 70%);
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-tag {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(0, 255, 136, 0.1);
+            color: var(--neon-primary);
+            font-size: 0.8rem;
+            letter-spacing: 0.3em;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: clamp(3rem, 8vw, 5rem);
+            line-height: 1;
+        }
+
+        .section-title span {
+            background: linear-gradient(135deg, var(--neon-primary), var(--neon-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .price-card {
+            position: relative;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 50px 40px;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .price-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--neon-primary);
+        }
+
+        .price-card.featured {
+            transform: scale(1.05);
+            border: 2px solid var(--neon-primary);
+            box-shadow: 0 0 50px rgba(0, 255, 136, 0.2);
+            z-index: 10;
+        }
+
+        .price-card.featured:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+
+        .card-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--accent-hot), var(--accent-gold));
+            padding: 10px 30px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            color: #000;
+            white-space: nowrap;
+        }
+
+        .card-tier {
+            display: block;
+            text-align: center;
+            font-size: 1rem;
+            letter-spacing: 0.2em;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        .card-price {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .card-price .currency {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        .card-price .amount {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 5rem;
+            line-height: 1;
+        }
+
+        .price-card.featured .amount {
+            color: var(--neon-primary);
+            text-shadow: 0 0 30px rgba(0, 255, 136, 0.5);
+        }
+
+        .card-price .period {
+            font-size: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .card-features {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+
+        .card-features li {
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 0.95rem;
+        }
+
+        .card-features li i {
+            color: var(--neon-primary);
+            font-size: 0.8rem;
+        }
+
+        .card-features li.disabled {
+            opacity: 0.4;
+            text-decoration: line-through;
+        }
+
+        .card-features li.disabled i {
+            color: var(--accent-hot);
+        }
+
+        .card-btn {
+            width: 100%;
+            padding: 18px;
+            background: transparent;
+            color: var(--text-primary);
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 0.1em;
+            border: 2px solid var(--glass-border);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .card-btn:hover {
+            background: var(--text-primary);
+            color: var(--bg-void);
+            border-color: var(--text-primary);
+        }
+
+        .price-card.featured .card-btn {
+            background: var(--neon-primary);
+            color: #000;
+            border-color: var(--neon-primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .price-card.featured .card-btn:hover {
+            box-shadow: 0 0 30px rgba(0, 255, 136, 0.5);
+        }
+
+        .card-guarantee {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .card-guarantee i {
+            color: var(--neon-primary);
+        }
+
+        /* ========================================
+           INSTALLATIONS SECTION
+           ======================================== */
+        .installations-section {
+            padding: 150px 50px;
+            background: linear-gradient(180deg, var(--bg-void) 0%, var(--bg-dark) 100%);
+        }
+
+        .installations-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .installation-card {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            aspect-ratio: 3/4;
+            cursor: pointer;
+        }
+
+        .installation-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .installation-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .installation-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to top,
+                rgba(0, 0, 0, 0.9) 0%,
+                rgba(0, 0, 0, 0.3) 50%,
+                transparent 100%
+            );
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 30px;
+            transition: all 0.3s;
+        }
+
+        .installation-card:hover .installation-overlay {
+            background: linear-gradient(
+                to top,
+                rgba(0, 255, 136, 0.9) 0%,
+                rgba(0, 0, 0, 0.5) 50%,
+                transparent 100%
+            );
+        }
+
+        .installation-number {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 4rem;
+            color: var(--neon-primary);
+            opacity: 0.3;
+            text-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+        }
+
+        .installation-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+
+        .installation-card:hover .installation-info h3 {
+            color: #000;
+        }
+
+        .installation-info p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            transition: color 0.3s;
+        }
+
+        .installation-card:hover .installation-info p {
+            color: rgba(0,0,0,0.7);
+        }
+
+        .installation-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 15px;
+            font-weight: 600;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s;
+        }
+
+        .installation-card:hover .installation-link {
+            opacity: 1;
+            transform: translateY(0);
+            color: #000;
+        }
+
+        .installation-link .arrow {
+            transition: transform 0.3s;
+        }
+
+        .installation-card:hover .installation-link .arrow {
+            transform: translateX(5px);
+        }
+
+        /* ========================================
+           TESTIMONIALS SECTION
+           ======================================== */
+        .testimonials-section {
+            padding: 150px 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonials-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -200px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255,0,128,0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 40px;
+            transition: all 0.3s;
+        }
+
+        .testimonial-card:hover {
+            border-color: var(--neon-primary);
+            transform: translateY(-5px);
+        }
+
+        .testimonial-rating {
+            color: var(--accent-gold);
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-quote {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 30px;
+            color: var(--text-secondary);
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--neon-primary);
+        }
+
+        .author-info {
+            flex: 1;
+        }
+
+        .author-name {
+            display: block;
+            font-weight: 600;
+        }
+
+        .author-meta {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .transformation-badge {
+            background: var(--neon-primary);
+            color: #000;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+
+        .google-reviews {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 80px;
+            padding: 30px;
+            background: var(--glass-bg);
+            border-radius: 20px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .google-reviews img {
+            height: 30px;
+        }
+
+        .reviews-score {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .reviews-score .score {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.5rem;
+        }
+
+        .reviews-score .stars {
+            color: var(--accent-gold);
+        }
+
+        .reviews-score .count {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* ========================================
+           CTA SECTION
+           ======================================== */
+        .cta-section {
+            padding: 150px 50px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0,255,136,0.1), transparent, rgba(255,0,128,0.1));
+            pointer-events: none;
+        }
+
+        .cta-title {
+            font-size: clamp(3rem, 10vw, 6rem);
+            margin-bottom: 30px;
+        }
+
+        .cta-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            margin-bottom: 50px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ========================================
+           FOOTER
+           ======================================== */
+        .footer {
+            background: var(--bg-dark);
+            padding: 80px 50px 40px;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto 60px;
+        }
+
+        .footer-brand .footer-logo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.5rem;
+            color: var(--neon-primary);
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .footer-tagline {
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 50%;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+
+        .social-link:hover {
+            background: var(--neon-primary);
+            color: #000;
+            border-color: var(--neon-primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-links h4 {
+            font-size: 1rem;
+            letter-spacing: 0.1em;
+            margin-bottom: 25px;
+            color: var(--text-primary);
+        }
+
+        .footer-links a {
+            display: block;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--neon-primary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid var(--glass-border);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom p {
+            margin-bottom: 10px;
+        }
+
+        .made-with {
+            opacity: 0.6;
+        }
+
+        /* ========================================
+           WHATSAPP FLOAT
+           ======================================== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            z-index: 999;
+        }
+
+        .whatsapp-icon {
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: white;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            transition: transform 0.3s;
+            position: relative;
+            z-index: 2;
+        }
+
+        .whatsapp-float:hover .whatsapp-icon {
+            transform: scale(1.1);
+        }
+
+        .whatsapp-pulse {
+            position: absolute;
+            right: 30px;
+            bottom: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            animation: wa-pulse 2s infinite;
+        }
+
+        @keyframes wa-pulse {
+            0% { transform: scale(1); opacity: 0.5; }
+            100% { transform: scale(1.8); opacity: 0; }
+        }
+
+        .whatsapp-text {
+            background: white;
+            color: #333;
+            padding: 12px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            opacity: 0;
+            transform: translateX(20px);
+            transition: all 0.3s;
+        }
+
+        .whatsapp-float:hover .whatsapp-text {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* ========================================
+           RESPONSIVE
+           ======================================== */
+        @media (max-width: 1024px) {
+            .pricing-grid,
+            .installations-grid,
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .price-card.featured {
+                transform: none;
+                grid-column: span 2;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 20px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content {
+                padding: 0 15px;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .pricing-grid,
+            .installations-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .price-card.featured {
+                grid-column: span 1;
+            }
+
+            .pricing-section,
+            .installations-section,
+            .testimonials-section,
+            .cta-section {
+                padding: 100px 20px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .google-reviews {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <a href="#" class="nav-logo">LOWGIM24</a>
+        <ul class="nav-links">
+            <li><a href="#pricing">Tarifas</a></li>
+            <li><a href="#installations">Instalaciones</a></li>
+            <li><a href="#">Actividades</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+        <button class="nav-cta">ÁREA CLIENTE</button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="scanlines"></div>
+        
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="dot-live"></span>
+                ABIERTO 24/7/365
+            </div>
+            
+            <h1 class="hero-title">
+                <span class="line1 glitch" data-text="NO HAY">NO HAY</span>
+                <span class="line2">LÍMITES</span>
+            </h1>
+            
+            <p class="hero-subtitle">
+                El gimnasio más completo de Marchena. Entrena cuando quieras, como quieras.
+            </p>
+            
+            <div class="hero-cta">
+                <button class="btn-primary">
+                    EMPIEZA AHORA
+                    <span class="shimmer"></span>
+                </button>
+                <button class="btn-secondary">
+                    VER TARIFAS <span class="arrow">→</span>
+                </button>
+            </div>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">+500</span>
+                    <span class="stat-label">Guerreros Activos</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">24H</span>
+                    <span class="stat-label">Sin Descanso</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">1200m²</span>
+                    <span class="stat-label">De Potencia</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span class="scroll-text">SCROLL</span>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section" id="pricing">
+        <div class="section-header">
+            <span class="section-tag">TARIFAS</span>
+            <h2 class="section-title">
+                ELIGE TU <span>PLAN</span>
+            </h2>
+        </div>
+        
+        <div class="pricing-grid">
+            <!-- Basic Card -->
+            <div class="price-card">
+                <span class="card-tier">BÁSICA</span>
+                <div class="card-price">
+                    <span class="currency">€</span>
+                    <span class="amount">35</span>
+                    <span class="period">/mes</span>
+                </div>
+                <ul class="card-features">
+                    <li><i class="fas fa-check"></i> Horario 7:30 - 22:00</li>
+                    <li><i class="fas fa-check"></i> Acceso a máquinas</li>
+                    <li><i class="fas fa-check"></i> Clases grupales</li>
+                    <li class="disabled"><i class="fas fa-times"></i> Acceso 24h</li>
+                    <li class="disabled"><i class="fas fa-times"></i> Festivos</li>
+                </ul>
+                <button class="card-btn">ELEGIR PLAN</button>
+            </div>
+            
+            <!-- Featured Card -->
+            <div class="price-card featured">
+                <div class="card-badge">🔥 MÁS POPULAR</div>
+                <span class="card-tier">POWER 24H</span>
+                <div class="card-price">
+                    <span class="currency">€</span>
+                    <span class="amount">45</span>
+                    <span class="period">/mes</span>
+                </div>
+                <ul class="card-features">
+                    <li><i class="fas fa-check"></i> Acceso ILIMITADO 24/7</li>
+                    <li><i class="fas fa-check"></i> Todas las instalaciones</li>
+                    <li><i class="fas fa-check"></i> Clases premium incluidas</li>
+                    <li><i class="fas fa-check"></i> Festivos incluidos</li>
+                    <li><i class="fas fa-check"></i> Sin permanencia</li>
+                </ul>
+                <button class="card-btn">ÚNETE AHORA</button>
+                <p class="card-guarantee">
+                    <i class="fas fa-shield-alt"></i> 7 días de prueba GRATIS
+                </p>
+            </div>
+            
+            <!-- Premium Card -->
+            <div class="price-card">
+                <span class="card-tier">ÉLITE</span>
+                <div class="card-price">
+                    <span class="currency">€</span>
+                    <span class="amount">75</span>
+                    <span class="period">/mes</span>
+                </div>
+                <ul class="card-features">
+                    <li><i class="fas fa-check"></i> Todo de POWER 24H</li>
+                    <li><i class="fas fa-check"></i> Entrenador personal</li>
+                    <li><i class="fas fa-check"></i> Plan nutricional</li>
+                    <li><i class="fas fa-check"></i> Rayos UVA ilimitados</li>
+                    <li><i class="fas fa-check"></i> Acceso VIP</li>
+                </ul>
+                <button class="card-btn">CONTACTAR</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Installations Section -->
+    <section class="installations-section" id="installations">
+        <div class="section-header">
+            <span class="section-tag">INSTALACIONES</span>
+            <h2 class="section-title">
+                NUESTRO <span>ARSENAL</span>
+            </h2>
+        </div>
+        
+        <div class="installations-grid">
+            <div class="installation-card">
+                <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600" alt="Zona de Fuerza">
+                <div class="installation-overlay">
+                    <span class="installation-number">01</span>
+                    <div class="installation-info">
+                        <h3>ZONA DE FUERZA</h3>
+                        <p>+50 máquinas de última generación</p>
+                        <a href="#" class="installation-link">
+                            EXPLORAR <span class="arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="installation-card">
+                <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600" alt="GluteZone">
+                <div class="installation-overlay">
+                    <span class="installation-number">02</span>
+                    <div class="installation-info">
+                        <h3>GLUTEZONE 🍑</h3>
+                        <p>Equipamiento GluteBuilder exclusivo</p>
+                        <a href="#" class="installation-link">
+                            EXPLORAR <span class="arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="installation-card">
+                <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=600" alt="Cardio">
+                <div class="installation-overlay">
+                    <span class="installation-number">03</span>
+                    <div class="installation-info">
+                        <h3>ZONA CARDIO</h3>
+                        <p>Cintas, elípticas y bicicletas</p>
+                        <a href="#" class="installation-link">
+                            EXPLORAR <span class="arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="installation-card">
+                <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600" alt="Clases">
+                <div class="installation-overlay">
+                    <span class="installation-number">04</span>
+                    <div class="installation-info">
+                        <h3>SALA DE CLASES</h3>
+                        <p>Spinning, Zumba, Yoga y más</p>
+                        <a href="#" class="installation-link">
+                            EXPLORAR <span class="arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="section-header">
+            <span class="section-tag">TESTIMONIOS</span>
+            <h2 class="section-title">
+                LO QUE DICEN <span>NUESTROS GUERREROS</span>
+            </h2>
+        </div>
+        
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-rating">★★★★★</div>
+                <blockquote class="testimonial-quote">
+                    "Llevo 6 meses entrenando aquí y he transformado mi cuerpo completamente. El acceso 24h es un GAME CHANGER para mi horario de trabajo."
+                </blockquote>
+                <div class="testimonial-author">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="María G." class="author-avatar">
+                    <div class="author-info">
+                        <span class="author-name">María G.</span>
+                        <span class="author-meta">Miembro desde 2024</span>
+                    </div>
+                    <div class="transformation-badge">-15kg</div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-rating">★★★★★</div>
+                <blockquote class="testimonial-quote">
+                    "Las instalaciones están impecables y el equipamiento es de primera. La zona de glúteos es brutal, no he visto nada igual en la zona."
+                </blockquote>
+                <div class="testimonial-author">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Carlos R." class="author-avatar">
+                    <div class="author-info">
+                        <span class="author-name">Carlos R.</span>
+                        <span class="author-meta">Miembro desde 2023</span>
+                    </div>
+                    <div class="transformation-badge">+8kg 💪</div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-rating">★★★★★</div>
+                <blockquote class="testimonial-quote">
+                    "El mejor gimnasio de Marchena sin duda. El personal es muy atento y las clases de spinning son adictivas. 100% recomendado."
+                </blockquote>
+                <div class="testimonial-author">
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Laura M." class="author-avatar">
+                    <div class="author-info">
+                        <span class="author-name">Laura M.</span>
+                        <span class="author-meta">Miembro desde 2024</span>
+                    </div>
+                    <div class="transformation-badge">-10kg</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="google-reviews">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/200px-Google_2015_logo.svg.png" alt="Google">
+            <div class="reviews-score">
+                <span class="score">4.9</span>
+                <div class="stars">★★★★★</div>
+                <span class="count">+120 reseñas</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2 class="cta-title">
+            ¿LISTO PARA <span style="background: linear-gradient(135deg, var(--neon-primary), var(--neon-secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">EMPEZAR</span>?
+        </h2>
+        <p class="cta-subtitle">
+            Únete a más de 500 guerreros que ya están transformando sus vidas. 
+            Tu primera semana es GRATIS.
+        </p>
+        <button class="btn-primary" style="font-size: 1.3rem; padding: 25px 60px;">
+            PRUEBA 7 DÍAS GRATIS
+            <span class="shimmer"></span>
+        </button>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="footer-logo">LOWGIM24</span>
+                <p class="footer-tagline">Donde los límites no existen. El gimnasio 24h de Marchena.</p>
+                <div class="footer-socials">
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h4>GIMNASIO</h4>
+                <a href="#">Instalaciones</a>
+                <a href="#">Tarifas</a>
+                <a href="#">Horarios</a>
+                <a href="#">Actividades</a>
+            </div>
+            
+            <div class="footer-links">
+                <h4>SOPORTE</h4>
+                <a href="#">FAQ</a>
+                <a href="#">Contacto</a>
+                <a href="#">Trabaja con nosotros</a>
+            </div>
+            
+            <div class="footer-links">
+                <h4>LEGAL</h4>
+                <a href="#">Privacidad</a>
+                <a href="#">Términos</a>
+                <a href="#">Cookies</a>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2024 Lowgim24. Todos los derechos reservados.</p>
+            <p class="made-with">Hecho con 💪 en Marchena</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <div class="whatsapp-pulse"></div>
+    <a href="https://wa.me/34XXXXXXXXX" class="whatsapp-float" target="_blank">
+        <span class="whatsapp-text">¿Dudas? ¡Escríbenos!</span>
+        <div class="whatsapp-icon">
+            <i class="fab fa-whatsapp"></i>
+        </div>
+    </a>
+
+    <script>
+        // Scroll Progress Bar
+        window.addEventListener('scroll', () => {
+            const scrollTop = document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = (scrollTop / scrollHeight) * 100;
+            document.getElementById('scrollProgress').style.width = progress + '%';
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Counter animation
+        const counters = document.querySelectorAll('.stat-number');
+        const animateCounter = (counter) => {
+            const target = counter.innerText.replace(/[^0-9]/g, '');
+            if (!target) return;
+            
+            const suffix = counter.innerText.replace(/[0-9]/g, '');
+            let current = 0;
+            const increment = target / 50;
+            
+            const updateCounter = () => {
+                if (current < target) {
+                    current += increment;
+                    counter.innerText = Math.ceil(current) + suffix;
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    counter.innerText = target + suffix;
+                }
+            };
+            updateCounter();
+        };
+
+        // Intersection Observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.price-card, .installation-card, .testimonial-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
