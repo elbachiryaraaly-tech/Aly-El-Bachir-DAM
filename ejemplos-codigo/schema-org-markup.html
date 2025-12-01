@@ -1,0 +1,302 @@
+<!-- 
+  SCHEMA.ORG MARKUP PARA LOWGIM24.COM
+  Copiar y pegar en el <head> de la página principal
+-->
+
+<!-- Schema para Gimnasio (LocalBusiness) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HealthAndBeautyBusiness",
+  "@id": "https://lowgim24.com/#organization",
+  "name": "Lowgim24",
+  "alternateName": "Lowgim 24",
+  "url": "https://lowgim24.com",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://lowgim24.com/logo.png",
+    "width": 600,
+    "height": 200
+  },
+  "image": [
+    "https://lowgim24.com/images/gimnasio-exterior.jpg",
+    "https://lowgim24.com/images/gimnasio-interior.jpg",
+    "https://lowgim24.com/images/zona-cardio.jpg"
+  ],
+  "description": "Gimnasio 24 horas en Marchena con equipamiento de última generación, clases dirigidas y entrenadores personales certificados. Abierto todos los días del año.",
+  "telephone": "+34-XXX-XXX-XXX",
+  "email": "info@lowgim24.com",
+  "priceRange": "€€",
+  "paymentAccepted": "Efectivo, Tarjeta de crédito, Transferencia bancaria",
+  "currenciesAccepted": "EUR",
+  
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Calle Ejemplo, 123",
+    "addressLocality": "Marchena",
+    "addressRegion": "Sevilla",
+    "postalCode": "41620",
+    "addressCountry": "ES"
+  },
+  
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 37.3320,
+    "longitude": -5.4164
+  },
+  
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
+    "opens": "00:00",
+    "closes": "23:59"
+  },
+  
+  "sameAs": [
+    "https://www.facebook.com/lowgim24",
+    "https://www.instagram.com/lowgim24",
+    "https://www.tiktok.com/@lowgim24",
+    "https://twitter.com/lowgim24"
+  ],
+  
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "147",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Planes de Membresía",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Plan Básico Mensual",
+          "description": "Acceso ilimitado al gimnasio 24/7"
+        },
+        "price": "29.99",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Plan Premium Mensual",
+          "description": "Acceso ilimitado + clases dirigidas + entrenador personal"
+        },
+        "price": "49.99",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Plan Anual",
+          "description": "Acceso ilimitado por 12 meses con descuento"
+        },
+        "price": "299.99",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock"
+      }
+    ]
+  },
+  
+  "amenityFeature": [
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "WiFi gratuito",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Parking",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Vestuarios y duchas",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Aire acondicionado",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Taquillas",
+      "value": true
+    }
+  ]
+}
+</script>
+
+<!-- Schema para Organización -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Lowgim24",
+  "url": "https://lowgim24.com",
+  "logo": "https://lowgim24.com/logo.png",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+34-XXX-XXX-XXX",
+    "contactType": "customer service",
+    "email": "info@lowgim24.com",
+    "availableLanguage": ["Spanish"],
+    "areaServed": "ES"
+  },
+  "sameAs": [
+    "https://www.facebook.com/lowgim24",
+    "https://www.instagram.com/lowgim24"
+  ]
+}
+</script>
+
+<!-- Schema para BreadcrumbList (navegación) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://lowgim24.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Planes",
+      "item": "https://lowgim24.com/planes"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Instalaciones",
+      "item": "https://lowgim24.com/instalaciones"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Contacto",
+      "item": "https://lowgim24.com/contacto"
+    }
+  ]
+}
+</script>
+
+<!-- Schema para FAQPage (preguntas frecuentes) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cuál es el horario del gimnasio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lowgim24 está abierto las 24 horas del día, los 7 días de la semana, todos los días del año. Puedes entrenar cuando quieras, incluso en festivos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Necesito experiencia previa para inscribirme?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, no necesitas experiencia previa. Tenemos programas para todos los niveles, desde principiantes hasta avanzados. Nuestros entrenadores te ayudarán a empezar de forma segura."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Ofrecen clases dirigidas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, ofrecemos diversas clases dirigidas como spinning, yoga, pilates, CrossFit, Zumba y más. Puedes consultar el horario completo en nuestra página de actividades."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo probar el gimnasio antes de inscribirme?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "¡Por supuesto! Ofrecemos una prueba gratuita de 7 días sin compromiso para que conozcas nuestras instalaciones y servicios."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Hay parking disponible?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, contamos con parking gratuito para nuestros socios justo enfrente del gimnasio."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué formas de pago aceptan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Aceptamos efectivo, tarjetas de crédito/débito y domiciliación bancaria mensual para mayor comodidad."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- Schema para WebSite (búsqueda interna) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Lowgim24",
+  "url": "https://lowgim24.com",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://lowgim24.com/buscar?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+<!-- Schema para Reviews (ejemplo de cómo añadir reseñas) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "LocalBusiness",
+    "name": "Lowgim24"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "María García"
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "5",
+    "bestRating": "5"
+  },
+  "reviewBody": "El mejor gimnasio de Marchena! Instalaciones modernas, siempre limpio y el personal es súper atento. Poder ir a cualquier hora es una gran ventaja.",
+  "datePublished": "2025-11-15"
+}
+</script>

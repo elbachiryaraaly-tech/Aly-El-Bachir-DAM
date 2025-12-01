@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Section Moderna - Lowgim24</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Hero Section con video de fondo */
+        .hero-section {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Video de fondo */
+        .hero-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+            opacity: 0.6;
+        }
+
+        /* Overlay oscuro para mejorar legibilidad */
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(55,168,25,0.3) 100%);
+            z-index: 1;
+        }
+
+        /* Contenido del hero */
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+            max-width: 1200px;
+        }
+
+        /* Título con efecto glitch opcional */
+        .hero-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(3rem, 10vw, 8rem);
+            font-weight: 900;
+            letter-spacing: -2px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            background: linear-gradient(45deg, #fff, #37A819, #80ff00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: titleGlow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes titleGlow {
+            from {
+                text-shadow: 0 0 20px rgba(55,168,25,0.5),
+                             0 0 40px rgba(55,168,25,0.3);
+                filter: brightness(1);
+            }
+            to {
+                text-shadow: 0 0 30px rgba(128,255,0,0.8),
+                             0 0 60px rgba(128,255,0,0.5);
+                filter: brightness(1.2);
+            }
+        }
+
+        /* Subtítulo con efecto neon */
+        .hero-subtitle {
+            font-family: 'Open Sans', sans-serif;
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            font-weight: 300;
+            letter-spacing: 4px;
+            margin-bottom: 40px;
+            text-shadow: 0 0 10px rgba(255,255,255,0.8),
+                         0 0 20px rgba(55,168,25,0.6),
+                         0 0 30px rgba(55,168,25,0.4);
+            animation: neonPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes neonPulse {
+            0%, 100% {
+                text-shadow: 0 0 10px rgba(255,255,255,0.8),
+                             0 0 20px rgba(55,168,25,0.6),
+                             0 0 30px rgba(55,168,25,0.4);
+            }
+            50% {
+                text-shadow: 0 0 15px rgba(255,255,255,1),
+                             0 0 30px rgba(55,168,25,0.8),
+                             0 0 45px rgba(55,168,25,0.6);
+            }
+        }
+
+        /* CTA Button ultra moderno */
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 20px 50px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: #000;
+            background: linear-gradient(135deg, #37A819 0%, #80ff00 100%);
+            border-radius: 50px;
+            box-shadow: 0 10px 40px rgba(55,168,25,0.5);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .hero-cta:hover::before {
+            left: 100%;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 60px rgba(55,168,25,0.7);
+        }
+
+        .hero-cta:active {
+            transform: translateY(-2px) scale(1.02);
+        }
+
+        /* Animación de pulse para el emoji */
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        .hero-cta .emoji {
+            display: inline-block;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        /* Features rápidas debajo del CTA */
+        .hero-features {
+            margin-top: 60px;
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .hero-feature i {
+            font-size: 1.5rem;
+            color: #80ff00;
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-20px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+        }
+
+        .scroll-indicator i {
+            font-size: 2.5rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-features {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .hero-cta {
+                padding: 16px 40px;
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <section class="hero-section">
+        <!-- Video de fondo (optimizado para web) -->
+        <video class="hero-video" autoplay muted loop playsinline poster="hero-poster.jpg">
+            <source src="gym-hero-video.mp4" type="video/mp4">
+            <source src="gym-hero-video.webm" type="video/webm">
+            <!-- Fallback: imagen de fondo -->
+            Tu navegador no soporta videos HTML5.
+        </video>
+
+        <!-- Overlay oscuro -->
+        <div class="hero-overlay"></div>
+
+        <!-- Contenido principal -->
+        <div class="hero-content">
+            <h1 class="hero-title">LOWGIM24</h1>
+            <p class="hero-subtitle">TU GIMNASIO 24 HORAS EN MARCHENA</p>
+            
+            <a href="#planes" class="hero-cta">
+                PRUEBA 7 DÍAS GRATIS <span class="emoji">🔥</span>
+            </a>
+
+            <!-- Features destacadas -->
+            <div class="hero-features">
+                <div class="hero-feature">
+                    <i class="fas fa-clock"></i>
+                    <span>Abierto 24/7</span>
+                </div>
+                <div class="hero-feature">
+                    <i class="fas fa-dumbbell"></i>
+                    <span>Equipamiento Premium</span>
+                </div>
+                <div class="hero-feature">
+                    <i class="fas fa-user-shield"></i>
+                    <span>Entrenadores Certificados</span>
+                </div>
+                <div class="hero-feature">
+                    <i class="fas fa-wifi"></i>
+                    <span>WiFi Gratis</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Indicador de scroll -->
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Nota: Para optimizar el video de fondo:
+         1. Máximo 20-30 segundos de loop
+         2. Resolución 1920x1080 (Full HD)
+         3. Compresión H.264 para MP4
+         4. Bitrate: 3-5 Mbps
+         5. Tamaño final: < 5MB
+         6. Herramienta recomendada: HandBrake o FFmpeg
+    -->
+</body>
+</html>

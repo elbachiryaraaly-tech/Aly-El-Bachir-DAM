@@ -1,0 +1,491 @@
+/* ==========================================
+   ESTILOS MODERNOS PARA LOWGIM24.COM
+   Sistema de diseño completo con variables CSS
+   ========================================== */
+
+/* ==================== VARIABLES CSS ==================== */
+:root {
+    /* Colores principales */
+    --color-primary: #37A819;
+    --color-primary-light: #80ff00;
+    --color-primary-dark: #2c8314;
+    --color-secondary: #000000;
+    --color-accent: #FFD700;
+
+    /* Colores de fondo */
+    --bg-dark: #0a0a0a;
+    --bg-dark-alt: #1a1a1a;
+    --bg-card: #1f1f1f;
+    --bg-card-hover: #2a2a2a;
+
+    /* Texto */
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.8);
+    --text-muted: rgba(255, 255, 255, 0.6);
+
+    /* Gradientes */
+    --gradient-primary: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+    --gradient-dark: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-dark-alt) 100%);
+    --gradient-overlay: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(55,168,25,0.3) 100%);
+
+    /* Sombras */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.15);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.2);
+    --shadow-xl: 0 16px 64px rgba(0, 0, 0, 0.3);
+    --shadow-glow: 0 0 30px rgba(55, 168, 25, 0.5);
+
+    /* Tipografía */
+    --font-primary: 'Inter', 'Montserrat', sans-serif;
+    --font-display: 'Space Grotesk', 'Montserrat', sans-serif;
+
+    /* Espaciado */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    --spacing-2xl: 4rem;
+
+    /* Border radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-full: 9999px;
+
+    /* Transiciones */
+    --transition-fast: 0.15s ease;
+    --transition-base: 0.3s ease;
+    --transition-slow: 0.5s ease;
+}
+
+/* ==================== GLASSMORPHISM ==================== */
+.glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    transition: all var(--transition-base);
+}
+
+.glass-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(55, 168, 25, 0.3);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl), var(--shadow-glow);
+}
+
+/* ==================== NEUMORPHISM ==================== */
+.neuro-card {
+    background: var(--bg-dark-alt);
+    border-radius: var(--radius-xl);
+    box-shadow: 
+        12px 12px 24px rgba(0, 0, 0, 0.5),
+        -12px -12px 24px rgba(255, 255, 255, 0.03);
+    padding: var(--spacing-lg);
+    transition: all var(--transition-base);
+}
+
+.neuro-card:hover {
+    box-shadow: 
+        16px 16px 32px rgba(0, 0, 0, 0.6),
+        -16px -16px 32px rgba(255, 255, 255, 0.05);
+}
+
+.neuro-button {
+    background: var(--bg-dark-alt);
+    border: none;
+    border-radius: var(--radius-full);
+    padding: 1rem 2rem;
+    color: var(--text-primary);
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 
+        8px 8px 16px rgba(0, 0, 0, 0.4),
+        -8px -8px 16px rgba(255, 255, 255, 0.02);
+    transition: all var(--transition-fast);
+}
+
+.neuro-button:active {
+    box-shadow: 
+        inset 4px 4px 8px rgba(0, 0, 0, 0.5),
+        inset -4px -4px 8px rgba(255, 255, 255, 0.03);
+}
+
+/* ==================== BOTONES MODERNOS ==================== */
+.btn-modern {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    overflow: hidden;
+    transition: all var(--transition-base);
+}
+
+/* Botón primario con gradiente */
+.btn-primary {
+    background: var(--gradient-primary);
+    color: #000;
+    box-shadow: 0 4px 20px rgba(55, 168, 25, 0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(55, 168, 25, 0.6);
+}
+
+/* Efecto ripple al hacer click */
+.btn-modern::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn-modern:active::after {
+    width: 300px;
+    height: 300px;
+}
+
+/* Botón outline */
+.btn-outline {
+    background: transparent;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+}
+
+.btn-outline:hover {
+    background: var(--color-primary);
+    color: #000;
+}
+
+/* ==================== TARJETAS DE PRECIOS ==================== */
+.pricing-card {
+    position: relative;
+    background: var(--bg-card);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    text-align: center;
+    overflow: hidden;
+    transition: all var(--transition-base);
+    border: 2px solid transparent;
+}
+
+.pricing-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--gradient-primary);
+    transform: scaleX(0);
+    transition: transform var(--transition-slow);
+}
+
+.pricing-card:hover::before {
+    transform: scaleX(1);
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-xl), var(--shadow-glow);
+}
+
+/* Badge de "Popular" */
+.pricing-badge {
+    position: absolute;
+    top: 20px;
+    right: -30px;
+    background: var(--gradient-primary);
+    color: #000;
+    padding: 0.5rem 2rem;
+    font-weight: 700;
+    font-size: 0.85rem;
+    transform: rotate(45deg);
+    box-shadow: var(--shadow-md);
+}
+
+/* ==================== EFECTOS DE HOVER 3D ==================== */
+.card-3d {
+    transform-style: preserve-3d;
+    transition: transform var(--transition-slow);
+}
+
+.card-3d:hover {
+    transform: perspective(1000px) rotateY(5deg) rotateX(5deg);
+}
+
+/* ==================== ANIMACIONES DE ENTRADA ==================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Clases de animación */
+.animate-fade-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-fade-left {
+    animation: fadeInLeft 0.6s ease-out;
+}
+
+.animate-fade-right {
+    animation: fadeInRight 0.6s ease-out;
+}
+
+.animate-scale {
+    animation: scaleIn 0.5s ease-out;
+}
+
+/* ==================== DARK MODE TOGGLE ==================== */
+.dark-mode-toggle {
+    position: relative;
+    width: 60px;
+    height: 30px;
+    background: var(--bg-card);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    box-shadow: var(--shadow-sm);
+}
+
+.dark-mode-toggle::before {
+    content: '🌙';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 24px;
+    height: 24px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    transition: all var(--transition-base);
+}
+
+.dark-mode-toggle.active::before {
+    content: '☀️';
+    transform: translateX(30px);
+}
+
+/* ==================== WHATSAPP BUTTON FLOTANTE ==================== */
+.whatsapp-float {
+    position: fixed;
+    width: 65px;
+    height: 65px;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(135deg, #25d366 0%, #128C7E 100%);
+    color: #FFF;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 35px;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-base);
+    animation: whatsappPulse 2s infinite;
+}
+
+@keyframes whatsappPulse {
+    0% {
+        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+    }
+    50% {
+        box-shadow: 0 8px 40px rgba(37, 211, 102, 0.8);
+        transform: scale(1.1);
+    }
+    100% {
+        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+    }
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.15) rotate(10deg);
+    box-shadow: 0 8px 40px rgba(37, 211, 102, 0.9);
+}
+
+/* ==================== PROGRESS BAR ANIMADO ==================== */
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: var(--bg-dark-alt);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-full);
+    transition: width 1s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-bar-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255,255,255,0.3), 
+        transparent
+    );
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* ==================== TESTIMONIALS ==================== */
+.testimonial-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonial-card::before {
+    content: '"';
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    font-size: 120px;
+    color: var(--color-primary);
+    opacity: 0.1;
+    font-family: Georgia, serif;
+}
+
+.testimonial-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--color-primary);
+    box-shadow: var(--shadow-glow);
+}
+
+/* ==================== PARALLAX SMOOTH ==================== */
+.parallax-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.parallax-bg {
+    position: absolute;
+    top: -50%;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    background-size: cover;
+    background-position: center;
+    will-change: transform;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+    :root {
+        --spacing-xl: 2rem;
+        --spacing-2xl: 3rem;
+    }
+
+    .whatsapp-float {
+        width: 55px;
+        height: 55px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 28px;
+    }
+
+    .pricing-card {
+        padding: var(--spacing-lg);
+    }
+}
+
+/* ==================== UTILITIES ==================== */
+.text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.glow-text {
+    text-shadow: 0 0 20px rgba(55, 168, 25, 0.8),
+                 0 0 40px rgba(55, 168, 25, 0.5);
+}
+
+.backdrop-blur {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
