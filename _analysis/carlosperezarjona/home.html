@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html lang="es" prefix="og: https://ogp.me/ns#">
+<head><meta charset="UTF-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>(()=>{class RocketLazyLoadScripts{constructor(){this.v="1.2.5.1",this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this.t.bind(this),this.touchStartHandler=this.i.bind(this),this.touchMoveHandler=this.o.bind(this),this.touchEndHandler=this.h.bind(this),this.clickHandler=this.u.bind(this),this.interceptedClicks=[],this.interceptedClickListeners=[],this.l(this),window.addEventListener("pageshow",(t=>{this.persisted=t.persisted,this.everythingLoaded&&this.m()})),document.addEventListener("DOMContentLoaded",(()=>{this.p()})),this.delayedScripts={normal:[],async:[],defer:[]},this.trash=[],this.allJQueries=[]}k(t){document.hidden?t.t():(this.triggerEvents.forEach((e=>window.addEventListener(e,t.userEventHandler,{passive:!0}))),window.addEventListener("touchstart",t.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",t.touchStartHandler),document.addEventListener("visibilitychange",t.userEventHandler))}_(){this.triggerEvents.forEach((t=>window.removeEventListener(t,this.userEventHandler,{passive:!0}))),document.removeEventListener("visibilitychange",this.userEventHandler)}i(t){"HTML"!==t.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),t.target.addEventListener("click",this.clickHandler),this.L(t.target,!0),this.M(t.target,"onclick","rocket-onclick"),this.C())}o(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),t.target.removeEventListener("click",this.clickHandler),this.L(t.target,!1),this.M(t.target,"rocket-onclick","onclick"),this.O()}h(){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}u(t){t.target.removeEventListener("click",this.clickHandler),this.L(t.target,!1),this.M(t.target,"rocket-onclick","onclick"),this.interceptedClicks.push(t),t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),this.O()}D(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach((t=>{t.target.dispatchEvent(new MouseEvent("click",{view:t.view,bubbles:!0,cancelable:!0}))}))}l(t){EventTarget.prototype.addEventListenerBase=EventTarget.prototype.addEventListener,EventTarget.prototype.addEventListener=function(e,i,o){"click"!==e||t.windowLoaded||i===t.clickHandler||t.interceptedClickListeners.push({target:this,func:i,options:o}),(this||window).addEventListenerBase(e,i,o)}}L(t,e){this.interceptedClickListeners.forEach((i=>{i.target===t&&(e?t.removeEventListener("click",i.func,i.options):t.addEventListener("click",i.func,i.options))})),t.parentNode!==document.documentElement&&this.L(t.parentNode,e)}S(){return new Promise((t=>{this.T?this.O=t:t()}))}C(){this.T=!0}O(){this.T=!1}M(t,e,i){t.hasAttribute&&t.hasAttribute(e)&&(event.target.setAttribute(i,event.target.getAttribute(e)),event.target.removeAttribute(e))}t(){this._(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this.R.bind(this)):this.R()}p(){let t=[];document.querySelectorAll("script[type=rocketlazyloadscript][data-rocket-src]").forEach((e=>{let i=e.getAttribute("data-rocket-src");if(i&&0!==i.indexOf("data:")){0===i.indexOf("//")&&(i=location.protocol+i);try{const o=new URL(i).origin;o!==location.origin&&t.push({src:o,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}catch(t){}}})),t=[...new Map(t.map((t=>[JSON.stringify(t),t]))).values()],this.j(t,"preconnect")}async R(){this.lastBreath=Date.now(),this.P(this),this.F(this),this.q(),this.A(),this.I(),await this.U(this.delayedScripts.normal),await this.U(this.delayedScripts.defer),await this.U(this.delayedScripts.async);try{await this.W(),await this.H(this),await this.J()}catch(t){console.error(t)}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this.everythingLoaded=!0,this.S().then((()=>{this.D()})),this.N()}A(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)}))}async B(t){if(await this.G(),!0!==t.noModule||!("noModule"in HTMLScriptElement.prototype))return new Promise((e=>{let i;function o(){(i||t).setAttribute("data-rocket-status","executed"),e()}try{if(navigator.userAgent.indexOf("Firefox/")>0||""===navigator.vendor)i=document.createElement("script"),[...t.attributes].forEach((t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),i.setAttribute(e,t.nodeValue))})),t.text&&(i.text=t.text),i.hasAttribute("src")?(i.addEventListener("load",o),i.addEventListener("error",(function(){i.setAttribute("data-rocket-status","failed"),e()})),setTimeout((()=>{i.isConnected||e()}),1)):(i.text=t.text,o()),t.parentNode.replaceChild(i,t);else{const i=t.getAttribute("data-rocket-type"),n=t.getAttribute("data-rocket-src");i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",o),t.addEventListener("error",(function(){t.setAttribute("data-rocket-status","failed"),e()})),n?(t.removeAttribute("data-rocket-src"),t.src=n):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}}catch(i){t.setAttribute("data-rocket-status","failed"),e()}}));t.setAttribute("data-rocket-status","skipped")}async U(t){const e=t.shift();return e&&e.isConnected?(await this.B(e),this.U(t)):Promise.resolve()}I(){this.j([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}j(t,e){var i=document.createDocumentFragment();t.forEach((t=>{const o=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(o){const n=document.createElement("link");n.href=o,n.rel=e,"preconnect"!==e&&(n.as="script"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),i.appendChild(n),this.trash.push(n)}})),document.head.appendChild(i)}P(t){let e={};function i(i,o){return e[o].eventsToRewrite.indexOf(i)>=0&&!t.everythingLoaded?"rocket-"+i:i}function o(t,o){!function(t){e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=i(arguments[0],t),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=i(arguments[0],t),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(o)}function n(e,i){let o=e[i];e[i]=null,Object.defineProperty(e,i,{get:()=>o||function(){},set(n){t.everythingLoaded?o=n:e["rocket"+i]=o=n}})}o(document,"DOMContentLoaded"),o(window,"DOMContentLoaded"),o(window,"load"),o(window,"pageshow"),o(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}F(t){let e;function i(e){return t.everythingLoaded?e:e.split(" ").map((t=>"load"===t||0===t.indexOf("load.")?"rocket-jquery-load":t)).join(" ")}function o(o){if(o&&o.fn&&!t.allJQueries.includes(o)){o.fn.ready=o.fn.init.prototype.ready=function(e){return t.domReadyFired?e.bind(document)(o):document.addEventListener("rocket-DOMContentLoaded",(()=>e.bind(document)(o))),o([])};const e=o.fn.on;o.fn.on=o.fn.init.prototype.on=function(){return this[0]===window&&("string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=i(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{const e=arguments[0][t];delete arguments[0][t],arguments[0][i(t)]=e}))),e.apply(this,arguments),this},t.allJQueries.push(o)}e=o}o(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){o(t)}})}async H(t){const e=document.querySelector("script[data-webpack]");e&&(await async function(){return new Promise((t=>{e.addEventListener("load",t),e.addEventListener("error",t)}))}(),await t.K(),await t.H(t))}async W(){this.domReadyFired=!0,await this.G(),document.dispatchEvent(new Event("rocket-readystatechange")),await this.G(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.G(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this.G(),window.dispatchEvent(new Event("rocket-DOMContentLoaded"))}async J(){await this.G(),document.dispatchEvent(new Event("rocket-readystatechange")),await this.G(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.G(),window.dispatchEvent(new Event("rocket-load")),await this.G(),window.rocketonload&&window.rocketonload(),await this.G(),this.allJQueries.forEach((t=>t(window).trigger("rocket-jquery-load"))),await this.G();const t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this.G(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted}),this.windowLoaded=!0}m(){document.onreadystatechange&&document.onreadystatechange(),window.onload&&window.onload(),window.onpageshow&&window.onpageshow({persisted:this.persisted})}q(){const t=new Map;document.write=document.writeln=function(e){const i=document.currentScript;i||console.error("WPRocket unable to document.write this: "+e);const o=document.createRange(),n=i.parentElement;let s=t.get(i);void 0===s&&(s=i.nextSibling,t.set(i,s));const c=document.createDocumentFragment();o.setStart(c,0),c.appendChild(o.createContextualFragment(e)),n.insertBefore(c,s)}}async G(){Date.now()-this.lastBreath>45&&(await this.K(),this.lastBreath=Date.now())}async K(){return document.hidden?new Promise((t=>setTimeout(t))):new Promise((t=>requestAnimationFrame(t)))}N(){this.trash.forEach((t=>t.remove()))}static run(){const t=new RocketLazyLoadScripts;t.k(t)}}RocketLazyLoadScripts.run()})();</script>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Optimización para motores de búsqueda de Rank Math -  https://rankmath.com/ -->
+<title>Diseñador Web Freelance | Carlos Pérez - Webs Profesionales</title><link rel="preload" as="image" href="https://carlosperezarjona.com/wp-content/uploads/2021/10/pepe-el-vito.webp" fetchpriority="high">
+<meta name="description" content="Soy diseñador web freelance💡con experiencia en crear páginas web atractivas, funcionales y optimizadas para SEO. ☎️ 652 48 77 88."/>
+<meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"/>
+<link rel="canonical" href="https://carlosperezarjona.com/" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Diseñador Web Freelance | Carlos Pérez - Webs Profesionales" />
+<meta property="og:description" content="Soy diseñador web freelance💡con experiencia en crear páginas web atractivas, funcionales y optimizadas para SEO. ☎️ 652 48 77 88." />
+<meta property="og:url" content="https://carlosperezarjona.com/" />
+<meta property="og:site_name" content="Carlos Pérez" />
+<meta property="og:updated_time" content="2025-03-20T16:47:55+00:00" />
+<meta property="og:image" content="https://carlosperezarjona.com/wp-content/uploads/2021/10/pepe-el-vito.webp" />
+<meta property="og:image:secure_url" content="https://carlosperezarjona.com/wp-content/uploads/2021/10/pepe-el-vito.webp" />
+<meta property="og:image:width" content="768" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="diseñador web 2" />
+<meta property="og:image:type" content="image/webp" />
+<meta property="article:published_time" content="2021-10-15T11:34:28+00:00" />
+<meta property="article:modified_time" content="2025-03-20T16:47:55+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Diseñador Web Freelance | Carlos Pérez - Webs Profesionales" />
+<meta name="twitter:description" content="Soy diseñador web freelance💡con experiencia en crear páginas web atractivas, funcionales y optimizadas para SEO. ☎️ 652 48 77 88." />
+<meta name="twitter:image" content="https://carlosperezarjona.com/wp-content/uploads/2021/10/pepe-el-vito.webp" />
+<meta name="twitter:label1" content="Escrito por" />
+<meta name="twitter:data1" content="Carlos Pérez" />
+<meta name="twitter:label2" content="Tiempo de lectura" />
+<meta name="twitter:data2" content="5 minutos" />
+<script type="application/ld+json" class="rank-math-schema">{"@context":"https://schema.org","@graph":[{"@type":["LocalBusiness","Organization"],"@id":"https://carlosperezarjona.com/#organization","name":"Dise\u00f1o Web","url":"https://carlosperezarjona.com","sameAs":["https://www.facebook.com/profile.php?id=100066782792133","https://www.instagram.com/carlosperezmarketing/"],"logo":{"@type":"ImageObject","@id":"https://carlosperezarjona.com/#logo","url":"https://carlosperezarjona.com/wp-content/uploads/2021/10/la-e-azul.png","contentUrl":"https://carlosperezarjona.com/wp-content/uploads/2021/10/la-e-azul.png","caption":"Carlos P\u00e9rez","inLanguage":"es","width":"1088","height":"1144"},"openingHours":["Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday 09:00-17:00"],"image":{"@id":"https://carlosperezarjona.com/#logo"}},{"@type":"WebSite","@id":"https://carlosperezarjona.com/#website","url":"https://carlosperezarjona.com","name":"Carlos P\u00e9rez","publisher":{"@id":"https://carlosperezarjona.com/#organization"},"inLanguage":"es","potentialAction":{"@type":"SearchAction","target":"https://carlosperezarjona.com/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"ImageObject","@id":"https://carlosperezarjona.com/wp-content/uploads/2021/10/pepe-el-vito.webp","url":"https://carlosperezarjona.com/wp-content/uploads/2021/10/pepe-el-vito.webp","width":"768","height":"630","caption":"dise\u00f1ador web 2","inLanguage":"es"},{"@type":"WebPage","@id":"https://carlosperezarjona.com/#webpage","url":"https://carlosperezarjona.com/","name":"Dise\u00f1ador Web Freelance | Carlos P\u00e9rez - Webs Profesionales","datePublished":"2021-10-15T11:34:28+00:00","dateModified":"2025-03-20T16:47:55+00:00","about":{"@id":"https://carlosperezarjona.com/#organization"},"isPartOf":{"@id":"https://carlosperezarjona.com/#website"},"primaryImageOfPage":{"@id":"https://carlosperezarjona.com/wp-content/uploads/2021/10/pepe-el-vito.webp"},"inLanguage":"es"},{"@type":"Person","@id":"https://carlosperezarjona.com/author/carperarj/","name":"Carlos P\u00e9rez","url":"https://carlosperezarjona.com/author/carperarj/","image":{"@type":"ImageObject","@id":"https://secure.gravatar.com/avatar/d9ce703e7c1926807377b87ac3e5215f1c88a3fc94fd32a8369f3165ec6560d7?s=96&amp;d=mm&amp;r=g","url":"https://secure.gravatar.com/avatar/d9ce703e7c1926807377b87ac3e5215f1c88a3fc94fd32a8369f3165ec6560d7?s=96&amp;d=mm&amp;r=g","caption":"Carlos P\u00e9rez","inLanguage":"es"},"sameAs":["https://carlosperezarjona.com"],"worksFor":{"@id":"https://carlosperezarjona.com/#organization"}},{"@type":"Article","headline":"Dise\u00f1ador Web Freelance | Carlos P\u00e9rez - Webs Profesionales","keywords":"Dise\u00f1ador web","datePublished":"2021-10-15T11:34:28+00:00","dateModified":"2025-03-20T16:47:55+00:00","author":{"@id":"https://carlosperezarjona.com/author/carperarj/","name":"Carlos P\u00e9rez"},"publisher":{"@id":"https://carlosperezarjona.com/#organization"},"description":"Soy dise\u00f1ador web freelance\ud83d\udca1con experiencia en crear p\u00e1ginas web atractivas, funcionales y optimizadas para SEO. \u260e\ufe0f 652 48 77 88.","name":"Dise\u00f1ador Web Freelance | Carlos P\u00e9rez - Webs Profesionales","@id":"https://carlosperezarjona.com/#richSnippet","isPartOf":{"@id":"https://carlosperezarjona.com/#webpage"},"image":{"@id":"https://carlosperezarjona.com/wp-content/uploads/2021/10/pepe-el-vito.webp"},"inLanguage":"es","mainEntityOfPage":{"@id":"https://carlosperezarjona.com/#webpage"}}]}</script>
+<!-- /Plugin Rank Math WordPress SEO -->
+
+<link rel='dns-prefetch' href='//www.googletagmanager.com' />
+<link rel="alternate" type="application/rss+xml" title="Carlos Pérez &raquo; Feed" href="https://carlosperezarjona.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Carlos Pérez &raquo; Feed de los comentarios" href="https://carlosperezarjona.com/comments/feed/" />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://carlosperezarjona.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcarlosperezarjona.com%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://carlosperezarjona.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcarlosperezarjona.com%2F&#038;format=xml" />
+<style id='wp-img-auto-sizes-contain-inline-css'>
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id='wp-emoji-styles-inline-css'>
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<style id='classic-theme-styles-inline-css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+<link rel='stylesheet' id='cmplz-general-css' href='https://carlosperezarjona.com/wp-content/plugins/complianz-gdpr/assets/css/cookieblocker.min.css?ver=1754558143' media='all' />
+<link rel='stylesheet' id='generate-style-css' href='https://carlosperezarjona.com/wp-content/themes/generatepress/assets/css/main.min.css?ver=3.6.0' media='all' />
+<style id='generate-style-inline-css'>
+body{background-color:var(--base-2);color:var(--contrast);}a{color:var(--accent);}a{text-decoration:underline;}.entry-title a, .site-branding a, a.button, .wp-block-button__link, .main-navigation a{text-decoration:none;}a:hover, a:focus, a:active{color:var(--contrast);}.wp-block-group__inner-container{max-width:1200px;margin-left:auto;margin-right:auto;}:root{--contrast:#222222;--contrast-2:#575760;--contrast-3:#b2b2be;--base:#f0f0f0;--base-2:#f7f8f9;--base-3:#ffffff;--accent:#1e73be;}:root .has-contrast-color{color:var(--contrast);}:root .has-contrast-background-color{background-color:var(--contrast);}:root .has-contrast-2-color{color:var(--contrast-2);}:root .has-contrast-2-background-color{background-color:var(--contrast-2);}:root .has-contrast-3-color{color:var(--contrast-3);}:root .has-contrast-3-background-color{background-color:var(--contrast-3);}:root .has-base-color{color:var(--base);}:root .has-base-background-color{background-color:var(--base);}:root .has-base-2-color{color:var(--base-2);}:root .has-base-2-background-color{background-color:var(--base-2);}:root .has-base-3-color{color:var(--base-3);}:root .has-base-3-background-color{background-color:var(--base-3);}:root .has-accent-color{color:var(--accent);}:root .has-accent-background-color{background-color:var(--accent);}.top-bar{background-color:#636363;color:#ffffff;}.top-bar a{color:#ffffff;}.top-bar a:hover{color:#303030;}.site-header{background-color:var(--base-3);}.main-title a,.main-title a:hover{color:var(--contrast);}.site-description{color:var(--contrast-2);}.mobile-menu-control-wrapper .menu-toggle,.mobile-menu-control-wrapper .menu-toggle:hover,.mobile-menu-control-wrapper .menu-toggle:focus,.has-inline-mobile-toggle #site-navigation.toggled{background-color:rgba(0, 0, 0, 0.02);}.main-navigation,.main-navigation ul ul{background-color:var(--base-3);}.main-navigation .main-nav ul li a, .main-navigation .menu-toggle, .main-navigation .menu-bar-items{color:var(--contrast);}.main-navigation .main-nav ul li:not([class*="current-menu-"]):hover > a, .main-navigation .main-nav ul li:not([class*="current-menu-"]):focus > a, .main-navigation .main-nav ul li.sfHover:not([class*="current-menu-"]) > a, .main-navigation .menu-bar-item:hover > a, .main-navigation .menu-bar-item.sfHover > a{color:var(--accent);}button.menu-toggle:hover,button.menu-toggle:focus{color:var(--contrast);}.main-navigation .main-nav ul li[class*="current-menu-"] > a{color:var(--accent);}.navigation-search input[type="search"],.navigation-search input[type="search"]:active, .navigation-search input[type="search"]:focus, .main-navigation .main-nav ul li.search-item.active > a, .main-navigation .menu-bar-items .search-item.active > a{color:var(--accent);}.main-navigation ul ul{background-color:var(--base);}.separate-containers .inside-article, .separate-containers .comments-area, .separate-containers .page-header, .one-container .container, .separate-containers .paging-navigation, .inside-page-header{background-color:var(--base-3);}.entry-title a{color:var(--contrast);}.entry-title a:hover{color:var(--contrast-2);}.entry-meta{color:var(--contrast-2);}.sidebar .widget{background-color:var(--base-3);}.footer-widgets{background-color:var(--base-3);}.site-info{background-color:var(--base-3);}input[type="text"],input[type="email"],input[type="url"],input[type="password"],input[type="search"],input[type="tel"],input[type="number"],textarea,select{color:var(--contrast);background-color:var(--base-2);border-color:var(--base);}input[type="text"]:focus,input[type="email"]:focus,input[type="url"]:focus,input[type="password"]:focus,input[type="search"]:focus,input[type="tel"]:focus,input[type="number"]:focus,textarea:focus,select:focus{color:var(--contrast);background-color:var(--base-2);border-color:var(--contrast-3);}button,html input[type="button"],input[type="reset"],input[type="submit"],a.button,a.wp-block-button__link:not(.has-background){color:#ffffff;background-color:#55555e;}button:hover,html input[type="button"]:hover,input[type="reset"]:hover,input[type="submit"]:hover,a.button:hover,button:focus,html input[type="button"]:focus,input[type="reset"]:focus,input[type="submit"]:focus,a.button:focus,a.wp-block-button__link:not(.has-background):active,a.wp-block-button__link:not(.has-background):focus,a.wp-block-button__link:not(.has-background):hover{color:#ffffff;background-color:#3f4047;}a.generate-back-to-top{background-color:rgba( 0,0,0,0.4 );color:#ffffff;}a.generate-back-to-top:hover,a.generate-back-to-top:focus{background-color:rgba( 0,0,0,0.6 );color:#ffffff;}:root{--gp-search-modal-bg-color:var(--base-3);--gp-search-modal-text-color:var(--contrast);--gp-search-modal-overlay-bg-color:rgba(0,0,0,0.2);}@media (max-width:768px){.main-navigation .menu-bar-item:hover > a, .main-navigation .menu-bar-item.sfHover > a{background:none;color:var(--contrast);}}.nav-below-header .main-navigation .inside-navigation.grid-container, .nav-above-header .main-navigation .inside-navigation.grid-container{padding:0px 20px 0px 20px;}.site-main .wp-block-group__inner-container{padding:40px;}.separate-containers .paging-navigation{padding-top:20px;padding-bottom:20px;}.entry-content .alignwide, body:not(.no-sidebar) .entry-content .alignfull{margin-left:-40px;width:calc(100% + 80px);max-width:calc(100% + 80px);}.rtl .menu-item-has-children .dropdown-menu-toggle{padding-left:20px;}.rtl .main-navigation .main-nav ul li.menu-item-has-children > a{padding-right:20px;}@media (max-width:768px){.separate-containers .inside-article, .separate-containers .comments-area, .separate-containers .page-header, .separate-containers .paging-navigation, .one-container .site-content, .inside-page-header{padding:30px;}.site-main .wp-block-group__inner-container{padding:30px;}.inside-top-bar{padding-right:30px;padding-left:30px;}.inside-header{padding-right:30px;padding-left:30px;}.widget-area .widget{padding-top:30px;padding-right:30px;padding-bottom:30px;padding-left:30px;}.footer-widgets-container{padding-top:30px;padding-right:30px;padding-bottom:30px;padding-left:30px;}.inside-site-info{padding-right:30px;padding-left:30px;}.entry-content .alignwide, body:not(.no-sidebar) .entry-content .alignfull{margin-left:-30px;width:calc(100% + 60px);max-width:calc(100% + 60px);}.one-container .site-main .paging-navigation{margin-bottom:20px;}}/* End cached CSS */.is-right-sidebar{width:30%;}.is-left-sidebar{width:30%;}.site-content .content-area{width:70%;}@media (max-width:768px){.main-navigation .menu-toggle,.sidebar-nav-mobile:not(#sticky-placeholder){display:block;}.main-navigation ul,.gen-sidebar-nav,.main-navigation:not(.slideout-navigation):not(.toggled) .main-nav > ul,.has-inline-mobile-toggle #site-navigation .inside-navigation > *:not(.navigation-search):not(.main-nav){display:none;}.nav-align-right .inside-navigation,.nav-align-center .inside-navigation{justify-content:space-between;}.has-inline-mobile-toggle .mobile-menu-control-wrapper{display:flex;flex-wrap:wrap;}.has-inline-mobile-toggle .inside-header{flex-direction:row;text-align:left;flex-wrap:wrap;}.has-inline-mobile-toggle .header-widget,.has-inline-mobile-toggle #site-navigation{flex-basis:100%;}.nav-float-left .has-inline-mobile-toggle #site-navigation{order:10;}}
+.elementor-template-full-width .site-content{display:block;}
+/*# sourceURL=generate-style-inline-css */
+</style>
+<link rel='stylesheet' id='elementor-frontend-css' href='https://carlosperezarjona.com/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=3.31.3' media='all' />
+<link rel='stylesheet' id='widget-image-css' href='https://carlosperezarjona.com/wp-content/plugins/elementor/assets/css/widget-image.min.css?ver=3.31.3' media='all' />
+<link rel='stylesheet' id='widget-nav-menu-css' href='https://carlosperezarjona.com/wp-content/plugins/elementor-pro/assets/css/widget-nav-menu.min.css?ver=3.31.2' media='all' />
+<link rel='stylesheet' id='e-sticky-css' href='https://carlosperezarjona.com/wp-content/plugins/elementor-pro/assets/css/modules/sticky.min.css?ver=3.31.2' media='all' />
+<link rel='stylesheet' id='e-animation-grow-css' href='https://carlosperezarjona.com/wp-content/plugins/elementor/assets/lib/animations/styles/e-animation-grow.min.css?ver=3.31.3' media='all' />
+<link rel='stylesheet' id='widget-heading-css' href='https://carlosperezarjona.com/wp-content/plugins/elementor/assets/css/widget-heading.min.css?ver=3.31.3' media='all' />
+<link rel='stylesheet' id='widget-icon-list-css' href='https://carlosperezarjona.com/wp-content/plugins/elementor/assets/css/widget-icon-list.min.css?ver=3.31.3' media='all' />
+<link data-minify="1" rel='stylesheet' id='elementor-icons-css' href='https://carlosperezarjona.com/wp-content/cache/min/1/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=1764812791' media='all' />
+<link rel='stylesheet' id='elementor-post-179-css' href='https://carlosperezarjona.com/wp-content/uploads/elementor/css/post-179.css?ver=1764812790' media='all' />
+<link data-minify="1" rel='stylesheet' id='swiper-css' href='https://carlosperezarjona.com/wp-content/cache/min/1/wp-content/plugins/elementor/assets/lib/swiper/v8/css/swiper.min.css?ver=1764816364' media='all' />
+<link rel='stylesheet' id='e-swiper-css' href='https://carlosperezarjona.com/wp-content/plugins/elementor/assets/css/conditionals/e-swiper.min.css?ver=3.31.3' media='all' />
+<link rel='stylesheet' id='widget-media-carousel-css' href='https://carlosperezarjona.com/wp-content/plugins/elementor-pro/assets/css/widget-media-carousel.min.css?ver=3.31.2' media='all' />
+<link rel='stylesheet' id='widget-carousel-module-base-css' href='https://carlosperezarjona.com/wp-content/plugins/elementor-pro/assets/css/widget-carousel-module-base.min.css?ver=3.31.2' media='all' />
+<link rel='stylesheet' id='widget-toggle-css' href='https://carlosperezarjona.com/wp-content/plugins/elementor/assets/css/widget-toggle.min.css?ver=3.31.3' media='all' />
+<link rel='stylesheet' id='widget-posts-css' href='https://carlosperezarjona.com/wp-content/plugins/elementor-pro/assets/css/widget-posts.min.css?ver=3.31.2' media='all' />
+<link rel='stylesheet' id='elementor-post-984-css' href='https://carlosperezarjona.com/wp-content/uploads/elementor/css/post-984.css?ver=1764816363' media='all' />
+<link rel='stylesheet' id='elementor-post-860-css' href='https://carlosperezarjona.com/wp-content/uploads/elementor/css/post-860.css?ver=1764812790' media='all' />
+<link rel='stylesheet' id='elementor-post-857-css' href='https://carlosperezarjona.com/wp-content/uploads/elementor/css/post-857.css?ver=1764812790' media='all' />
+<link data-minify="1" rel='stylesheet' id='elementor-gf-local-arvo-css' href='https://carlosperezarjona.com/wp-content/cache/min/1/wp-content/uploads/elementor/google-fonts/css/arvo.css?ver=1764812791' media='all' />
+<link data-minify="1" rel='stylesheet' id='elementor-gf-local-poppins-css' href='https://carlosperezarjona.com/wp-content/cache/min/1/wp-content/uploads/elementor/google-fonts/css/poppins.css?ver=1764812791' media='all' />
+<link data-minify="1" rel='stylesheet' id='elementor-gf-local-robotoslab-css' href='https://carlosperezarjona.com/wp-content/cache/min/1/wp-content/uploads/elementor/google-fonts/css/robotoslab.css?ver=1764812791' media='all' />
+<link rel='stylesheet' id='elementor-icons-shared-0-css' href='https://carlosperezarjona.com/wp-content/plugins/elementor/assets/lib/font-awesome/css/fontawesome.min.css?ver=5.15.3' media='all' />
+<link data-minify="1" rel='stylesheet' id='elementor-icons-fa-solid-css' href='https://carlosperezarjona.com/wp-content/cache/min/1/wp-content/plugins/elementor/assets/lib/font-awesome/css/solid.min.css?ver=1764812791' media='all' />
+<link data-minify="1" rel='stylesheet' id='elementor-icons-fa-brands-css' href='https://carlosperezarjona.com/wp-content/cache/min/1/wp-content/plugins/elementor/assets/lib/font-awesome/css/brands.min.css?ver=1764812791' media='all' />
+<script type="rocketlazyloadscript" data-rocket-src="https://carlosperezarjona.com/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-src="https://carlosperezarjona.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js" defer></script>
+
+<!-- Fragmento de código de la etiqueta de Google (gtag.js) añadida por Site Kit -->
+<!-- Fragmento de código de Google Analytics añadido por Site Kit -->
+<script type="rocketlazyloadscript" data-rocket-src="https://www.googletagmanager.com/gtag/js?id=GT-MJPX7CN5" id="google_gtagjs-js" async></script>
+<script type="rocketlazyloadscript" id="google_gtagjs-js-after">
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag("set","linker",{"domains":["carlosperezarjona.com"]});
+gtag("js", new Date());
+gtag("set", "developer_id.dZTNiMT", true);
+gtag("config", "GT-MJPX7CN5");
+ window._googlesitekit = window._googlesitekit || {}; window._googlesitekit.throttledEvents = []; window._googlesitekit.gtagEvent = (name, data) => { var key = JSON.stringify( { name, data } ); if ( !! window._googlesitekit.throttledEvents[ key ] ) { return; } window._googlesitekit.throttledEvents[ key ] = true; setTimeout( () => { delete window._googlesitekit.throttledEvents[ key ]; }, 5 ); gtag( "event", name, { ...data, event_source: "site-kit" } ); }; 
+//# sourceURL=google_gtagjs-js-after
+</script>
+<link rel="https://api.w.org/" href="https://carlosperezarjona.com/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://carlosperezarjona.com/wp-json/wp/v2/pages/984" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://carlosperezarjona.com/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 6.9" />
+<link rel='shortlink' href='https://carlosperezarjona.com/' />
+
+		<!-- GA Google Analytics @ https://m0n.co/ga -->
+		<script type="rocketlazyloadscript">
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+			ga('create', 'G-KZBE8GVSEQ', 'auto');
+			ga('send', 'pageview');
+		</script>
+
+	<meta name="generator" content="Site Kit by Google 1.167.0" /><!-- HFCM by 99 Robots - Snippet # 2: Google Ads -->
+<!-- Global site tag (gtag.js) - Google Ads: 647649744 -->
+<script type="rocketlazyloadscript" async data-rocket-src="https://www.googletagmanager.com/gtag/js?id=AW-647649744"></script>
+<script type="rocketlazyloadscript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-647649744');
+</script>
+<!-- /end HFCM by 99 Robots -->
+<!-- HFCM by 99 Robots - Snippet # 3: Pixel de FB Carlos Pérez -->
+<!-- Meta Pixel Code -->
+<script type="rocketlazyloadscript">
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '463690015269469');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=463690015269469&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<!-- /end HFCM by 99 Robots -->
+<!-- HFCM by 99 Robots - Snippet # 4: Propiedad dominio -->
+<meta name="facebook-domain-verification" content="dyi0lkv5az1kjhtn82v6jbhy21i3lb" />
+<!-- /end HFCM by 99 Robots -->
+<!-- HFCM by 99 Robots - Snippet # 6: Tag Manager Head -->
+<!-- Google Tag Manager -->
+<script type="rocketlazyloadscript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M59S3MC');</script>
+<!-- End Google Tag Manager -->
+<!-- /end HFCM by 99 Robots -->
+<!-- HFCM by 99 Robots - Snippet # 8: Tag Manager 2 -->
+<!-- Google Tag Manager -->
+<script type="rocketlazyloadscript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M5QD6WJV');</script>
+<!-- End Google Tag Manager -->
+<!-- /end HFCM by 99 Robots -->
+			<style>.cmplz-hidden {
+					display: none !important;
+				}</style><!-- Analytics by WP Statistics - https://wp-statistics.com -->
+<meta name="generator" content="Elementor 3.31.3; features: additional_custom_breakpoints, e_element_cache; settings: css_print_method-external, google_font-enabled, font_display-auto">
+<link rel="icon" href="https://carlosperezarjona.com/wp-content/uploads/2020/03/E-FONDO-BLANCO-carlos-perez-150x150.webp" sizes="32x32" />
+<link rel="icon" href="https://carlosperezarjona.com/wp-content/uploads/2020/03/E-FONDO-BLANCO-carlos-perez-300x300.webp" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://carlosperezarjona.com/wp-content/uploads/2020/03/E-FONDO-BLANCO-carlos-perez-300x300.webp" />
+<meta name="msapplication-TileImage" content="https://carlosperezarjona.com/wp-content/uploads/2020/03/E-FONDO-BLANCO-carlos-perez-300x300.webp" />
+		<style id="wp-custom-css">
+			.size-auto, .size-full, .size-large, .size-medium, .size-thumbnail {display:none		</style>
+		<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript><style id='global-styles-inline-css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--contrast: var(--contrast);--wp--preset--color--contrast-2: var(--contrast-2);--wp--preset--color--contrast-3: var(--contrast-3);--wp--preset--color--base: var(--base);--wp--preset--color--base-2: var(--base-2);--wp--preset--color--base-3: var(--base-3);--wp--preset--color--accent: var(--accent);--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+<style id="wpr-lazyload-bg-container"></style><style id="wpr-lazyload-bg-exclusion"></style>
+<noscript>
+<style id="wpr-lazyload-bg-nostyle"></style>
+</noscript>
+<script type="application/javascript">const rocket_pairs = []; const rocket_excluded_pairs = [];</script></head>
+
+<body class="home wp-singular page-template page-template-elementor_header_footer page page-id-984 wp-custom-logo wp-embed-responsive wp-theme-generatepress right-sidebar nav-float-right separate-containers header-aligned-left dropdown-hover featured-image-active elementor-default elementor-template-full-width elementor-kit-179 elementor-page elementor-page-984 full-width-content" itemtype="https://schema.org/WebPage" itemscope>
+	<a class="screen-reader-text skip-link" href="#content" title="Saltar al contenido">Saltar al contenido</a>		<header data-elementor-type="header" data-elementor-id="860" class="elementor elementor-860 elementor-location-header" data-elementor-post-type="elementor_library">
+					<section class="elementor-section elementor-top-section elementor-element elementor-element-d6c5354 elementor-hidden-desktop elementor-hidden-tablet elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="d6c5354" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-9f3e147" data-id="9f3e147" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-a7e03c4 elementor-widget__width-auto elementor-widget elementor-widget-text-editor" data-id="a7e03c4" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p>652 48 77 88</p>								</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-2ea8414" data-id="2ea8414" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-025db56 elementor-widget__width-auto elementor-widget elementor-widget-button" data-id="025db56" data-element_type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+									<div class="elementor-button-wrapper">
+					<a class="elementor-button elementor-button-link elementor-size-sm" href="https://carlosperezarjona.com/contacto/">
+						<span class="elementor-button-content-wrapper">
+									<span class="elementor-button-text">¿Hablamos?</span>
+					</span>
+					</a>
+				</div>
+								</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-637102b elementor-section-height-min-height elementor-section-boxed elementor-section-height-default elementor-section-items-middle" data-id="637102b" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;sticky&quot;:&quot;top&quot;,&quot;sticky_on&quot;:[&quot;desktop&quot;,&quot;tablet&quot;,&quot;mobile&quot;],&quot;sticky_offset&quot;:0,&quot;sticky_effects_offset&quot;:0,&quot;sticky_anchor_link_offset&quot;:0}">
+							<div class="elementor-background-overlay"></div>
+							<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-1840cbe2" data-id="1840cbe2" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-386749c elementor-widget elementor-widget-image" data-id="386749c" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+																<a href="https://carlosperezarjona.com">
+							<img fetchpriority="high" width="1221" height="192" src="https://carlosperezarjona.com/wp-content/uploads/2021/10/logotipo-carlos-perez-disenador-web.webp" class="attachment-full size-full wp-image-2758" alt="logotipo-carlos-perez-diseñador-web" />								</a>
+															</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-01c7236" data-id="01c7236" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-711adef elementor-nav-menu__align-end elementor-nav-menu--stretch elementor-widget__width-initial elementor-nav-menu--dropdown-tablet elementor-nav-menu__text-align-aside elementor-nav-menu--toggle elementor-nav-menu--burger elementor-widget elementor-widget-nav-menu" data-id="711adef" data-element_type="widget" data-settings="{&quot;full_width&quot;:&quot;stretch&quot;,&quot;layout&quot;:&quot;horizontal&quot;,&quot;submenu_icon&quot;:{&quot;value&quot;:&quot;&lt;i class=\&quot;fas fa-caret-down\&quot;&gt;&lt;\/i&gt;&quot;,&quot;library&quot;:&quot;fa-solid&quot;},&quot;toggle&quot;:&quot;burger&quot;}" data-widget_type="nav-menu.default">
+				<div class="elementor-widget-container">
+								<nav aria-label="Menú" class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-horizontal e--pointer-none">
+				<ul id="menu-1-711adef" class="elementor-nav-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-984 current_page_item current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1220"><a href="https://carlosperezarjona.com/" aria-current="page" class="elementor-item elementor-item-active">Diseño Web</a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-984 current_page_item menu-item-2891"><a href="https://carlosperezarjona.com/" aria-current="page" class="elementor-sub-item elementor-item-active">Páginas Web</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2735"><a href="https://carlosperezarjona.com/diseno-tiendas-online/" class="elementor-sub-item">Tiendas Online</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2656"><a href="https://carlosperezarjona.com/consultor-seo-freelance/" class="elementor-item">SEO</a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3108"><a href="https://carlosperezarjona.com/consultor-seo-freelance/" class="elementor-sub-item">Posicionamiento SEO</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3107"><a href="https://carlosperezarjona.com/agencia-seo-ecommerce/" class="elementor-sub-item">SEO Ecommerce</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1217"><a href="https://carlosperezarjona.com/freelance-de-marketing-digital/" class="elementor-item">Sobre Mi</a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2890"><a href="https://carlosperezarjona.com/freelance-de-marketing-digital/" class="elementor-sub-item">Experto en Marketing</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1218"><a href="https://carlosperezarjona.com/proyectos/" class="elementor-sub-item">Proyectos</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1219"><a href="https://carlosperezarjona.com/contacto/" class="elementor-item">Contacto</a></li>
+</ul>			</nav>
+					<div class="elementor-menu-toggle" role="button" tabindex="0" aria-label="Alternar menú" aria-expanded="false">
+			<i aria-hidden="true" role="presentation" class="elementor-menu-toggle__icon--open eicon-menu-bar"></i><i aria-hidden="true" role="presentation" class="elementor-menu-toggle__icon--close eicon-close"></i>		</div>
+					<nav class="elementor-nav-menu--dropdown elementor-nav-menu__container" aria-hidden="true">
+				<ul id="menu-2-711adef" class="elementor-nav-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-984 current_page_item current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1220"><a href="https://carlosperezarjona.com/" aria-current="page" class="elementor-item elementor-item-active" tabindex="-1">Diseño Web</a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-984 current_page_item menu-item-2891"><a href="https://carlosperezarjona.com/" aria-current="page" class="elementor-sub-item elementor-item-active" tabindex="-1">Páginas Web</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2735"><a href="https://carlosperezarjona.com/diseno-tiendas-online/" class="elementor-sub-item" tabindex="-1">Tiendas Online</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2656"><a href="https://carlosperezarjona.com/consultor-seo-freelance/" class="elementor-item" tabindex="-1">SEO</a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3108"><a href="https://carlosperezarjona.com/consultor-seo-freelance/" class="elementor-sub-item" tabindex="-1">Posicionamiento SEO</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3107"><a href="https://carlosperezarjona.com/agencia-seo-ecommerce/" class="elementor-sub-item" tabindex="-1">SEO Ecommerce</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1217"><a href="https://carlosperezarjona.com/freelance-de-marketing-digital/" class="elementor-item" tabindex="-1">Sobre Mi</a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2890"><a href="https://carlosperezarjona.com/freelance-de-marketing-digital/" class="elementor-sub-item" tabindex="-1">Experto en Marketing</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1218"><a href="https://carlosperezarjona.com/proyectos/" class="elementor-sub-item" tabindex="-1">Proyectos</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1219"><a href="https://carlosperezarjona.com/contacto/" class="elementor-item" tabindex="-1">Contacto</a></li>
+</ul>			</nav>
+						</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-6aac663 elementor-hidden-mobile" data-id="6aac663" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-37e2950 elementor-widget__width-auto elementor-widget elementor-widget-button" data-id="37e2950" data-element_type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+									<div class="elementor-button-wrapper">
+					<a class="elementor-button elementor-button-link elementor-size-sm" href="https://carlosperezarjona.com/contacto/">
+						<span class="elementor-button-content-wrapper">
+									<span class="elementor-button-text">¿Hablamos?</span>
+					</span>
+					</a>
+				</div>
+								</div>
+				</div>
+				<div class="elementor-element elementor-element-b21d694 elementor-widget__width-auto elementor-widget elementor-widget-text-editor" data-id="b21d694" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p><strong><a href="tel:+34652487788">652 48 77 88</a></strong></p>								</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				</header>
+				<div class="featured-image page-header-image grid-container grid-parent">
+			<img fetchpriority="high" width="768" height="630" src="https://carlosperezarjona.com/wp-content/uploads/2021/10/pepe-el-vito.webp" class="attachment-full size-full wp-post-image" alt="diseñador web 2" itemprop="image" decoding="async" />		</div>
+		
+	<div class="site grid-container container hfeed" id="page">
+				<div class="site-content" id="content">
+					<div data-elementor-type="wp-page" data-elementor-id="984" class="elementor elementor-984" data-elementor-post-type="page">
+						<section class="elementor-section elementor-top-section elementor-element elementor-element-38b0656 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="38b0656" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;gradient&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-671a8d9" data-id="671a8d9" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-bdc08dc elementor-widget elementor-widget-heading" data-id="bdc08dc" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h1 class="elementor-heading-title elementor-size-default">Diseñador Web</h1>				</div>
+				</div>
+				<div class="elementor-element elementor-element-00a219b elementor-widget elementor-widget-heading" data-id="00a219b" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">Creamos Sitios Web que Generan Resultados</h2>				</div>
+				</div>
+				<div class="elementor-element elementor-element-e5261d9 elementor-widget elementor-widget-text-editor" data-id="e5261d9" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p data-start="876" data-end="1109">✔ Adaptadas a todos los dispositivos.<br data-start="938" data-end="941" />✔ Rápidas y optimizadas para SEO.<br data-start="983" data-end="986" />✔ Diseño atractivo y profesional.<br data-start="1033" data-end="1036" />✔ Convierte visitantes en clientes.</p>								</div>
+				</div>
+				<div class="elementor-element elementor-element-40b16be elementor-align-left elementor-mobile-align-center elementor-widget__width-auto elementor-widget-mobile__width-inherit elementor-hidden-mobile elementor-widget elementor-widget-button" data-id="40b16be" data-element_type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+									<div class="elementor-button-wrapper">
+					<a class="elementor-button elementor-button-link elementor-size-xs elementor-animation-grow" href="https://carlosperezarjona.com/contacto/">
+						<span class="elementor-button-content-wrapper">
+									<span class="elementor-button-text">CUÉNTAME TU PROYECTO</span>
+					</span>
+					</a>
+				</div>
+								</div>
+				</div>
+				<div class="elementor-element elementor-element-7181018 elementor-align-left elementor-mobile-align-center elementor-widget__width-auto elementor-widget-mobile__width-inherit elementor-hidden-desktop elementor-hidden-tablet elementor-widget elementor-widget-button" data-id="7181018" data-element_type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+									<div class="elementor-button-wrapper">
+					<a class="elementor-button elementor-button-link elementor-size-xs elementor-animation-grow" href="tel:+34652487788">
+						<span class="elementor-button-content-wrapper">
+									<span class="elementor-button-text">CUÉNTAME TU PROYECTO</span>
+					</span>
+					</a>
+				</div>
+								</div>
+				</div>
+				<div class="elementor-element elementor-element-250886b elementor-align-left elementor-mobile-align-center elementor-widget__width-auto elementor-widget-mobile__width-inherit elementor-widget elementor-widget-button" data-id="250886b" data-element_type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+									<div class="elementor-button-wrapper">
+					<a class="elementor-button elementor-button-link elementor-size-xs elementor-animation-grow" href="https://calendly.com/carlosperezarjona/45min?month=2022-11&#038;date=2022-11-29" target="_blank" rel="noopener">
+						<span class="elementor-button-content-wrapper">
+									<span class="elementor-button-text">Quiero una reunión &gt;</span>
+					</span>
+					</a>
+				</div>
+								</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-5a88a63" data-id="5a88a63" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-7f0520c elementor-widget elementor-widget-image" data-id="7f0520c" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<img loading="lazy" decoding="async" width="768" height="630" src="https://carlosperezarjona.com/wp-content/uploads/2021/10/pepe-el-vito.webp" class="attachment-full size-full wp-image-2759" alt="diseñador web 2" />															</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-d054040 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="d054040" data-element_type="section">
+							<div class="elementor-background-overlay"></div>
+							<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-c3c67c7" data-id="c3c67c7" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-127b700 elementor-widget elementor-widget-text-editor" data-id="127b700" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p data-start="292" data-end="534">Hoy en día, tener una página web no es suficiente: necesitas un diseño que <strong data-start="367" data-end="401">impacte, convierta y posicione</strong>. Como <strong data-start="408" data-end="435">diseñador webs</strong>, creo sitios web atractivos, funcionales y optimizados para que tu negocio destaque de tus competidores en internet.</p><p data-start="536" data-end="663">Si buscas un <strong data-start="549" data-end="575">diseño web profesional</strong>, adaptado a tu marca y con una estructura SEO optimizada, estás en el lugar indicado.</p><p data-start="384" data-end="617"><a href="https://carlosperezarjona.com/contacto/">¿Empezamos?</a></p>								</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-7d60884 elementor-reverse-mobile elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="7d60884" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-7fd62e6" data-id="7fd62e6" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-4bb8fde elementor-widget elementor-widget-heading" data-id="4bb8fde" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h3 class="elementor-heading-title elementor-size-default">Tu Diseñador Web Profesional</h3>				</div>
+				</div>
+				<div class="elementor-element elementor-element-a903b75 elementor-widget elementor-widget-heading" data-id="a903b75" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">¿Quieres que tu negocio tenga una imagen profesional?</h2>				</div>
+				</div>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-4837d13 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="4837d13" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-6c30e71" data-id="6c30e71" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-fbfe65b elementor-widget elementor-widget-text-editor" data-id="fbfe65b" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p data-start="223" data-end="529">Con más de <strong data-start="307" data-end="351">5 años de experiencia </strong>en el sector del diseño web, desde Sevilla he ayudado a cientos de negocios de Madrid, <a href="https://carlosperezarjona.com/diseno-web-en-cadiz/">Cádiz</a>, Córdoba como en el resto de España. Les he ayudado a <strong>atraer clientes</strong> con <a href="https://carlosperezarjona.com/consultor-seo-freelance/">SEO</a> y retenerlos con un diseño web atractivo, ya que en este proceso todo paso que da nuestro cliente es fundamental. Así que si estás buscando un web corporativa o una <a href="https://carlosperezarjona.com/diseno-tiendas-online/">tienda online</a> este es tu lugar.</p><p data-start="1289" data-end="1474">Soy <strong data-start="1293" data-end="1309">Carlos Pérez</strong>, <strong data-start="1311" data-end="1338">diseñador web freelance</strong> me dedico a la creación de sitios web para empresas y profesionales. Mi trabajo se basa en tres pilares fundamentales:</p><p data-start="1476" data-end="1693">💡 <strong data-start="1479" data-end="1494">Creatividad</strong>: Diseño web atractivo y adaptado a tu marca.<br data-start="1539" data-end="1542" />⚡ <strong data-start="1544" data-end="1561">Funcionalidad</strong>: Webs intuitivas, rápidas y de fácil navegación.<br data-start="1610" data-end="1613" />🚀 <strong data-start="1616" data-end="1636">Optimización SEO</strong>: Desarrollo web con estructura optimizada para Google.</p><p data-start="1695" data-end="1865">Me he especializado y trabajo con tecnologías como <strong data-start="1724" data-end="1793">WordPress, WooCommerce, Shopify, Prestashop y desarrollo a medida</strong>, asegurando que tu página sea escalable, segura y fácil de gestionar.</p>								</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-c2092aa" data-id="c2092aa" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-bd9fa30 elementor-widget elementor-widget-image" data-id="bd9fa30" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<img decoding="async" width="768" height="768" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20768%20768'%3E%3C/svg%3E" class="attachment-full size-full wp-image-2671" alt="consultor SEO freelance" data-lazy-srcset="https://carlosperezarjona.com/wp-content/uploads/2025/03/consultor-SEO-freelance.webp 768w, https://carlosperezarjona.com/wp-content/uploads/2025/03/consultor-SEO-freelance-300x300.webp 300w, https://carlosperezarjona.com/wp-content/uploads/2025/03/consultor-SEO-freelance-150x150.webp 150w" data-lazy-sizes="(max-width: 768px) 100vw, 768px" data-lazy-src="https://carlosperezarjona.com/wp-content/uploads/2025/03/consultor-SEO-freelance.webp" /><noscript><img loading="lazy" decoding="async" width="768" height="768" src="https://carlosperezarjona.com/wp-content/uploads/2025/03/consultor-SEO-freelance.webp" class="attachment-full size-full wp-image-2671" alt="consultor SEO freelance" srcset="https://carlosperezarjona.com/wp-content/uploads/2025/03/consultor-SEO-freelance.webp 768w, https://carlosperezarjona.com/wp-content/uploads/2025/03/consultor-SEO-freelance-300x300.webp 300w, https://carlosperezarjona.com/wp-content/uploads/2025/03/consultor-SEO-freelance-150x150.webp 150w" sizes="(max-width: 768px) 100vw, 768px" /></noscript>															</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-706f2db elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="706f2db" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-67686c5" data-id="67686c5" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-2871a87 elementor-skin-carousel elementor-widget elementor-widget-media-carousel" data-id="2871a87" data-element_type="widget" data-settings="{&quot;slides_per_view&quot;:&quot;3&quot;,&quot;slides_per_view_mobile&quot;:&quot;3&quot;,&quot;skin&quot;:&quot;carousel&quot;,&quot;effect&quot;:&quot;slide&quot;,&quot;speed&quot;:500,&quot;autoplay&quot;:&quot;yes&quot;,&quot;autoplay_speed&quot;:5000,&quot;loop&quot;:&quot;yes&quot;,&quot;space_between&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:10,&quot;sizes&quot;:[]},&quot;space_between_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:10,&quot;sizes&quot;:[]},&quot;space_between_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:10,&quot;sizes&quot;:[]}}" data-widget_type="media-carousel.default">
+				<div class="elementor-widget-container">
+									<div class="elementor-swiper">
+					<div class="elementor-main-swiper swiper" role="region" aria-roledescription="carousel" aria-label="Diapositivas">
+				<div class="swiper-wrapper">
+											<div class="swiper-slide" role="group" aria-roledescription="slide">
+									<div data-bg="https://carlosperezarjona.com/wp-content/uploads/2025/03/google-analytics-logotipo.webp" class="elementor-carousel-image rocket-lazyload" role="img" aria-label="google-analytics-logotipo" style="">
+
+			
+					</div>
+								</div>
+											<div class="swiper-slide" role="group" aria-roledescription="slide">
+									<div data-bg="https://carlosperezarjona.com/wp-content/uploads/2025/03/logo-wordpress.webp" class="elementor-carousel-image rocket-lazyload" role="img" aria-label="logo-wordpress" style="">
+
+			
+					</div>
+								</div>
+											<div class="swiper-slide" role="group" aria-roledescription="slide">
+									<div data-bg="https://carlosperezarjona.com/wp-content/uploads/2025/03/logo-woocommerce.webp" class="elementor-carousel-image rocket-lazyload" role="img" aria-label="logo-woocommerce" style="">
+
+			
+					</div>
+								</div>
+											<div class="swiper-slide" role="group" aria-roledescription="slide">
+									<div data-bg="https://carlosperezarjona.com/wp-content/uploads/2025/03/rank-math-logotipo.webp" class="elementor-carousel-image rocket-lazyload" role="img" aria-label="rank-math-logotipo" style="">
+
+			
+					</div>
+								</div>
+											<div class="swiper-slide" role="group" aria-roledescription="slide">
+									<div data-bg="https://carlosperezarjona.com/wp-content/uploads/2025/03/se-ranking-logotipo.webp" class="elementor-carousel-image rocket-lazyload" role="img" aria-label="se-ranking-logotipo" style="">
+
+			
+					</div>
+								</div>
+									</div>
+																					</div>
+				</div>
+								</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-e043724 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="e043724" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-d26ef05" data-id="d26ef05" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-1c8cc36 elementor-widget elementor-widget-heading" data-id="1c8cc36" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h3 class="elementor-heading-title elementor-size-default">Impulsa tu Negocio Online</h3>				</div>
+				</div>
+				<div class="elementor-element elementor-element-58061ed elementor-widget elementor-widget-heading" data-id="58061ed" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h3 class="elementor-heading-title elementor-size-default">Nuestro Proceso de Diseño de un Sitio Web Profesional</h3>				</div>
+				</div>
+				<div class="elementor-element elementor-element-768d25d elementor-widget elementor-widget-text-editor" data-id="768d25d" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p data-start="269" data-end="467">Crear un <strong data-start="278" data-end="303">sitio web profesional</strong> no es solo cuestión de estética, sino de estrategia y funcionalidad. Cada proyecto que desarrollo sigue un proceso optimizado para garantizar el mejor resultado.</p>								</div>
+				</div>
+				<div class="elementor-element elementor-element-efd5bcc elementor-widget elementor-widget-toggle" data-id="efd5bcc" data-element_type="widget" data-widget_type="toggle.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-toggle">
+							<div class="elementor-toggle-item">
+					<h4 id="elementor-tab-title-2511" class="elementor-tab-title" data-tab="1" role="button" aria-controls="elementor-tab-content-2511" aria-expanded="false">
+												<span class="elementor-toggle-icon elementor-toggle-icon-left" aria-hidden="true">
+															<span class="elementor-toggle-icon-closed"><i class="fas fa-caret-right"></i></span>
+								<span class="elementor-toggle-icon-opened"><i class="elementor-toggle-icon-opened fas fa-caret-up"></i></span>
+													</span>
+												<a class="elementor-toggle-title" tabindex="0">Análisis y Definición de Objetivos</a>
+					</h4>
+
+					<div id="elementor-tab-content-2511" class="elementor-tab-content elementor-clearfix" data-tab="1" role="region" aria-labelledby="elementor-tab-title-2511"><p data-start="517" data-end="697">Antes de comenzar, realizo una reunión contigo para entender <strong data-start="578" data-end="611">qué necesitas en tu sitio web</strong> y cómo podemos alinearlo con tus objetivos de negocio. Algunas preguntas clave son:</p><ul data-start="699" data-end="989"><li data-start="699" data-end="799">¿Cuál es el propósito del <strong data-start="727" data-end="740">sitio web</strong> (ventas, captación de clientes, presencia online, etc.)?</li><li data-start="800" data-end="833">¿Cuál es el público objetivo?</li><li data-start="834" data-end="931">¿Qué funcionalidades debe incluir la web? (formulario de contacto, tienda online, blog, etc.)</li><li data-start="932" data-end="989">¿Tienes referencias o ejemplos de webs que te gusten?</li></ul><p data-start="991" data-end="1092">Definir bien estos aspectos nos permite crear un <strong data-start="1040" data-end="1066">diseño web profesional</strong> alineado con tu visión.</p></div>
+				</div>
+							<div class="elementor-toggle-item">
+					<h4 id="elementor-tab-title-2512" class="elementor-tab-title" data-tab="2" role="button" aria-controls="elementor-tab-content-2512" aria-expanded="false">
+												<span class="elementor-toggle-icon elementor-toggle-icon-left" aria-hidden="true">
+															<span class="elementor-toggle-icon-closed"><i class="fas fa-caret-right"></i></span>
+								<span class="elementor-toggle-icon-opened"><i class="elementor-toggle-icon-opened fas fa-caret-up"></i></span>
+													</span>
+												<a class="elementor-toggle-title" tabindex="0">Planificación y Estructura del Sitio Web</a>
+					</h4>
+
+					<div id="elementor-tab-content-2512" class="elementor-tab-content elementor-clearfix" data-tab="2" role="region" aria-labelledby="elementor-tab-title-2512"><p data-start="1148" data-end="1248">En esta fase, estructuro la web para garantizar que la navegación sea clara y efectiva. Para ello:</p><p data-start="1250" data-end="1459">✔ Defino la arquitectura del sitio (páginas, categorías y enlaces internos).<br data-start="1326" data-end="1329" />✔ Diseño un <strong data-start="1341" data-end="1354">wireframe</strong> o esquema visual de la web.<br data-start="1382" data-end="1385" />✔ Selecciono los colores, tipografías y estilos gráficos según tu marca.</p><p data-start="1461" data-end="1561">Una buena estructura es clave para que el usuario encuentre lo que busca y el sitio sea intuitivo.</p></div>
+				</div>
+							<div class="elementor-toggle-item">
+					<h4 id="elementor-tab-title-2513" class="elementor-tab-title" data-tab="3" role="button" aria-controls="elementor-tab-content-2513" aria-expanded="false">
+												<span class="elementor-toggle-icon elementor-toggle-icon-left" aria-hidden="true">
+															<span class="elementor-toggle-icon-closed"><i class="fas fa-caret-right"></i></span>
+								<span class="elementor-toggle-icon-opened"><i class="elementor-toggle-icon-opened fas fa-caret-up"></i></span>
+													</span>
+												<a class="elementor-toggle-title" tabindex="0">Diseño Visual del Sitio Web</a>
+					</h4>
+
+					<div id="elementor-tab-content-2513" class="elementor-tab-content elementor-clearfix" data-tab="3" role="region" aria-labelledby="elementor-tab-title-2513"><p data-start="1604" data-end="1778">Aquí comienza la parte creativa. Desarrollo un diseño atractivo y alineado con tu identidad visual, asegurando que el <strong data-start="1722" data-end="1747">sitio web profesional</strong> cumpla con estos principios:</p><p data-start="1780" data-end="1973">🎨 Diseño moderno y atractivo.<br data-start="1810" data-end="1813" />📱 Adaptabilidad a dispositivos móviles (diseño responsive).<br data-start="1873" data-end="1876" />⚡ Optimización de velocidad de carga.<br data-start="1913" data-end="1916" />🖥 Experiencia de usuario intuitiva y fácil navegación.</p><p data-start="1975" data-end="2074">El objetivo es que tu web no solo se vea bien, sino que también <strong data-start="2039" data-end="2071">funcione de manera eficiente</strong>.</p></div>
+				</div>
+							<div class="elementor-toggle-item">
+					<h4 id="elementor-tab-title-2514" class="elementor-tab-title" data-tab="4" role="button" aria-controls="elementor-tab-content-2514" aria-expanded="false">
+												<span class="elementor-toggle-icon elementor-toggle-icon-left" aria-hidden="true">
+															<span class="elementor-toggle-icon-closed"><i class="fas fa-caret-right"></i></span>
+								<span class="elementor-toggle-icon-opened"><i class="elementor-toggle-icon-opened fas fa-caret-up"></i></span>
+													</span>
+												<a class="elementor-toggle-title" tabindex="0">Desarrollo y Programación Web</a>
+					</h4>
+
+					<div id="elementor-tab-content-2514" class="elementor-tab-content elementor-clearfix" data-tab="4" role="region" aria-labelledby="elementor-tab-title-2514"><p data-start="2119" data-end="2297">En esta etapa, convierto el diseño en una web totalmente funcional, utilizando plataformas como <strong data-start="2215" data-end="2259">WordPress, Shopify o desarrollo a medida</strong> según las necesidades del proyecto.</p><ul><li data-start="2299" data-end="2495">Implemento código limpio y optimizado.</li><li data-start="2299" data-end="2495">Configuro todas las funcionalidades necesarias.</li><li data-start="2299" data-end="2495">Añado formularios de contacto, integración con redes sociales y cualquier otro elemento clave.</li></ul><p data-start="2497" data-end="2587">Al finalizar, realizo pruebas exhaustivas para asegurar que todo funcione perfectamente.</p></div>
+				</div>
+							<div class="elementor-toggle-item">
+					<h4 id="elementor-tab-title-2515" class="elementor-tab-title" data-tab="5" role="button" aria-controls="elementor-tab-content-2515" aria-expanded="false">
+												<span class="elementor-toggle-icon elementor-toggle-icon-left" aria-hidden="true">
+															<span class="elementor-toggle-icon-closed"><i class="fas fa-caret-right"></i></span>
+								<span class="elementor-toggle-icon-opened"><i class="elementor-toggle-icon-opened fas fa-caret-up"></i></span>
+													</span>
+												<a class="elementor-toggle-title" tabindex="0">Optimización SEO y Performance</a>
+					</h4>
+
+					<div id="elementor-tab-content-2515" class="elementor-tab-content elementor-clearfix" data-tab="5" role="region" aria-labelledby="elementor-tab-title-2515"><p data-start="2633" data-end="2769">Un <strong data-start="2636" data-end="2661">sitio web profesional</strong> debe estar optimizado para <strong data-start="2689" data-end="2715">posicionarse en Google</strong> y cargar rápidamente. Antes de la entrega, realizo:</p><p data-start="2771" data-end="3085">✅ Optimización SEO On Page (títulos, meta descripciones y estructura de URLs).<br data-start="2849" data-end="2852" />✅ Reducción de tiempos de carga para una mejor experiencia de usuario.<br data-start="2922" data-end="2925" />✅ Implementación de seguridad con HTTPS y copias de seguridad automáticas.<br data-start="2999" data-end="3002" />✅ Integración con herramientas como <strong data-start="3038" data-end="3082">Google Analytics y Google Search Console</strong>.</p><p data-start="3087" data-end="3184">El objetivo es que tu web <strong data-start="3113" data-end="3181">no solo se vea bien, sino que también atraiga tráfico y clientes</strong>.</p></div>
+				</div>
+							<div class="elementor-toggle-item">
+					<h4 id="elementor-tab-title-2516" class="elementor-tab-title" data-tab="6" role="button" aria-controls="elementor-tab-content-2516" aria-expanded="false">
+												<span class="elementor-toggle-icon elementor-toggle-icon-left" aria-hidden="true">
+															<span class="elementor-toggle-icon-closed"><i class="fas fa-caret-right"></i></span>
+								<span class="elementor-toggle-icon-opened"><i class="elementor-toggle-icon-opened fas fa-caret-up"></i></span>
+													</span>
+												<a class="elementor-toggle-title" tabindex="0">Lanzamiento y Mantenimiento del Sitio Web</a>
+					</h4>
+
+					<div id="elementor-tab-content-2516" class="elementor-tab-content elementor-clearfix" data-tab="6" role="region" aria-labelledby="elementor-tab-title-2516"><p data-start="3241" data-end="3486">Una vez que el <strong data-start="3256" data-end="3281">sitio web profesional</strong> está listo, lo pongo en producción y me aseguro de que funcione correctamente en todos los dispositivos. Además, ofrezco <strong data-start="3403" data-end="3433">servicios de mantenimiento</strong> para que tu web siempre esté actualizada y segura.</p><p data-start="3488" data-end="3643">📌 <strong data-start="3491" data-end="3531">Actualización de contenido y plugins</strong>.<br data-start="3532" data-end="3535" />📌 <strong data-start="3538" data-end="3583">Corrección de errores y mejoras continuas</strong>.<br data-start="3584" data-end="3587" />📌 <strong data-start="3590" data-end="3640">Monitoreo de rendimiento y análisis de tráfico</strong>.</p></div>
+				</div>
+								</div>
+						</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-67a737a elementor-reverse-mobile elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="67a737a" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-e6364ff" data-id="e6364ff" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-956231c elementor-widget elementor-widget-heading" data-id="956231c" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h3 class="elementor-heading-title elementor-size-default">Descubre algunos de nuestros casos de éxito</h3>				</div>
+				</div>
+				<div class="elementor-element elementor-element-3a69a37 elementor-widget elementor-widget-heading" data-id="3a69a37" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">Proyectos de diseño web que marcan la diferencia
+</h2>				</div>
+				</div>
+				<div class="elementor-element elementor-element-6bff808 elementor-widget elementor-widget-text-editor" data-id="6bff808" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p data-start="4096" data-end="4182">He trabajado con empresas de distintos sectores, ayudándolas a destacar en Internet con un <strong data-start="1845" data-end="1883">diseño web profesional y atractivo</strong>. Cada proyecto es único y adaptado a las necesidades de cada cliente.</p><p data-start="2004" data-end="2172">Desde negocios locales hasta grandes empresas, mi experiencia como <strong data-start="2071" data-end="2099">diseñador web en Sevilla</strong> abarca sectores como la hostelería, salud, educación, ecommerce y más.</p>								</div>
+				</div>
+				<div class="elementor-element elementor-element-b8cc152 elementor-grid-3 elementor-grid-tablet-2 elementor-grid-mobile-1 elementor-posts--thumbnail-top elementor-widget elementor-widget-posts" data-id="b8cc152" data-element_type="widget" data-settings="{&quot;classic_columns&quot;:&quot;3&quot;,&quot;classic_columns_tablet&quot;:&quot;2&quot;,&quot;classic_columns_mobile&quot;:&quot;1&quot;,&quot;classic_row_gap&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:35,&quot;sizes&quot;:[]},&quot;classic_row_gap_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;classic_row_gap_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}" data-widget_type="posts.classic">
+				<div class="elementor-widget-container">
+							<div class="elementor-posts-container elementor-posts elementor-posts--skin-classic elementor-grid" role="list">
+				<article class="elementor-post elementor-grid-item post-3347 post type-post status-publish format-standard has-post-thumbnail hentry category-webs" role="listitem">
+				<a class="elementor-post__thumbnail__link" href="https://carlosperezarjona.com/webs/diseno-web-ies-federico-garcia-lorca/" tabindex="-1">
+			<div class="elementor-post__thumbnail"><img decoding="async" width="1125" height="750" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201125%20750'%3E%3C/svg%3E" class="attachment-full size-full wp-image-3323" alt="" data-lazy-src="https://carlosperezarjona.com/wp-content/uploads/2025/03/diseno-web-lorca.webp" /><noscript><img loading="lazy" decoding="async" width="1125" height="750" src="https://carlosperezarjona.com/wp-content/uploads/2025/03/diseno-web-lorca.webp" class="attachment-full size-full wp-image-3323" alt="" /></noscript></div>
+		</a>
+				<div class="elementor-post__text">
+				<h3 class="elementor-post__title">
+			<a href="https://carlosperezarjona.com/webs/diseno-web-ies-federico-garcia-lorca/">
+				Diseño Web IES Federico García Lorca			</a>
+		</h3>
+		
+		<a class="elementor-post__read-more" href="https://carlosperezarjona.com/webs/diseno-web-ies-federico-garcia-lorca/" aria-label="Más información sobre Diseño Web IES Federico García Lorca" tabindex="-1">
+			Ver Proyecto »		</a>
+
+				</div>
+				</article>
+				<article class="elementor-post elementor-grid-item post-3342 post type-post status-publish format-standard has-post-thumbnail hentry category-webs" role="listitem">
+				<a class="elementor-post__thumbnail__link" href="https://carlosperezarjona.com/webs/diseno-web-jm-diaz-arquitecto/" tabindex="-1">
+			<div class="elementor-post__thumbnail"><img decoding="async" width="500" height="300" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20500%20300'%3E%3C/svg%3E" class="attachment-full size-full wp-image-3325" alt="" data-lazy-src="https://carlosperezarjona.com/wp-content/uploads/2025/03/diseno-web-arquitecto.webp" /><noscript><img loading="lazy" decoding="async" width="500" height="300" src="https://carlosperezarjona.com/wp-content/uploads/2025/03/diseno-web-arquitecto.webp" class="attachment-full size-full wp-image-3325" alt="" /></noscript></div>
+		</a>
+				<div class="elementor-post__text">
+				<h3 class="elementor-post__title">
+			<a href="https://carlosperezarjona.com/webs/diseno-web-jm-diaz-arquitecto/">
+				Diseño Web JM Díaz Arquitecto			</a>
+		</h3>
+		
+		<a class="elementor-post__read-more" href="https://carlosperezarjona.com/webs/diseno-web-jm-diaz-arquitecto/" aria-label="Más información sobre Diseño Web JM Díaz Arquitecto" tabindex="-1">
+			Ver Proyecto »		</a>
+
+				</div>
+				</article>
+				<article class="elementor-post elementor-grid-item post-3332 post type-post status-publish format-standard has-post-thumbnail hentry category-diseno-grafico category-webs" role="listitem">
+				<a class="elementor-post__thumbnail__link" href="https://carlosperezarjona.com/webs/logotipo-y-diseno-web-enrique-j-gallardo-fotografia/" tabindex="-1">
+			<div class="elementor-post__thumbnail"><img decoding="async" width="2000" height="1500" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202000%201500'%3E%3C/svg%3E" class="attachment-full size-full wp-image-3329" alt="" data-lazy-srcset="https://carlosperezarjona.com/wp-content/uploads/2025/03/001.webp 2000w, https://carlosperezarjona.com/wp-content/uploads/2025/03/001-1536x1152.webp 1536w" data-lazy-sizes="(max-width: 2000px) 100vw, 2000px" data-lazy-src="https://carlosperezarjona.com/wp-content/uploads/2025/03/001.webp" /><noscript><img loading="lazy" decoding="async" width="2000" height="1500" src="https://carlosperezarjona.com/wp-content/uploads/2025/03/001.webp" class="attachment-full size-full wp-image-3329" alt="" srcset="https://carlosperezarjona.com/wp-content/uploads/2025/03/001.webp 2000w, https://carlosperezarjona.com/wp-content/uploads/2025/03/001-1536x1152.webp 1536w" sizes="(max-width: 2000px) 100vw, 2000px" /></noscript></div>
+		</a>
+				<div class="elementor-post__text">
+				<h3 class="elementor-post__title">
+			<a href="https://carlosperezarjona.com/webs/logotipo-y-diseno-web-enrique-j-gallardo-fotografia/">
+				Logotipo y Diseño Web Enrique J Gallardo Fotografía			</a>
+		</h3>
+		
+		<a class="elementor-post__read-more" href="https://carlosperezarjona.com/webs/logotipo-y-diseno-web-enrique-j-gallardo-fotografia/" aria-label="Más información sobre Logotipo y Diseño Web Enrique J Gallardo Fotografía" tabindex="-1">
+			Ver Proyecto »		</a>
+
+				</div>
+				</article>
+				<article class="elementor-post elementor-grid-item post-3303 post type-post status-publish format-standard has-post-thumbnail hentry category-webs" role="listitem">
+				<a class="elementor-post__thumbnail__link" href="https://carlosperezarjona.com/webs/diseno-web-jm/" tabindex="-1">
+			<div class="elementor-post__thumbnail"><img decoding="async" width="828" height="549" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20828%20549'%3E%3C/svg%3E" class="attachment-full size-full wp-image-3305" alt="" data-lazy-src="https://carlosperezarjona.com/wp-content/uploads/2025/03/diseno-web-unas.webp" /><noscript><img loading="lazy" decoding="async" width="828" height="549" src="https://carlosperezarjona.com/wp-content/uploads/2025/03/diseno-web-unas.webp" class="attachment-full size-full wp-image-3305" alt="" /></noscript></div>
+		</a>
+				<div class="elementor-post__text">
+				<h3 class="elementor-post__title">
+			<a href="https://carlosperezarjona.com/webs/diseno-web-jm/">
+				Diseño Web JM			</a>
+		</h3>
+		
+		<a class="elementor-post__read-more" href="https://carlosperezarjona.com/webs/diseno-web-jm/" aria-label="Más información sobre Diseño Web JM" tabindex="-1">
+			Ver Proyecto »		</a>
+
+				</div>
+				</article>
+				<article class="elementor-post elementor-grid-item post-3296 post type-post status-publish format-standard has-post-thumbnail hentry category-webs" role="listitem">
+				<a class="elementor-post__thumbnail__link" href="https://carlosperezarjona.com/webs/diseno-web-ana-cristina-centro-estetico/" tabindex="-1">
+			<div class="elementor-post__thumbnail"><img decoding="async" width="934" height="651" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20934%20651'%3E%3C/svg%3E" class="attachment-full size-full wp-image-3299" alt="" data-lazy-src="https://carlosperezarjona.com/wp-content/uploads/2025/03/diseno-web-centro-estetico_1.webp" /><noscript><img loading="lazy" decoding="async" width="934" height="651" src="https://carlosperezarjona.com/wp-content/uploads/2025/03/diseno-web-centro-estetico_1.webp" class="attachment-full size-full wp-image-3299" alt="" /></noscript></div>
+		</a>
+				<div class="elementor-post__text">
+				<h3 class="elementor-post__title">
+			<a href="https://carlosperezarjona.com/webs/diseno-web-ana-cristina-centro-estetico/">
+				Diseño Web Ana Cristina Centro Estético			</a>
+		</h3>
+		
+		<a class="elementor-post__read-more" href="https://carlosperezarjona.com/webs/diseno-web-ana-cristina-centro-estetico/" aria-label="Más información sobre Diseño Web Ana Cristina Centro Estético" tabindex="-1">
+			Ver Proyecto »		</a>
+
+				</div>
+				</article>
+				<article class="elementor-post elementor-grid-item post-3289 post type-post status-publish format-standard has-post-thumbnail hentry category-webs" role="listitem">
+				<a class="elementor-post__thumbnail__link" href="https://carlosperezarjona.com/webs/diseno-web-buena-onda-love/" tabindex="-1">
+			<div class="elementor-post__thumbnail"><img decoding="async" width="500" height="300" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20500%20300'%3E%3C/svg%3E" class="attachment-full size-full wp-image-3291" alt="" data-lazy-src="https://carlosperezarjona.com/wp-content/uploads/2025/03/diseno-web-buena-onda-love.webp" /><noscript><img loading="lazy" decoding="async" width="500" height="300" src="https://carlosperezarjona.com/wp-content/uploads/2025/03/diseno-web-buena-onda-love.webp" class="attachment-full size-full wp-image-3291" alt="" /></noscript></div>
+		</a>
+				<div class="elementor-post__text">
+				<h3 class="elementor-post__title">
+			<a href="https://carlosperezarjona.com/webs/diseno-web-buena-onda-love/">
+				Diseño Web Buena Onda Love			</a>
+		</h3>
+		
+		<a class="elementor-post__read-more" href="https://carlosperezarjona.com/webs/diseno-web-buena-onda-love/" aria-label="Más información sobre Diseño Web Buena Onda Love" tabindex="-1">
+			Ver Proyecto »		</a>
+
+				</div>
+				</article>
+				</div>
+		
+						</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-fd3edfb elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="fd3edfb" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-3ac205f" data-id="3ac205f" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-606abf4 elementor-widget elementor-widget-heading" data-id="606abf4" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h3 class="elementor-heading-title elementor-size-default">Diseñador web Freelance</h3>				</div>
+				</div>
+				<div class="elementor-element elementor-element-2c72a2e elementor-widget elementor-widget-heading" data-id="2c72a2e" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h3 class="elementor-heading-title elementor-size-default">Preguntas frecuentes sobre nuestro servicio de diseño web</h3>				</div>
+				</div>
+				<div class="elementor-element elementor-element-f16c757 elementor-widget elementor-widget-text-editor" data-id="f16c757" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p data-start="4184" data-end="4300">Si buscas un <strong data-start="4197" data-end="4225">diseñador web en Sevilla</strong> que te ayude a crear una web atractiva y efectiva, <a href="https://carlosperezarjona.com/contacto/">contáctame</a> hoy mismo.</p>								</div>
+				</div>
+				<div class="elementor-element elementor-element-7398c55 elementor-widget elementor-widget-toggle" data-id="7398c55" data-element_type="widget" data-widget_type="toggle.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-toggle">
+							<div class="elementor-toggle-item">
+					<h4 id="elementor-tab-title-1211" class="elementor-tab-title" data-tab="1" role="button" aria-controls="elementor-tab-content-1211" aria-expanded="false">
+												<span class="elementor-toggle-icon elementor-toggle-icon-left" aria-hidden="true">
+															<span class="elementor-toggle-icon-closed"><i class="fas fa-caret-right"></i></span>
+								<span class="elementor-toggle-icon-opened"><i class="elementor-toggle-icon-opened fas fa-caret-up"></i></span>
+													</span>
+												<a class="elementor-toggle-title" tabindex="0">¿Cuánto cuesta hacer una web profesional en Sevilla?</a>
+					</h4>
+
+					<div id="elementor-tab-content-1211" class="elementor-tab-content elementor-clearfix" data-tab="1" role="region" aria-labelledby="elementor-tab-title-1211"><p data-start="3568" data-end="3683">El precio varía según las necesidades del proyecto, pero siempre ofrezco soluciones adaptadas a cada presupuesto. Pero el precio de partida suele ser unos 450€ la web más sencilla y el precio irá ascendiendo dependiendo de la complejidad del proyecto.</p></div>
+				</div>
+							<div class="elementor-toggle-item">
+					<h4 id="elementor-tab-title-1212" class="elementor-tab-title" data-tab="2" role="button" aria-controls="elementor-tab-content-1212" aria-expanded="false">
+												<span class="elementor-toggle-icon elementor-toggle-icon-left" aria-hidden="true">
+															<span class="elementor-toggle-icon-closed"><i class="fas fa-caret-right"></i></span>
+								<span class="elementor-toggle-icon-opened"><i class="elementor-toggle-icon-opened fas fa-caret-up"></i></span>
+													</span>
+												<a class="elementor-toggle-title" tabindex="0">¿Cuánto tiempo tarda el desarrollo de una web?</a>
+					</h4>
+
+					<div id="elementor-tab-content-1212" class="elementor-tab-content elementor-clearfix" data-tab="2" role="region" aria-labelledby="elementor-tab-title-1212"><p data-start="3742" data-end="3864">Depende de la complejidad, pero en general, un <strong data-start="3789" data-end="3814">diseño web </strong>en Sevilla profesional puede estar listo en un plazo de 2 a 6 semanas. Depende mucho de la fase en la que el cliente tiene que aportar la información necesaria</p></div>
+				</div>
+							<div class="elementor-toggle-item">
+					<h4 id="elementor-tab-title-1213" class="elementor-tab-title" data-tab="3" role="button" aria-controls="elementor-tab-content-1213" aria-expanded="false">
+												<span class="elementor-toggle-icon elementor-toggle-icon-left" aria-hidden="true">
+															<span class="elementor-toggle-icon-closed"><i class="fas fa-caret-right"></i></span>
+								<span class="elementor-toggle-icon-opened"><i class="elementor-toggle-icon-opened fas fa-caret-up"></i></span>
+													</span>
+												<a class="elementor-toggle-title" tabindex="0">¿La web incluye optimización SEO y mantenimiento?</a>
+					</h4>
+
+					<div id="elementor-tab-content-1213" class="elementor-tab-content elementor-clearfix" data-tab="3" role="region" aria-labelledby="elementor-tab-title-1213"><p data-start="1604" data-end="1778">Son opciones complementarias pero muy recomendadas, sin estos dos pilares la web de por si no empezará a atraer clientes de manera recurrente. Es importante hacer el mantenimiento para un buen funcionamiento de la web y la <a href="https://carlosperezarjona.com/consultor-seo-freelance/">optimización SEO</a> constante para posicionar en los buscadores las palabras clave que se desea.</p></div>
+				</div>
+										<script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"\u00bfCu\u00e1nto cuesta hacer una web profesional en Sevilla?","acceptedAnswer":{"@type":"Answer","text":"<p data-start=\"3568\" data-end=\"3683\">El precio var\u00eda seg\u00fan las necesidades del proyecto, pero siempre ofrezco soluciones adaptadas a cada presupuesto. Pero el precio de partida suele ser unos 450\u20ac la web m\u00e1s sencilla y el precio ir\u00e1 ascendiendo dependiendo de la complejidad del proyecto.<\/p>"}},{"@type":"Question","name":"\u00bfCu\u00e1nto tiempo tarda el desarrollo de una web?","acceptedAnswer":{"@type":"Answer","text":"<p data-start=\"3742\" data-end=\"3864\">Depende de la complejidad, pero en general, un <strong data-start=\"3789\" data-end=\"3814\">dise\u00f1o web <\/strong>en Sevilla profesional puede estar listo en un plazo de 2 a 6 semanas. Depende mucho de la fase en la que el cliente tiene que aportar la informaci\u00f3n necesaria<\/p>"}},{"@type":"Question","name":"\u00bfLa web incluye optimizaci\u00f3n SEO y mantenimiento?","acceptedAnswer":{"@type":"Answer","text":"<p data-start=\"1604\" data-end=\"1778\">Son opciones complementarias pero muy recomendadas, sin estos dos pilares la web de por si no empezar\u00e1 a atraer clientes de manera recurrente. Es importante hacer el mantenimiento para un buen funcionamiento de la web y la <a href=\"https:\/\/carlosperezarjona.com\/consultor-seo-freelance\/\">optimizaci\u00f3n SEO<\/a> constante para posicionar en los buscadores las palabras clave que se desea.<\/p>"}}]}</script>
+					</div>
+						</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-3da221e elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="3da221e" data-element_type="section">
+							<div class="elementor-background-overlay"></div>
+							<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-a705e93" data-id="a705e93" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-2fb40b6 elementor-widget elementor-widget-heading" data-id="2fb40b6" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h4 class="elementor-heading-title elementor-size-default">Diseñador de sitios web</h4>				</div>
+				</div>
+				<div class="elementor-element elementor-element-33e4cd7 elementor-widget elementor-widget-heading" data-id="33e4cd7" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h3 class="elementor-heading-title elementor-size-default">Opiniones de los clientes de diseño web</h3>				</div>
+				</div>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-085d7a2 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="085d7a2" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-641d3cb" data-id="641d3cb" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-2ab0d88 elementor-widget elementor-widget-text-editor" data-id="2ab0d88" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<blockquote data-start="4528" data-end="4643"><p data-start="4530" data-end="4643">«Gracias a Carlos, nuestra web se ve increíble y nos ha traído más clientes que nunca.»</p></blockquote>								</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-a3e5fdd" data-id="a3e5fdd" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-528bfdb elementor-widget elementor-widget-text-editor" data-id="528bfdb" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<blockquote data-start="4380" data-end="4526"><p data-start="4382" data-end="4526">«Un trabajo impecable, con gran atención a los detalles y una web optimizada para SEO.»</p></blockquote>								</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+					</div>
+		</div>
+					</div>
+		</section>
+				</div>
+		
+	</div>
+</div>
+
+
+<div class="site-footer">
+			<footer data-elementor-type="footer" data-elementor-id="857" class="elementor elementor-857 elementor-location-footer" data-elementor-post-type="elementor_library">
+					<section class="elementor-section elementor-top-section elementor-element elementor-element-28ac4a8 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="28ac4a8" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-b54d154" data-id="b54d154" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-5557c2b elementor-widget elementor-widget-text-editor" data-id="5557c2b" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p>¿Tienes un proyecto en mente? Cuéntanoslo</p>								</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-4cf9a0a" data-id="4cf9a0a" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-5c83adb elementor-align-center elementor-widget elementor-widget-button" data-id="5c83adb" data-element_type="widget" data-settings="{&quot;sticky&quot;:&quot;bottom&quot;,&quot;sticky_on&quot;:[&quot;mobile&quot;],&quot;sticky_offset&quot;:0,&quot;sticky_effects_offset&quot;:0,&quot;sticky_anchor_link_offset&quot;:0}" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+									<div class="elementor-button-wrapper">
+					<a class="elementor-button elementor-button-link elementor-size-sm elementor-animation-grow" href="https://carlosperezarjona.com/contacto/">
+						<span class="elementor-button-content-wrapper">
+									<span class="elementor-button-text">Pide Presupuesto</span>
+					</span>
+					</a>
+				</div>
+								</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-753e99c1 elementor-section-full_width elementor-section-height-min-height elementor-section-items-stretch elementor-section-height-default" data-id="753e99c1" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-4187718f" data-id="4187718f" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-widget-wrap elementor-element-populated">
+					<div class="elementor-background-overlay"></div>
+						<section class="elementor-section elementor-inner-section elementor-element elementor-element-65f1063e elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="65f1063e" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-71c4a010" data-id="71c4a010" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-6fda1175 elementor-widget elementor-widget-image" data-id="6fda1175" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<img width="1221" height="192" src="https://carlosperezarjona.com/wp-content/uploads/2021/10/logotipo-carlos-perez-disenador-web.webp" class="attachment-full size-full wp-image-2758" alt="logotipo-carlos-perez-diseñador-web" />															</div>
+				</div>
+				<div class="elementor-element elementor-element-2bf82f8c elementor-widget elementor-widget-heading" data-id="2bf82f8c" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h3 class="elementor-heading-title elementor-size-default">Hagamos crecer tu imagen digital</h3>				</div>
+				</div>
+				<div class="elementor-element elementor-element-1fad3a62 elementor-mobile-align-center elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="1fad3a62" data-element_type="widget" data-widget_type="icon-list.default">
+				<div class="elementor-widget-container">
+							<ul class="elementor-icon-list-items">
+							<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-text">© 2025 Todos los derechos reservados</span>
+									</li>
+								<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-text">652 48 77 88</span>
+									</li>
+								<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-text">hola@carlosperezarjona.com</span>
+									</li>
+						</ul>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-3febd7c elementor-widget elementor-widget-text-editor" data-id="3febd7c" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p>Oficina en Sevilla (España) y Jerez de la Frontera (<a href="https://carlosperezarjona.com/diseno-web-en-cadiz/">Cádiz</a>)</p>								</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-c3eae53" data-id="c3eae53" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-667d126 elementor-mobile-align-center elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="667d126" data-element_type="widget" data-widget_type="icon-list.default">
+				<div class="elementor-widget-container">
+							<ul class="elementor-icon-list-items">
+							<li class="elementor-icon-list-item">
+											<a href="https://carlosperezarjona.com/">
+
+											<span class="elementor-icon-list-text">Diseño Web</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+											<a href="https://carlosperezarjona.com/diseno-tiendas-online/">
+
+											<span class="elementor-icon-list-text">Tiendas Online</span>
+											</a>
+									</li>
+						</ul>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-ebb9717 elementor-mobile-align-center elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="ebb9717" data-element_type="widget" data-widget_type="icon-list.default">
+				<div class="elementor-widget-container">
+							<ul class="elementor-icon-list-items">
+							<li class="elementor-icon-list-item">
+											<a href="https://carlosperezarjona.com/consultor-seo-freelance/">
+
+											<span class="elementor-icon-list-text">Posicionamiento SEO</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+											<a href="https://carlosperezarjona.com/agencia-seo-ecommerce/">
+
+											<span class="elementor-icon-list-text">Posicionamiento SEO Ecommerce</span>
+											</a>
+									</li>
+						</ul>
+						</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-76245bc" data-id="76245bc" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-widget-wrap elementor-element-populated">
+					<div class="elementor-background-overlay"></div>
+						<div class="elementor-element elementor-element-99d7f72 elementor-widget elementor-widget-image" data-id="99d7f72" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+																<a href="https://catalogo.andaluciavuela.es/empresas/carlos-perez/">
+							<img width="115" height="142" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20115%20142'%3E%3C/svg%3E" class="attachment-full size-full wp-image-2852" alt="" data-lazy-src="https://carlosperezarjona.com/wp-content/uploads/2021/10/Icono-Vuela-Andalucia-1.svg" /><noscript><img width="115" height="142" src="https://carlosperezarjona.com/wp-content/uploads/2021/10/Icono-Vuela-Andalucia-1.svg" class="attachment-full size-full wp-image-2852" alt="" /></noscript>								</a>
+															</div>
+				</div>
+				<div class="elementor-element elementor-element-3afca02f elementor-widget elementor-widget-heading" data-id="3afca02f" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h4 class="elementor-heading-title elementor-size-default">Sígueme en Redes Sociales</h4>				</div>
+				</div>
+				<div class="elementor-element elementor-element-44556f06 elementor-icon-list--layout-inline elementor-align-left elementor-tablet-align-center elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="44556f06" data-element_type="widget" data-widget_type="icon-list.default">
+				<div class="elementor-widget-container">
+							<ul class="elementor-icon-list-items elementor-inline-items">
+							<li class="elementor-icon-list-item elementor-inline-item">
+											<a href="https://www.instagram.com/carlosperezmarketing/">
+
+												<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="fab fa-instagram"></i>						</span>
+										<span class="elementor-icon-list-text"></span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item elementor-inline-item">
+											<a href="https://www.linkedin.com/in/carlos-p%C3%A9rez-marketing/">
+
+												<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="fab fa-linkedin"></i>						</span>
+										<span class="elementor-icon-list-text"></span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item elementor-inline-item">
+											<a href="https://www.facebook.com/Carlos-P%C3%A9rez-Arjona-106675588168099/services/?ref=page_internal">
+
+												<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="fab fa-facebook-f"></i>						</span>
+										<span class="elementor-icon-list-text"></span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item elementor-inline-item">
+											<a href="https://x.com/Carlosperezkise">
+
+												<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="fab fa-x-twitter"></i>						</span>
+										<span class="elementor-icon-list-text"></span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item elementor-inline-item">
+											<a href="https://es.pinterest.com/carlosprezarjona/">
+
+												<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="fab fa-pinterest"></i>						</span>
+										<span class="elementor-icon-list-text"></span>
+											</a>
+									</li>
+						</ul>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-e88d9ca elementor-widget elementor-widget-text-editor" data-id="e88d9ca" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p><a href="https://carlosperezarjona.com/politica-de-privacidad/">Política de Privacidad</a> &#8211; <a href="https://carlosperezarjona.com/politica-de-cookies/">Política de Cookies</a> &#8211; <a href="https://carlosperezarjona.com/page-sitemap.xml">Mapa Web </a></p>								</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				</footer>
+		</div>
+
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/generatepress/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<!-- HFCM by 99 Robots - Snippet # 7: Tag Manager Body -->
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M59S3MC"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<!-- /end HFCM by 99 Robots -->
+<!-- HFCM by 99 Robots - Snippet # 9: Tag Manager 2 body -->
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M5QD6WJV"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<!-- /end HFCM by 99 Robots -->
+
+<!-- Consent Management powered by Complianz | GDPR/CCPA Cookie Consent https://wordpress.org/plugins/complianz-gdpr -->
+<div id="cmplz-cookiebanner-container"><div class="cmplz-cookiebanner cmplz-hidden banner-1 banner-a optin cmplz-bottom-right cmplz-categories-type-view-preferences" aria-modal="true" data-nosnippet="true" role="dialog" aria-live="polite" aria-labelledby="cmplz-header-1-optin" aria-describedby="cmplz-message-1-optin">
+	<div class="cmplz-header">
+		<div class="cmplz-logo"></div>
+		<div class="cmplz-title" id="cmplz-header-1-optin">Gestionar consentimiento</div>
+		<div class="cmplz-close" tabindex="0" role="button" aria-label="Cerrar ventana">
+			<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times" class="svg-inline--fa fa-times fa-w-11" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512"><path fill="currentColor" d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path></svg>
+		</div>
+	</div>
+
+	<div class="cmplz-divider cmplz-divider-header"></div>
+	<div class="cmplz-body">
+		<div class="cmplz-message" id="cmplz-message-1-optin">Para ofrecer las mejores experiencias, utilizamos tecnologías como las cookies para almacenar y/o acceder a la información del dispositivo. El consentimiento de estas tecnologías nos permitirá procesar datos como el comportamiento de navegación o las identificaciones únicas en este sitio. No consentir o retirar el consentimiento, puede afectar negativamente a ciertas características y funciones.</div>
+		<!-- categories start -->
+		<div class="cmplz-categories">
+			<details class="cmplz-category cmplz-functional" >
+				<summary>
+						<span class="cmplz-category-header">
+							<span class="cmplz-category-title">Funcional</span>
+							<span class='cmplz-always-active'>
+								<span class="cmplz-banner-checkbox">
+									<input type="checkbox"
+										   id="cmplz-functional-optin"
+										   data-category="cmplz_functional"
+										   class="cmplz-consent-checkbox cmplz-functional"
+										   size="40"
+										   value="1"/>
+									<label class="cmplz-label" for="cmplz-functional-optin"><span class="screen-reader-text">Funcional</span></label>
+								</span>
+								Siempre activo							</span>
+							<span class="cmplz-icon cmplz-open">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"  height="18" ><path d="M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z"/></svg>
+							</span>
+						</span>
+				</summary>
+				<div class="cmplz-description">
+					<span class="cmplz-description-functional">El almacenamiento o acceso técnico es estrictamente necesario para el propósito legítimo de permitir el uso de un servicio específico explícitamente solicitado por el abonado o usuario, o con el único propósito de llevar a cabo la transmisión de una comunicación a través de una red de comunicaciones electrónicas.</span>
+				</div>
+			</details>
+
+			<details class="cmplz-category cmplz-preferences" >
+				<summary>
+						<span class="cmplz-category-header">
+							<span class="cmplz-category-title">Preferencias</span>
+							<span class="cmplz-banner-checkbox">
+								<input type="checkbox"
+									   id="cmplz-preferences-optin"
+									   data-category="cmplz_preferences"
+									   class="cmplz-consent-checkbox cmplz-preferences"
+									   size="40"
+									   value="1"/>
+								<label class="cmplz-label" for="cmplz-preferences-optin"><span class="screen-reader-text">Preferencias</span></label>
+							</span>
+							<span class="cmplz-icon cmplz-open">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"  height="18" ><path d="M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z"/></svg>
+							</span>
+						</span>
+				</summary>
+				<div class="cmplz-description">
+					<span class="cmplz-description-preferences">El almacenamiento o acceso técnico es necesario para la finalidad legítima de almacenar preferencias no solicitadas por el abonado o usuario.</span>
+				</div>
+			</details>
+
+			<details class="cmplz-category cmplz-statistics" >
+				<summary>
+						<span class="cmplz-category-header">
+							<span class="cmplz-category-title">Estadísticas</span>
+							<span class="cmplz-banner-checkbox">
+								<input type="checkbox"
+									   id="cmplz-statistics-optin"
+									   data-category="cmplz_statistics"
+									   class="cmplz-consent-checkbox cmplz-statistics"
+									   size="40"
+									   value="1"/>
+								<label class="cmplz-label" for="cmplz-statistics-optin"><span class="screen-reader-text">Estadísticas</span></label>
+							</span>
+							<span class="cmplz-icon cmplz-open">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"  height="18" ><path d="M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z"/></svg>
+							</span>
+						</span>
+				</summary>
+				<div class="cmplz-description">
+					<span class="cmplz-description-statistics">El almacenamiento o acceso técnico que es utilizado exclusivamente con fines estadísticos.</span>
+					<span class="cmplz-description-statistics-anonymous">El almacenamiento o acceso técnico que se utiliza exclusivamente con fines estadísticos anónimos. Sin un requerimiento, el cumplimiento voluntario por parte de tu proveedor de servicios de Internet, o los registros adicionales de un tercero, la información almacenada o recuperada sólo para este propósito no se puede utilizar para identificarte.</span>
+				</div>
+			</details>
+			<details class="cmplz-category cmplz-marketing" >
+				<summary>
+						<span class="cmplz-category-header">
+							<span class="cmplz-category-title">Marketing</span>
+							<span class="cmplz-banner-checkbox">
+								<input type="checkbox"
+									   id="cmplz-marketing-optin"
+									   data-category="cmplz_marketing"
+									   class="cmplz-consent-checkbox cmplz-marketing"
+									   size="40"
+									   value="1"/>
+								<label class="cmplz-label" for="cmplz-marketing-optin"><span class="screen-reader-text">Marketing</span></label>
+							</span>
+							<span class="cmplz-icon cmplz-open">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"  height="18" ><path d="M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z"/></svg>
+							</span>
+						</span>
+				</summary>
+				<div class="cmplz-description">
+					<span class="cmplz-description-marketing">El almacenamiento o acceso técnico es necesario para crear perfiles de usuario para enviar publicidad, o para rastrear al usuario en una web o en varias web con fines de marketing similares.</span>
+				</div>
+			</details>
+		</div><!-- categories end -->
+			</div>
+
+	<div class="cmplz-links cmplz-information">
+		<a class="cmplz-link cmplz-manage-options cookie-statement" href="#" data-relative_url="#cmplz-manage-consent-container">Administrar opciones</a>
+		<a class="cmplz-link cmplz-manage-third-parties cookie-statement" href="#" data-relative_url="#cmplz-cookies-overview">Gestionar los servicios</a>
+		<a class="cmplz-link cmplz-manage-vendors tcf cookie-statement" href="#" data-relative_url="#cmplz-tcf-wrapper">Gestionar {vendor_count} proveedores</a>
+		<a class="cmplz-link cmplz-external cmplz-read-more-purposes tcf" target="_blank" rel="noopener noreferrer nofollow" href="https://cookiedatabase.org/tcf/purposes/">Leer más sobre estos propósitos</a>
+			</div>
+
+	<div class="cmplz-divider cmplz-footer"></div>
+
+	<div class="cmplz-buttons">
+		<button class="cmplz-btn cmplz-accept">Aceptar</button>
+		<button class="cmplz-btn cmplz-deny">Denegar</button>
+		<button class="cmplz-btn cmplz-view-preferences">Ver preferencias</button>
+		<button class="cmplz-btn cmplz-save-preferences">Guardar preferencias</button>
+		<a class="cmplz-btn cmplz-manage-options tcf cookie-statement" href="#" data-relative_url="#cmplz-manage-consent-container">Ver preferencias</a>
+			</div>
+
+	<div class="cmplz-links cmplz-documents">
+		<a class="cmplz-link cookie-statement" href="#" data-relative_url="">{title}</a>
+		<a class="cmplz-link privacy-statement" href="#" data-relative_url="">{title}</a>
+		<a class="cmplz-link impressum" href="#" data-relative_url="">{title}</a>
+			</div>
+
+</div>
+</div>
+					<div id="cmplz-manage-consent" data-nosnippet="true"><button class="cmplz-btn cmplz-hidden cmplz-manage-consent manage-consent-1">Gestionar consentimiento</button>
+
+</div><script type="rocketlazyloadscript" id="generate-a11y">
+!function(){"use strict";if("querySelector"in document&&"addEventListener"in window){var e=document.body;e.addEventListener("pointerdown",(function(){e.classList.add("using-mouse")}),{passive:!0}),e.addEventListener("keydown",(function(){e.classList.remove("using-mouse")}),{passive:!0})}}();
+</script>
+<script type="rocketlazyloadscript" id="rocket-browser-checker-js-after">
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+//# sourceURL=rocket-browser-checker-js-after
+</script>
+<script id="rocket-preload-links-js-extra">
+var RocketPreloadLinksConfig = {"excludeUris":"/(?:.+/)?feed(?:/(?:.+/?)?)?$|/(?:.+/)?embed/|/(index.php/)?(.*)wp-json(/.*|$)|/refer/|/go/|/recommend/|/recommends/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https://carlosperezarjona.com","onHoverDelay":"100","rateThrottle":"3"};
+//# sourceURL=rocket-preload-links-js-extra
+</script>
+<script type="rocketlazyloadscript" id="rocket-preload-links-js-after">
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+
+//# sourceURL=rocket-preload-links-js-after
+</script>
+<script id="rocket_lazyload_css-js-extra">
+var rocket_lazyload_css_data = {"threshold":"300"};
+//# sourceURL=rocket_lazyload_css-js-extra
+</script>
+<script id="rocket_lazyload_css-js-after">
+!function o(n,c,a){function s(t,e){if(!c[t]){if(!n[t]){var r="function"==typeof require&&require;if(!e&&r)return r(t,!0);if(u)return u(t,!0);throw(r=new Error("Cannot find module '"+t+"'")).code="MODULE_NOT_FOUND",r}r=c[t]={exports:{}},n[t][0].call(r.exports,function(e){return s(n[t][1][e]||e)},r,r.exports,o,n,c,a)}return c[t].exports}for(var u="function"==typeof require&&require,e=0;e<a.length;e++)s(a[e]);return s}({1:[function(e,t,r){"use strict";!function(){const r="undefined"==typeof rocket_pairs?[]:rocket_pairs,e="undefined"==typeof rocket_excluded_pairs?[]:rocket_excluded_pairs;e.map(t=>{var e=t.selector;const r=document.querySelectorAll(e);r.forEach(e=>{e.setAttribute("data-rocket-lazy-bg-".concat(t.hash),"excluded")})});const o=document.querySelector("#wpr-lazyload-bg-container");var t=rocket_lazyload_css_data.threshold||300;const n=new IntersectionObserver(e=>{e.forEach(t=>{if(t.isIntersecting){const e=r.filter(e=>t.target.matches(e.selector));e.map(t=>{var e;t&&((e=document.createElement("style")).textContent=t.style,o.insertAdjacentElement("afterend",e),t.elements.forEach(e=>{n.unobserve(e),e.setAttribute("data-rocket-lazy-bg-".concat(t.hash),"loaded")}))})}})},{rootMargin:t+"px"});function c(){0<(0<arguments.length&&void 0!==arguments[0]?arguments[0]:[]).length&&r.forEach(t=>{try{const e=document.querySelectorAll(t.selector);e.forEach(e=>{"loaded"!==e.getAttribute("data-rocket-lazy-bg-".concat(t.hash))&&"excluded"!==e.getAttribute("data-rocket-lazy-bg-".concat(t.hash))&&(n.observe(e),(t.elements||(t.elements=[])).push(e))})}catch(e){console.error(e)}})}c();const a=function(){const o=window.MutationObserver;return function(e,t){if(e&&1===e.nodeType){const r=new o(t);return r.observe(e,{attributes:!0,childList:!0,subtree:!0}),r}}}();t=document.querySelector("body"),a(t,c)}()},{}]},{},[1]);
+//# sourceMappingURL=lazyload-css.min.js.map
+
+//# sourceURL=rocket_lazyload_css-js-after
+</script>
+<script type="rocketlazyloadscript" id="generate-menu-js-before">
+var generatepressMenu = {"toggleOpenedSubMenus":true,"openSubMenuLabel":"Abrir el submen\u00fa","closeSubMenuLabel":"Cerrar el submen\u00fa"};
+//# sourceURL=generate-menu-js-before
+</script>
+<script type="rocketlazyloadscript" data-rocket-src="https://carlosperezarjona.com/wp-content/themes/generatepress/assets/js/menu.min.js?ver=3.6.0" id="generate-menu-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-src="https://carlosperezarjona.com/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.31.3" id="elementor-webpack-runtime-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-src="https://carlosperezarjona.com/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.31.3" id="elementor-frontend-modules-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-src="https://carlosperezarjona.com/wp-includes/js/jquery/ui/core.min.js?ver=1.13.3" id="jquery-ui-core-js" defer></script>
+<script type="rocketlazyloadscript" id="elementor-frontend-js-before">
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Compartir en Facebook","shareOnTwitter":"Compartir en Twitter","pinIt":"Pinear","download":"Descargar","downloadImage":"Descargar imagen","fullscreen":"Pantalla completa","zoom":"Zoom","share":"Compartir","playVideo":"Reproducir v\u00eddeo","previous":"Anterior","next":"Siguiente","close":"Cerrar","a11yCarouselPrevSlideMessage":"Diapositiva anterior","a11yCarouselNextSlideMessage":"Diapositiva siguiente","a11yCarouselFirstSlideMessage":"Esta es la primera diapositiva","a11yCarouselLastSlideMessage":"Esta es la \u00faltima diapositiva","a11yCarouselPaginationBulletMessage":"Ir a la diapositiva"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"M\u00f3vil vertical","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"M\u00f3vil horizontal","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tableta vertical","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tableta horizontal","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Port\u00e1til","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Pantalla grande","value":2400,"default_value":2400,"direction":"min","is_enabled":false}},"hasCustomBreakpoints":false},"version":"3.31.3","is_static":false,"experimentalFeatures":{"additional_custom_breakpoints":true,"theme_builder_v2":true,"landing-pages":true,"e_element_cache":true,"home_screen":true,"global_classes_should_enforce_capabilities":true,"e_variables":true,"cloud-library":true,"e_opt_in_v4_page":true},"urls":{"assets":"https:\/\/carlosperezarjona.com\/wp-content\/plugins\/elementor\/assets\/","ajaxurl":"https:\/\/carlosperezarjona.com\/wp-admin\/admin-ajax.php","uploadUrl":"https:\/\/carlosperezarjona.com\/wp-content\/uploads"},"nonces":{"floatingButtonsClickTracking":"bfe1ecbab7"},"swiperClass":"swiper","settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description"},"post":{"id":984,"title":"Dise%C3%B1ador%20Web%20Freelance%20%7C%20Carlos%20P%C3%A9rez%20-%20Webs%20Profesionales","excerpt":"","featuredImage":"https:\/\/carlosperezarjona.com\/wp-content\/uploads\/2021\/10\/pepe-el-vito.webp"}};
+//# sourceURL=elementor-frontend-js-before
+</script>
+<script type="rocketlazyloadscript" data-rocket-src="https://carlosperezarjona.com/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.31.3" id="elementor-frontend-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-src="https://carlosperezarjona.com/wp-content/plugins/elementor-pro/assets/lib/smartmenus/jquery.smartmenus.min.js?ver=1.2.1" id="smartmenus-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-src="https://carlosperezarjona.com/wp-content/plugins/elementor-pro/assets/lib/sticky/jquery.sticky.min.js?ver=3.31.2" id="e-sticky-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-src="https://carlosperezarjona.com/wp-content/plugins/elementor/assets/lib/swiper/v8/swiper.min.js?ver=8.4.5" id="swiper-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-src="https://carlosperezarjona.com/wp-includes/js/imagesloaded.min.js?ver=5.0.0" id="imagesloaded-js" defer></script>
+<script id="wp-statistics-tracker-js-extra">
+var WP_Statistics_Tracker_Object = {"requestUrl":"https://carlosperezarjona.com/wp-json/wp-statistics/v2","ajaxUrl":"https://carlosperezarjona.com/wp-admin/admin-ajax.php","hitParams":{"wp_statistics_hit":1,"source_type":"home","source_id":984,"search_query":"","signature":"a8db1965e5ee4366f3469d69774d2a23","endpoint":"hit"},"onlineParams":{"wp_statistics_hit":1,"source_type":"home","source_id":984,"search_query":"","signature":"a8db1965e5ee4366f3469d69774d2a23","endpoint":"online"},"option":{"userOnline":true,"dntEnabled":false,"bypassAdBlockers":false,"consentIntegration":{"name":null,"status":[]},"isPreview":false,"trackAnonymously":false,"isWpConsentApiActive":false,"consentLevel":"disabled"},"jsCheckTime":"60000","isLegacyEventLoaded":"","customEventAjaxUrl":"https://carlosperezarjona.com/wp-admin/admin-ajax.php?action=wp_statistics_custom_event&nonce=14ef7359d2"};
+//# sourceURL=wp-statistics-tracker-js-extra
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-src="https://carlosperezarjona.com/wp-content/cache/min/1/wp-content/plugins/wp-statistics/assets/js/tracker.js?ver=1755513133" id="wp-statistics-tracker-js" defer></script>
+<script id="cmplz-cookiebanner-js-extra">
+var complianz = {"prefix":"cmplz_","user_banner_id":"1","set_cookies":[],"block_ajax_content":"0","banner_version":"17","version":"7.4.2","store_consent":"","do_not_track_enabled":"","consenttype":"optin","region":"eu","geoip":"","dismiss_timeout":"","disable_cookiebanner":"1","soft_cookiewall":"","dismiss_on_scroll":"","cookie_expiry":"365","url":"https://carlosperezarjona.com/wp-json/complianz/v1/","locale":"lang=es&locale=es_ES","set_cookies_on_root":"0","cookie_domain":"","current_policy_id":"35","cookie_path":"/","categories":{"statistics":"estad\u00edsticas","marketing":"m\u00e1rketing"},"tcf_active":"","placeholdertext":"Haz clic para aceptar cookies de marketing y permitir este contenido","css_file":"https://carlosperezarjona.com/wp-content/uploads/complianz/css/banner-{banner_id}-{type}.css?v=17","page_links":{"eu":{"cookie-statement":{"title":"Pol\u00edtica de Cookies","url":"https://carlosperezarjona.com/politica-de-cookies/"},"privacy-statement":{"title":"Pol\u00edtica de Privacidad","url":"https://carlosperezarjona.com/politica-de-privacidad/"}}},"tm_categories":"","forceEnableStats":"","preview":"","clean_cookies":"","aria_label":"Haz clic para aceptar cookies de marketing y permitir este contenido"};
+//# sourceURL=cmplz-cookiebanner-js-extra
+</script>
+<script type="rocketlazyloadscript" defer data-rocket-src="https://carlosperezarjona.com/wp-content/plugins/complianz-gdpr/cookiebanner/js/complianz.min.js?ver=1754558143" id="cmplz-cookiebanner-js"></script>
+<script type="rocketlazyloadscript" id="cmplz-cookiebanner-js-after">window.addEventListener('DOMContentLoaded', function() {
+		if ('undefined' != typeof window.jQuery) {
+			jQuery(document).ready(function ($) {
+				$(document).on('elementor/popup/show', () => {
+					let rev_cats = cmplz_categories.reverse();
+					for (let key in rev_cats) {
+						if (rev_cats.hasOwnProperty(key)) {
+							let category = cmplz_categories[key];
+							if (cmplz_has_consent(category)) {
+								document.querySelectorAll('[data-category="' + category + '"]').forEach(obj => {
+									cmplz_remove_placeholder(obj);
+								});
+							}
+						}
+					}
+
+					let services = cmplz_get_services_on_page();
+					for (let key in services) {
+						if (services.hasOwnProperty(key)) {
+							let service = services[key].service;
+							let category = services[key].category;
+							if (cmplz_has_service_consent(service, category)) {
+								document.querySelectorAll('[data-service="' + service + '"]').forEach(obj => {
+									cmplz_remove_placeholder(obj);
+								});
+							}
+						}
+					}
+				});
+			});
+		}
+    
+    
+		
+			document.addEventListener("cmplz_enable_category", function(consentData) {
+				var category = consentData.detail.category;
+				var services = consentData.detail.services;
+				var blockedContentContainers = [];
+				let selectorVideo = '.cmplz-elementor-widget-video-playlist[data-category="'+category+'"],.elementor-widget-video[data-category="'+category+'"]';
+				let selectorGeneric = '[data-cmplz-elementor-href][data-category="'+category+'"]';
+				for (var skey in services) {
+					if (services.hasOwnProperty(skey)) {
+						let service = skey;
+						selectorVideo +=',.cmplz-elementor-widget-video-playlist[data-service="'+service+'"],.elementor-widget-video[data-service="'+service+'"]';
+						selectorGeneric +=',[data-cmplz-elementor-href][data-service="'+service+'"]';
+					}
+				}
+				document.querySelectorAll(selectorVideo).forEach(obj => {
+					let elementService = obj.getAttribute('data-service');
+					if ( cmplz_is_service_denied(elementService) ) {
+						return;
+					}
+					if (obj.classList.contains('cmplz-elementor-activated')) return;
+					obj.classList.add('cmplz-elementor-activated');
+
+					if ( obj.hasAttribute('data-cmplz_elementor_widget_type') ){
+						let attr = obj.getAttribute('data-cmplz_elementor_widget_type');
+						obj.classList.removeAttribute('data-cmplz_elementor_widget_type');
+						obj.classList.setAttribute('data-widget_type', attr);
+					}
+					if (obj.classList.contains('cmplz-elementor-widget-video-playlist')) {
+						obj.classList.remove('cmplz-elementor-widget-video-playlist');
+						obj.classList.add('elementor-widget-video-playlist');
+					}
+					obj.setAttribute('data-settings', obj.getAttribute('data-cmplz-elementor-settings'));
+					blockedContentContainers.push(obj);
+				});
+
+				document.querySelectorAll(selectorGeneric).forEach(obj => {
+					let elementService = obj.getAttribute('data-service');
+					if ( cmplz_is_service_denied(elementService) ) {
+						return;
+					}
+					if (obj.classList.contains('cmplz-elementor-activated')) return;
+
+					if (obj.classList.contains('cmplz-fb-video')) {
+						obj.classList.remove('cmplz-fb-video');
+						obj.classList.add('fb-video');
+					}
+
+					obj.classList.add('cmplz-elementor-activated');
+					obj.setAttribute('data-href', obj.getAttribute('data-cmplz-elementor-href'));
+					blockedContentContainers.push(obj.closest('.elementor-widget'));
+				});
+
+				/**
+				 * Trigger the widgets in Elementor
+				 */
+				for (var key in blockedContentContainers) {
+					if (blockedContentContainers.hasOwnProperty(key) && blockedContentContainers[key] !== undefined) {
+						let blockedContentContainer = blockedContentContainers[key];
+						if (elementorFrontend.elementsHandler) {
+							elementorFrontend.elementsHandler.runReadyTrigger(blockedContentContainer)
+						}
+						var cssIndex = blockedContentContainer.getAttribute('data-placeholder_class_index');
+						blockedContentContainer.classList.remove('cmplz-blocked-content-container');
+						blockedContentContainer.classList.remove('cmplz-placeholder-' + cssIndex);
+					}
+				}
+
+			});
+		
+		
+        
+            document.addEventListener("cmplz_enable_category", function () {
+                document.querySelectorAll('[data-rocket-lazyload]').forEach(obj => {
+                    if (obj.hasAttribute('data-lazy-src')) {
+                        obj.setAttribute('src', obj.getAttribute('data-lazy-src'));
+                    }
+                });
+            });
+        
+		
+//# sourceURL=cmplz-cookiebanner-js-after
+});</script>
+<script type="rocketlazyloadscript" data-rocket-src="https://carlosperezarjona.com/wp-content/plugins/elementor-pro/assets/js/webpack-pro.runtime.min.js?ver=3.31.2" id="elementor-pro-webpack-runtime-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-src="https://carlosperezarjona.com/wp-includes/js/dist/hooks.min.js?ver=dd5603f07f9220ed27f1" id="wp-hooks-js"></script>
+<script type="rocketlazyloadscript" data-rocket-src="https://carlosperezarjona.com/wp-includes/js/dist/i18n.min.js?ver=c26c3dc7bed366793375" id="wp-i18n-js"></script>
+<script type="rocketlazyloadscript" id="wp-i18n-js-after">
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+//# sourceURL=wp-i18n-js-after
+</script>
+<script type="rocketlazyloadscript" id="elementor-pro-frontend-js-before">
+var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/carlosperezarjona.com\/wp-admin\/admin-ajax.php","nonce":"676ef25a7b","urls":{"assets":"https:\/\/carlosperezarjona.com\/wp-content\/plugins\/elementor-pro\/assets\/","rest":"https:\/\/carlosperezarjona.com\/wp-json\/"},"settings":{"lazy_load_background_images":false},"popup":{"hasPopUps":true},"shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"mix":{"title":"Mix"},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"},"x-twitter":{"title":"X"},"threads":{"title":"Threads"}},"facebook_sdk":{"lang":"es_ES","app_id":""},"lottie":{"defaultAnimationUrl":"https:\/\/carlosperezarjona.com\/wp-content\/plugins\/elementor-pro\/modules\/lottie\/assets\/animations\/default.json"}};
+//# sourceURL=elementor-pro-frontend-js-before
+</script>
+<script type="rocketlazyloadscript" data-rocket-src="https://carlosperezarjona.com/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=3.31.2" id="elementor-pro-frontend-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-src="https://carlosperezarjona.com/wp-content/plugins/elementor-pro/assets/js/elements-handlers.min.js?ver=3.31.2" id="pro-elements-handlers-js" defer></script>
+<script id="wp-emoji-settings" type="application/json">
+{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"https://carlosperezarjona.com/wp-includes/js/wp-emoji-release.min.js?ver=6.9"}}
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="module">
+/*! This file is auto-generated */
+const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(window._wpemojiSettings=a,"wpEmojiSettingsSupports"),s=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const a=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===a[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,a){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!a(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,a){let r;const o=(r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),s=(o.textBaseline="top",o.font="600 32px Arial",{});return e.forEach(e=>{s[e]=t(o,e,n,a)}),s}function r(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}a.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),c.toString(),p.toString()].join(",")+"));",a=new Blob([e],{type:"text/javascript"});const r=new Worker(URL.createObjectURL(a),{name:"wpTestEmojiSupports"});return void(r.onmessage=e=>{i(n=e.data),r.terminate(),t(n)})}catch(e){}i(n=f(s,u,c,p))}t(n)}).then(e=>{for(const n in e)a.supports[n]=e[n],a.supports.everything=a.supports.everything&&a.supports[n],"flag"!==n&&(a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&a.supports[n]);var t;a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&!a.supports.flag,a.supports.everything||((t=a.source||{}).concatemoji?r(t.concatemoji):t.wpemoji&&t.twemoji&&(r(t.twemoji),r(t.wpemoji)))});
+//# sourceURL=https://carlosperezarjona.com/wp-includes/js/wp-emoji-loader.min.js
+</script>
+				<script type="rocketlazyloadscript" async data-category="statistics"
+						data-rocket-src="https://www.googletagmanager.com/gtag/js?id=G-KZBE8GVSEQ"></script><!-- Statistics script Complianz GDPR/CCPA -->
+						<script type="text/plain"							data-category="statistics">window['gtag_enable_tcf_support'] = false;
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-KZBE8GVSEQ', {
+	cookie_flags:'secure;samesite=none',
+	
+});
+</script><script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://carlosperezarjona.com/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js"></script>
+<script>class RocketElementorAnimation{constructor(){this.deviceMode=document.createElement("span"),this.deviceMode.id="elementor-device-mode-wpr",this.deviceMode.setAttribute("class","elementor-screen-only"),document.body.appendChild(this.deviceMode)}_detectAnimations(){let t=getComputedStyle(this.deviceMode,":after").content.replace(/"/g,"");this.animationSettingKeys=this._listAnimationSettingsKeys(t),document.querySelectorAll(".elementor-invisible[data-settings]").forEach(t=>{const e=t.getBoundingClientRect();if(e.bottom>=0&&e.top<=window.innerHeight)try{this._animateElement(t)}catch(t){}})}_animateElement(t){const e=JSON.parse(t.dataset.settings),i=e._animation_delay||e.animation_delay||0,n=e[this.animationSettingKeys.find(t=>e[t])];if("none"===n)return void t.classList.remove("elementor-invisible");t.classList.remove(n),this.currentAnimation&&t.classList.remove(this.currentAnimation),this.currentAnimation=n;let s=setTimeout(()=>{t.classList.remove("elementor-invisible"),t.classList.add("animated",n),this._removeAnimationSettings(t,e)},i);window.addEventListener("rocket-startLoading",function(){clearTimeout(s)})}_listAnimationSettingsKeys(t="mobile"){const e=[""];switch(t){case"mobile":e.unshift("_mobile");case"tablet":e.unshift("_tablet");case"desktop":e.unshift("_desktop")}const i=[];return["animation","_animation"].forEach(t=>{e.forEach(e=>{i.push(t+e)})}),i}_removeAnimationSettings(t,e){this._listAnimationSettingsKeys().forEach(t=>delete e[t]),t.dataset.settings=JSON.stringify(e)}static run(){const t=new RocketElementorAnimation;requestAnimationFrame(t._detectAnimations.bind(t))}}document.addEventListener("DOMContentLoaded",RocketElementorAnimation.run);</script></body>
+</html>
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1765386343 -->
