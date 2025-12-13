@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="es" >
+<head>
+  <meta charset="utf-8">
+  <title>Codemartia</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+  <link href="https://codemartia.com/wp-content/themes/codemartia-theme/img/logos/favicon.png" rel="icon">
+  <link href="https://codemartia.com/wp-content/themes/codemartia-theme/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="https://codemartia.com/wp-content/themes/codemartia-theme/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="https://codemartia.com/wp-content/themes/codemartia-theme/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://codemartia.com/wp-content/themes/codemartia-theme/lib/animate/animate.min.css" rel="stylesheet">
+  <link href="https://codemartia.com/wp-content/themes/codemartia-theme/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="https://codemartia.com/wp-content/themes/codemartia-theme/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="https://codemartia.com/wp-content/themes/codemartia-theme/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="https://codemartia.com/wp-content/themes/codemartia-theme/css/style.css" rel="stylesheet">
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-122600994-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-122600994-1');
+	</script>
+
+
+  <meta name='robots' content='max-image-preview:large' />
+
+<!-- This site is optimized with the Yoast SEO plugin v12.9.1 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="robots" content="noindex,follow"/>
+<meta property="og:locale" content="es_ES" />
+<meta property="og:type" content="object" />
+<meta property="og:title" content="Página no encontrada - Codemartia" />
+<meta property="og:site_name" content="Codemartia" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Página no encontrada - Codemartia" />
+<meta name="twitter:site" content="@codemartia" />
+<script type='application/ld+json' class='yoast-schema-graph yoast-schema-graph--main'>{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://codemartia.com/#website","url":"https://codemartia.com/","name":"Codemartia","description":"Desarrollo Aplicaciones Web","potentialAction":{"@type":"SearchAction","target":"https://codemartia.com/?s={search_term_string}","query-input":"required name=search_term_string"}}]}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='//s.w.org' />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/codemartia.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.7.14"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='https://codemartia.com/wp-includes/css/dist/block-library/style.min.css?ver=5.7.14' type='text/css' media='all' />
+<link rel='stylesheet' id='addtoany-css'  href='https://codemartia.com/wp-content/plugins/add-to-any/addtoany.min.css?ver=1.15' type='text/css' media='all' />
+<script type='text/javascript' src='https://codemartia.com/wp-includes/js/jquery/jquery.min.js?ver=3.5.1' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://codemartia.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<script type='text/javascript' src='https://codemartia.com/wp-content/plugins/add-to-any/addtoany.min.js?ver=1.1' id='addtoany-js'></script>
+<link rel="https://api.w.org/" href="https://codemartia.com/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://codemartia.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://codemartia.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.7.14" />
+
+<script data-cfasync="false">
+window.a2a_config=window.a2a_config||{};a2a_config.callbacks=[];a2a_config.overlays=[];a2a_config.templates={};a2a_localize = {
+	Share: "Compartir",
+	Save: "Guardar",
+	Subscribe: "Suscribir",
+	Email: "Correo electrónico",
+	Bookmark: "Marcador",
+	ShowAll: "Mostrar todo",
+	ShowLess: "Mostrar menos",
+	FindServices: "Encontrar servicio(s)",
+	FindAnyServiceToAddTo: "Encuentra al instante cualquier servicio para añadir a",
+	PoweredBy: "Funciona con",
+	ShareViaEmail: "Compartir por correo electrónico",
+	SubscribeViaEmail: "Suscribirse a través de correo electrónico",
+	BookmarkInYourBrowser: "Añadir a marcadores de tu navegador",
+	BookmarkInstructions: "Presiona «Ctrl+D» o «\u2318+D» para añadir esta página a marcadores",
+	AddToYourFavorites: "Añadir a tus favoritos",
+	SendFromWebOrProgram: "Enviar desde cualquier dirección o programa de correo electrónico ",
+	EmailProgram: "Programa de correo electrónico",
+	More: "Más&#8230;",
+	ThanksForSharing: "¡Gracias por compartir!",
+	ThanksForFollowing: "¡Gracias por seguirnos!"
+};
+
+(function(d,s,a,b){a=d.createElement(s);b=d.getElementsByTagName(s)[0];a.async=1;a.src="https://static.addtoany.com/menu/page.js";b.parentNode.insertBefore(a,b);})(document,"script");
+</script>
+</head>
+
+
+<body>
+
+  <header id="header">
+    <div class="container-fluid">
+
+      <div id="logo" class="pull-left">
+        <a href="https://codemartia.com"><img width="300px" src="https://codemartia.com/wp-content/themes/codemartia-theme/img/logos/logo_codemartia_horizontal.png" alt="" title="" /></a>
+      </div>
+
+      <nav id="nav-menu-container" class="menu-menu-principal-container"><ul id="menu-menu-principal" class="nav-menu"><li id="menu-item-14" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-14"><a href="http://codemartia.com/">Inicio</a></li>
+<li id="menu-item-19" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19"><a href="https://codemartia.com/sobre-nosotros/">Sobre Nosotros</a></li>
+<li id="menu-item-21" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21"><a href="https://codemartia.com/servicios/">Servicios</a></li>
+<li id="menu-item-24" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24"><a href="https://codemartia.com/contacto/">Contacto</a></li>
+</ul></nav>
+
+
+    </div>
+  </header>
+
+
+  <main id="main">
+  <section id="blog" class="first-section">
+      <div class="container">
+
+      <header class="section-header wow fadeInUp">
+        <h1>Blog</h1>
+        <p></p>
+      </header>
+
+      
+      
+	      <article class="card mb-4 blog-post">
+	        
+	        <div class="card-body">
+	          <div class="row">
+
+	            <div class="col-lg-6 wow fadeInLeft">
+	              <a href="https://codemartia.com/rtvmarchena-es-medio-de-comunicacion-local/">
+	                <img width="1913" height="955" src="https://codemartia.com/wp-content/uploads/2021/09/Screenshot_1.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://codemartia.com/wp-content/uploads/2021/09/Screenshot_1.png 1913w, https://codemartia.com/wp-content/uploads/2021/09/Screenshot_1-300x150.png 300w, https://codemartia.com/wp-content/uploads/2021/09/Screenshot_1-1024x511.png 1024w, https://codemartia.com/wp-content/uploads/2021/09/Screenshot_1-768x383.png 768w, https://codemartia.com/wp-content/uploads/2021/09/Screenshot_1-1536x767.png 1536w" sizes="(max-width: 1913px) 100vw, 1913px" />	              </a>
+	            </div>
+
+	            <div class="col-lg-6 wow fadeInRight">
+	              
+	              	<div class="post-title">
+		              	<h2 class="card-title">
+		              		<a href="https://codemartia.com/rtvmarchena-es-medio-de-comunicacion-local/">
+		              			RtvMarchena.es | Medio de comunicación local		              		</a>
+		              	</h2>
+	              	</div>
+
+	              	<div class="post-excerpt">
+	              			              	</div>
+
+	              	<p class="card-text text-muted">Publicado el 28 septiembre, 2021 por <a href="https://codemartia.com/author/codemartia/" title="Entradas de Codemartia" rel="author">Codemartia</a>	              		
+	              	</p>
+
+	              	<a href="https://codemartia.com/rtvmarchena-es-medio-de-comunicacion-local/" class="btn btn-read-more">Seguir leyendo &rarr;</a>
+	            </div>
+
+	          </div>
+	        </div>
+
+	      </article>
+
+	      <hr>
+
+	  
+	      <article class="card mb-4 blog-post">
+	        
+	        <div class="card-body">
+	          <div class="row">
+
+	            <div class="col-lg-6 wow fadeInLeft">
+	              <a href="https://codemartia.com/nuribel-disenadores-de-moda-para-mujer/">
+	                <img width="1422" height="761" src="https://codemartia.com/wp-content/uploads/2021/07/Screenshot_13.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://codemartia.com/wp-content/uploads/2021/07/Screenshot_13.png 1422w, https://codemartia.com/wp-content/uploads/2021/07/Screenshot_13-300x161.png 300w, https://codemartia.com/wp-content/uploads/2021/07/Screenshot_13-1024x548.png 1024w, https://codemartia.com/wp-content/uploads/2021/07/Screenshot_13-768x411.png 768w" sizes="(max-width: 1422px) 100vw, 1422px" />	              </a>
+	            </div>
+
+	            <div class="col-lg-6 wow fadeInRight">
+	              
+	              	<div class="post-title">
+		              	<h2 class="card-title">
+		              		<a href="https://codemartia.com/nuribel-disenadores-de-moda-para-mujer/">
+		              			Nuribel | Diseñadores de moda para mujer		              		</a>
+		              	</h2>
+	              	</div>
+
+	              	<div class="post-excerpt">
+	              			              	</div>
+
+	              	<p class="card-text text-muted">Publicado el 28 septiembre, 2021 por <a href="https://codemartia.com/author/codemartia/" title="Entradas de Codemartia" rel="author">Codemartia</a>	              		
+	              	</p>
+
+	              	<a href="https://codemartia.com/nuribel-disenadores-de-moda-para-mujer/" class="btn btn-read-more">Seguir leyendo &rarr;</a>
+	            </div>
+
+	          </div>
+	        </div>
+
+	      </article>
+
+	      <hr>
+
+	  
+	      <article class="card mb-4 blog-post">
+	        
+	        <div class="card-body">
+	          <div class="row">
+
+	            <div class="col-lg-6 wow fadeInLeft">
+	              <a href="https://codemartia.com/inga-concept-store-moda-para-mujer/">
+	                <img width="1426" height="758" src="https://codemartia.com/wp-content/uploads/2021/07/Screenshot_5.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://codemartia.com/wp-content/uploads/2021/07/Screenshot_5.png 1426w, https://codemartia.com/wp-content/uploads/2021/07/Screenshot_5-300x159.png 300w, https://codemartia.com/wp-content/uploads/2021/07/Screenshot_5-1024x544.png 1024w, https://codemartia.com/wp-content/uploads/2021/07/Screenshot_5-768x408.png 768w" sizes="(max-width: 1426px) 100vw, 1426px" />	              </a>
+	            </div>
+
+	            <div class="col-lg-6 wow fadeInRight">
+	              
+	              	<div class="post-title">
+		              	<h2 class="card-title">
+		              		<a href="https://codemartia.com/inga-concept-store-moda-para-mujer/">
+		              			Inga Concept Store | Moda para mujer		              		</a>
+		              	</h2>
+	              	</div>
+
+	              	<div class="post-excerpt">
+	              		<p>Para el diseño de este proyecto, desarrollamos una interfaz propia evitando por todos los medios la utilización de plantillas de diseño de terceros. Con ello, ganamos en velocidad de carga, en seguridad y en una alta capacidad de personalización de la misma. Como motor usamos Wocoomerce para la gestión de productos y pedidos con el [&hellip;]</p>
+	              	</div>
+
+	              	<p class="card-text text-muted">Publicado el 8 julio, 2021 por <a href="https://codemartia.com/author/codemartia/" title="Entradas de Codemartia" rel="author">Codemartia</a>	              		
+	              	</p>
+
+	              	<a href="https://codemartia.com/inga-concept-store-moda-para-mujer/" class="btn btn-read-more">Seguir leyendo &rarr;</a>
+	            </div>
+
+	          </div>
+	        </div>
+
+	      </article>
+
+	      <hr>
+
+	  
+	      <article class="card mb-4 blog-post">
+	        
+	        <div class="card-body">
+	          <div class="row">
+
+	            <div class="col-lg-6 wow fadeInLeft">
+	              <a href="https://codemartia.com/abuela-tata-disenadores-de-moda-infantil/">
+	                <img width="1426" height="758" src="https://codemartia.com/wp-content/uploads/2021/07/Screenshot_6.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://codemartia.com/wp-content/uploads/2021/07/Screenshot_6.png 1426w, https://codemartia.com/wp-content/uploads/2021/07/Screenshot_6-300x159.png 300w, https://codemartia.com/wp-content/uploads/2021/07/Screenshot_6-1024x544.png 1024w, https://codemartia.com/wp-content/uploads/2021/07/Screenshot_6-768x408.png 768w" sizes="(max-width: 1426px) 100vw, 1426px" />	              </a>
+	            </div>
+
+	            <div class="col-lg-6 wow fadeInRight">
+	              
+	              	<div class="post-title">
+		              	<h2 class="card-title">
+		              		<a href="https://codemartia.com/abuela-tata-disenadores-de-moda-infantil/">
+		              			Abuela Tata | Diseñadores de Moda infantil		              		</a>
+		              	</h2>
+	              	</div>
+
+	              	<div class="post-excerpt">
+	              		<p>Con Abuela Tata se nos presentaba un reto importante: desarrollar una intranet desde la que gestionar las ventas a los distribuidores, y por otro lado, esos mismos productos mostrarlos en formato catálogo para el cliente final. Esto lo conseguimos con un desarrollo adaptado a los requisitos del cliente.</p>
+	              	</div>
+
+	              	<p class="card-text text-muted">Publicado el 8 julio, 2021 por <a href="https://codemartia.com/author/codemartia/" title="Entradas de Codemartia" rel="author">Codemartia</a>	              		
+	              	</p>
+
+	              	<a href="https://codemartia.com/abuela-tata-disenadores-de-moda-infantil/" class="btn btn-read-more">Seguir leyendo &rarr;</a>
+	            </div>
+
+	          </div>
+	        </div>
+
+	      </article>
+
+	      <hr>
+
+	  
+	      <article class="card mb-4 blog-post">
+	        
+	        <div class="card-body">
+	          <div class="row">
+
+	            <div class="col-lg-6 wow fadeInLeft">
+	              <a href="https://codemartia.com/egora-asesores-de-formacion/">
+	                <img width="1425" height="756" src="https://codemartia.com/wp-content/uploads/2021/07/Screenshot_7.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://codemartia.com/wp-content/uploads/2021/07/Screenshot_7.png 1425w, https://codemartia.com/wp-content/uploads/2021/07/Screenshot_7-300x159.png 300w, https://codemartia.com/wp-content/uploads/2021/07/Screenshot_7-1024x543.png 1024w, https://codemartia.com/wp-content/uploads/2021/07/Screenshot_7-768x407.png 768w" sizes="(max-width: 1425px) 100vw, 1425px" />	              </a>
+	            </div>
+
+	            <div class="col-lg-6 wow fadeInRight">
+	              
+	              	<div class="post-title">
+		              	<h2 class="card-title">
+		              		<a href="https://codemartia.com/egora-asesores-de-formacion/">
+		              			Égora | Asesores de formación		              		</a>
+		              	</h2>
+	              	</div>
+
+	              	<div class="post-excerpt">
+	              		<p>Landing page es un tipo de web cuyo principal objetivo es mostrar al mundo que servicios ofreces, y eso era precisamente lo que necesitaban en Égora. Los requisitos eran una navegación sencilla para encontrar de forma ordenada todos los servicios que ofrecen y además la puesta en valor de todas las certificaciones que abalan el [&hellip;]</p>
+	              	</div>
+
+	              	<p class="card-text text-muted">Publicado el 8 julio, 2021 por <a href="https://codemartia.com/author/codemartia/" title="Entradas de Codemartia" rel="author">Codemartia</a>	              		
+	              	</p>
+
+	              	<a href="https://codemartia.com/egora-asesores-de-formacion/" class="btn btn-read-more">Seguir leyendo &rarr;</a>
+	            </div>
+
+	          </div>
+	        </div>
+
+	      </article>
+
+	      <hr>
+
+	  
+	      <article class="card mb-4 blog-post">
+	        
+	        <div class="card-body">
+	          <div class="row">
+
+	            <div class="col-lg-6 wow fadeInLeft">
+	              <a href="https://codemartia.com/tcal-laboratorio-agroalimentario-de-ensayos-y-calibraciones/">
+	                <img width="1420" height="757" src="https://codemartia.com/wp-content/uploads/2021/07/Screenshot_8.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://codemartia.com/wp-content/uploads/2021/07/Screenshot_8.png 1420w, https://codemartia.com/wp-content/uploads/2021/07/Screenshot_8-300x160.png 300w, https://codemartia.com/wp-content/uploads/2021/07/Screenshot_8-1024x546.png 1024w, https://codemartia.com/wp-content/uploads/2021/07/Screenshot_8-768x409.png 768w" sizes="(max-width: 1420px) 100vw, 1420px" />	              </a>
+	            </div>
+
+	            <div class="col-lg-6 wow fadeInRight">
+	              
+	              	<div class="post-title">
+		              	<h2 class="card-title">
+		              		<a href="https://codemartia.com/tcal-laboratorio-agroalimentario-de-ensayos-y-calibraciones/">
+		              			TCAL | Laboratorio Agroalimentario, de ensayos y calibraciones		              		</a>
+		              	</h2>
+	              	</div>
+
+	              	<div class="post-excerpt">
+	              		<p>Cuando hablamos de TCAL, hablamos de uno de los laboratorios de análisis más equipado y con el mayor equipo de profesionales en el sector. Precisamente esto era el objetivo de la web que se iba a desarrollar, mostrar al mundo el potencial de esta empresa y su gran equipo.</p>
+	              	</div>
+
+	              	<p class="card-text text-muted">Publicado el 8 julio, 2021 por <a href="https://codemartia.com/author/codemartia/" title="Entradas de Codemartia" rel="author">Codemartia</a>	              		
+	              	</p>
+
+	              	<a href="https://codemartia.com/tcal-laboratorio-agroalimentario-de-ensayos-y-calibraciones/" class="btn btn-read-more">Seguir leyendo &rarr;</a>
+	            </div>
+
+	          </div>
+	        </div>
+
+	      </article>
+
+	      <hr>
+
+	  
+	      <article class="card mb-4 blog-post">
+	        
+	        <div class="card-body">
+	          <div class="row">
+
+	            <div class="col-lg-6 wow fadeInLeft">
+	              <a href="https://codemartia.com/emprensa-com-revista-empresarial/">
+	                <img width="1427" height="758" src="https://codemartia.com/wp-content/uploads/2021/07/Screenshot_9.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://codemartia.com/wp-content/uploads/2021/07/Screenshot_9.png 1427w, https://codemartia.com/wp-content/uploads/2021/07/Screenshot_9-300x159.png 300w, https://codemartia.com/wp-content/uploads/2021/07/Screenshot_9-1024x544.png 1024w, https://codemartia.com/wp-content/uploads/2021/07/Screenshot_9-768x408.png 768w" sizes="(max-width: 1427px) 100vw, 1427px" />	              </a>
+	            </div>
+
+	            <div class="col-lg-6 wow fadeInRight">
+	              
+	              	<div class="post-title">
+		              	<h2 class="card-title">
+		              		<a href="https://codemartia.com/emprensa-com-revista-empresarial/">
+		              			Emprensa.com | Revista Empresarial		              		</a>
+		              	</h2>
+	              	</div>
+
+	              	<div class="post-excerpt">
+	              			              	</div>
+
+	              	<p class="card-text text-muted">Publicado el 8 julio, 2021 por <a href="https://codemartia.com/author/codemartia/" title="Entradas de Codemartia" rel="author">Codemartia</a>	              		
+	              	</p>
+
+	              	<a href="https://codemartia.com/emprensa-com-revista-empresarial/" class="btn btn-read-more">Seguir leyendo &rarr;</a>
+	            </div>
+
+	          </div>
+	        </div>
+
+	      </article>
+
+	      <hr>
+
+	  
+	      <article class="card mb-4 blog-post">
+	        
+	        <div class="card-body">
+	          <div class="row">
+
+	            <div class="col-lg-6 wow fadeInLeft">
+	              <a href="https://codemartia.com/sevillamagazine-revista-de-informacion-social/">
+	                <img width="1433" height="756" src="https://codemartia.com/wp-content/uploads/2021/07/Screenshot_4.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://codemartia.com/wp-content/uploads/2021/07/Screenshot_4.png 1433w, https://codemartia.com/wp-content/uploads/2021/07/Screenshot_4-300x158.png 300w, https://codemartia.com/wp-content/uploads/2021/07/Screenshot_4-1024x540.png 1024w, https://codemartia.com/wp-content/uploads/2021/07/Screenshot_4-768x405.png 768w" sizes="(max-width: 1433px) 100vw, 1433px" />	              </a>
+	            </div>
+
+	            <div class="col-lg-6 wow fadeInRight">
+	              
+	              	<div class="post-title">
+		              	<h2 class="card-title">
+		              		<a href="https://codemartia.com/sevillamagazine-revista-de-informacion-social/">
+		              			SevillaMagazine | Revista de Información Social		              		</a>
+		              	</h2>
+	              	</div>
+
+	              	<div class="post-excerpt">
+	              			              	</div>
+
+	              	<p class="card-text text-muted">Publicado el 8 julio, 2021 por <a href="https://codemartia.com/author/codemartia/" title="Entradas de Codemartia" rel="author">Codemartia</a>	              		
+	              	</p>
+
+	              	<a href="https://codemartia.com/sevillamagazine-revista-de-informacion-social/" class="btn btn-read-more">Seguir leyendo &rarr;</a>
+	            </div>
+
+	          </div>
+	        </div>
+
+	      </article>
+
+	      <hr>
+
+	  
+	      <article class="card mb-4 blog-post">
+	        
+	        <div class="card-body">
+	          <div class="row">
+
+	            <div class="col-lg-6 wow fadeInLeft">
+	              <a href="https://codemartia.com/demibarrio-eu-directorio-de-comercios-locales/">
+	                <img width="1423" height="758" src="https://codemartia.com/wp-content/uploads/2021/07/Screenshot_10.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://codemartia.com/wp-content/uploads/2021/07/Screenshot_10.png 1423w, https://codemartia.com/wp-content/uploads/2021/07/Screenshot_10-300x160.png 300w, https://codemartia.com/wp-content/uploads/2021/07/Screenshot_10-1024x545.png 1024w, https://codemartia.com/wp-content/uploads/2021/07/Screenshot_10-768x409.png 768w" sizes="(max-width: 1423px) 100vw, 1423px" />	              </a>
+	            </div>
+
+	            <div class="col-lg-6 wow fadeInRight">
+	              
+	              	<div class="post-title">
+		              	<h2 class="card-title">
+		              		<a href="https://codemartia.com/demibarrio-eu-directorio-de-comercios-locales/">
+		              			Demibarrio.eu | Directorio de comercios locales		              		</a>
+		              	</h2>
+	              	</div>
+
+	              	<div class="post-excerpt">
+	              			              	</div>
+
+	              	<p class="card-text text-muted">Publicado el 8 julio, 2021 por <a href="https://codemartia.com/author/codemartia/" title="Entradas de Codemartia" rel="author">Codemartia</a>	              		
+	              	</p>
+
+	              	<a href="https://codemartia.com/demibarrio-eu-directorio-de-comercios-locales/" class="btn btn-read-more">Seguir leyendo &rarr;</a>
+	            </div>
+
+	          </div>
+	        </div>
+
+	      </article>
+
+	      <hr>
+
+	  
+	      <article class="card mb-4 blog-post">
+	        
+	        <div class="card-body">
+	          <div class="row">
+
+	            <div class="col-lg-6 wow fadeInLeft">
+	              <a href="https://codemartia.com/lanzaderamusic-distribucion-digital-de-musica-y-video/">
+	                <img width="1423" height="756" src="https://codemartia.com/wp-content/uploads/2021/07/Screenshot_11-1.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://codemartia.com/wp-content/uploads/2021/07/Screenshot_11-1.png 1423w, https://codemartia.com/wp-content/uploads/2021/07/Screenshot_11-1-300x159.png 300w, https://codemartia.com/wp-content/uploads/2021/07/Screenshot_11-1-1024x544.png 1024w, https://codemartia.com/wp-content/uploads/2021/07/Screenshot_11-1-768x408.png 768w" sizes="(max-width: 1423px) 100vw, 1423px" />	              </a>
+	            </div>
+
+	            <div class="col-lg-6 wow fadeInRight">
+	              
+	              	<div class="post-title">
+		              	<h2 class="card-title">
+		              		<a href="https://codemartia.com/lanzaderamusic-distribucion-digital-de-musica-y-video/">
+		              			LanzaderaMusic | Distribución digital de música y video		              		</a>
+		              	</h2>
+	              	</div>
+
+	              	<div class="post-excerpt">
+	              			              	</div>
+
+	              	<p class="card-text text-muted">Publicado el 8 julio, 2021 por <a href="https://codemartia.com/author/codemartia/" title="Entradas de Codemartia" rel="author">Codemartia</a>	              		
+	              	</p>
+
+	              	<a href="https://codemartia.com/lanzaderamusic-distribucion-digital-de-musica-y-video/" class="btn btn-read-more">Seguir leyendo &rarr;</a>
+	            </div>
+
+	          </div>
+	        </div>
+
+	      </article>
+
+	      <hr>
+
+	  
+
+    </div>
+</section>
+
+
+</main>
+
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+       
+          <div class="col-lg-4 col-md-12 footer-contact">
+            <h4>Contacto</h4>
+            <p>
+              Marchena, Sevilla <br>
+              <strong>Teléfono:</strong> +34 605 422 807<br>
+              <strong>Email:</strong> info@codemartia.com<br>
+            </p>
+
+          </div>
+
+          <div class="col-lg-4 col-md-12 footer-links">
+            <h4>Enlaces útiles</h4>
+
+            <div class="col-lg-6 col-md-12 footer-links"><ul id="menu-menu-footer" class="menu"><li id="menu-item-15" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-15"><a href="http://codemartia.com/">Inicio</a></li>
+<li id="menu-item-27" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27"><a href="https://codemartia.com/servicios/">Servicios</a></li>
+<li id="menu-item-26" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26"><a href="https://codemartia.com/contacto/">Contacto</a></li>
+<li id="menu-item-49" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49"><a href="https://codemartia.com/aviso-legal/">Aviso legal</a></li>
+<li id="menu-item-53" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-53"><a href="https://codemartia.com/politica-de-privacidad/">Política de privacidad</a></li>
+</ul></div>            
+          </div>
+
+
+          <div class="col-lg-4 col-md-12 footer-about">
+          	<h4>Sobre nosotros</h4>
+          	<p>Codemartia es una empresa situada en Marchena (Sevilla) dedicada al diseño web, comercio electrónico, catálogos online, desarrollo de aplicaciones web y de aplicaciones de gestión. Ofrecemos un servicio cercano y completo, desde la planificación y el diseño del mismo hasta el despligue e inrfaestructura que sostiene el mismo.</p>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong>Codemartia S.L.</strong> 2021.
+      </div>
+      
+    </div>
+  </footer>
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+  <div id="inferior" style="
+    color: white !important;
+    background: #18d26e;
+    width: 60px;   
+    height: 60px; 
+    padding: 0px;
+    position: fixed;
+    left: 10px;
+    right: 10px;
+    bottom: 20px;
+    z-index: 10;
+    border-radius: 100px;
+    ">
+    <a href="https://api.whatsapp.com/send?phone=34619241349&text=" target="_blank" title="whatsapp" class="text-white text-hover-primary" style="padding-left: 10px;"><i class="fab fa-whatsapp fa-3x whatsapp-button pt-1"></i></a>
+  </div>
+
+  <script src="https://codemartia.com/wp-content/themes/codemartia-theme/lib/jquery/jquery.min.js"></script>
+  <script src="https://codemartia.com/wp-content/themes/codemartia-theme/lib/jquery/jquery-migrate.min.js"></script>
+  <script src="https://codemartia.com/wp-content/themes/codemartia-theme/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://codemartia.com/wp-content/themes/codemartia-theme/lib/easing/easing.min.js"></script>
+  <script src="https://codemartia.com/wp-content/themes/codemartia-theme/lib/superfish/hoverIntent.js"></script>
+  <script src="https://codemartia.com/wp-content/themes/codemartia-theme/lib/superfish/superfish.min.js"></script>
+  <script src="https://codemartia.com/wp-content/themes/codemartia-theme/lib/wow/wow.min.js"></script>
+  <script src="https://codemartia.com/wp-content/themes/codemartia-theme/lib/waypoints/waypoints.min.js"></script>
+  <script src="https://codemartia.com/wp-content/themes/codemartia-theme/lib/counterup/counterup.min.js"></script>
+  <script src="https://codemartia.com/wp-content/themes/codemartia-theme/lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="https://codemartia.com/wp-content/themes/codemartia-theme/lib/isotope/isotope.pkgd.min.js"></script>
+  <script src="https://codemartia.com/wp-content/themes/codemartia-theme/lib/lightbox/js/lightbox.min.js"></script>
+  <script src="https://codemartia.com/wp-content/themes/codemartia-theme/lib/touchSwipe/jquery.touchSwipe.min.js"></script>
+  <script src="https://codemartia.com/wp-content/themes/codemartia-theme/contactform/contactform.js"></script>
+
+  <script src="https://codemartia.com/wp-content/themes/codemartia-theme/js/main.js"></script>
+
+  <script type='text/javascript' src='https://codemartia.com/wp-includes/js/wp-embed.min.js?ver=5.7.14' id='wp-embed-js'></script>
+
+  
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+<link href="https://codemartia.com/wp-content/themes/codemartia-theme/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://codemartia.com/wp-content/themes/codemartia-theme/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+<style>
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 99999; 
+  padding-top: 100px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.closecookies {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  text: right;
+}
+
+.closecookies:hover,
+.closecookies:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#cajacookies {
+  background-color: white;
+  color: black;
+  padding: 20px;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  z-index:10031;
+  display: none;
+}
+
+#cajacookies a {
+  color: black;
+}
+
+</style>
+
+<div id="cajacookies">
+    <div class="row">
+        <div class="col-2 mx-auto">
+        <i class="fas fa-cookie-bite fa-3x"></i>
+        </div>
+        <div class="col-10 mx-auto">
+        <p>
+        Nos harías muy felices si aceptaras las cookies. De esta forma, podremos ofrecerte la mejor de las experiencias en el uso de este sitio web.
+        Si quieres saber más sobre las cookies, puedes leer la <a href="https://codemartia.com/politica-de-privacidad/" class="text-dark"><em>política de cookies</em></a>.
+        </p>
+        </div>
+        <div class="col-12 text-right">
+            <a onclick="personalizarCookies()" class="btn btn-light text-dark mr-2 mb-3"><i class="fa fa-wrench"></i> Personalizar cookies</a>
+
+            <a onclick="aceptarCookies()" class="btn btn-dark text-white mr-2 mb-3"><i class="fa fa-check"></i> Aceptar cookies</a>
+        </div>
+    </div>    
+</div>
+
+<div id="cookiemodal" class="modal">
+    <div class="modal-content">
+        <span id="closecookies" class="closecookies">&times;</span>
+        <br>
+        <p class="mb-2"><b>Cookies necesarias</b></p>
+        <small>En estas cookies guardamos información necesaria para el funcionamiento del sitio web y el rechazo de este tipo de cookies implica la inutilidad del mismo.</small>
+        <br>
+
+        <span>
+        <input type="radio" id="" name="" value="" disabled>
+        <label for="" class="mr-4">Rechazar</label>
+        <input type="radio" id="" name="" value="" disabled checked>
+        <label for="">Aceptar</label>
+        </span>
+        
+        <hr>
+
+        <p class="mb-2"><b>Cookies estadísticas</b></p>
+        <small>Estas cookies nos sirven para saber cuantas personas nos visitan, desde que ciudad, etc. Nunca obtenemos información personal tal como nombre, números de teléfonos ni ninguna información de caracter personal. </small>
+        <br>
+
+        <span>
+        <input type="radio" id="cookiesestadistica" name="cookiesestadistica" value="0" >
+        <label for="" class="mr-4">Rechazar</label>
+        <input type="radio" id="cookiesestadistica" name="cookiesestadistica" value="1" >
+        <label for="">Aceptar</label>
+        </span>
+        <small id="errorcookies" class="text-danger" style="display:none">Debe marcar una opción</small>
+
+        <hr>
+
+        <span class="text-right">
+            <a onclick="guardarCookies()" class="btn btn-light text-dark mr-2 mb-3"><i class="fa fa-wrench"></i> Guardar preferencias</a>
+            <a onclick="aceptarCookies()" class="btn btn-dark text-white mr-2 mb-3"><i class="fa fa-check"></i> Aceptar cookies</a>
+        </span>
+    </div>
+
+</div>
+
+<script>
+    function borraCookiesEstadistica() {
+        
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var cookies = decodedCookie.split(';');
+
+        if ( '' !== cookies ) {
+
+            console.log(cookies);
+
+            for(var i = 0; i <cookies.length; i++) {
+
+                var c = cookies[i];
+
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+
+                comparacion = c.substring(0,3);
+                nombre = c.split('=')[0];
+
+                if(comparacion == "_ga" || comparacion == "_gi") {
+                    cookierBorrar = nombre+"=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;Domain=."+window.location.hostname;
+                    console.log(cookierBorrar);
+                    document.cookie = cookierBorrar;
+                }
+                
+
+            }
+
+        }
+
+        localStorage.aceptaCookies = 'false';
+        
+    }
+
+    function compruebaAceptaCookies() {
+        if(localStorage.aceptaCookies == undefined){
+            cajacookies.style.display = 'block';
+        } else {
+            if(localStorage.aceptaCookies == 'false'){
+                borraCookiesEstadistica();
+            }
+        }
+    }
+
+    function aceptarCookies() {
+        var modal = document.getElementById("cookiemodal");
+        modal.style.display = "none";
+
+        localStorage.aceptaCookies = 'true';
+        cajacookies.style.display = 'none';
+    }
+
+    
+
+    function guardarCookies() {
+        var radios = document.getElementsByName('cookiesestadistica');
+        var cookiesestadistica = 0;
+        var chequeado = 0;
+
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                cookiesestadistica = radios[i].value;
+                chequeado = 1;
+            }
+        }
+
+        if(chequeado == 1) {
+
+            if(cookiesestadistica == 0) {
+                console.log("Entra");
+
+                borraCookiesEstadistica();
+            }
+            
+            var modal = document.getElementById("cookiemodal");
+            modal.style.display = "none";
+
+            cajacookies.style.display = 'none';
+
+        } else {
+
+            var errorcookies = document.getElementById('errorcookies');
+            errorcookies.style.display = "block";
+
+        }
+
+    }
+
+    function personalizarCookies() {
+        var modal = document.getElementById("cookiemodal");
+        modal.style.display = "block";
+    }
+
+    $('#closecookies').click(function(){
+        var modal = document.getElementById("cookiemodal");
+        modal.style.display = "none";
+    });
+
+    $(document).ready(function () {
+        compruebaAceptaCookies();
+    });
+</script>
+</body>
+</html>
