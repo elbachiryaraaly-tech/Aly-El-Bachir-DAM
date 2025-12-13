@@ -1,0 +1,7 @@
+HTTP/1.1 200 OK
+Date: Sat, 13 Dec 2025 17:42:59 GMT
+Server: Apache/2.4.25 (Debian)
+Link: <https://codemartia.com/wp-json/>; rel="https://api.w.org/", <https://codemartia.com/wp-json/wp/v2/pages/61>; rel="alternate"; type="application/json", <https://codemartia.com/>; rel=shortlink
+Set-Cookie: __google_un=1; path=/
+Content-Type: text/html; charset=UTF-8
+
