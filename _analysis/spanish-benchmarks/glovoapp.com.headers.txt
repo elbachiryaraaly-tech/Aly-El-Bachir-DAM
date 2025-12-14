@@ -1,0 +1,37 @@
+HTTP/2 301 
+date: Sun, 14 Dec 2025 06:38:29 GMT
+location: /en/
+x-cache: Hit from cloudfront
+via: 1.1 fd84a98fca0c092bda874136d6c8db62.cloudfront.net (CloudFront)
+x-amz-cf-pop: HIO52-P3
+x-amz-cf-id: z_LXENDTx5M7PRd7exAAJNC-f-m8kUmpIQz18Sn1GexZEqzrcMrxgg==
+age: 52819
+
+HTTP/2 308 
+date: Sun, 14 Dec 2025 21:18:48 GMT
+refresh: 0;url=/en
+location: /en
+x-cache: Miss from cloudfront
+via: 1.1 fd84a98fca0c092bda874136d6c8db62.cloudfront.net (CloudFront)
+x-amz-cf-pop: HIO52-P3
+x-amz-cf-id: 1hqKFlPNHObzx-hb8JnlmVJ29zGQDQJ4mZYUnIavOfhWeBJDyhVWvA==
+
+HTTP/2 200 
+content-type: text/html; charset=utf-8
+date: Sun, 14 Dec 2025 21:18:49 GMT
+cache-control: private, no-cache, no-store, max-age=0, must-revalidate
+set-cookie: layout_mode=light; Path=/
+set-cookie: glovo_user_lang=en; Path=/
+set-cookie: glv_perseus_session=%7B%22id%22%3A%221cc2ef51-70ec-4312-b791-77d80fd26866%22%2C%22timestamp%22%3A1765747129193%7D; Path=/
+set-cookie: glv_perseus_client=%7B%22id%22%3A%228110687c-9c27-4459-9620-94db1188437d%22%2C%22timestamp%22%3A1765747129193%7D; Path=/
+x-glv-language: en
+x-perseus-client-data: {"id":"8110687c-9c27-4459-9620-94db1188437d","timestamp":1765747129193}
+x-perseus-session-data: {"id":"1cc2ef51-70ec-4312-b791-77d80fd26866","timestamp":1765747129193}
+link: </_next/static/css/4883ce4409cc188c.css>; rel=preload; as="style", </_next/static/css/80ba412df204d825.css>; rel=preload; as="style", </_next/static/css/ca9b8ed90b79549b.css>; rel=preload; as="style", </_next/static/css/94ac83d52eba0b60.css>; rel=preload; as="style", </_next/static/css/76be1df065e19a03.css>; rel=preload; as="style", </_next/static/css/d82cced241ecd311.css>; rel=preload; as="style"
+x-powered-by: Next.js
+vary: Accept-Encoding
+x-cache: Miss from cloudfront
+via: 1.1 fd84a98fca0c092bda874136d6c8db62.cloudfront.net (CloudFront)
+x-amz-cf-pop: HIO52-P3
+x-amz-cf-id: 1vg11ZdHtwgY4vWW1o3MpQKqE1zmvRPUiIWutO_cq1XQB5U9OKqWpA==
+

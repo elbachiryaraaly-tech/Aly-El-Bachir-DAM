@@ -1,0 +1,10 @@
+typeform.com http:2 code:200 ttfb:0.280577 total:0.298515
+factorialhr.com http:2 code:200 ttfb:0.081021 total:0.092353
+travelperk.com http:2 code:200 ttfb:0.263344 total:0.275777
+cabify.com http:2 code:200 ttfb:0.324139 total:0.324801
+wallapop.com http:2 code:200 ttfb:0.226200 total:0.226498
+glovoapp.com http:2 code:200 ttfb:1.164176 total:1.404155
+carto.com http:2 code:200 ttfb:0.236665 total:0.249499
+feverup.com http:2 code:200 ttfb:0.293353 total:0.317914
+clarity.ai http:2 code:200 ttfb:0.290824 total:0.294720
+plainconcepts.com http:2 code:200 ttfb:0.570190 total:0.573464

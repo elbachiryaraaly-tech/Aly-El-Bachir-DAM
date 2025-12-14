@@ -1,0 +1,30 @@
+HTTP/2 301 
+server: CloudFront
+date: Sun, 14 Dec 2025 21:18:47 GMT
+content-length: 0
+location: https://www.typeform.com/
+x-cache: LambdaGeneratedResponse from cloudfront
+via: 1.1 c5e1a6561d8dc3977e11160718fc75e8.cloudfront.net (CloudFront)
+x-amz-cf-pop: HIO52-P4
+alt-svc: h3=":443"; ma=86400
+x-amz-cf-id: H8jekNhRAN_v-iTdmW24acZOze4-Z8-0DVsAI9YaelAIfxPB7EE7RA==
+
+HTTP/2 200 
+content-type: text/html
+date: Sun, 14 Dec 2025 21:18:47 GMT
+set-cookie: _cfuvid=nNOMCokmxjyF2RXXkekyaoIgOmlKBOyBbcaQbYmgnyM-1765747127478-0.0.1.1-604800000; path=/; domain=.webflow-prod.typeform.com; HttpOnly; Secure; SameSite=None
+server: cloudflare
+cf-ray: 9ae0bc5a9ce0fc1e-PDX
+cf-cache-status: HIT
+last-modified: Thu, 11 Dec 2025 09:54:55 GMT
+surrogate-control: max-age=432000
+surrogate-key: webflow-prod.typeform.com 66ffe2174aa8e8d5661c2708 pageId:66ffe2174aa8e8d5661c2710 6733265c7bf7fb3f16730e02 67288c73d0b8fb12bb297551 6724bbbdd6950254f66255e6
+x-lambda-id: 88f50ce2-8834-45cd-8ff9-fe5bc38cf079
+vary: accept-encoding
+x-cache: Miss from cloudfront
+via: 1.1 9b38ff4b39c6c0a269c601916dab060e.cloudfront.net (CloudFront)
+x-amz-cf-pop: HIO52-P4
+alt-svc: h3=":443"; ma=86400
+x-amz-cf-id: trq1NGGiIC8BMIAp_n8_nm5dUxi4vG8gePm8SUegnqJdIXJb8JtFEg==
+age: 300231
+

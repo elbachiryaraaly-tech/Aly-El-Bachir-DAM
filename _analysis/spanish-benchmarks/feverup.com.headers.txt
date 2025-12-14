@@ -1,0 +1,38 @@
+HTTP/2 301 
+date: Sun, 14 Dec 2025 21:15:22 GMT
+x-frame-options: DENY
+x-xss-protection: 0
+server: nginx
+cache-control: max-age=60, stale-while-revalidate=300
+content-security-policy: frame-ancestors 'self'
+location: /en
+strict-transport-security: max-age=31536000
+x-content-type-options: nosniff
+via: 1.1 74e8c76139b8c7f9b11d5e4441c2a7a2.cloudfront.net (CloudFront)
+alt-svc: h3=":443"; ma=86400
+age: 207
+set-cookie: data-bucket=96; Path=/; Secure; SameSite=Lax; Expires=Sat, 31 Dec 2050 23:59:59 GMT
+set-cookie: fauuid=9ecf1321-58f1-4a41-ae0e-f9dd999d8d2e; Path=/; Secure; SameSite=Lax; Expires=Sat, 31 Dec 2050 23:59:59 GMT
+x-cache: Hit from cloudfront
+x-amz-cf-pop: SEA900-P10
+x-amz-cf-id: 3qG8ZRaKe6rvlVTyA-cjhC364ansr3ohNSvIjNW0hTyxS0rgKbuvLQ==
+
+HTTP/2 200 
+content-type: text/html
+date: Sun, 14 Dec 2025 20:28:36 GMT
+x-frame-options: DENY
+x-xss-protection: 0
+server: nginx
+cache-control: max-age=3600, stale-while-revalidate=86400, stale-if-error=86400
+content-security-policy: frame-ancestors 'self'
+strict-transport-security: max-age=31536000
+x-content-type-options: nosniff
+via: 1.1 74e8c76139b8c7f9b11d5e4441c2a7a2.cloudfront.net (CloudFront)
+alt-svc: h3=":443"; ma=86400
+age: 3013
+set-cookie: data-bucket=29; Path=/; Secure; SameSite=Lax; Expires=Sat, 31 Dec 2050 23:59:59 GMT
+set-cookie: fauuid=d910ffe1-8063-403e-8cec-40ce14d97239; Path=/; Secure; SameSite=Lax; Expires=Sat, 31 Dec 2050 23:59:59 GMT
+x-cache: Hit from cloudfront
+x-amz-cf-pop: SEA900-P10
+x-amz-cf-id: mh5aP1DNMmvj0iBayQk07g3pBfykjcZreWyzjJ8xaa7D-ldXV83Svg==
+

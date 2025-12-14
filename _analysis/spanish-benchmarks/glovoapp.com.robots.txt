@@ -1,0 +1,10 @@
+User-agent: PetalBot
+Disallow: /
+
+# All robots allowed
+User-agent: *
+Allow: /
+
+# Sitemap files
+Sitemap: https://glovoapp.com/sitemap-index.xml
+Sitemap: https://glovoapp.com/nextjs-pages-sitemap.xml

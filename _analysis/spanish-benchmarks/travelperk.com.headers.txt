@@ -1,0 +1,29 @@
+HTTP/2 301 
+content-length: 0
+location: https://www.perk.com/
+date: Sun, 14 Dec 2025 15:20:09 GMT
+server: AmazonS3
+x-cache: Hit from cloudfront
+via: 1.1 c72ffb889138b44aea59adaf65f8164e.cloudfront.net (CloudFront)
+x-amz-cf-pop: HIO52-P3
+x-amz-cf-id: b7LwI-cypg5VPl6_I8b0GLuzgYdu5wqiUzXOcg3tel6sNM3PuAPu0A==
+age: 21519
+
+HTTP/2 200 
+content-type: text/html; charset=utf-8
+content-length: 1013920
+date: Wed, 10 Dec 2025 07:39:01 GMT
+apigw-requestid: VXJ-miLiDoEEJXQ=
+x-content-type-options: nosniff
+etag: "4kcuxxj690lppe"
+referrer-policy: same-origin
+strict-transport-security: max-age=63072000; includeSubDomains; preload
+cache-control: public, s-maxage=31536000, max-age=600, stale-if-error=1800
+via: 1.1 0a9acaac1641579d63bb7e6410165540.cloudfront.net (CloudFront), 1.1 7d14d4fc1c149f1d429681a4c414c21a.cloudfront.net (CloudFront)
+x-amz-cf-pop: HIO52-P4
+vary: Accept-Encoding
+x-cache: Miss from cloudfront
+x-amz-cf-pop: HIO52-P4
+x-amz-cf-id: ci_11zEzxCPLALh0p57UqOYz_Gd98z7Ks5o6qfoHvtv7PDoFzdWr_w==
+age: 394786
+

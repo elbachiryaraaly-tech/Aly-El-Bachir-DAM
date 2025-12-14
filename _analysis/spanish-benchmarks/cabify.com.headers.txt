@@ -1,0 +1,25 @@
+HTTP/2 301 
+date: Sun, 14 Dec 2025 21:18:48 GMT
+content-type: text/html
+content-length: 166
+location: https://cabify.com/es
+strict-transport-security: max-age=6.3072e+07; includeSubDomains
+x-cabify-ingress: web-proxy-root-df061a
+x-cabify-backend: web-proxy
+
+HTTP/2 200 
+date: Sun, 14 Dec 2025 21:18:48 GMT
+content-type: text/html; charset=UTF-8
+content-length: 97465
+x-nf-request-id: 01KCFBNXSZ0NA50YTF10Y5K0A8
+accept-ranges: bytes
+age: 15980
+cache-control: public,max-age=0,must-revalidate
+cache-status: "Netlify Edge"; hit
+content-security-policy: default-src 'self' localhost:* cabify.website *.cabify.com *.cabifil.es; manifest-src 'self' localhost:* cabify.website *.cabify.com *.cabifil.es; style-src 'self' localhost:* 'unsafe-inline' cabify.website *.cabify.com *.cabifil.es *.youtube.com *.calendly.com calendly.com *.stackadapt.com; script-src 'self' localhost:* 'unsafe-inline' 'unsafe-eval' cabify.website *.cabify.com *.cabifil.es rum.browser-intake-datadoghq.com *.datadoghq.com *.clarity.ms *.googletagmanager.com *.doubleclick.net *.googleadservices.com *.jotform.com *.google-analytics.com *.youtube.com *.google.com *.gstatic.com *.licdn.com *.facebook.net *.amplitude.com *.outbrain.com *.taboola.com *.talent.com *.tiktok.com *.linkedin.com *.stackadapt.com qvdt3feo.com *.calendly.com calendly.com *.criteo.com *.criteo.net unpkg.com; img-src * data:; connect-src 'self' localhost:* ws://localhost:* cabify.website *.cabify.com *.cabifil.es *.oribi.io *.jotform.com *.google-analytics.com *.doubleclick.net *.googleadservices.com *.google.com *.googleapis.com *.youtube.com translate.googleapis.com *.googlesyndication.com rum.browser-intake-datadoghq.com *.datadoghq.com *.clarity.ms *.outbrain.com *.googletagmanager.com *.amplitude.com *.facebook.com *.facebook.net *.linkedin.com *.stackadapt.com *.calendly.com calendly.com *.tiktok.com *.pangle-ads.com *.criteo.com *.criteo.net unpkg.com; frame-src 'self' localhost:* cabify.website *.cabify.com *.cabifil.es *.oribi.io *.jotform.com *.google-analytics.com *.doubleclick.net *.googleadservices.com *.google.com *.googleapis.com *.youtube.com translate.googleapis.com *.googlesyndication.com rum.browser-intake-datadoghq.com *.datadoghq.com *.clarity.ms *.googletagmanager.com *.amplitude.com *.facebook.com *.facebook.net *.linkedin.com *.stackadapt.com *.calendly.com calendly.com *.whatsapp.com *.criteo.com *.criteo.net unpkg.com; report-uri https://csp-report.browser-intake-datadoghq.com/api/v2/logs?dd-api-key=pub57d126e9dea45259c0e69381468deb10&dd-evp-origin=content-security-policy&ddsource=csp-report
+etag: "1f297d1fed5042800ff9c1c85c3e9848-ssl"
+strict-transport-security: max-age=6.3072e+07; includeSubDomains
+x-content-type-options: nosniff
+x-cabify-ingress: web-proxy-root-df061a
+x-cabify-backend: web-proxy
+

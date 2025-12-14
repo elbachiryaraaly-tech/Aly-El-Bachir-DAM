@@ -1,0 +1,22 @@
+HTTP/2 200 
+age: 0
+cache-control: private, no-cache, no-store, max-age=0, must-revalidate
+content-security-policy: default-src 'self'; script-src 'self' 'nonce-r6AxhoF+q7GauNy75khYXQ==' 'strict-dynamic' https://vercel.live https://*.vercel-insights.com https://www.googletagmanager.com https://www.google-analytics.com https://app.cal.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https: blob:; connect-src 'self' https://*.vercel-insights.com https://vercel.live wss://*.vercel.live https://api.openai.com https://formspree.io https://www.google-analytics.com https://*.google-analytics.com https://app.cal.com; frame-src 'self' https://app.cal.com https://cal.com; object-src 'none'; base-uri 'self'; form-action 'self' https://formspree.io; frame-ancestors 'self'; upgrade-insecure-requests
+content-type: text/html; charset=utf-8
+cross-origin-opener-policy: same-origin-allow-popups
+date: Sun, 14 Dec 2025 21:18:29 GMT
+link: </_next/static/media/806de4d605d3ad01-s.p.woff2>; rel=preload; as="font"; crossorigin=""; nonce="r6AxhoF+q7GauNy75khYXQ=="; type="font/woff2", </_next/static/media/bb3ef058b751a6ad-s.p.woff2>; rel=preload; as="font"; crossorigin=""; nonce="r6AxhoF+q7GauNy75khYXQ=="; type="font/woff2", </_next/static/media/e4af272ccee01ff0-s.p.woff2>; rel=preload; as="font"; crossorigin=""; nonce="r6AxhoF+q7GauNy75khYXQ=="; type="font/woff2", </_next/static/media/fc727f226c737876-s.p.woff2>; rel=preload; as="font"; crossorigin=""; nonce="r6AxhoF+q7GauNy75khYXQ=="; type="font/woff2"
+permissions-policy: camera=(), microphone=(), geolocation=()
+referrer-policy: strict-origin-when-cross-origin
+server: Vercel
+strict-transport-security: max-age=63072000; includeSubDomains; preload
+vary: rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch
+x-content-type-options: nosniff
+x-dns-prefetch-control: on
+x-frame-options: SAMEORIGIN
+x-matched-path: /
+x-nonce: r6AxhoF+q7GauNy75khYXQ==
+x-vercel-cache: MISS
+x-vercel-id: pdx1::iad1::hnzcl-1765747109512-c620743c821f
+x-xss-protection: 1; mode=block
+
