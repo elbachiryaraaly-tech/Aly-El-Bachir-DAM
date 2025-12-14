@@ -1,0 +1,1027 @@
+ <!DOCTYPE html> <html lang="es"> <head> <!-- **** Balises meta --> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta charset="utf-8" /> <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"> <title>
+	Error 404 | Sopra Steria
+</title> <link rel="icon" href="/ResourcePackages/Bootstrap4/assets/dist/favicon/favicon-Corp.ico" /> <link rel="preconnect" href="//privacy-proxy.usercentrics.eu"> <link rel="preload" href="//privacy-proxy.usercentrics.eu/latest/uc-block.bundle.js" as="script"> <script id="usercentrics-cmp" src="https://app.usercentrics.eu/browser-ui/latest/loader.js" data-settings-id="YvGIRCaglrEgxU" async></script> <script type="application/javascript" src="https://privacy-proxy.usercentrics.eu/latest/uc-block.bundle.js?v=1.0"></script> <script>
+		uc.blockOnly([
+		  'BJz7qNsdj-7', // YouTube is blocked
+		  'HyEX5Nidi-m' // Vimeo is blocked 
+		]);
+		</script> <!-- Google Tag Manager --> <script type="text/plain" data-usercentrics="Google Tag Manager">
+	(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-KGBK4CN');
+	</script> <!-- End Google Tag Manager --> <script src="/ScriptResource.axd?d=okuX3IVIBwfJlfEQK32K3uTyg3pXVc-Hb6I9_wv02P68WjXpFRuDTqzTn0YGmoVepu6t2qoadT9_lh68flRYSoSoqbQXCVAyRqxbu7TcJOdKYe0aivArX49FdMYoqVilYcuBrGhv1CbOiRyi-cFltjVl6DwoEYBCXBU6lAINitliqdZT0&amp;t=409a93b9" type="text/javascript"></script><script src="/ScriptResource.axd?d=EydukmxBmDstn7gSYzQESGunHZBFr04OWc0O0BcuO_cPvGayHAn4ad6xhX19yPNGGYIu6cvQyVEg60sw3IHhgQDeYc7s3_oK2zdhY5Rhhum2nBD3dzF_5Sng20dFHFfk37Qt-Gh2AJ4X4xCIvtMIdknUDAOqK4w3ju85V6AfkaqidS4V0&amp;t=409a93b9" type="text/javascript"></script><script src="/ScriptResource.axd?d=XMGO4ERtq-tq-0o5XW3_aAyqZCWYmWT0suvpHAWDkGnvGhJE4F4WbltCrSlFdg5-0QQVH8dSvsn5soZa_kMsPjZqu_1njIaxbcXYGzcdJyIwkZ2XbH3HA3x4G3-fSuTyyLMsFe4JyA0EF1_L6gNZ7mojKe7rUb7X0sM54xydEGa0A-yW0&amp;t=409a93b9" type="text/javascript"></script><link href="/ResourcePackages/Bootstrap4/assets/dist/css/bootstrap.min.css?v=3&amp;package=Bootstrap4" rel="stylesheet" type="text/css" /><link href="/ResourcePackages/Bootstrap4/assets/dist/css/edition-ssg.css?v=V1.1.7&amp;package=Bootstrap4" rel="stylesheet" type="text/css" /><link href="/ResourcePackages/Bootstrap4/assets/dist/css/style-ssg.css?v=V1.1.1085&amp;package=Bootstrap4" rel="stylesheet" type="text/css" /> <!-- JQuery --> <link rel="preload" as="font" href="/ResourcePackages/Bootstrap4/assets/dist/fonts/HurmeGeometricSans4W05-SmBd.d3a6995.woff2" crossorigin> <link rel="preload" as="font" href="/ResourcePackages/Bootstrap4/assets/dist/fonts/HurmeGeometricSans3W05-Bold.e1b7848.woff2" crossorigin> <link rel="preload" as="font" href="/ResourcePackages/Bootstrap4/assets/dist/fonts/HurmeGeometricSans3W05-Rg.927fd43.woff2" crossorigin> <link rel="preload" as="font" href="/ResourcePackages/Bootstrap4/assets/dist/fonts/AlbraDisplay-MediumItalic.5580f67.woff" crossorigin> <meta name="robots" content="noindex" /><meta property="og:title" content="Error 404 | Sopra Steria" /><meta property="og:url" content="https://www.soprasteria.es/error-pages/404" /><meta property="og:type" content="website" /><meta property="og:site_name" content="Sopra Steria ES" /><style type="text/css" media="all">.footer__logo p {
+    cursor: none;
+    color: black;
+}
+
+.footer__logo a:hover{
+	text-decoration:none;
+}</style><style type="text/css" media="all">.oups{
+  margin-top:10rem;
+}</style><link rel="canonical" href="https://www.soprasteria.es/error-pages/404" /> <script type="text/javascript">
+(function() {
+    function load_config() {                   
+        window._elqQ = window._elqQ || [];
+        window._elqQ.push(['elqSetSiteId', '1705460725']);
+        window._elqQ.push(['elqTrackPageView']);
+
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true; s.src = '//img.en25.com/i/elqCfg.min.js';
+        var x = document.getElementsByTagName('script')[0];
+        x.parentNode.insertBefore(s, x);
+    }               
+
+    function load_user_guid() {
+		var script = document.createElement('script');
+		var prior = document.getElementsByTagName('script')[0];
+		script.async = 1;
+		prior.parentNode.insertBefore(script, prior);
+		script.onload = script.onreadystatechange = function( _, isAbort ) {
+			if(isAbort || !script.readyState || /loaded|complete/.test(script.readyState) ) {
+				script.onload = script.onreadystatechange = null;
+				script = undefined;
+				if(!isAbort) { 
+                    if (typeof GetElqCustomerGUID == 'function') {
+						var userId = GetElqCustomerGUID();
+						document.cookie = 'elqUserId=' + userId + '; path=/';
+					}
+                }
+			}
+		};
+		script.src = '//s1705460725.t.eloqua.com/visitor/v200/svrGP?pps=70&siteid=1705460725';
+	};
+
+    function handle_tracking_change(canTrack) {
+        if (canTrack) {
+            load_user_guid();
+            load_config();
+        }
+        else {
+            document.cookie = 'elqUserId=;expires=Mon Jan 01 1900 00:00:00 ; path=/';
+        }
+    }
+
+    function on_content_loaded() {
+        if (window.TrackingConsentManager) {
+            TrackingConsentManager.addEventListener('ConsentChanged', handle_tracking_change);
+            handle_tracking_change(TrackingConsentManager.canTrackCurrentUser());
+        }
+        else {
+            handle_tracking_change(true);
+        }  
+    }
+
+    if (window.addEventListener) window.addEventListener('DOMContentLoaded', on_content_loaded, false);
+    else if (window.attachEvent) window.attachEvent('onload', on_content_loaded);
+})();
+</script><link href="/Telerik.Web.UI.WebResource.axd?d=PMrIT5dOWaVYIcpFWUE4nNM7Yz9fCD69ytmxGun7ZGC1ZrdZej4NxAY6U-5WaSFOZFSUTak5_w6rjWxr-Ny6VakshZE00czVrEqiAQMefjKbPlsf0&amp;t=638841126637275692&amp;compress=0&amp;_TSM_CombinedScripts_=%3b%3bTelerik.Sitefinity.Resources%2c+Version%3d13.3.7651.0%2c+Culture%3dneutral%2c+PublicKeyToken%3db28c218413bdf563%3aes%3a6a3560ad-0336-4e7a-96cf-64c8fef0abc3%3a7a90d6a" type="text/css" rel="stylesheet" /></head> <body><form method="post" action="./sitemap.xml?404%3bhttps%3a%2f%2fwww.soprasteria.es%3a443%2fsitemap.xml" id="aspnetForm">
+<div class="aspNetHidden">
+<input type="hidden" name="ctl06_TSM" id="ctl06_TSM" value="" />
+<input type="hidden" name="ctl07_TSSM" id="ctl07_TSSM" value="" />
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="b1G3SLueuLKuUxNXc8K599A9MxCV5vXFauSy80+NaPLEArZEGUrv2NAsDdWnKlNx92YFodlFlW0wGD6vuUcK2QvYO7Y=" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZGhfOHQ9YIyK_70dG_sjJpr5Go1xrj3Zt7mwyfsI3fU8gg2P_g2&amp;t=638901608248157332" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+var __cultureInfo = {"name":"es","numberFormat":{"CurrencyDecimalDigits":2,"CurrencyDecimalSeparator":",","IsReadOnly":true,"CurrencyGroupSizes":[3],"NumberGroupSizes":[3],"PercentGroupSizes":[3],"CurrencyGroupSeparator":".","CurrencySymbol":"€","NaNSymbol":"NaN","CurrencyNegativePattern":8,"NumberNegativePattern":1,"PercentPositivePattern":0,"PercentNegativePattern":0,"NegativeInfinitySymbol":"-∞","NegativeSign":"-","NumberDecimalDigits":2,"NumberDecimalSeparator":",","NumberGroupSeparator":".","CurrencyPositivePattern":3,"PositiveInfinitySymbol":"∞","PositiveSign":"+","PercentDecimalDigits":2,"PercentDecimalSeparator":",","PercentGroupSeparator":".","PercentSymbol":"%","PerMilleSymbol":"‰","NativeDigits":["0","1","2","3","4","5","6","7","8","9"],"DigitSubstitution":1},"dateTimeFormat":{"AMDesignator":"","Calendar":{"MinSupportedDateTime":"\/Date(-62135596800000)\/","MaxSupportedDateTime":"\/Date(253402297199999)\/","AlgorithmType":1,"CalendarType":1,"Eras":[1],"TwoDigitYearMax":2029,"IsReadOnly":true},"DateSeparator":"/","FirstDayOfWeek":1,"CalendarWeekRule":2,"FullDateTimePattern":"dddd, d\u0027 de \u0027MMMM\u0027 de \u0027yyyy H:mm:ss","LongDatePattern":"dddd, d\u0027 de \u0027MMMM\u0027 de \u0027yyyy","LongTimePattern":"H:mm:ss","MonthDayPattern":"d \u0027de\u0027 MMMM","PMDesignator":"","RFC1123Pattern":"ddd, dd MMM yyyy HH\u0027:\u0027mm\u0027:\u0027ss \u0027GMT\u0027","ShortDatePattern":"dd/MM/yyyy","ShortTimePattern":"H:mm","SortableDateTimePattern":"yyyy\u0027-\u0027MM\u0027-\u0027dd\u0027T\u0027HH\u0027:\u0027mm\u0027:\u0027ss","TimeSeparator":":","UniversalSortableDateTimePattern":"yyyy\u0027-\u0027MM\u0027-\u0027dd HH\u0027:\u0027mm\u0027:\u0027ss\u0027Z\u0027","YearMonthPattern":"MMMM\u0027 de \u0027yyyy","AbbreviatedDayNames":["do.","lu.","ma.","mi.","ju.","vi.","sá."],"ShortestDayNames":["D","L","M","X","J","V","S"],"DayNames":["domingo","lunes","martes","miércoles","jueves","viernes","sábado"],"AbbreviatedMonthNames":["ene.","feb.","mar.","abr.","may.","jun.","jul.","ago.","sep.","oct.","nov.","dic.",""],"MonthNames":["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre",""],"IsReadOnly":true,"NativeCalendarName":"calendario gregoriano","AbbreviatedMonthGenitiveNames":["ene.","feb.","mar.","abr.","may.","jun.","jul.","ago.","sep.","oct.","nov.","dic.",""],"MonthGenitiveNames":["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre",""]},"eras":[1,"d. C.",null,0]};//]]>
+</script>
+
+<script src="/Telerik.Web.UI.WebResource.axd?_TSM_HiddenField_=ctl06_TSM&amp;compress=0&amp;_TSM_CombinedScripts_=%3b%3bSystem.Web.Extensions%2c+Version%3d4.0.0.0%2c+Culture%3dneutral%2c+PublicKeyToken%3d31bf3856ad364e35%3aes%3aa8328cc8-0a99-4e41-8fe3-b58afac64e45%3aea597d4b%3ab25378d2" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=okuX3IVIBwfJlfEQK32K3uTyg3pXVc-Hb6I9_wv02P68WjXpFRuDTqzTn0YGmoVepu6t2qoadT9_lh68flRYSoSoqbQXCVAyRqxbu7TcJOdKYe0aivArX49FdMYoqVilYcuBrGhv1CbOiRyi-cFltjVl6DwoEYBCXBU6lAINitliqdZT0&amp;t=409a93b9" type="text/javascript"></script>
+<script src="/Telerik.Web.UI.WebResource.axd?_TSM_HiddenField_=ctl06_TSM&amp;compress=0&amp;_TSM_CombinedScripts_=%3b%3bTelerik.Sitefinity.Resources%3aes%3a6a3560ad-0336-4e7a-96cf-64c8fef0abc3%3ab162b7a1" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="14956A66" />
+</div><script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ctl06', 'aspnetForm', [], [], [], 90, 'ctl00');
+//]]>
+</script>
+<input type="hidden" name="ctl00$ctl06" id="ctl06" />
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.setServerId("ctl06", "ctl00$ctl06");
+Sys.Application._enableHistoryInScriptManager();
+//]]>
+</script>
+ <!-- Google Tag Manager (noscript) --> <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KGBK4CN"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> <!-- End Google Tag Manager (noscript) --> <a href="#readspeakerContent" class="skip">Saltar al contenido</a> 
+
+
+
+
+ <script src="/ResourcePackages/Bootstrap4/assets/dist/js/popper.min.js" type="text/javascript"></script><script src="/ResourcePackages/Bootstrap4/assets/dist/js/bootstrap.min.js" type="text/javascript"></script><script src="/ResourcePackages/Bootstrap4/assets/dist/js/bundle-ssg.js?v=43&amp;package=Bootstrap4" type="text/javascript"></script> <!-- Section Top --> <!-- Bootstrap --> <!-- JS --> <header id="header" class="header" role="banner"> <!-- LWj7Ry -#1# --> <div class="header__secondary-menu _bg-purple"> <div class="secondary-menu__left-content"> 
+
+
+
+
+
+ </div> <div class="secondary-menu__right-content"> 
+
+
+
+
+
+
+
+<div class="localization" aria-label='Pa&#237;s'> 
+
+  <div class="local-wrapper">
+        
+        <select name="localize" id="country" aria-label='Cambiar de sitio : Sopra Steria ES Sitio actual'>
+          
+          <option value="https://www.soprasteria.com/">Global</option>
+		  <option value="https://careers.soprasteria.com/">GLOBAL CAREERS</option>
+          <option disabled="disabled">&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;</option>
+          
+                  <option value="https://www.soprasteria.at/">Austria</option>
+                  <option value="https://www.soprasteria.be/">B&#233;lgica</option>
+                  <option value="https://www.soprasteria.dk/">Dinamarca</option>
+                  <option value="https://www.soprasteria.de/">Alemania</option>
+                  <option value="https://www.soprasteria.fr/">Francia</option>
+                  <option value="https://www.soprasteria.in/">India</option>
+                  <option value="https://www.soprasteria.it">Italia</option>
+                  <option value="&lt;div&gt;&lt;/div&gt;">Luxemburgo</option>
+                  <option value="https://www.soprasteria.nl/">Pa&#237;ses Bajos</option>
+                  <option value="https://www.soprasteria.no/">Noruega</option>
+                  <option value="https://www.soprasteria.pl/">Polonia</option>
+                  <option value="https://www.soprasteria.sg/">Singapur</option>
+                  <option value="https://www.soprasteria.es/">Espa&#241;a</option>
+                  <option value="https://www.soprasteria.se/">Suecia</option>
+                  <option value="https://www.soprasteria.ch/">Suiza</option>
+                  <option value="https://www.soprasteria.co.uk/">Reino Unido</option>
+                  <option value="https://bg.soprasteria.com/">Bulgaria</option>
+                  <option value="https://www.soprasteria.com">Canad&#225;</option>
+                  <option value="https://www.soprasteria.com">USA</option>
+          
+          <option disabled="disabled">&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;</option>
+          <option value="https://www.soprahr.com">Sopra HR Software</option>
+          <option value="https://www.cimpa.com/">CIMPA</option>
+        </select>
+        
+  </div>
+</div> </div> </div> <div class="header__primary-menu"> <nav role="navigation" class="primary-menu__btn"> <button type="button" class="menu-btn" aria-expanded="false"> <span class="primary-menu__icon"></span> <span class="sr-only">Abrir el men&#250; principal</span> </button> </nav> <a href="https://www.soprasteria.es/home" class="primary-menu__logo" aria-label='Sopra Steria - Volver a la p&#225;gina de inicio'> <img src='/ResourcePackages/Bootstrap4/assets/dist/logos/logo-soprasteria.svg' alt="Sopra Steria"> </a> <div class="primary-menu__nav"> 
+
+
+
+
+
+<nav class="main__menu" role="navigation" aria-label='Navegaci&#243;n principal'>
+            
+    <ul id="main-menu">
+        <li class="mega-menu">
+            
+
+              <a href="#" onclick='onChangePage("/oferta","_self")' class="link first-level _self">
+					<span class="btn-custom-menu">Oferta</span>
+			  </a>
+              <div class="mobile-only mega-menu__cat link">
+                <button type="button" aria-expanded="false" aria-label="Oferta"></button>
+              </div>
+              <div class="desktop-only mega-menu__cat mega-menu__cat__double link">
+                <button type="button" class="visible-when-focus" aria-expanded="false" aria-label="Oferta" data-toggle="collapse" aria-controls="FAFD2F34-E7FD-6C36-B458-FF000034B0D9" data-target="#FAFD2F34-E7FD-6C36-B458-FF000034B0D9"><span aria-hidden="true">Ë…</span></button>
+              </div>
+
+            <div class="mega-menu__cat-list collapse" id="FAFD2F34-E7FD-6C36-B458-FF000034B0D9">
+
+                <button type="button" class="back-btn__main" aria-label="Oferta (retour)">Oferta</button>
+                
+                <ul>
+                                <li class="desktop-only mega-menu__cat-list-container cat-list-container--full ">
+
+			<a href="#" onclick='onChangePage("/oferta/consultoria-sopra-steria-next","_self")' class="link second-level _self">
+			    <span class="btn-custom-menu">Consulting - Sopra Steria Next <span class="icon_external d-none"></span></span>
+			</a>
+
+              </li>  
+              <li class="mobile-only second-level mega-menu__cat-list-container--withSubLevels">
+                      <a href="#" onclick='onChangePage("/oferta/consultoria-sopra-steria-next","_self")' class="grouppage _self">
+                        <span class="btn-custom-menu">Consulting - Sopra Steria Next</span>
+                      </a>
+                    <div class="mega-menu__cat-list-container cat-list-container--full ">
+                        <button type="button" aria-expanded="false"></button> 
+                        
+                    </div>
+                
+              </li>
+              <li class="desktop-only mega-menu__cat-list-container cat-list-container--full ">
+
+			<a href="#" onclick='onChangePage("/oferta/tecnologia","_self")' class="link second-level _self">
+			    <span class="btn-custom-menu">Tecnolog&#237;a <span class="icon_external d-none"></span></span>
+			</a>
+
+              </li>  
+              <li class="mobile-only second-level mega-menu__cat-list-container--withSubLevels">
+                      <a href="#" onclick='onChangePage("/oferta/tecnologia","_self")' class="grouppage _self">
+                        <span class="btn-custom-menu">Tecnolog&#237;a</span>
+                      </a>
+                    <div class="mega-menu__cat-list-container cat-list-container--full ">
+                        <button type="button" aria-expanded="false"></button> 
+                        
+                    </div>
+                
+              </li>
+              <li class="desktop-only mega-menu__cat-list-container cat-list-container--full ">
+
+			<a href="#" onclick='onChangePage("/oferta/integracion-de-sistemas","_self")' class="link second-level _self">
+			    <span class="btn-custom-menu">Integraci&#243;n de sistemas <span class="icon_external d-none"></span></span>
+			</a>
+
+              </li>  
+              <li class="mobile-only second-level mega-menu__cat-list-container--withSubLevels">
+                      <a href="#" onclick='onChangePage("/oferta/integracion-de-sistemas","_self")' class="grouppage _self">
+                        <span class="btn-custom-menu">Integraci&#243;n de sistemas</span>
+                      </a>
+                    <div class="mega-menu__cat-list-container cat-list-container--full ">
+                        <button type="button" aria-expanded="false"></button> 
+                        
+                    </div>
+                
+              </li>
+            <li class="second-level nochild mega-menu__cat-list-container cat-list-container--full cat-list__single">
+                      <a href="#" onclick='onChangePage("/oferta/software","_self")' class="_self">
+				<span class="btn-custom-menu">Software <span class="icon_external d-none"></span></span>
+	  	      </a>
+            </li>
+            <li class="second-level nochild mega-menu__cat-list-container cat-list-container--full cat-list__single">
+                      <a href="#" onclick='onChangePage("/oferta/ciberseguridad","_self")' class="_self">
+				<span class="btn-custom-menu">Ciberseguridad <span class="icon_external d-none"></span></span>
+	  	      </a>
+            </li>
+            <li class="second-level nochild mega-menu__cat-list-container cat-list-container--full cat-list__single">
+                      <a href="#" onclick='onChangePage("/oferta/user-experience-design","_self")' class="_self">
+				<span class="btn-custom-menu">Dise&#241;o <span class="icon_external d-none"></span></span>
+	  	      </a>
+            </li>
+            <li class="second-level nochild mega-menu__cat-list-container cat-list-container--full cat-list__single">
+                      <a href="#" onclick='onChangePage("/oferta/gestion-de-infraestructuras","_self")' class="_self">
+				<span class="btn-custom-menu">Gesti&#243;n de infraestructuras <span class="icon_external d-none"></span></span>
+	  	      </a>
+            </li>
+
+                </ul>
+
+            </div>
+        </li>
+        <li class="mega-menu">
+            
+
+              <div class="mobile-only first-level">
+				<span>Sectores</span>
+			  </div>
+              <div class="mobile-only mega-menu__cat group">
+                <button type="button" aria-expanded="false" aria-label="Sectores"></button>
+              </div>
+              <div class="desktop-only mega-menu__cat group"> 
+                <button type="button" aria-expanded="false" aria-label="Sectores" data-toggle="collapse"  aria-controls="482F2533-E7FD-6C36-B458-FF000034B0D9" data-target="#482F2533-E7FD-6C36-B458-FF000034B0D9">Sectores</button>
+              </div>
+
+            <div class="mega-menu__cat-list collapse" id="482F2533-E7FD-6C36-B458-FF000034B0D9">
+
+                <button type="button" class="back-btn__main" aria-label="Sectores (retour)">Sectores</button>
+                
+                <ul>
+                              <li class="second-level nochild mega-menu__cat-list-container cat-list-container--full cat-list__single">
+                      <a href="#" onclick='onChangePage("/sectores/aeroespacial","_self")' class="_self">
+				<span class="btn-custom-menu">Aeroespacial <span class="icon_external d-none"></span></span>
+	  	      </a>
+            </li>
+            <li class="second-level nochild mega-menu__cat-list-container cat-list-container--full cat-list__single">
+                      <a href="#" onclick='onChangePage("/sectores/banca","_self")' class="_self">
+				<span class="btn-custom-menu">Banca <span class="icon_external d-none"></span></span>
+	  	      </a>
+            </li>
+            <li class="second-level nochild mega-menu__cat-list-container cat-list-container--full cat-list__single">
+                      <a href="#" onclick='onChangePage("/sectores/energia-y-utilities","_self")' class="_self">
+				<span class="btn-custom-menu">Energ&#237;a y Utilities <span class="icon_external d-none"></span></span>
+	  	      </a>
+            </li>
+            <li class="second-level nochild mega-menu__cat-list-container cat-list-container--full cat-list__single">
+                      <a href="#" onclick='onChangePage("/sectores/retail","_self")' class="_self">
+				<span class="btn-custom-menu">Retail <span class="icon_external d-none"></span></span>
+	  	      </a>
+            </li>
+            <li class="second-level nochild mega-menu__cat-list-container cat-list-container--full cat-list__single">
+                      <a href="#" onclick='onChangePage("/sectores/sector-publico","_self")' class="_self">
+				<span class="btn-custom-menu">Sector P&#250;blico <span class="icon_external d-none"></span></span>
+	  	      </a>
+            </li>
+            <li class="second-level nochild mega-menu__cat-list-container cat-list-container--full cat-list__single">
+                      <a href="#" onclick='onChangePage("/sectores/seguros","_self")' class="_self">
+				<span class="btn-custom-menu">Seguros <span class="icon_external d-none"></span></span>
+	  	      </a>
+            </li>
+            <li class="second-level nochild mega-menu__cat-list-container cat-list-container--full cat-list__single">
+                      <a href="#" onclick='onChangePage("/sectores/telecomunicaciones","_self")' class="_self">
+				<span class="btn-custom-menu">Telecomunicaciones <span class="icon_external d-none"></span></span>
+	  	      </a>
+            </li>
+            <li class="second-level nochild mega-menu__cat-list-container cat-list-container--full cat-list__single">
+                      <a href="#" onclick='onChangePage("/sectores/transporte","_self")' class="_self">
+				<span class="btn-custom-menu">Transporte <span class="icon_external d-none"></span></span>
+	  	      </a>
+            </li>
+
+                </ul>
+
+            </div>
+        </li>
+        <li class="mega-menu">
+            
+
+              <div class="mobile-only first-level">
+				<span>Con&#243;cenos</span>
+			  </div>
+              <div class="mobile-only mega-menu__cat group">
+                <button type="button" aria-expanded="false" aria-label="Con&#243;cenos"></button>
+              </div>
+              <div class="desktop-only mega-menu__cat group"> 
+                <button type="button" aria-expanded="false" aria-label="Con&#243;cenos" data-toggle="collapse"  aria-controls="01302533-E7FD-6C36-B458-FF000034B0D9" data-target="#01302533-E7FD-6C36-B458-FF000034B0D9">Con&#243;cenos</button>
+              </div>
+
+            <div class="mega-menu__cat-list collapse" id="01302533-E7FD-6C36-B458-FF000034B0D9">
+
+                <button type="button" class="back-btn__main" aria-label="Con&#243;cenos (retour)">Con&#243;cenos</button>
+                
+                <ul>
+                              <li class="second-level nochild mega-menu__cat-list-container cat-list-container--full cat-list__single">
+                      <a href="#" onclick='onChangePage("/conocenos/nuestra-mision","_self")' class="_self">
+				<span class="btn-custom-menu">Nuestra misi&#243;n <span class="icon_external d-none"></span></span>
+	  	      </a>
+            </li>
+            <li class="second-level nochild mega-menu__cat-list-container cat-list-container--full cat-list__single">
+                      <a href="#" onclick='onChangePage("/conocenos/en-pocas-palabras","_self")' class="_self">
+				<span class="btn-custom-menu">En pocas palabras <span class="icon_external d-none"></span></span>
+	  	      </a>
+            </li>
+              <li class="desktop-only mega-menu__cat-list-container cat-list-container--full ">
+
+			<a href="#" onclick='onChangePage("/conocenos/responsabilidad-corporativa","_self")' class="link second-level _self">
+			    <span class="btn-custom-menu">Responsabilidad Corporativa <span class="icon_external d-none"></span></span>
+			</a>
+
+              </li>  
+              <li class="mobile-only second-level mega-menu__cat-list-container--withSubLevels">
+                      <a href="#" onclick='onChangePage("/conocenos/responsabilidad-corporativa","_self")' class="grouppage _self">
+                        <span class="btn-custom-menu">Responsabilidad Corporativa</span>
+                      </a>
+                    <div class="mega-menu__cat-list-container cat-list-container--full ">
+                        <button type="button" aria-expanded="false"></button> 
+                        
+                    </div>
+                
+              </li>
+            <li class="second-level nochild mega-menu__cat-list-container cat-list-container--full cat-list__single">
+                      <a href="#" onclick='onChangePage("/conocenos/alianzas","_self")' class="_self">
+				<span class="btn-custom-menu">Alianzas&#160; <span class="icon_external d-none"></span></span>
+	  	      </a>
+            </li>
+            <li class="second-level nochild mega-menu__cat-list-container cat-list-container--full cat-list__single">
+                      <a href="#" onclick='onChangePage("/conocenos/certificaciones","_self")' class="_self">
+				<span class="btn-custom-menu">Certificaciones <span class="icon_external d-none"></span></span>
+	  	      </a>
+            </li>
+            <li class="second-level nochild mega-menu__cat-list-container cat-list-container--full cat-list__single">
+                      <a href="#" onclick='onChangePage("/conocenos/etica-y-cumplimiento-normativo","_self")' class="_self">
+				<span class="btn-custom-menu">&#201;tica y cumplimiento normativo <span class="icon_external d-none"></span></span>
+	  	      </a>
+            </li>
+            <li class="second-level nochild mega-menu__cat-list-container cat-list-container--full cat-list__single">
+                      <a href="#" onclick='onChangePage("/conocenos/sistema-interno-de-informacion","_self")' class="_self">
+				<span class="btn-custom-menu">Sistema Interno de Informaci&#243;n <span class="icon_external d-none"></span></span>
+	  	      </a>
+            </li>
+            <li class="second-level nochild mega-menu__cat-list-container cat-list-container--full cat-list__single">
+                      <a href="#" onclick='onChangePage("/conocenos/nuestras-oficinas","_self")' class="_self">
+				<span class="btn-custom-menu">Nuestras oficinas <span class="icon_external d-none"></span></span>
+	  	      </a>
+            </li>
+            <li class="second-level nochild mega-menu__cat-list-container cat-list-container--full cat-list__single">
+                      <a href="#" onclick='onChangePage("/conocenos/investors","_blank")' class="_blank">
+				<span class="btn-custom-menu">Investors <span class="icon_external d-none"></span></span>
+	  	      </a>
+            </li>
+
+                </ul>
+
+            </div>
+        </li>
+        <li>
+            <div>
+                 <a href="#" onclick='onChangePage("/trabaja-con-nosotros","_blank")' class="first-level nochild _blank">
+						<span class="btn-custom-menu">Talento <span class="icon_external d-none"></span></span>
+				 </a>
+            </div>
+        </li>
+        <li class="mega-menu">
+            
+
+              <div class="mobile-only first-level">
+				<span>Sala de prensa</span>
+			  </div>
+              <div class="mobile-only mega-menu__cat group">
+                <button type="button" aria-expanded="false" aria-label="Sala de prensa"></button>
+              </div>
+              <div class="desktop-only mega-menu__cat group"> 
+                <button type="button" aria-expanded="false" aria-label="Sala de prensa" data-toggle="collapse"  aria-controls="A92B5233-E7FD-6C36-B458-FF000034B0D9" data-target="#A92B5233-E7FD-6C36-B458-FF000034B0D9">Sala de prensa</button>
+              </div>
+
+            <div class="mega-menu__cat-list collapse" id="A92B5233-E7FD-6C36-B458-FF000034B0D9">
+
+                <button type="button" class="back-btn__main" aria-label="Sala de prensa (retour)">Sala de prensa</button>
+                
+                <ul>
+                              <li class="second-level nochild mega-menu__cat-list-container cat-list-container--full cat-list__single">
+                      <a href="#" onclick='onChangePage("/sala-de-prensa/blog","_self")' class="_self">
+				<span class="btn-custom-menu">Blog <span class="icon_external d-none"></span></span>
+	  	      </a>
+            </li>
+            <li class="second-level nochild mega-menu__cat-list-container cat-list-container--full cat-list__single">
+                      <a href="#" onclick='onChangePage("/sala-de-prensa/noticias","_self")' class="_self">
+				<span class="btn-custom-menu">Noticias <span class="icon_external d-none"></span></span>
+	  	      </a>
+            </li>
+            <li class="second-level nochild mega-menu__cat-list-container cat-list-container--full cat-list__single">
+                      <a href="#" onclick='onChangePage("/sala-de-prensa/notas-de-prensa","_self")' class="_self">
+				<span class="btn-custom-menu">Notas de prensa <span class="icon_external d-none"></span></span>
+	  	      </a>
+            </li>
+            <li class="second-level nochild mega-menu__cat-list-container cat-list-container--full cat-list__single">
+                      <a href="#" onclick='onChangePage("/sala-de-prensa/informes","_self")' class="_self">
+				<span class="btn-custom-menu">Informes <span class="icon_external d-none"></span></span>
+	  	      </a>
+            </li>
+            <li class="second-level nochild mega-menu__cat-list-container cat-list-container--full cat-list__single">
+                      <a href="#" onclick='onChangePage("/sala-de-prensa/publicaciones","_self")' class="_self">
+				<span class="btn-custom-menu">Publicaciones <span class="icon_external d-none"></span></span>
+	  	      </a>
+            </li>
+            <li class="second-level nochild mega-menu__cat-list-container cat-list-container--full cat-list__single">
+                      <a href="#" onclick='onChangePage("/sala-de-prensa/eventos","_self")' class="_self">
+				<span class="btn-custom-menu">Eventos <span class="icon_external d-none"></span></span>
+	  	      </a>
+            </li>
+            <li class="second-level nochild mega-menu__cat-list-container cat-list-container--full cat-list__single">
+                      <a href="#" onclick='onChangePage("/sala-de-prensa/sala-de-prensaSopra-Steria-video-25","_self")' class="_self">
+				<span class="btn-custom-menu">Video 25 aniversario Sopra Steria <span class="icon_external d-none"></span></span>
+	  	      </a>
+            </li>
+
+                </ul>
+
+            </div>
+        </li>
+    </ul>
+   
+</nav>
+
+
+
+
+ 
+
+
+
+
+
+<script>
+  
+  function onChangePage(url,target){
+    event.preventDefault();
+    //window.location = url;
+    window.open(url, target);
+    return false;
+  }
+  
+  function onChangePageOnDesktop(url,target){
+    event.preventDefault();
+    if ($(window).width() > 992) {  
+        //window.location = url;
+        window.open(url, target);
+    }
+    return false;
+  }
+
+   $('.mega-menu__cat-list-container--withSubLevels .mega-menu__cat-list-container').click(function() {
+      if($(window).width() <= 922) {  
+        if($(this).hasClass('coll')){
+          $(this).find('ul').clone().appendTo($(this).parent()).addClass("ul-mobile");
+        } else{
+          $(this).parent().find('.ul-mobile').remove();
+        }
+       }
+   });
+
+  $(document).ready(function(){
+    
+    // *** SCREEN WIDTH
+    $("#clientScreenWidth").val($(window).width());
+    
+
+    // *** ON MOBILE 
+
+    if($(window).width() < 991) {  
+
+      setTimeout(function(){
+      
+        // Move secondary menu right content (Carriere Media e.g.) to top of its parent to read in correct order elements
+        // Move logo and search above
+        if ($(".secondary-menu__right-content").length){
+          $('.secondary-menu__right-content').insertAfter('.primary-menu__btn');
+        }
+        if ($(".primary-menu__search").length){
+            $(".primary-menu__search").parent().prepend($(".primary-menu__search"));
+        }
+        if ($(".primary-menu__logo").length){
+            $(".primary-menu__logo").parent().prepend($(".primary-menu__logo"));
+        } 
+        if ( $(".secondary-menu__left-content").length){
+          $(".secondary-menu__left-content").appendTo($(".primary-menu__nav"));
+        }
+
+        // Click on burger
+        $(".menu-btn").click(function(e){
+          e.preventDefault();
+          if($("#header").hasClass("open")){
+            $("#header").removeClass("open");
+            $("body").removeClass("open");
+            $(".menu-btn").attr("aria-expanded", "false");
+            $(".secondary-menu__left-content").css("display","none");
+            $(".secondary-menu__right-content").css("display","none");
+            $(".main__menu").css("display","none");
+          } else {
+            $("#header").addClass("open");
+            $("body").addClass("open");
+            $(".menu-btn").attr("aria-expanded", "true");
+            $(".secondary-menu__left-content").css("display","block");
+            $(".secondary-menu__right-content").css("display","flex");
+            $(".main__menu").css("display","block");
+          }
+        });
+
+        // Go the second level
+        $(".mega-menu__cat button").click(function(e){
+          e.preventDefault();
+          $(this).attr("aria-expanded","true");
+          $(".first-level").css("display","none");
+          $(".secondary-menu__left-content").css("display","none");
+          $(".secondary-menu__right-content").css("display","none");
+          $(".mega-menu__cat").css("display","none");
+          $(this).parent().parent().find(".mega-menu__cat-list").css("display","block");
+          $("#header .header__primary-menu .primary-menu__nav>nav").css("margin-top","0");
+        });
+
+        // Back to first level
+        $(".back-btn__main").click(function(e){
+           e.preventDefault();
+           $(this).parent().parent().find(".mega-menu__cat").find("button").attr("aria-expanded","false");
+           $(".first-level").css("display","block");
+           $(".secondary-menu__left-content").css("display","block");
+           $(".secondary-menu__right-content").css("display","flex");
+           $(".mega-menu__cat").css("display","flex");
+           $(this).parent().parent().find(".mega-menu__cat-list").css("display","none");
+           $("#header .header__primary-menu .primary-menu__nav>nav").css("margin-top","2.5rem");
+        });
+     
+        // Open/Close third level
+        $(".mega-menu__cat-list-container button").click(function(e){
+          e.preventDefault(e);
+          if($(this).parent().parent().hasClass("coll")){
+            $(this).parent().parent().removeClass("coll");
+            $(this).parent().removeClass("coll");
+            $(this).attr("aria-expanded","false");
+          } else {
+            $(this).parent().parent().addClass("coll");
+            $(this).parent().addClass("coll");
+            $(this).attr("aria-expanded","true");
+          }
+        });
+
+        /* FOCUS ELEMENT */
+
+        // Echap on menu
+        var KEYCODE_ESC = 27;
+
+        $(".menu-btn").on("keyup", function(e) {
+            
+            e.preventDefault(e);
+
+            if (e.keyCode == KEYCODE_ESC){
+                if($("#header").hasClass("open")){
+                    $("#header").removeClass("open");
+                    $("body").removeClass("open");
+                    $(".menu-btn").attr("aria-expanded", "false");
+                    $(".secondary-menu__left-content").css("display","none");
+                    $(".secondary-menu__right-content").css("display","none");
+                    $(".main__menu").css("display","none");
+                  }
+            }
+        });
+           
+      }, 2000);
+
+ 
+    }
+    
+    // *** ON DESKTOP
+
+    if($(window).width() >= 991){
+      
+      $(".mega-menu__cat-list-container ul").css('display','none');
+      
+      $(".mega-menu").mouseover(function(){
+        $(".mega-menu").removeClass("open");
+        $(this).addClass("open");
+        $(this).find(".mega-menu__cat").find("button").attr("aria-expanded","true");
+        $(this).find(".mega-menu__cat-list").css("display","block");
+        $(this).find(".desktop-only.mega-menu__cat__double.link").css("display","none");
+          
+      });
+
+      $(".mega-menu").mouseout(function(){
+        $(this).removeClass("open");
+        $(this).find(".mega-menu__cat").find("button").attr("aria-expanded","false");
+        $(this).find(".mega-menu__cat-list").css("display","none");
+        $(this).find(".mega-menu__cat-list").removeClass("show");
+        $(this).find(".link").css("display","block");
+      });
+
+      $(".mega-menu__cat-list-container").mouseover(function(){
+        $(".mega-menu__cat-list-container").removeClass("open");
+        $(".mega-menu__cat-list-container ul").css("display","none");
+        $(".mega-menu__cat-list-container ul").removeClass("show");
+        $(this).addClass("open");
+        $(this).find("ul").css("display","block");
+        $(this).find("ul").addClass("show");
+        $(this).find("button").attr("aria-expanded","true");
+      });
+
+      $(".mega-menu__cat-list-container").mouseout(function(){
+        if($(".mega-menu__cat-list-container").hasClass("open")){
+          $(this).removeClass("open");
+          $(this).find("button").attr("aria-expanded", "false");
+        }
+      });
+
+      /* FOCUS ELEMENT */
+
+      var KEYCODE_ENTER = 13;
+      var KEYCODE_ESC = 27;
+      var KEYCODE_SPACE = 32;
+
+     
+ $(".mega-menu__cat-list-container button").click(function(e) {
+
+             e.preventDefault(e);
+
+                if($(this).attr('aria-expanded') == 'true'){
+                    $(this).attr("aria-expanded","false");
+                    $(".mega-menu__cat-list-container ul").css("display","none");
+                    $(".mega-menu__cat-list-container ul").removeClass("show");
+                } else {
+                    $(".mega-menu__cat-list-container button").attr("aria-expanded","false");
+                    $(this).attr("aria-expanded","true");
+                    $(".mega-menu__cat-list-container ul").css("display","none");
+                    $(".mega-menu__cat-list-container ul").removeClass("show");
+                    $(this).parent().find("ul").css("display","block");
+                    $(this).parent().find("ul").addClass("show");
+                }
+            
+        });
+
+       $(".mega-menu").click(function(e) {
+            
+            e.preventDefault(e);
+            
+            // only when clicked on parent element (on mega-menu only)
+         
+
+
+                if (!$(".mega-menu__cat-list-container button").is(":focus")) {
+                    if($(this).hasClass("open")){
+                        $(".mega-menu").removeClass("open");
+                        $(".mega-menu__cat-article").css("display","none");
+                        $(".mega-menu__cat-list").css("display","none");
+                        $(this).find(".mega-menu__cat-list").css("display","none");
+                        $(this).find(".mega-menu__cat-article").css("display","none");
+                        $(this).find(".mega-menu__cat").find("button").attr("aria-expanded","false");                    
+                        $(this).find(".mega-menu__cat-list").removeClass("show");
+                    } else {
+                        $(".mega-menu__cat-article").css("display","none");
+                        $(".mega-menu").removeClass("open");
+                        $(this).addClass("open");
+                        $(this).find(".mega-menu__cat").find("button").attr("aria-expanded","true");
+                        $(".mega-menu__cat-list").css("display","none");
+                        $(this).find(".mega-menu__cat-list").css("display","block");
+                        $(this).find(".mega-menu__cat-list").addClass("show");
+                        $(this).find(".mega-menu__cat-article").css("display","block");
+                    }
+                }
+                
+         
+         
+        });
+
+      $(".mega-menu").on("keyup", function(e) {
+            
+            e.preventDefault(e);
+            console.log("mega-menu keyup");
+
+            if (e.keyCode == KEYCODE_SPACE){
+                if($(this).hasClass("open")){
+                    $(".mega-menu").removeClass("open");
+                    $(".mega-menu__cat-article").css("display","none");
+                    $(".mega-menu__cat-list").css("display","none");
+                    $(this).find(".mega-menu__cat-list").css("display","none");
+                    $(this).find(".mega-menu__cat-article").css("display","none");
+                    $(this).find(".mega-menu__cat").find("button").attr("aria-expanded","false");                    
+                    $(this).find(".mega-menu__cat-list").removeClass("show");
+                } else {
+                    $(".mega-menu__cat-article").css("display","none");
+                    $(".mega-menu").removeClass("open");
+                    $(this).addClass("open");
+                    $(this).find(".mega-menu__cat").find("button").attr("aria-expanded","true");
+                    $(".mega-menu__cat-list").css("display","none");
+                    $(this).find(".mega-menu__cat-list").css("display","block");
+                    $(this).find(".mega-menu__cat-list").addClass("show");
+                    $(this).find(".mega-menu__cat-article").css("display","block");
+                }
+            }
+
+            if (e.keyCode == KEYCODE_ESC){
+                if($(this).hasClass("open")){
+                    $(".mega-menu").removeClass("open");
+                    $(".mega-menu__cat-article").css("display","none");
+                    $(".mega-menu__cat-list").css("display","none");
+                    $(this).find(".mega-menu__cat-list").css("display","none");
+                    $(this).find(".mega-menu__cat-article").css("display","none");
+                    $(this).find(".mega-menu__cat").find("button").attr("aria-expanded","false");                    
+                    $(this).find(".mega-menu__cat-list").removeClass("show");
+                }
+            }  
+           
+      });
+
+
+       
+
+       $(".mega-menu__cat-list-container button").on("keyup", function(e) {
+
+             e.preventDefault(e);
+
+            if (e.keyCode == KEYCODE_SPACE) {
+                if($(this).attr('aria-expanded') == 'true'){
+                    $(this).attr("aria-expanded","false");
+                    $(".mega-menu__cat-list-container ul").css("display","none");
+                    $(".mega-menu__cat-list-container ul").removeClass("show");
+                } else {
+                    $(".mega-menu__cat-list-container button").attr("aria-expanded","false");
+                    $(this).attr("aria-expanded","true");
+                    $(".mega-menu__cat-list-container ul").css("display","none");
+                    $(".mega-menu__cat-list-container ul").removeClass("show");
+                    $(this).parent().find("ul").css("display","block");
+                    $(this).parent().find("ul").addClass("show");
+                }
+            }
+
+
+            if (e.keyCode == KEYCODE_ESC) {
+                if($(this).attr('aria-expanded') == 'true'){
+                    $(this).attr("aria-expanded","false");
+                    $(".mega-menu__cat-list-container ul").css("display","none");
+                    $(".mega-menu__cat-list-container ul").removeClass("show");
+                }
+            }
+
+            e.stopPropagation();
+
+       });
+
+       $(".visible-when-focus").focus(function() {
+            $(this).find("span").css("visibility","visible");
+            $(this).find("span").attr("aria-hidden","false");
+        });
+
+        $(".visible-when-focus").focusout(function() {
+            $(this).find("span").css("visibility","hidden");
+            $(this).find("span").attr("aria-hidden","true");
+        });
+
+        $(".mega-menu a").on("keyup", function(e) {
+   
+            e.preventDefault(e);
+
+            if (e.keyCode == KEYCODE_ENTER || e.keyCode == KEYCODE_SPACE) {
+              window.location = $(this).attr("href");
+            }
+
+        });    
+
+        $(".mega-menu__cat-list-container a").on("keyup", function(e) {
+   
+            e.preventDefault(e);
+
+            if (e.keyCode == KEYCODE_ENTER || e.keyCode == KEYCODE_SPACE) {
+              window.location = $(this).attr("href");
+            }
+
+        });             
+                  
+   }
+
+  });
+                                  
+</script><div id="HEADER_MAIN_MEGA_NAV_TBDF18AF5031_Col00" class="sf_colsIn container" data-sf-element="Container" data-placeholder-label="NonSearchableContainer">
+</div>
+ </div> <div class="primary-menu__search" role="search"> <a href='/busqueda'> <span class="primary-menu__search-icon"> <span class="sr-only">Busqueda</span> </span> </a> </div> </div> </header> <main class="main" role="main" id="readspeakerContent"> 
+<div id="MAIN_Do_Not_Drag_Anything_Here_C005_Col00" class="sf_colsIn page-innersite" data-sf-element="Container" data-placeholder-label="INNERSITE">
+</div>
+<div id="MAIN_Do_Not_Drag_Anything_Here_TD85F9F87002_Col00" class="sf_colsIn page-innersite" data-sf-element="Container" data-placeholder-label="Page Inner site"><div id="MAIN_Do_Not_Drag_Anything_Here_TD85F9F87003_Col00" class="sf_colsIn page-hero" data-sf-element="Container" data-placeholder-label="Page hero"><div id="MAIN_Do_Not_Drag_Anything_Here_TA405AD97027_Col00" class="sf_colsIn page-hero-bannerImage" data-sf-element="Container" data-placeholder-label="CONTAINER BANNER IMAGE"><div id="MAIN_Do_Not_Drag_Anything_Here_TA405AD97018_Col00" class="sf_colsIn page-hero__container page-hero__container--center" data-sf-element="Container" data-placeholder-label="HERO CONTAINER"><div class="" data-sf-element="Grid-x3">
+    <div class="" data-sf-element="Row">
+      <div id="MAIN_Do_Not_Drag_Anything_Here_TA405AD97026_Col00" class="sf_colsIn page-hero__bg" data-sf-element="Column 1" data-placeholder-label="BANNER IMAGE BACKGROUND - Drag here a widget Image for image banner">
+      </div>
+	  <div id="MAIN_Do_Not_Drag_Anything_Here_TA405AD97026_Col01" class="sf_colsIn page-hero__content" data-sf-element="Column 2" data-placeholder-label="BANNER IMAGE CONTENT">
+<div class="breadcrumb-nav">
+    <nav aria-label="Ruta de navegaci&#243;n" role="navigation">
+        <ol class="sf-breadscrumb breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Inicio </a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Error 404</li>
+        </ol>
+    </nav>
+</div>
+<div class="sf-contentblock" >
+    <div ><h1>&nbsp;</h1></div>    
+</div>
+      </div>
+	  <div id="MAIN_Do_Not_Drag_Anything_Here_TA405AD97026_Col02" class="sf_colsIn page-hero__bottom" data-sf-element="Column 3" data-placeholder-label="BANNER IMAGE LOGO - Drag here a widget Image for a logo on image banner">
+      </div>
+    </div>
+ </div>
+</div>
+
+</div>
+
+</div>
+<div id="MAIN_Do_Not_Drag_Anything_Here_TD85F9F87004_Col00" class="sf_colsIn custom-container" data-sf-element="Container" data-placeholder-label="CONTAINER (here the content will be full screen width large)"><div class="grid-x1" data-sf-element="Grid-x1">
+    <div class="row" data-sf-element="Row">
+      <div id="MAIN_Do_Not_Drag_Anything_Here_TD85F9F87010_Col00" class="sf_colsIn col-sm-12" data-sf-element="Column 1" data-placeholder-label="Container - do not use - use instead grid-x"><div class="grid-x3" data-sf-element="Grid-x3">
+    <div class="row" data-sf-element="Row">
+      <div id="MAIN_Do_Not_Drag_Anything_Here_C014_Col00" class="sf_colsIn col-sm-4" data-sf-element="Column 1" data-placeholder-label="Column 1">
+      </div>
+	  <div id="MAIN_Do_Not_Drag_Anything_Here_C014_Col01" class="sf_colsIn col-sm-4" data-sf-element="Column 2" data-placeholder-label="Column 2">
+<div class="oups nopadding sf-contentblock" >
+    <div ><p style="font-size: 8rem; text-align: center">&nbsp;</p><p style="font-size: 8rem; text-align: center">¡Uy!</p><br><br><br><br><p style="text-align: center">Algo salió mal. Lamentamos las molestias. Por favor, intente volver a la página principal.<br><span class="btn-custom-black"></span></p><p style="text-align: center">&nbsp;</p><p style="text-align: center"><a href="/home"><span class="btn-custom-gradient">Volver a la página de inicio</span></a></p><p style="text-align: center"><em>Código de error:&nbsp;
+        404</em>
+</p><p>&nbsp;</p></div>    
+</div>
+      </div>
+	  <div id="MAIN_Do_Not_Drag_Anything_Here_C014_Col02" class="sf_colsIn col-sm-4" data-sf-element="Column 3" data-placeholder-label="Column 3">
+      </div>
+    </div>
+ </div>
+      </div>
+    </div>
+ </div>
+  
+
+</div>
+
+</div>
+ </main> <footer id="footer" class="footer" role="contentinfo"> <div class="footer__content"> <div class="footer__top-content"> <a href="https://www.soprasteria.es/home" class="footer__logo"> <img src='/ResourcePackages/Bootstrap4/assets/dist/logos/logo-soprasteria.svg' alt="Sopra Steria"> <p lang='en-GB'>The world is how we shape it</p> <p>Sopra Steria, reconocido l&#237;der europeo en consultor&#237;a, servicios digitales y desarrollo de software, con cerca de 50.000 empleados en casi 30 pa&#237;ses.</p> </a> <div class="footer__secondary-nav"> 
+
+
+
+
+
+
+
+    <ul aria-label='Informaci&#243;n &#250;til'>
+      
+
+
+
+ 
+	
+      
+      
+      
+      
+        <li><a href="#" onClick="UC_UI.showSecondLayer();">Gesti&#243;n de las cookies</a></li>
+      
+      
+      
+    <li>
+        <a href="/footer/contactenos">Cont&#225;ctenos</a>
+    </li>
+    <li>
+        <a href="/footer/politica-de-privacidad">Pol&#237;tica de privacidad</a>
+    </li>
+    <li>
+        <a href="/footer/aviso-legal">Aviso legal</a>
+    </li>
+    <li>
+        <a href="/footer/politica-de-cookies">Pol&#237;tica de cookies</a>
+    </li>
+    <li>
+        <a href="/footer/sitemap">Sitemap</a>
+    </li>
+
+      
+    </ul>
+  
+
+
+
+
+
+
+
+ </div> </div> </div> <div class="footer__bottom-content"> <div class="footer__social"> 
+
+
+
+<div>
+ 
+      <div>
+        <ul aria-label='RedesSociales'>
+             
+            <li>
+              <a class="twitter" href="https://twitter.com/SopraSteria_ES" title="S&#237;guenos en Twitter" target="_blank">Twitter</a>
+            </li>
+                      <li>
+              <a class="linkedin" href="https://www.linkedin.com/company/3054/" title="S&#237;guenos en Linkedin" target="_blank">Linkedin</a>
+            </li>
+                      <li>
+              <a class="youtube" href="https://www.youtube.com/SopraSteriaGroup" title="S&#237;guenos en Youtube" target="_blank">Youtube</a>
+            </li>
+                      <li>
+              <a class="facebook" href="https://www.facebook.com/SopraSteriaEspana/" title="S&#237;guenos en Facebook" target="_blank">Facebook</a>
+            </li>
+                      <li>
+              <a class="instagram" href="https://www.instagram.com/soprasteria_es/" title="S&#237;guenos en Instagram" target="_blank">Instagram</a>
+            </li>
+                                <li>
+              <a class="blog" href="https://www.soprasteria.es/sala-de-prensa/blog" title="Visita nuestro blog" target="_blank">Blog</a>
+            </li>
+          
+        </ul>
+      </div>
+  
+</div> </div> <div class="footer__bottom-copyright">
+				Sopra Steria 2025&copy;
+			</div> </div> </footer>  
+ 
+
+<script type="text/javascript">
+//<![CDATA[
+window.__TsmHiddenField = $get('ctl06_TSM');;(function() {
+                        function loadHandler() {
+                            var hf = $get('ctl07_TSSM');
+                            if (!hf._RSSM_init) { hf._RSSM_init = true; hf.value = ''; }
+                            hf.value += ';Telerik.Sitefinity.Resources, Version=13.3.7651.0, Culture=neutral, PublicKeyToken=b28c218413bdf563:es:6a3560ad-0336-4e7a-96cf-64c8fef0abc3:7a90d6a';
+                            Sys.Application.remove_load(loadHandler);
+                        };
+                        Sys.Application.add_load(loadHandler);
+                    })();//]]>
+</script>
+</form><script type="text/javascript" src="/WebResource.axd?d=NjxTqR2bqTw1rewxxlkHPqzzpm7JrP_b2aeyABRqthcambyYhj7vH-v5PG9tZWtC4anQdLyPEu8xXH8AKFpZdtKH78EOOaeWVI5CZPDNeVGnJapfgSLDV3X0cy8z2yeZIeNH1KqOXj422F9QuBsRJNH4rptpZUue8WMJG84uFy4BCh9nNmVOMRq0TZp4QioMDuQoi9QLaI6wyuRW2gcUM1Z7k1Q1&amp;t=638809164660000000">
+
+</script><script type="text/javascript">
+$(document).ready(function(){
+
+
+  // Site selector selected country
+  $('#country  option[value="https://www.soprasteria.es/"]').attr("selected","selected");
+  $('#country ').change(function(){
+	window.location = this.value;
+  });
+ 
+  
+});
+</script></body> </html>
+

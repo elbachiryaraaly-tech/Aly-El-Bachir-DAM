@@ -1,0 +1,16 @@
+User-agent: *
+Disallow: /ScriptResource.axd
+Disallow: /combinescriptshandler.axd
+Disallow: /WebResource.axd
+Disallow: /tests/
+Disallow: /fr/tests/
+Disallow: /not-indexed/
+Disallow: /en/not-indexed/
+Disallow: /es/not-indexed/
+Disallow: /docs/librariesprovider2/sopra-steria-fr-documents/notindexdocuments/
+Disallow: /docs/librariesprovider2/sopra-steria-corporate/notindexdocuments/
+Disallow: /docs/librariesprovider2/soprasteria-next-exploratoire-documents/notindexdocuments/
+Disallow: /docs/librariesprovider2/sopra-steria-benelux-documents/notindexdocuments-ssg-be/
+Disallow: /Content/Studies
+Disallow: /images/librariesprovider2/sopra-steria-de-images/notindex-photos-people/
+Disallow: /images/librariesprovider2/default-album/user-guide/
