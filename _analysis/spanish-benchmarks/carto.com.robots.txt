@@ -1,0 +1,16 @@
+# https://support.google.com/webmasters/answer/6062608
+
+User-agent: *
+Disallow: /api/
+Disallow: /documentation/
+Disallow: /confirmation
+Disallow: /static/
+Allow: /static/cms-sitemap.xml
+Allow: /static/catalog_sitemap.xml
+
+Sitemap: https://carto.com/sitemap.xml
+Sitemap: https://carto.com/static/cms-sitemap.xml
+Sitemap: https://carto.com/static/catalog_sitemap.xml
+Sitemap: https://carto.com/blog/sitemap.xml
+Sitemap: https://carto.com/help/sitemap.xml
+Sitemap: https://carto.com/developers/sitemap.xml

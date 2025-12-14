@@ -1,0 +1,20 @@
+HTTP/2 200 
+date: Sun, 14 Dec 2025 21:18:50 GMT
+content-type: text/html; charset=UTF-8
+cf-ray: 9ae0bc691addc654-PDX
+vary: Accept-Encoding
+vary: Accept-Encoding
+vary: Accept-Encoding
+vary: Accept-Encoding,Cookie
+link: <https://clarity.ai/wp-json/>; rel="https://api.w.org/"
+link: <https://clarity.ai/wp-json/wp/v2/pages/488106>; rel="alternate"; title="JSON"; type="application/json"
+x-powered-by: WP Engine
+x-cacheable: SHORT
+cache-control: max-age=600, must-revalidate
+x-cache: HIT: 32
+x-cache-group: normal
+cf-cache-status: DYNAMIC
+set-cookie: __cf_bm=4dF.EXfofhGCvMIvID6ysHvJvbsnf0I8wuQZYHkrL.k-1765747130-1.0.1.1-D8ATRXODKxxEC_75Ycd9wDVvZrEP5CFtqAgyKvdMF_aGVF6.PnjILdlHMcA7xuLLDq_v40gNkd4Dbq5LLe0uY1AVYwwFB_1lnW3UrV70Rz8; path=/; expires=Sun, 14-Dec-25 21:48:50 GMT; domain=.clarity.ai; HttpOnly; Secure; SameSite=None
+server: cloudflare
+alt-svc: h3=":443"; ma=86400
+

@@ -1,0 +1,26 @@
+HTTP/1.1 301 Moved Permanently
+content-length: 0
+location: https://www.plainconcepts.com/
+
+HTTP/2 200 
+date: Sun, 14 Dec 2025 21:18:51 GMT
+content-type: text/html; charset=UTF-8
+cf-ray: 9ae0bc727c9a9b30-PDX
+vary: Accept-Encoding
+vary: Accept-Encoding
+vary: Accept-Encoding
+vary: Accept-Encoding,Cookie
+link: <https://www.plainconcepts.com/wp-json/>; rel="https://api.w.org/"
+link: <https://www.plainconcepts.com/wp-json/wp/v2/pages/5>; rel="alternate"; title="JSON"; type="application/json"
+link: <https://www.plainconcepts.com/>; rel=shortlink
+x-powered-by: WP Engine
+x-cacheable: SHORT
+cache-control: max-age=600, must-revalidate
+x-cache: HIT: 1
+x-cache-group: normal
+last-modified: Sun, 14 Dec 2025 21:09:46 GMT
+cf-cache-status: HIT
+set-cookie: __cf_bm=508ZkKkUbtUt.mdrcipqZ2jwSoD2Y3m9TyHJ181qdFQ-1765747131-1.0.1.1-3HGYJP0pAffGmGGm2czzH7q6hIDjAKRkfOk7O61OTJ2RezrWHO1qeIfMyGAdwvVFH_nMptNG61YCblBQNTikHl0AghUudEM28VNq2KKplc4; path=/; expires=Sun, 14-Dec-25 21:48:51 GMT; domain=.www.plainconcepts.com; HttpOnly; Secure; SameSite=None
+server: cloudflare
+alt-svc: h3=":443"; ma=86400
+

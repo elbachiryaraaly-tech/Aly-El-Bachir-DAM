@@ -1,0 +1,23 @@
+HTTP/2 200 
+date: Sun, 14 Dec 2025 21:18:47 GMT
+content-type: text/html; charset=utf-8
+cf-ray: 9ae0bc5b19b66289-PDX
+cache-control: s-maxage=86400, max-age=0, public, no-store
+link: </_next/static/media/13971731025ec697-s.p.woff2>; rel=preload; as="font"; crossorigin=""; type="font/woff2"
+vary: Accept-Encoding
+vary: rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch, Accept-Encoding
+x-factorial-platform: production-main
+x-middleware-cache: no-cache
+x-middleware-rewrite: /en-US/
+last-modified: Sun, 14 Dec 2025 16:36:41 GMT
+age: 16925
+cf-cache-status: HIT
+strict-transport-security: max-age=31536000; includeSubDomains; preload
+expect-ct: max-age=86400, enforce
+x-frame-options: SAMEORIGIN
+x-xss-protection: 1; mode=block
+content-security-policy: frame-ancestors 'self' https://dato-plugin-seven.vercel.app https://factorial-next.admin.datocms.com *.factorial.co *.factorial.es *.factorial.mx *.factorial.fr *.factorial.it *.factorialhr.co.uk *.factorialhr.co *.factorialhr.de *.factorial.ch *.factorial.be *.factorialhr.pt *.factorialhr.com.br *.factorialhr.com.ar *.factorialhr.ar *.factorialhr.cl *.factorialhr.com.de *.factorial.pl *.factorialhr.com
+x-content-type-options: nosniff
+referrer-policy: strict-origin-when-cross-origin
+server: cloudflare
+

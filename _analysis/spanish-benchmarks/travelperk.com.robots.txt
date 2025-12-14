@@ -1,0 +1,20 @@
+User-agent: *
+Disallow: */search/*
+Disallow: /en-us/
+Disallow: /wp-admin/
+Disallow: /wp-content/uploads/GP_Letter_2022.pdf
+Disallow: /wp-content/uploads/TravelPerk-List-of-Sub-Processors-1.pdf
+Disallow: */careers/*
+Disallow: */empleos/*
+Disallow: */carrieres/*
+Disallow: */karriere/*
+Allow: */travel-safety-advice/$
+Allow: */careers/$
+Allow: */careers/berlin/$
+Allow: */careers/edinburgh-jobs/$
+Allow: */empleos/$
+Allow: */carrieres/$
+Allow: */karriere/$
+
+
+Sitemap: https://www.perk.com/sitemap/index.xml

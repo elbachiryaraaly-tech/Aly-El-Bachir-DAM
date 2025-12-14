@@ -1,0 +1,36 @@
+HTTP/2 301 
+server: CloudFront
+date: Sun, 14 Dec 2025 21:18:48 GMT
+content-length: 0
+location: https://www.wallapop.com/
+x-cache: FunctionGeneratedResponse from cloudfront
+via: 1.1 0a9acaac1641579d63bb7e6410165540.cloudfront.net (CloudFront)
+x-amz-cf-pop: HIO52-P4
+x-amz-cf-id: zWVW6JRF9x58eXdbx900Dp6HnhtSeFoNQr5Ucw0S3R-DYYTnuha8mQ==
+x-xss-protection: 1; mode=block
+x-frame-options: SAMEORIGIN
+referrer-policy: strict-origin-when-cross-origin
+content-security-policy: form-action 'self' wallapop.com *.wallapop.com; frame-ancestors 'self' wallapop.com *.wallapop.com;
+x-content-type-options: nosniff
+strict-transport-security: max-age=31536000; includeSubDomains
+
+HTTP/2 200 
+content-type: text/html; charset=utf-8
+content-length: 64072
+date: Sun, 14 Dec 2025 20:19:08 GMT
+cache-control: public, s-maxage=3600, max-age=0, stale-if-error=0, no-cache="Set-Cookie"
+x-powered-by: Next.js
+etag: "pdgdk0vz2x1deo"
+vary: Accept-Encoding
+x-cache: Hit from cloudfront
+via: 1.1 6957b6fac4a3f8180355a074ea5833e2.cloudfront.net (CloudFront)
+x-amz-cf-pop: HIO52-P4
+x-amz-cf-id: wujinCvwGxvd15b_ARtJZQ8Jz0g-rapPKl6p2DGppSzfUSYw-S8AZA==
+age: 3580
+x-xss-protection: 1; mode=block
+x-frame-options: SAMEORIGIN
+referrer-policy: strict-origin-when-cross-origin
+content-security-policy: form-action 'self' wallapop.com *.wallapop.com; frame-ancestors 'self' wallapop.com *.wallapop.com;
+x-content-type-options: nosniff
+strict-transport-security: max-age=31536000; includeSubDomains
+

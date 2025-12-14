@@ -1,0 +1,27 @@
+HTTP/2 200 
+date: Sun, 14 Dec 2025 21:18:49 GMT
+content-type: text/html
+vary: Accept-Encoding
+vary: Accept-Encoding
+cf-ray: 9ae0bc6739cbeae6-ORD
+cf-cache-status: HIT
+age: 212444
+last-modified: Fri, 12 Dec 2025 10:18:05 GMT
+surrogate-control: max-age=432000
+surrogate-key: webflow.carto.com 6345207a1b18e581fcf67604 pageId:65e9f2a5aa591b41d23fcc95 65e9f2a5aa591b41d23fcc9a 65e9f2a5aa591b41d23fccab
+x-lambda-id: 8155cc5b-3560-4a64-b83b-370bc4f3dd6c
+set-cookie: _cfuvid=5NnwKmzkOlBAopHEfAH1_Gew9M8Jpq5Gkqx5v6kkrU8-1765747129528-0.0.1.1-604800000; path=/; domain=.webflow.carto.com; HttpOnly; Secure; SameSite=None
+alt-svc: h3=":443"; ma=86400
+alt-svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+cache-control: public
+x-frame-options: DENY
+x-content-type-options: nosniff
+strict-transport-security: max-age=31536000; includeSubDomains
+referrer-policy: strict-origin-when-cross-origin
+permissions-policy: accelerometer=(), autoplay=(), camera=(), gyroscope=(), magnetometer=(), microphone=(), midi=(), payment=(), publickey-credentials-get=(), screen-wake-lock=(), usb=()
+cross-origin-embedder-policy: unsafe-none
+cross-origin-resource-policy: cross-origin
+cross-origin-opener-policy: unsafe-none
+content-security-policy: upgrade-insecure-requests
+via: 1.1 google
+

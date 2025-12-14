@@ -1,0 +1,9 @@
+User-agent: *
+
+Sitemap: https://factorialhr.com/sitemap.xml
+Sitemap: https://factorialhr.com/blog/sitemap_index.xml
+Sitemap: https://factorialhr.com/free_resources_sitemap.xml
+Disallow: /*/feed/$
+Disallow: /*/?wordfence*
+Disallow: /*wtime*wtime
+Disallow: /*?ref=

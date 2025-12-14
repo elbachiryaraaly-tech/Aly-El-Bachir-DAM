@@ -1,0 +1,9 @@
+HTTP/1.1 200 OK
+Date: Sat, 13 Dec 2025 17:42:59 GMT
+Server: Apache/2.4.38 (Debian)
+Link: <https://multiplika.es/wp-json/>; rel="https://api.w.org/"
+Content-Security-Policy: upgrade-insecure-requests;
+Upgrade: h2,h2c
+Connection: Upgrade
+Content-Type: text/html; charset=UTF-8
+
