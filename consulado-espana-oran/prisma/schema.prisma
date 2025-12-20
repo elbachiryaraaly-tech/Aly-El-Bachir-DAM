@@ -1,0 +1,611 @@
+// ============================================================================
+// CONSULADO GENERAL DE ESPAÑA EN ORÁN - SISTEMA DE RESERVAS
+// Base de Datos con Seguridad de Nivel Gubernamental
+// ============================================================================
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ============================================================================
+// MODELOS DE USUARIOS Y AUTENTICACIÓN
+// ============================================================================
+
+model User {
+  id                    String    @id @default(cuid())
+  email                 String    @unique
+  emailVerified         DateTime?
+  passwordHash          String
+  firstName             String
+  lastName              String
+  documentType          DocumentType
+  documentNumber        String    @unique
+  nationality           String
+  phone                 String
+  dateOfBirth           DateTime
+  address               String?
+  city                  String?
+  country               String    @default("Argelia")
+  
+  // Seguridad 2FA
+  twoFactorEnabled      Boolean   @default(false)
+  twoFactorSecret       String?
+  twoFactorBackupCodes  String[]
+  
+  // Control de acceso
+  role                  UserRole  @default(CITIZEN)
+  isActive              Boolean   @default(true)
+  isBlocked             Boolean   @default(false)
+  blockReason           String?
+  
+  // Auditoría
+  failedLoginAttempts   Int       @default(0)
+  lastFailedLogin       DateTime?
+  lastLogin             DateTime?
+  lastPasswordChange    DateTime  @default(now())
+  passwordExpiry        DateTime?
+  mustChangePassword    Boolean   @default(false)
+  
+  // Timestamps
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
+  
+  // Relaciones
+  appointments          Appointment[]
+  sessions              Session[]
+  auditLogs             AuditLog[]
+  notifications         Notification[]
+  documents             Document[]
+  securityEvents        SecurityEvent[]
+  
+  @@index([email])
+  @@index([documentNumber])
+  @@index([role])
+}
+
+model Session {
+  id            String   @id @default(cuid())
+  userId        String
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  token         String   @unique
+  refreshToken  String?  @unique
+  ipAddress     String
+  userAgent     String
+  deviceInfo    String?
+  isValid       Boolean  @default(true)
+  expiresAt     DateTime
+  createdAt     DateTime @default(now())
+  lastActivity  DateTime @default(now())
+  
+  @@index([userId])
+  @@index([token])
+}
+
+// ============================================================================
+// MODELOS DE SERVICIOS CONSULARES
+// ============================================================================
+
+model ConsularService {
+  id                String   @id @default(cuid())
+  code              String   @unique
+  name              String
+  nameArabic        String?
+  nameFrench        String?
+  description       String
+  descriptionArabic String?
+  descriptionFrench String?
+  category          ServiceCategory
+  
+  // Configuración de citas
+  duration          Int      // Duración en minutos
+  maxPerDay         Int      // Máximo de citas por día
+  requiresDocuments Boolean  @default(true)
+  price             Decimal? @db.Decimal(10, 2)
+  currency          String   @default("EUR")
+  
+  // Requisitos
+  requirements      String[] // Lista de documentos requeridos
+  instructions      String?  // Instrucciones especiales
+  
+  // Estado
+  isActive          Boolean  @default(true)
+  
+  // Timestamps
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  
+  // Relaciones
+  appointments      Appointment[]
+  timeSlots         TimeSlot[]
+  
+  @@index([category])
+  @@index([isActive])
+}
+
+model TimeSlot {
+  id              String   @id @default(cuid())
+  serviceId       String
+  service         ConsularService @relation(fields: [serviceId], references: [id])
+  dayOfWeek       Int      // 0-6 (Domingo-Sábado)
+  startTime       String   // HH:MM formato 24h
+  endTime         String   // HH:MM formato 24h
+  maxAppointments Int      @default(1)
+  isActive        Boolean  @default(true)
+  
+  // Relaciones
+  appointments    Appointment[]
+  
+  @@index([serviceId])
+  @@index([dayOfWeek])
+}
+
+model SpecialDate {
+  id          String   @id @default(cuid())
+  date        DateTime @db.Date
+  type        SpecialDateType
+  description String
+  isRecurring Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  
+  @@unique([date, type])
+}
+
+// ============================================================================
+// MODELOS DE CITAS
+// ============================================================================
+
+model Appointment {
+  id                String   @id @default(cuid())
+  referenceNumber   String   @unique // Número de referencia único
+  
+  // Usuario y servicio
+  userId            String
+  user              User     @relation(fields: [userId], references: [id])
+  serviceId         String
+  service           ConsularService @relation(fields: [serviceId], references: [id])
+  timeSlotId        String?
+  timeSlot          TimeSlot? @relation(fields: [timeSlotId], references: [id])
+  
+  // Fecha y hora
+  appointmentDate   DateTime @db.Date
+  appointmentTime   String   // HH:MM
+  estimatedDuration Int      // Minutos
+  
+  // Estado
+  status            AppointmentStatus @default(PENDING)
+  statusReason      String?
+  
+  // Información adicional
+  notes             String?
+  internalNotes     String?  // Solo visible para staff
+  priority          Priority @default(NORMAL)
+  
+  // Confirmación
+  isConfirmed       Boolean  @default(false)
+  confirmationCode  String?
+  confirmedAt       DateTime?
+  
+  // Check-in
+  checkedInAt       DateTime?
+  checkedInBy       String?
+  
+  // Completación
+  completedAt       DateTime?
+  completedBy       String?
+  
+  // Cancelación
+  cancelledAt       DateTime?
+  cancelledBy       String?
+  cancellationReason String?
+  
+  // Reprogramación
+  rescheduledFrom   String?  // ID de cita anterior
+  rescheduledTo     String?  // ID de nueva cita
+  rescheduledAt     DateTime?
+  rescheduleCount   Int      @default(0)
+  
+  // Recordatorios
+  reminderSent      Boolean  @default(false)
+  reminderSentAt    DateTime?
+  
+  // Timestamps
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  
+  // Relaciones
+  documents         Document[]
+  auditLogs         AuditLog[]
+  
+  @@index([userId])
+  @@index([serviceId])
+  @@index([appointmentDate])
+  @@index([status])
+  @@index([referenceNumber])
+}
+
+// ============================================================================
+// MODELOS DE DOCUMENTOS
+// ============================================================================
+
+model Document {
+  id              String   @id @default(cuid())
+  userId          String
+  user            User     @relation(fields: [userId], references: [id])
+  appointmentId   String?
+  appointment     Appointment? @relation(fields: [appointmentId], references: [id])
+  
+  // Información del documento
+  name            String
+  type            DocumentType
+  fileName        String
+  fileSize        Int
+  mimeType        String
+  
+  // Almacenamiento seguro
+  storagePath     String   // Ruta encriptada
+  checksum        String   // Hash SHA-256 para verificar integridad
+  encryptionKey   String?  // Clave de encriptación (almacenada de forma segura)
+  
+  // Estado
+  status          DocumentStatus @default(PENDING)
+  verifiedAt      DateTime?
+  verifiedBy      String?
+  rejectionReason String?
+  
+  // Metadatos
+  metadata        Json?
+  
+  // Timestamps
+  uploadedAt      DateTime @default(now())
+  expiresAt       DateTime?
+  
+  @@index([userId])
+  @@index([appointmentId])
+  @@index([status])
+}
+
+// ============================================================================
+// MODELOS DE SEGURIDAD Y AUDITORÍA
+// ============================================================================
+
+model AuditLog {
+  id            String   @id @default(cuid())
+  
+  // Actor
+  userId        String?
+  user          User?    @relation(fields: [userId], references: [id])
+  actorType     ActorType
+  
+  // Acción
+  action        AuditAction
+  resource      String
+  resourceId    String?
+  
+  // Detalles
+  description   String
+  oldValue      Json?
+  newValue      Json?
+  metadata      Json?
+  
+  // Contexto
+  ipAddress     String
+  userAgent     String?
+  requestId     String?
+  
+  // Relacionado con cita
+  appointmentId String?
+  appointment   Appointment? @relation(fields: [appointmentId], references: [id])
+  
+  // Timestamp
+  createdAt     DateTime @default(now())
+  
+  @@index([userId])
+  @@index([action])
+  @@index([resource])
+  @@index([createdAt])
+}
+
+model SecurityEvent {
+  id            String   @id @default(cuid())
+  
+  // Usuario afectado
+  userId        String?
+  user          User?    @relation(fields: [userId], references: [id])
+  
+  // Evento
+  type          SecurityEventType
+  severity      Severity
+  description   String
+  
+  // Contexto
+  ipAddress     String
+  userAgent     String?
+  location      String?
+  
+  // Detalles adicionales
+  metadata      Json?
+  
+  // Resolución
+  isResolved    Boolean  @default(false)
+  resolvedAt    DateTime?
+  resolvedBy    String?
+  resolution    String?
+  
+  // Timestamp
+  createdAt     DateTime @default(now())
+  
+  @@index([userId])
+  @@index([type])
+  @@index([severity])
+  @@index([createdAt])
+}
+
+model RateLimitRecord {
+  id          String   @id @default(cuid())
+  identifier  String   // IP o userId
+  endpoint    String
+  count       Int      @default(1)
+  windowStart DateTime @default(now())
+  windowEnd   DateTime
+  isBlocked   Boolean  @default(false)
+  
+  @@unique([identifier, endpoint, windowStart])
+  @@index([identifier])
+  @@index([windowEnd])
+}
+
+model BlockedIP {
+  id          String   @id @default(cuid())
+  ipAddress   String   @unique
+  reason      String
+  blockedAt   DateTime @default(now())
+  blockedBy   String?
+  expiresAt   DateTime?
+  isPermanent Boolean  @default(false)
+  
+  @@index([ipAddress])
+}
+
+// ============================================================================
+// MODELOS DE NOTIFICACIONES
+// ============================================================================
+
+model Notification {
+  id          String   @id @default(cuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+  
+  // Contenido
+  type        NotificationType
+  title       String
+  message     String
+  
+  // Estado
+  isRead      Boolean  @default(false)
+  readAt      DateTime?
+  
+  // Envío
+  channels    NotificationChannel[]
+  sentVia     NotificationChannel[]
+  
+  // Metadatos
+  metadata    Json?
+  actionUrl   String?
+  
+  // Timestamps
+  createdAt   DateTime @default(now())
+  expiresAt   DateTime?
+  
+  @@index([userId])
+  @@index([isRead])
+  @@index([type])
+}
+
+model EmailTemplate {
+  id          String   @id @default(cuid())
+  code        String   @unique
+  name        String
+  subject     String
+  body        String   @db.Text
+  variables   String[] // Variables disponibles
+  isActive    Boolean  @default(true)
+  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// ============================================================================
+// MODELOS DE CONFIGURACIÓN
+// ============================================================================
+
+model SystemConfig {
+  id          String   @id @default(cuid())
+  key         String   @unique
+  value       String
+  description String?
+  category    String
+  isSecret    Boolean  @default(false)
+  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  @@index([category])
+}
+
+model ConsulateInfo {
+  id                String   @id @default(cuid())
+  name              String
+  address           String
+  city              String
+  country           String
+  postalCode        String?
+  phone             String
+  fax               String?
+  email             String
+  website           String?
+  
+  // Horarios
+  openingHours      Json     // Estructura de horarios por día
+  emergencyPhone    String?
+  
+  // Coordenadas para mapa
+  latitude          Decimal? @db.Decimal(10, 8)
+  longitude         Decimal? @db.Decimal(11, 8)
+  
+  // Información adicional
+  jurisdiction      String?  // Área de jurisdicción
+  consularDistrict  String?
+  
+  // Redes sociales
+  socialMedia       Json?
+  
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+}
+
+// ============================================================================
+// ENUMERACIONES
+// ============================================================================
+
+enum UserRole {
+  CITIZEN           // Usuario ciudadano
+  STAFF             // Personal del consulado
+  ADMIN             // Administrador
+  SUPER_ADMIN       // Super administrador
+  AUDITOR           // Solo lectura para auditorías
+}
+
+enum DocumentType {
+  PASSPORT
+  DNI
+  NIE
+  VISA
+  BIRTH_CERTIFICATE
+  MARRIAGE_CERTIFICATE
+  DEATH_CERTIFICATE
+  CRIMINAL_RECORD
+  RESIDENCE_PERMIT
+  PHOTO
+  OTHER
+}
+
+enum ServiceCategory {
+  PASAPORTES            // Pasaportes y documentos de viaje
+  VISADOS               // Visados
+  REGISTRO_CIVIL        // Nacimientos, matrimonios, defunciones
+  NACIONALIDAD          // Nacionalidad española
+  NOTARIA               // Servicios notariales
+  LEGALIZACIONES        // Legalizaciones y apostillas
+  CENSO_ELECTORAL       // Censo y voto
+  PROTECCION_CONSULAR   // Protección y asistencia
+  OTROS                 // Otros servicios
+}
+
+enum AppointmentStatus {
+  PENDING           // Pendiente de confirmación
+  CONFIRMED         // Confirmada
+  CHECKED_IN        // Usuario presente
+  IN_PROGRESS       // En atención
+  COMPLETED         // Completada
+  CANCELLED         // Cancelada
+  NO_SHOW           // No se presentó
+  RESCHEDULED       // Reprogramada
+}
+
+enum Priority {
+  LOW
+  NORMAL
+  HIGH
+  URGENT
+}
+
+enum DocumentStatus {
+  PENDING           // Pendiente de revisión
+  APPROVED          // Aprobado
+  REJECTED          // Rechazado
+  EXPIRED           // Expirado
+}
+
+enum SpecialDateType {
+  HOLIDAY_SPAIN     // Festivo España
+  HOLIDAY_ALGERIA   // Festivo Argelia
+  CLOSED            // Cerrado
+  REDUCED_HOURS     // Horario reducido
+  SPECIAL_EVENT     // Evento especial
+}
+
+enum AuditAction {
+  CREATE
+  READ
+  UPDATE
+  DELETE
+  LOGIN
+  LOGOUT
+  LOGIN_FAILED
+  PASSWORD_CHANGE
+  PASSWORD_RESET
+  TWO_FACTOR_ENABLE
+  TWO_FACTOR_DISABLE
+  APPOINTMENT_CREATE
+  APPOINTMENT_UPDATE
+  APPOINTMENT_CANCEL
+  APPOINTMENT_COMPLETE
+  DOCUMENT_UPLOAD
+  DOCUMENT_VERIFY
+  DOCUMENT_REJECT
+  ADMIN_ACTION
+  SECURITY_EVENT
+  EXPORT_DATA
+}
+
+enum ActorType {
+  USER
+  STAFF
+  ADMIN
+  SYSTEM
+  ANONYMOUS
+}
+
+enum SecurityEventType {
+  BRUTE_FORCE_ATTEMPT
+  SUSPICIOUS_ACTIVITY
+  UNAUTHORIZED_ACCESS
+  SESSION_HIJACK_ATTEMPT
+  SQL_INJECTION_ATTEMPT
+  XSS_ATTEMPT
+  RATE_LIMIT_EXCEEDED
+  INVALID_TOKEN
+  IP_BLOCKED
+  ACCOUNT_LOCKED
+  DATA_BREACH_ATTEMPT
+}
+
+enum Severity {
+  LOW
+  MEDIUM
+  HIGH
+  CRITICAL
+}
+
+enum NotificationType {
+  APPOINTMENT_CONFIRMATION
+  APPOINTMENT_REMINDER
+  APPOINTMENT_CANCELLED
+  APPOINTMENT_RESCHEDULED
+  DOCUMENT_STATUS
+  ACCOUNT_SECURITY
+  SYSTEM_ANNOUNCEMENT
+  GENERAL
+}
+
+enum NotificationChannel {
+  EMAIL
+  SMS
+  PUSH
+  IN_APP
+}
