@@ -106,6 +106,8 @@
 
 **Nota**: Los costos pueden variar. Confirmar con el instituto antes de enviar.
 
+**📊 Para información detallada sobre precios, ver**: [PRECIOS_CERTIFICACION.md](./PRECIOS_CERTIFICACION.md)
+
 ### Tiempo Estimado
 
 - **Respuesta inicial**: 1-2 semanas
