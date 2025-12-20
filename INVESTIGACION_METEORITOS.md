@@ -84,13 +84,17 @@
 #### **Instituciones Científicas que Certifican**
 
 **España:**
-- **Instituto de Ciencias del Espacio (ICE-CSIC)**, Barcelona
+- **Instituto de Ciencias del Espacio (ICE-CSIC)**, Barcelona ⭐ RECOMENDADO
   - Contacto: Dr. Josep M. Trigo-Rodríguez
   - Email: trigo@ice.csic.es
+  - Teléfono: +34 93 581 48 08
+  - **Ver guía detallada**: [CERTIFICACION_ESPANA.md](./CERTIFICACION_ESPANA.md)
 - **Museo Nacional de Ciencias Naturales (MNCN)**, Madrid
   - Departamento de Geología
+  - Teléfono: +34 914 111 328
 - **Universidad Complutense de Madrid**
   - Departamento de Geología
+  - **Ver guía detallada**: [CERTIFICACION_ESPANA.md](./CERTIFICACION_ESPANA.md) para información completa
 
 **Argelia:**
 - **Centre de Recherche en Astronomie, Astrophysique et Géophysique (CRAAG)**

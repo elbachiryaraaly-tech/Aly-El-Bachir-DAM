@@ -2,9 +2,10 @@
 
 Este repositorio contiene una investigación exhaustiva sobre cómo identificar, autenticar y vender meteoritos encontrados en Argelia, con el objetivo de comercializarlos en España.
 
-## 📄 Documento Principal
+## 📄 Documentos Disponibles
 
-Ver **[INVESTIGACION_METEORITOS.md](./INVESTIGACION_METEORITOS.md)** para la guía completa.
+- **[INVESTIGACION_METEORITOS.md](./INVESTIGACION_METEORITOS.md)** - Guía completa general
+- **[CERTIFICACION_ESPANA.md](./CERTIFICACION_ESPANA.md)** - ⭐ Guía específica y detallada sobre certificación en España
 
 ## 🎯 Contenido de la Investigación
 
