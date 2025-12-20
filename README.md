@@ -11,6 +11,7 @@ Este repositorio contiene una investigación exhaustiva sobre cómo identificar,
 - **[PRECIOS_METEORITOS.md](./PRECIOS_METEORITOS.md)** - 💎 Guía completa de precios de mercado de meteoritos
 - **[PRECIO_MARCIANOS.md](./PRECIO_MARCIANOS.md)** - 🔴 Guía específica sobre precios de meteoritos marcianos (incluye 1 kg)
 - **[EDAD_METEORITOS.md](./EDAD_METEORITOS.md)** - ⏰ Información sobre la edad de los meteoritos
+- **[METEORITOS_MAS_RAROS.md](./METEORITOS_MAS_RAROS.md)** - 🌟 Los meteoritos más raros del mundo y sus edades
 
 ## 🎯 Contenido de la Investigación
 
