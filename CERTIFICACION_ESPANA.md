@@ -6,6 +6,8 @@
 
 ## 1. INSTITUTO DE CIENCIAS DEL ESPACIO (ICE-CSIC) - BARCELONA ⭐ RECOMENDADO
 
+**Nota**: Si buscas opciones específicamente en Andalucía, ver [CERTIFICACION_ANDALUCIA.md](./CERTIFICACION_ANDALUCIA.md)
+
 ### Información General
 
 **Institución**: Instituto de Ciencias del Espacio (ICE-CSIC)  
