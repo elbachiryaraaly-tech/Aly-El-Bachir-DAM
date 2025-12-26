@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@theme {
+  --color-neon-blue: #00f3ff;
+  --color-neon-green: #00ff9d;
+  --color-neon-red: #ff0055;
+  --color-dark-bg: #0a0a0f;
+  --color-panel-bg: #12121a;
+  
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  --animate-pulse-fast: pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+body {
+  @apply bg-dark-bg text-white overflow-hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+.glass-panel {
+  @apply bg-panel-bg/80 backdrop-blur-md border border-white/10 rounded-xl shadow-xl;
+}
+
+.neon-text {
+  text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+}
+
+.neon-border {
+  box-shadow: 0 0 10px rgba(0, 243, 255, 0.2);
+}
