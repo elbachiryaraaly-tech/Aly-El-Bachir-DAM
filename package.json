@@ -1,0 +1,27 @@
+{
+  "name": "advanced-car-diagnostic-platform",
+  "version": "1.0.0",
+  "description": "Plataforma avanzada de diagnóstico automotriz - Superior a todas las apps existentes",
+  "main": "server/index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "cd server && nodemon index.js",
+    "dev:client": "cd client && npm run dev",
+    "build": "cd client && npm run build",
+    "start": "cd server && node index.js",
+    "install:all": "npm install && cd server && npm install && cd ../client && npm install"
+  },
+  "keywords": [
+    "obd",
+    "diagnostico",
+    "automotriz",
+    "car",
+    "diagnostic"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.0.2"
+  }
+}
