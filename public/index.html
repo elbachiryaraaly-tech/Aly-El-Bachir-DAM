@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Rastreo de ubicación de alta precisión entre dispositivos">
+    <title>Rastreo de Ubicación - Alta Precisión</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📍 Rastreo de Ubicación</h1>
+            <div class="device-info">
+                <div class="device-id-display">
+                    <label>ID del Dispositivo:</label>
+                    <span id="deviceId">Cargando...</span>
+                    <button id="copyIdBtn" class="btn-small">Copiar</button>
+                </div>
+                <div class="device-type">
+                    <span id="deviceType"></span>
+                </div>
+            </div>
+        </header>
+
+        <div class="controls">
+            <div class="control-group">
+                <button id="startTrackingBtn" class="btn btn-primary">Iniciar Rastreo</button>
+                <button id="stopTrackingBtn" class="btn btn-secondary" disabled>Detener Rastreo</button>
+            </div>
+            <div class="status">
+                <div class="status-item">
+                    <span class="status-label">Estado:</span>
+                    <span id="status" class="status-value">Desconectado</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">Precisión:</span>
+                    <span id="accuracy" class="status-value">--</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">Última actualización:</span>
+                    <span id="lastUpdate" class="status-value">--</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="devices-panel">
+            <h2>Dispositivos Conectados</h2>
+            <div id="devicesList" class="devices-list"></div>
+        </div>
+
+        <div id="map" class="map-container"></div>
+
+        <div class="location-info">
+            <h3>Información de Ubicación</h3>
+            <div class="info-grid">
+                <div class="info-item">
+                    <label>Latitud:</label>
+                    <span id="latitude">--</span>
+                </div>
+                <div class="info-item">
+                    <label>Longitud:</label>
+                    <span id="longitude">--</span>
+                </div>
+                <div class="info-item">
+                    <label>Altitud:</label>
+                    <span id="altitude">--</span>
+                </div>
+                <div class="info-item">
+                    <label>Velocidad:</label>
+                    <span id="speed">--</span>
+                </div>
+                <div class="info-item">
+                    <label>Dirección:</label>
+                    <span id="heading">--</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
