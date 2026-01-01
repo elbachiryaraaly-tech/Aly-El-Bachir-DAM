@@ -1,0 +1,122 @@
+╔═══════════════════════════════════════════════════════════════╗
+║                                                               ║
+║   📍 SISTEMA DE RASTREO DE UBICACIÓN EN TIEMPO REAL 📍       ║
+║                                                               ║
+║   Sincroniza la ubicación de tu móvil y ordenador con        ║
+║   máxima precisión GPS                                        ║
+║                                                               ║
+╚═══════════════════════════════════════════════════════════════╝
+
+┌───────────────────────────────────────────────────────────────┐
+│  🚀 INICIO RÁPIDO (3 PASOS)                                   │
+└───────────────────────────────────────────────────────────────┘
+
+  1️⃣  Instalar dependencias:
+      $ npm install
+
+  2️⃣  Iniciar servidor:
+      $ npm start
+
+  3️⃣  Abrir en navegadores:
+      → Ordenador: http://localhost:3000
+      → Móvil: http://[IP-LOCAL]:3000
+
+
+┌───────────────────────────────────────────────────────────────┐
+│  📱 CONECTAR MÓVIL Y ORDENADOR                                │
+└───────────────────────────────────────────────────────────────┘
+
+  En tu ORDENADOR:
+  ─────────────────
+  1. Ejecuta: npm start
+  2. Abre: http://localhost:3000
+  3. Anota tu IP local
+
+  En tu MÓVIL:
+  ────────────
+  1. Conecta a la misma WiFi que el ordenador
+  2. Abre el navegador
+  3. Visita: http://[IP-DEL-ORDENADOR]:3000
+
+
+┌───────────────────────────────────────────────────────────────┐
+│  🔧 ENCONTRAR TU IP LOCAL                                     │
+└───────────────────────────────────────────────────────────────┘
+
+  Automático:
+      $ ./scripts/find-ip.sh
+
+  Manual:
+      Linux/Mac: ifconfig | grep inet
+      Windows:   ipconfig
+
+
+┌───────────────────────────────────────────────────────────────┐
+│  💡 CONSEJOS PARA MÁXIMA PRECISIÓN                           │
+└───────────────────────────────────────────────────────────────┘
+
+  ✓ Activa el GPS en tu móvil
+  ✓ Activa el WiFi (ayuda a triangulación)
+  ✓ Sal al exterior si la precisión es baja
+  ✓ Espera 10-15 seg para que se estabilice
+  ✓ Acepta los permisos de ubicación
+
+
+┌───────────────────────────────────────────────────────────────┐
+│  📚 DOCUMENTACIÓN                                             │
+└───────────────────────────────────────────────────────────────┘
+
+  README.md              → Documentación completa
+  GUIA_RAPIDA.md        → Guía rápida de inicio
+  DOCUMENTACION_TECNICA.md → Detalles técnicos
+
+
+┌───────────────────────────────────────────────────────────────┐
+│  🌐 ACCESO DESDE INTERNET (OPCIONAL)                         │
+└───────────────────────────────────────────────────────────────┘
+
+  Con ngrok (gratis):
+      1. Instala: https://ngrok.com
+      2. Ejecuta: ngrok http 3000
+      3. Usa la URL proporcionada
+
+
+┌───────────────────────────────────────────────────────────────┐
+│  🎯 CARACTERÍSTICAS                                           │
+└───────────────────────────────────────────────────────────────┘
+
+  ✨ Geolocalización GPS de alta precisión
+  🔄 Sincronización en tiempo real (WebSocket)
+  📱 Compatible con móvil, tablet y ordenador
+  🗺️  Visualización en mapa interactivo
+  💾 Persistencia de datos
+  🎨 Diseño moderno y responsive
+  📊 Estadísticas en tiempo real
+  🔔 Notificaciones de eventos
+
+
+┌───────────────────────────────────────────────────────────────┐
+│  🆘 PROBLEMAS COMUNES                                        │
+└───────────────────────────────────────────────────────────────┘
+
+  ❌ No se conecta
+      → Verifica misma red WiFi
+      → Revisa firewall (puerto 3000)
+
+  ❌ Baja precisión
+      → Activa GPS
+      → Sal al exterior
+      → Espera unos segundos
+
+  ❌ No pide permisos
+      → Recarga página
+      → Limpia caché del navegador
+
+
+╔═══════════════════════════════════════════════════════════════╗
+║                                                               ║
+║   🎉 ¡Listo para rastrear tus dispositivos!                  ║
+║                                                               ║
+║   Ejecuta: npm start                                          ║
+║                                                               ║
+╚═══════════════════════════════════════════════════════════════╝

@@ -1,0 +1,22 @@
+{
+  "name": "device-location-tracker",
+  "version": "1.0.0",
+  "description": "Sistema de rastreo de ubicación en tiempo real para múltiples dispositivos",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "nodemon server/index.js"
+  },
+  "keywords": ["location", "tracking", "geolocation", "realtime", "websocket"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.6.1",
+    "uuid": "^9.0.0",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

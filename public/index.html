@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Rastreo de Ubicación - Dispositivos</title>
+    
+    <!-- Leaflet CSS para mapas -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Meta tags para PWA -->
+    <meta name="theme-color" content="#2563eb">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1>📍 Rastreo de Ubicación</h1>
+                <div class="device-info">
+                    <span id="current-device-name">Mi Dispositivo</span>
+                    <span class="status-indicator" id="connection-status"></span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Configuración inicial (se muestra solo la primera vez) -->
+        <div id="setup-screen" class="setup-screen">
+            <div class="setup-card">
+                <h2>🎯 Configurar Dispositivo</h2>
+                <p>Personaliza tu dispositivo para comenzar el rastreo</p>
+                
+                <div class="form-group">
+                    <label for="device-name">Nombre del Dispositivo</label>
+                    <input type="text" id="device-name" placeholder="Ej: iPhone de Juan, Laptop de María">
+                </div>
+                
+                <div class="form-group">
+                    <label for="device-type">Tipo de Dispositivo</label>
+                    <select id="device-type">
+                        <option value="mobile">📱 Móvil</option>
+                        <option value="tablet">📱 Tablet</option>
+                        <option value="desktop">💻 Ordenador</option>
+                        <option value="laptop">💻 Portátil</option>
+                    </select>
+                </div>
+                
+                <button id="register-btn" class="btn btn-primary btn-large">
+                    Comenzar Rastreo
+                </button>
+                
+                <div class="info-box">
+                    <p>ℹ️ Se solicitará permiso para acceder a tu ubicación. Esto es necesario para el rastreo de alta precisión.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pantalla principal -->
+        <div id="main-screen" class="main-screen" style="display: none;">
+            <!-- Panel de control -->
+            <div class="control-panel">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">📱</div>
+                        <div class="stat-content">
+                            <div class="stat-value" id="devices-count">0</div>
+                            <div class="stat-label">Dispositivos</div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">📍</div>
+                        <div class="stat-content">
+                            <div class="stat-value" id="location-accuracy">--</div>
+                            <div class="stat-label">Precisión</div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">🔄</div>
+                        <div class="stat-content">
+                            <div class="stat-value" id="last-update">--</div>
+                            <div class="stat-label">Última Actualización</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botones de acción -->
+                <div class="action-buttons">
+                    <button id="toggle-tracking-btn" class="btn btn-success">
+                        ▶️ Iniciar Rastreo
+                    </button>
+                    <button id="center-map-btn" class="btn btn-secondary">
+                        🎯 Centrar en Mí
+                    </button>
+                    <button id="refresh-btn" class="btn btn-secondary">
+                        🔄 Actualizar
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mapa -->
+            <div class="map-container">
+                <div id="map"></div>
+                <div class="map-overlay">
+                    <button id="fullscreen-btn" class="btn-icon" title="Pantalla completa">
+                        ⛶
+                    </button>
+                </div>
+            </div>
+
+            <!-- Lista de dispositivos -->
+            <div class="devices-panel">
+                <h3>Dispositivos Rastreados</h3>
+                <div id="devices-list" class="devices-list">
+                    <!-- Los dispositivos se cargarán dinámicamente -->
+                </div>
+            </div>
+
+            <!-- Panel de información actual -->
+            <div class="info-panel">
+                <h3>📍 Mi Ubicación Actual</h3>
+                <div id="current-location-info" class="location-info">
+                    <p class="loading">Esperando ubicación...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Notificaciones Toast -->
+        <div id="toast-container" class="toast-container"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
