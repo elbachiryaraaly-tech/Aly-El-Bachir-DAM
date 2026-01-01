@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#667eea">
+    <meta name="description" content="Rastrea la ubicación de tus dispositivos en tiempo real con máxima precisión">
+    
+    <!-- PWA Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Location Tracker">
+    
+    <title>📍 Device Location Tracker</title>
+    
+    <!-- Manifest para PWA -->
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/icon-192.png">
+    <link rel="icon" type="image/svg+xml" href="/icons/icon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/icon-96.png">
+    
+    <!-- Leaflet CSS para el mapa -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" 
+          crossorigin=""/>
+    
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Pantalla de configuración inicial -->
+        <div id="setup-screen" class="screen active">
+            <div class="setup-container">
+                <div class="logo">
+                    <span class="logo-icon">📍</span>
+                    <h1>Device Location Tracker</h1>
+                    <p class="subtitle">Rastrea tus dispositivos en tiempo real</p>
+                </div>
+                
+                <div class="setup-form">
+                    <div class="form-group">
+                        <label for="device-name">Nombre del dispositivo</label>
+                        <input type="text" id="device-name" placeholder="Ej: Mi iPhone, Portátil trabajo...">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="device-type">Tipo de dispositivo</label>
+                        <div class="device-type-selector">
+                            <button type="button" class="type-btn" data-type="mobile">
+                                <span class="type-icon">📱</span>
+                                <span>Móvil</span>
+                            </button>
+                            <button type="button" class="type-btn" data-type="desktop">
+                                <span class="type-icon">💻</span>
+                                <span>Ordenador</span>
+                            </button>
+                            <button type="button" class="type-btn" data-type="tablet">
+                                <span class="type-icon">📲</span>
+                                <span>Tablet</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="sync-code">Código de sincronización</label>
+                        <div class="sync-code-input">
+                            <input type="text" id="sync-code" placeholder="Introduce o genera un código">
+                            <button type="button" id="generate-code" class="btn-icon" title="Generar código">
+                                🎲
+                            </button>
+                        </div>
+                        <p class="hint">Usa el mismo código en todos tus dispositivos para sincronizarlos</p>
+                    </div>
+                    
+                    <button type="button" id="start-tracking" class="btn-primary" disabled>
+                        🚀 Comenzar rastreo
+                    </button>
+                </div>
+                
+                <div class="features">
+                    <div class="feature">
+                        <span class="feature-icon">🎯</span>
+                        <span>Alta precisión GPS</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">⚡</span>
+                        <span>Tiempo real</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">🔒</span>
+                        <span>Privado y seguro</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pantalla principal de tracking -->
+        <div id="tracking-screen" class="screen">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <span class="status-indicator" id="connection-status"></span>
+                    <span class="header-title">Location Tracker</span>
+                </div>
+                <div class="header-right">
+                    <span class="sync-code-display" id="current-sync-code"></span>
+                    <button id="settings-btn" class="btn-icon-small" title="Configuración">⚙️</button>
+                </div>
+            </header>
+            
+            <!-- Mapa -->
+            <div id="map-container">
+                <div id="map"></div>
+                
+                <!-- Controles del mapa -->
+                <div class="map-controls">
+                    <button id="center-map" class="map-btn" title="Centrar en mi ubicación">
+                        🎯
+                    </button>
+                    <button id="fit-all" class="map-btn" title="Ver todos los dispositivos">
+                        👥
+                    </button>
+                    <button id="refresh-location" class="map-btn" title="Actualizar ubicación">
+                        🔄
+                    </button>
+                </div>
+                
+                <!-- Info de precisión -->
+                <div class="accuracy-badge" id="accuracy-badge">
+                    <span class="accuracy-icon">🎯</span>
+                    <span class="accuracy-value" id="accuracy-value">--</span>
+                </div>
+            </div>
+            
+            <!-- Panel de dispositivos -->
+            <div id="devices-panel">
+                <div class="panel-header">
+                    <h3>📱 Dispositivos conectados</h3>
+                    <button id="toggle-panel" class="btn-icon-small">▲</button>
+                </div>
+                <div class="devices-list" id="devices-list">
+                    <!-- Los dispositivos se añadirán dinámicamente -->
+                </div>
+                
+                <!-- Mi ubicación actual -->
+                <div class="my-location-card" id="my-location-card">
+                    <div class="location-header">
+                        <span class="device-icon">📍</span>
+                        <span class="device-name" id="my-device-name">Mi dispositivo</span>
+                        <span class="update-time" id="my-update-time">--</span>
+                    </div>
+                    <div class="location-details">
+                        <div class="coord">
+                            <span class="label">Lat:</span>
+                            <span class="value" id="my-lat">--</span>
+                        </div>
+                        <div class="coord">
+                            <span class="label">Lng:</span>
+                            <span class="value" id="my-lng">--</span>
+                        </div>
+                        <div class="coord">
+                            <span class="label">Precisión:</span>
+                            <span class="value" id="my-accuracy">--</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modal de configuración -->
+        <div id="settings-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>⚙️ Configuración</h2>
+                    <button id="close-settings" class="btn-icon-small">✕</button>
+                </div>
+                <div class="modal-body">
+                    <div class="setting-group">
+                        <label class="setting-label">
+                            <input type="checkbox" id="high-accuracy" checked>
+                            <span>Alta precisión GPS</span>
+                        </label>
+                        <p class="setting-hint">Usa GPS para mayor precisión (consume más batería)</p>
+                    </div>
+                    
+                    <div class="setting-group">
+                        <label for="update-interval">Intervalo de actualización</label>
+                        <select id="update-interval">
+                            <option value="1000">1 segundo</option>
+                            <option value="3000" selected>3 segundos</option>
+                            <option value="5000">5 segundos</option>
+                            <option value="10000">10 segundos</option>
+                            <option value="30000">30 segundos</option>
+                        </select>
+                    </div>
+                    
+                    <div class="setting-group">
+                        <label class="setting-label">
+                            <input type="checkbox" id="show-accuracy-circle" checked>
+                            <span>Mostrar círculo de precisión</span>
+                        </label>
+                    </div>
+                    
+                    <div class="setting-group">
+                        <label class="setting-label">
+                            <input type="checkbox" id="keep-screen-on">
+                            <span>Mantener pantalla encendida</span>
+                        </label>
+                    </div>
+                    
+                    <div class="setting-group danger">
+                        <button id="disconnect-btn" class="btn-danger">
+                            🔌 Desconectar y salir
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Toast notifications -->
+        <div id="toast-container"></div>
+    </div>
+    
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""></script>
+    
+    <!-- Socket.io -->
+    <script src="/socket.io/socket.io.js"></script>
+    
+    <!-- App JS -->
+    <script src="/app.js"></script>
+</body>
+</html>

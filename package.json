@@ -1,0 +1,26 @@
+{
+  "name": "device-location-tracker",
+  "version": "1.0.0",
+  "description": "Aplicación para rastrear la ubicación de alta precisión entre dispositivos",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "geolocation",
+    "tracking",
+    "real-time",
+    "websocket"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.21.2",
+    "socket.io": "^4.8.1",
+    "uuid": "^11.0.3"
+  },
+  "devDependencies": {
+    "sharp": "^0.34.5"
+  }
+}
