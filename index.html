@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demostración de Geolocalización</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Localizador Web (Demo)</h1>
+    <p>Este ejemplo muestra cómo obtener la ubicación actual del dispositivo solicitando permiso al usuario.</p>
+    
+    <button class="btn" onclick="getLocation()">Obtener Mi Ubicación</button>
+
+    <div id="result">
+        <p>Latitud: <span id="lat"></span></p>
+        <p>Longitud: <span id="long"></span></p>
+        <p>Precisión: <span id="acc"></span> metros</p>
+        <p><a id="mapLink" target="_blank">Ver en Google Maps</a></p>
+    </div>
+
+    <script>
+        function getLocation() {
+            const resultDiv = document.getElementById('result');
+            
+            if (!navigator.geolocation) {
+                alert("La geolocalización no es soportada por su navegador.");
+                return;
+            }
+
+            navigator.geolocation.getCurrentPosition(success, error);
+
+            function success(position) {
+                const latitude = position.coords.latitude;
+                const longitude = position.coords.longitude;
+                const accuracy = position.coords.accuracy;
+
+                document.getElementById('lat').textContent = latitude;
+                document.getElementById('long').textContent = longitude;
+                document.getElementById('acc').textContent = accuracy;
+                
+                const mapLink = document.getElementById('mapLink');
+                mapLink.href = `https://www.google.com/maps?q=${latitude},${longitude}`;
+                
+                resultDiv.style.display = 'block';
+            }
+
+            function error() {
+                alert("No se pudo obtener la ubicación. El usuario denegó el permiso o hubo un error técnico.");
+            }
+        }
+    </script>
+</body>
+</html>
