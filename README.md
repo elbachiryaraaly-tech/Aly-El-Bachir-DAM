@@ -1,6 +1,6 @@
-# Herramientas de Liberación de Espacio
+# Herramientas de Mantenimiento PC
 
-Este repositorio contiene herramientas y guías para ayudarte a liberar espacio en tu disco duro rápidamente, especialmente útil cuando el sistema está saturado.
+Este repositorio contiene herramientas y guías para optimizar tu PC Windows, liberar espacio y diagnosticar problemas de batería.
 
 ## Contenido
 
@@ -10,12 +10,21 @@ Una guía paso a paso en español con métodos seguros y efectivos para recupera
 - Limpieza de temporales.
 - Gestión de aplicaciones.
 
-### 2. Script de Limpieza Automática
-Un script en Python para eliminar archivos temporales automáticamente.
+### 2. [Guía de Optimización de Batería](docs/GUIA_OPTIMIZAR_BATERIA.md)
+Consejos específicos para portátiles (especialmente HP EliteBook) para diagnosticar la salud de la batería y mejorar su duración.
 
-**Uso:**
-Asegúrate de tener Python instalado y ejecuta:
+## Scripts Automatizados
+
+### Limpiador de Espacio
+Elimina archivos temporales automáticamente.
 ```bash
 python scripts/limpiador.py
 ```
-*Nota: Para una limpieza más profunda, ejecuta la terminal como Administrador.*
+*Nota: Ejecutar como Administrador para mayor efectividad.*
+
+### Diagnóstico de Batería
+Genera y abre un reporte oficial de Windows sobre la salud de tu batería.
+```bash
+python scripts/diagnostico_bateria.py
+```
+Este script te mostrará la capacidad real de tu batería frente a la original de fábrica.
