@@ -1,0 +1,23 @@
+# ContentGPT Bot - Dependencias
+# Bot de Telegram que genera contenido con IA
+
+# Bot de Telegram
+python-telegram-bot==20.7
+python-telegram-bot[job-queue]==20.7
+
+# IA Gratis (sin necesidad de API key de pago)
+g4f==0.2.5.2
+
+# Base de datos
+aiosqlite==0.19.0
+
+# Web y pagos
+fastapi==0.109.0
+uvicorn==0.27.0
+stripe==7.10.0
+python-dotenv==1.0.0
+jinja2==3.1.3
+
+# Utilidades
+aiohttp==3.9.1
+asyncio==3.4.3
