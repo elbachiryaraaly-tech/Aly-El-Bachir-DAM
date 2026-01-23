@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Lbachir Aakaik</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .cv-container {
+            max-width: 900px;
+            margin: 20px auto;
+            background: #fff;
+            box-shadow: 0 0 30px rgba(0,0,0,0.1);
+            display: grid;
+            grid-template-columns: 320px 1fr;
+        }
+
+        /* Columna izquierda - Sidebar */
+        .sidebar {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: #fff;
+            padding: 40px 25px;
+        }
+
+        .profile-section {
+            text-align: center;
+            margin-bottom: 35px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: #fff;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: #1a365d;
+            font-weight: 700;
+        }
+
+        .profile-name {
+            font-family: 'Roboto', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .profile-title {
+            font-size: 14px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .sidebar-section {
+            margin-bottom: 30px;
+        }
+
+        .sidebar-title {
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #63b3ed;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            font-size: 13px;
+        }
+
+        .contact-icon {
+            width: 35px;
+            height: 35px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+
+        .contact-icon svg {
+            width: 16px;
+            height: 16px;
+            fill: #63b3ed;
+        }
+
+        .contact-text {
+            padding-top: 7px;
+        }
+
+        .contact-label {
+            font-size: 11px;
+            opacity: 0.7;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Certificaciones */
+        .cert-item {
+            background: rgba(255,255,255,0.1);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            border-left: 3px solid #63b3ed;
+        }
+
+        .cert-name {
+            font-weight: 600;
+            font-size: 13px;
+            margin-bottom: 3px;
+        }
+
+        .cert-date {
+            font-size: 11px;
+            opacity: 0.8;
+        }
+
+        /* Idiomas */
+        .language-item {
+            margin-bottom: 15px;
+        }
+
+        .language-name {
+            font-size: 13px;
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .language-bar {
+            height: 6px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .language-level {
+            height: 100%;
+            background: linear-gradient(90deg, #63b3ed, #4fd1c5);
+            border-radius: 3px;
+        }
+
+        /* Columna derecha - Main Content */
+        .main-content {
+            padding: 40px 35px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a365d;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #1a365d;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: #1a365d;
+            border-radius: 50%;
+            margin-right: 12px;
+        }
+
+        /* Perfil profesional */
+        .profile-text {
+            font-size: 14px;
+            color: #555;
+            text-align: justify;
+            line-height: 1.8;
+        }
+
+        /* Experiencia */
+        .experience-item {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 25px;
+            border-left: 2px solid #e2e8f0;
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 14px;
+            height: 14px;
+            background: #1a365d;
+            border-radius: 50%;
+            border: 3px solid #fff;
+            box-shadow: 0 0 0 2px #1a365d;
+        }
+
+        .experience-date {
+            display: inline-block;
+            background: linear-gradient(135deg, #1a365d, #2c5282);
+            color: #fff;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .experience-company {
+            font-family: 'Roboto', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a365d;
+            margin-bottom: 5px;
+        }
+
+        .experience-position {
+            font-size: 14px;
+            color: #2c5282;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .experience-description {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .experience-description ul {
+            list-style: none;
+            margin-top: 8px;
+        }
+
+        .experience-description li {
+            position: relative;
+            padding-left: 18px;
+            margin-bottom: 5px;
+        }
+
+        .experience-description li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #1a365d;
+        }
+
+        /* Habilidades */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .skill-item {
+            background: #f7fafc;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #1a365d;
+        }
+
+        .skill-name {
+            font-weight: 600;
+            font-size: 13px;
+            color: #1a365d;
+            margin-bottom: 8px;
+        }
+
+        .skill-bar {
+            height: 8px;
+            background: #e2e8f0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .skill-level {
+            height: 100%;
+            background: linear-gradient(90deg, #1a365d, #2c5282);
+            border-radius: 4px;
+        }
+
+        /* Datos personales */
+        .personal-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .personal-item {
+            background: #f7fafc;
+            padding: 12px 15px;
+            border-radius: 8px;
+        }
+
+        .personal-label {
+            font-size: 11px;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .personal-value {
+            font-size: 14px;
+            color: #1a365d;
+            font-weight: 600;
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: #fff;
+            }
+            .cv-container {
+                box-shadow: none;
+                margin: 0;
+            }
+        }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="profile-section">
+                <div class="profile-photo">LA</div>
+                <h1 class="profile-name">Lbachir Aakaik</h1>
+                <p class="profile-title">Operador de Maquinaria | Instalador Fotovoltaico</p>
+            </div>
+
+            <!-- Contacto -->
+            <div class="sidebar-section">
+                <h2 class="sidebar-title">Contacto</h2>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    </div>
+                    <div class="contact-text">
+                        <div class="contact-label">Dirección</div>
+                        <div>Calle Río Ebro, 20</div>
+                        <div>41620 Marchena, Sevilla</div>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    </div>
+                    <div class="contact-text">
+                        <div class="contact-label">NIE</div>
+                        <div>Y0903623J</div>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                    </div>
+                    <div class="contact-text">
+                        <div class="contact-label">Nacionalidad</div>
+                        <div>Marroquí</div>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM9 10H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm-8 4H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/></svg>
+                    </div>
+                    <div class="contact-text">
+                        <div class="contact-label">Fecha de Nacimiento</div>
+                        <div>7 de Julio de 1971</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certificaciones -->
+            <div class="sidebar-section">
+                <h2 class="sidebar-title">Certificaciones</h2>
+                
+                <div class="cert-item">
+                    <div class="cert-name">Carretilla Elevadora</div>
+                    <div class="cert-date">Válido hasta: 25/01/2030</div>
+                </div>
+                
+                <div class="cert-item">
+                    <div class="cert-name">Plataforma Elevadora</div>
+                    <div class="cert-date">Válido hasta: 25/01/2030</div>
+                </div>
+                
+                <div class="cert-item">
+                    <div class="cert-name">Maquinaria Telescópica</div>
+                    <div class="cert-date">Válido hasta: 25/01/2030</div>
+                </div>
+                
+                <div class="cert-item">
+                    <div class="cert-name">Camión Pluma</div>
+                    <div class="cert-date">Válido hasta: 25/01/2030</div>
+                </div>
+                
+                <div class="cert-item">
+                    <div class="cert-name">Dumper</div>
+                    <div class="cert-date">Válido hasta: 25/01/2030</div>
+                </div>
+            </div>
+
+            <!-- Idiomas -->
+            <div class="sidebar-section">
+                <h2 class="sidebar-title">Idiomas</h2>
+                
+                <div class="language-item">
+                    <div class="language-name">
+                        <span>Árabe</span>
+                        <span>Nativo</span>
+                    </div>
+                    <div class="language-bar">
+                        <div class="language-level" style="width: 100%;"></div>
+                    </div>
+                </div>
+                
+                <div class="language-item">
+                    <div class="language-name">
+                        <span>Español</span>
+                        <span>Avanzado</span>
+                    </div>
+                    <div class="language-bar">
+                        <div class="language-level" style="width: 85%;"></div>
+                    </div>
+                </div>
+                
+                <div class="language-item">
+                    <div class="language-name">
+                        <span>Francés</span>
+                        <span>Intermedio</span>
+                    </div>
+                    <div class="language-bar">
+                        <div class="language-level" style="width: 60%;"></div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Perfil Profesional -->
+            <section class="section">
+                <h2 class="section-title">Perfil Profesional</h2>
+                <p class="profile-text">
+                    Profesional con amplia experiencia en el sector de energías renovables, especializado en la instalación y mantenimiento de plantas fotovoltaicas. Cuento con certificaciones vigentes en operación de maquinaria pesada (carretilla elevadora, plataforma elevadora, maquinaria telescópica, camión pluma y dumper), lo que me permite desarrollar trabajos de forma autónoma y segura en diferentes entornos industriales. Persona responsable, comprometida y con capacidad para trabajar en equipo en proyectos de gran envergadura. Poseo permiso de residencia de larga duración con autorización para trabajar.
+                </p>
+            </section>
+
+            <!-- Experiencia Profesional -->
+            <section class="section">
+                <h2 class="section-title">Experiencia Profesional</h2>
+                
+                <div class="experience-item">
+                    <span class="experience-date">Mayo 2025 - Diciembre 2025</span>
+                    <h3 class="experience-company">MT BLUTUO, S.L.</h3>
+                    <p class="experience-position">Operario de Instalaciones Fotovoltaicas</p>
+                    <div class="experience-description">
+                        <ul>
+                            <li>Instalación y montaje de paneles solares fotovoltaicos</li>
+                            <li>Operación de maquinaria pesada para el movimiento de materiales</li>
+                            <li>Montaje de estructuras metálicas para soporte de paneles</li>
+                            <li>Colaboración en tareas de mantenimiento preventivo de instalaciones</li>
+                            <li>Cumplimiento de normativas de seguridad y prevención de riesgos laborales</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <span class="experience-date">Enero 2025 - Mayo 2025</span>
+                    <h3 class="experience-company">PRONARCEA, S.L.</h3>
+                    <p class="experience-position">Operario de Instalaciones Fotovoltaicas</p>
+                    <div class="experience-description">
+                        <ul>
+                            <li>Participación en proyectos de instalación de plantas solares</li>
+                            <li>Manejo de plataformas elevadoras y maquinaria telescópica</li>
+                            <li>Preparación y acondicionamiento de terrenos para instalaciones</li>
+                            <li>Trabajo coordinado en equipos multidisciplinares</li>
+                            <li>Descarga y ubicación de materiales con camión pluma</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <span class="experience-date">Mayo 2024 - Diciembre 2024</span>
+                    <h3 class="experience-company">TIRIS LAND SOLUTIONS, S.L.</h3>
+                    <p class="experience-position">Operario de Instalaciones Fotovoltaicas</p>
+                    <div class="experience-description">
+                        <ul>
+                            <li>Instalación de sistemas de energía solar fotovoltaica</li>
+                            <li>Operación de carretillas elevadoras y dumpers</li>
+                            <li>Transporte de materiales dentro del área de trabajo</li>
+                            <li>Colaboración en el ensamblaje de componentes eléctricos básicos</li>
+                            <li>Apoyo en tareas de logística y almacenamiento de equipos</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Habilidades Técnicas -->
+            <section class="section">
+                <h2 class="section-title">Habilidades Técnicas</h2>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <div class="skill-name">Instalación Fotovoltaica</div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">Maquinaria Pesada</div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 95%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">Montaje Estructuras</div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">Trabajo en Altura</div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">Seguridad Laboral (PRL)</div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">Trabajo en Equipo</div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 95%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Datos Adicionales -->
+            <section class="section">
+                <h2 class="section-title">Información Adicional</h2>
+                <div class="personal-grid">
+                    <div class="personal-item">
+                        <div class="personal-label">Permiso de Trabajo</div>
+                        <div class="personal-value">Residencia Larga Duración</div>
+                    </div>
+                    <div class="personal-item">
+                        <div class="personal-label">Disponibilidad</div>
+                        <div class="personal-value">Inmediata</div>
+                    </div>
+                    <div class="personal-item">
+                        <div class="personal-label">Movilidad Geográfica</div>
+                        <div class="personal-value">Sí, disponible</div>
+                    </div>
+                    <div class="personal-item">
+                        <div class="personal-label">Carnet de Conducir</div>
+                        <div class="personal-value">Disponible</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
