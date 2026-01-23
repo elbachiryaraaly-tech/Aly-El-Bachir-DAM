@@ -2,3 +2,4 @@
 
 ## CV
 - [`CV_LBACHIR_AAKAIK.md`](./CV_LBACHIR_AAKAIK.md)
+- [`CV_LBACHIR_AAKAIK.html`](./CV_LBACHIR_AAKAIK.html)

@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <title>CV · Lbachir Aakaik</title>
+    <style>
+      :root{
+        --bg: #0b1220;
+        --paper: #ffffff;
+        --ink: #0f172a;
+        --muted: #475569;
+        --line: #e2e8f0;
+        --chip: #f1f5f9;
+        --accent: #2563eb;
+        --accent2: #06b6d4;
+        --shadow: 0 18px 55px rgba(2,6,23,.25);
+      }
+
+      * { box-sizing: border-box; }
+      html, body { height: 100%; }
+      body{
+        margin: 0;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+        color: var(--ink);
+        background:
+          radial-gradient(1000px 450px at 15% 0%, rgba(37,99,235,.35), transparent 60%),
+          radial-gradient(850px 420px at 95% 10%, rgba(6,182,212,.28), transparent 55%),
+          linear-gradient(180deg, #050813, var(--bg) 55%, #050813);
+        padding: 24px 14px;
+      }
+
+      a { color: inherit; text-decoration: none; }
+      a:hover { text-decoration: underline; }
+
+      .page{
+        width: min(980px, 100%);
+        margin: 0 auto;
+        background: var(--paper);
+        border: 1px solid rgba(226,232,240,.85);
+        border-radius: 18px;
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+
+      .topbar{
+        padding: 22px 26px 18px;
+        background:
+          linear-gradient(135deg, rgba(37,99,235,.10), rgba(6,182,212,.08)),
+          radial-gradient(900px 250px at 0% 0%, rgba(37,99,235,.13), transparent 60%),
+          radial-gradient(700px 220px at 85% 0%, rgba(6,182,212,.12), transparent 55%);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .name{
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 18px;
+        flex-wrap: wrap;
+      }
+
+      h1{
+        margin: 0;
+        font-size: 34px;
+        letter-spacing: -0.02em;
+        line-height: 1.08;
+      }
+
+      .role{
+        margin-top: 8px;
+        color: var(--muted);
+        font-weight: 600;
+      }
+
+      .meta{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 8px;
+        margin-top: 14px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .meta strong { color: var(--ink); font-weight: 700; }
+
+      .wrap{
+        display: grid;
+        grid-template-columns: 1.6fr 1fr;
+        gap: 22px;
+        padding: 22px 26px 26px;
+      }
+
+      .card{
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 16px 16px 14px;
+        background: #fff;
+      }
+
+      .section-title{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 0 0 10px;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: .10em;
+        color: var(--muted);
+        font-weight: 800;
+      }
+      .section-title::before{
+        content: "";
+        width: 10px;
+        height: 10px;
+        border-radius: 999px;
+        background: linear-gradient(135deg, var(--accent), var(--accent2));
+        box-shadow: 0 0 0 3px rgba(37,99,235,.10);
+      }
+
+      p{ margin: 0; color: var(--ink); line-height: 1.45; }
+      .muted{ color: var(--muted); }
+
+      .job{
+        padding: 14px 0;
+        border-top: 1px dashed var(--line);
+      }
+      .job:first-of-type{ border-top: 0; padding-top: 0; }
+
+      .job-head{
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 16px;
+      }
+
+      .job h3{
+        margin: 0;
+        font-size: 15.5px;
+        line-height: 1.25;
+      }
+      .company{
+        font-weight: 800;
+      }
+      .date{
+        font-size: 12.5px;
+        color: var(--muted);
+        font-weight: 700;
+        white-space: nowrap;
+      }
+
+      ul{
+        margin: 10px 0 0;
+        padding-left: 18px;
+        color: var(--ink);
+      }
+      li{ margin: 6px 0; line-height: 1.35; }
+
+      .chips{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 10px;
+      }
+      .chip{
+        font-size: 12.5px;
+        color: #0b1220;
+        background: var(--chip);
+        border: 1px solid rgba(226,232,240,.9);
+        border-radius: 999px;
+        padding: 7px 10px;
+        font-weight: 700;
+      }
+
+      .grid-2{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      .list-tight li{ margin: 5px 0; }
+
+      .note{
+        margin-top: 10px;
+        padding: 10px 12px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, rgba(37,99,235,.06), rgba(6,182,212,.05));
+        border: 1px solid rgba(226,232,240,.9);
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.35;
+      }
+
+      .printbar{
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+        padding: 12px 18px;
+        border-top: 1px solid var(--line);
+        background: #fbfdff;
+      }
+      .btn{
+        border: 1px solid rgba(226,232,240,.95);
+        background: white;
+        color: var(--ink);
+        font-weight: 800;
+        font-size: 13px;
+        padding: 9px 12px;
+        border-radius: 12px;
+        cursor: pointer;
+      }
+      .btn.primary{
+        border-color: rgba(37,99,235,.25);
+        background: linear-gradient(135deg, rgba(37,99,235,.12), rgba(6,182,212,.10));
+      }
+
+      @media (max-width: 900px){
+        .wrap{ grid-template-columns: 1fr; }
+      }
+
+      @media print{
+        body{ background: none; padding: 0; }
+        .page{ box-shadow: none; border: none; border-radius: 0; }
+        .printbar{ display: none; }
+        a{ text-decoration: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page" role="document" aria-label="Currículum Vitae">
+      <header class="topbar">
+        <div class="name">
+          <div>
+            <h1>LBACHIR AAKAIK</h1>
+            <div class="role">Técnico de instalaciones fotovoltaicas · Montaje en obra · Seguridad y productividad</div>
+          </div>
+          <div class="meta" aria-label="Datos de contacto">
+            <div><strong>Ubicación:</strong> Marchena (Sevilla) · Calle Río Ebro 20, 41620, Marchena</div>
+            <div><strong>Tel.:</strong> [añadir] · <strong>Email:</strong> [añadir] · <strong>LinkedIn:</strong> [añadir]</div>
+          </div>
+        </div>
+      </header>
+
+      <section class="wrap">
+        <section class="card" aria-label="Columna principal">
+          <h2 class="section-title">Perfil profesional</h2>
+          <p>
+            Profesional con experiencia en proyectos de <strong>energía solar fotovoltaica</strong> en obra, especializado en
+            <strong>montaje de estructuras y módulos</strong>, apoyo a <strong>tendidos de cableado</strong> y tareas de campo orientadas a
+            <strong>calidad, seguridad (PRL)</strong> y cumplimiento de plazos. Acostumbrado a trabajar en equipo siguiendo procedimientos e
+            instrucciones técnicas.
+          </p>
+
+          <div style="height: 16px"></div>
+
+          <h2 class="section-title">Experiencia profesional (Fotovoltaica)</h2>
+
+          <article class="job">
+            <div class="job-head">
+              <h3>Operario / Técnico de instalación fotovoltaica — <span class="company">TIRIS LAND SOLUTIONS, S.L.</span></h3>
+              <div class="date">Mayo 2024 – Diciembre 2024</div>
+            </div>
+            <ul>
+              <li>Montaje de <strong>estructuras</strong> y <strong>módulos fotovoltaicos</strong> (panelado) con alineación y aprietes según especificaciones.</li>
+              <li>Apoyo en <strong>tendido de cableado</strong> y ordenación de materiales en obra.</li>
+              <li>Cumplimiento de <strong>normas de seguridad</strong>, uso de EPIs y buenas prácticas de orden y limpieza.</li>
+            </ul>
+          </article>
+
+          <article class="job">
+            <div class="job-head">
+              <h3>Operario / Técnico de instalación fotovoltaica — <span class="company">PRONARCEA, S.L.</span></h3>
+              <div class="date">Enero 2025 – Mayo 2025</div>
+            </div>
+            <ul>
+              <li>Montaje en campo: <strong>estructura</strong>, <strong>panelado</strong> y apoyo en canalizaciones/tendidos.</li>
+              <li>Soporte en coordinación de obra: logística de materiales, replanteos básicos y preparación de frentes.</li>
+              <li>Participación en rutinas de <strong>verificación visual</strong> y control de calidad básico de montaje.</li>
+            </ul>
+          </article>
+
+          <article class="job">
+            <div class="job-head">
+              <h3>Operario / Técnico de instalación fotovoltaica — <span class="company">MT BLUTUO, S.L.</span></h3>
+              <div class="date">Mayo 2025 – Diciembre 2025</div>
+            </div>
+            <ul>
+              <li>Montaje FV en obra con foco en <strong>ritmo de producción</strong> y cumplimiento de objetivos diarios.</li>
+              <li>Apoyo en maniobras y movimientos de materiales siguiendo instrucciones de seguridad.</li>
+              <li>Cierre de frentes: revisión, recogida de herramientas, orden y limpieza.</li>
+            </ul>
+          </article>
+        </section>
+
+        <aside class="card" aria-label="Columna lateral">
+          <h2 class="section-title">Certificaciones (Maquinaria)</h2>
+          <p class="muted"><strong>Operador</strong> · obtención 25/01/2025 · renovación 25/01/2030</p>
+          <div class="chips" aria-label="Certificaciones">
+            <span class="chip">Carretilla elevadora</span>
+            <span class="chip">Plataforma elevadora (PEMP)</span>
+            <span class="chip">Maquinaria telescópica</span>
+            <span class="chip">Camión pluma</span>
+            <span class="chip">Dumper</span>
+          </div>
+
+          <div style="height: 16px"></div>
+
+          <h2 class="section-title">Competencias técnicas</h2>
+          <ul class="list-tight">
+            <li><strong>Montaje fotovoltaico:</strong> estructura, panelado, aprietes, ordenación de campo.</li>
+            <li><strong>Trabajo en obra:</strong> coordinación, seguimiento de instrucciones, control visual de calidad.</li>
+            <li><strong>Seguridad:</strong> EPIs, hábitos de prevención, orden y limpieza.</li>
+            <li><strong>Manejo de maquinaria:</strong> según certificaciones (carretilla, PEMP, telescópica, camión pluma, dumper).</li>
+          </ul>
+
+          <div style="height: 16px"></div>
+
+          <h2 class="section-title">Competencias personales</h2>
+          <div class="grid-2">
+            <div class="note">Responsabilidad y constancia</div>
+            <div class="note">Trabajo en equipo</div>
+            <div class="note">Orientación a objetivos</div>
+            <div class="note">Puntualidad y orden</div>
+          </div>
+
+          <div style="height: 16px"></div>
+
+          <h2 class="section-title">Idiomas</h2>
+          <ul class="list-tight">
+            <li>Español: <strong>[indicar nivel]</strong></li>
+            <li>Árabe: <strong>[indicar nivel]</strong></li>
+            <li>Francés: <strong>[indicar nivel]</strong></li>
+          </ul>
+
+          <div style="height: 16px"></div>
+
+          <h2 class="section-title">Información adicional</h2>
+          <p class="muted">
+            Permiso de residencia en España: <strong>residencia de larga duración (autoriza a trabajar)</strong>.
+          </p>
+          <div style="height: 10px"></div>
+          <p class="muted">Disponibilidad: <strong>[indicar disponibilidad / desplazamientos]</strong>.</p>
+        </aside>
+      </section>
+
+      <footer class="printbar" aria-label="Acciones">
+        <button class="btn" type="button" onclick="window.print()">Imprimir / Guardar PDF</button>
+        <button class="btn primary" type="button" onclick="navigator.clipboard?.writeText(document.title).catch(() => {})">
+          Copiar título
+        </button>
+      </footer>
+    </main>
+  </body>
+</html>
