@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #34495e;
+    --accent-color: #3498db;
+    --text-color: #333;
+    --text-light: #666;
+    --bg-color: #f0f2f5;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.cv-container {
+    max-width: 210mm; /* A4 width */
+    margin: 40px auto;
+    background-color: var(--white);
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    min-height: 297mm; /* A4 height */
+}
+
+/* Header Styles */
+.cv-header {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 40px;
+    text-align: center;
+}
+
+.cv-header h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.cv-header h2 {
+    font-size: 18px;
+    font-weight: 400;
+    color: #ecf0f1;
+    margin-bottom: 20px;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 14px;
+}
+
+.contact-info span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.contact-info i {
+    color: var(--accent-color);
+}
+
+/* Main Content Layout */
+.main-content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.left-column {
+    width: 35%;
+    background-color: #f8f9fa;
+    padding: 30px;
+    border-right: 1px solid #eee;
+}
+
+.right-column {
+    width: 65%;
+    padding: 30px;
+}
+
+/* Section Styles */
+.section {
+    margin-bottom: 30px;
+}
+
+.section h3 {
+    color: var(--primary-color);
+    font-size: 18px;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section h3 i {
+    color: var(--accent-color);
+}
+
+/* Profile Section */
+.profile p {
+    color: var(--text-light);
+    text-align: justify;
+}
+
+/* Certifications & Skills */
+.cert-item {
+    margin-bottom: 15px;
+}
+
+.cert-item h4 {
+    font-size: 14px;
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+}
+
+ul {
+    list-style: none;
+}
+
+.certifications ul li,
+.skills ul li,
+.languages ul li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
+    color: var(--text-light);
+}
+
+.certifications ul li::before,
+.skills ul li::before,
+.languages ul li::before {
+    content: "•";
+    color: var(--accent-color);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* Experience Section */
+.job {
+    margin-bottom: 25px;
+}
+
+.job-header {
+    margin-bottom: 10px;
+}
+
+.job-header h4 {
+    font-size: 16px;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.job-header .company {
+    display: block;
+    font-weight: 500;
+    color: var(--accent-color);
+}
+
+.job-header .date {
+    font-size: 12px;
+    color: #95a5a6;
+    font-style: italic;
+}
+
+.job-details ul li {
+    position: relative;
+    padding-left: 15px;
+    margin-bottom: 5px;
+    color: var(--text-light);
+}
+
+.job-details ul li::before {
+    content: "-";
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background-color: white;
+        -webkit-print-color-adjust: exact;
+    }
+    
+    .cv-container {
+        margin: 0;
+        box-shadow: none;
+        width: 100%;
+        max-width: none;
+    }
+
+    .left-column {
+        background-color: #f8f9fa !important;
+        -webkit-print-color-adjust: exact;
+    }
+
+    .cv-header {
+        background-color: var(--primary-color) !important;
+        -webkit-print-color-adjust: exact;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+    }
+    
+    .left-column, .right-column {
+        width: 100%;
+        border-right: none;
+    }
+}
