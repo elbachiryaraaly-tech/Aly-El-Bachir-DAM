@@ -93,8 +93,13 @@
 ║  💰 RESUMEN GENERAL HOY                        ║
 ║  ┌────────────────────────────────────────┐   ║
 ║  │  Transacciones:  156  (+23 vs ayer)   │   ║
+║  │   ├─ Efectivo: 134 (86%)              │   ║
+║  │   └─ Transferencias: 22 (14%)         │   ║
+║  │                                        │   ║
 ║  │  Comisiones:    €3,240  (+12%)        │   ║
-║  │  Efectivo Total: €48,500              │   ║
+║  │  Efectivo Total: €28,500              │   ║
+║  │  Bancos: €12,300 (40 transfers)       │   ║
+║  │  💎 TOTAL: €40,800                    │   ║
 ║  └────────────────────────────────────────┘   ║
 ║                                                ║
 ║  📍 POR UBICACIÓN                              ║
@@ -102,7 +107,11 @@
 ║  │ 🏢 TINDOUF         │ ⛺ AAIÚN          │   ║
 ║  ├─────────────────────┼──────────────────┤   ║
 ║  │ Trans: 89          │ Trans: 67        │   ║
-║  │ Efectivo: €28,300  │ Efectivo: €20,200│   ║
+║  │ ├─ Efectivo: 67    │ ├─ Efectivo: 50  │   ║
+║  │ └─ Transfer: 22    │ └─ Transfer: 17  │   ║
+║  │                    │                  │   ║
+║  │ Efectivo: €18,300  │ Efectivo: €10,200│   ║
+║  │ Banco: €8,200 🏦   │ Banco: €4,100 🏦 │   ║
 ║  │ Empleados: 3 ✓     │ Empleados: 2 ✓   │   ║
 ║  │ Estado: ✅ OK      │ Estado: ⚠️ EUR Bajo│   ║
 ║  └─────────────────────┴──────────────────┘   ║
@@ -110,9 +119,10 @@
 ║  ⚠️ ALERTAS ACTIVAS                            ║
 ║  • Aaiún: EUR bajo nivel (€850 restantes)     ║
 ║  • Tindouf: Transacción grande pendiente      ║
+║  • 2 transferencias pendientes (€580 total)   ║
 ║  • Empleado "Ahmed" cerró caja en Tindouf     ║
 ║                                                ║
-║  [VER MÁS DETALLES] [CAMBIAR TASAS] [REPORTES]║
+║  [DETALLES] [CUENTAS BANCARIAS] [TASAS] [MÁS] ║
 ╚════════════════════════════════════════════════╝
 ```
 
@@ -183,15 +193,93 @@ Cada vez que un empleado hace una transacción:
 ╚════════════════════════════════════════════════╝
 ```
 
-#### 4. Notificaciones por WhatsApp Automáticas
+#### 4. Gestión de Cuentas Bancarias
+
+```
+╔════════════════════════════════════════════════╗
+║  🏦 CUENTAS BANCARIAS                          ║
+╠════════════════════════════════════════════════╣
+║                                                ║
+║  📍 CUENTA TINDOUF                             ║
+║  ┌──────────────────────────────────────────┐ ║
+║  │  Banco: CPA / CCP                        │ ║
+║  │  IBAN: DZ59...                          │ ║
+║  │                                          │ ║
+║  │  Balance: €8,200                         │ ║
+║  │  Hoy recibido: €2,340 (22 transfers)    │ ║
+║  │  Estado: ⚠️ 88% lleno - Retirar pronto  │ ║
+║  │                                          │ ║
+║  │  [VER MOVIMIENTOS] [REGISTRAR RETIRO]   │ ║
+║  └──────────────────────────────────────────┘ ║
+║                                                ║
+║  📍 CUENTA AAIÚN                               ║
+║  ┌──────────────────────────────────────────┐ ║
+║  │  Banco: CPA / CCP                        │ ║
+║  │  IBAN: DZ59...                          │ ║
+║  │                                          │ ║
+║  │  Balance: €4,100                         │ ║
+║  │  Hoy recibido: €1,890 (18 transfers)    │ ║
+║  │  Estado: ✅ Normal (68%)                 │ ║
+║  │                                          │ ║
+║  │  [VER MOVIMIENTOS] [REGISTRAR RETIRO]   │ ║
+║  └──────────────────────────────────────────┘ ║
+║                                                ║
+║  💡 SUGERENCIAS:                               ║
+║  • Retirar €6,000 de cuenta Tindouf           ║
+║                                                ║
+║  TOTAL EN BANCOS: €12,300                     ║
+║  [VOLVER AL DASHBOARD]                        ║
+╚════════════════════════════════════════════════╝
+```
+
+**Funciones:**
+- Ver balance de cada cuenta bancaria
+- Historial de todas las transferencias recibidas
+- Alertas cuando cuenta está >80% llena
+- Registrar retiros de banco a efectivo
+- Movimientos detallados por fecha
+
+#### 5. Notificaciones por WhatsApp Automáticas
 
 **Recibes mensajes automáticos como:**
 
 ```
 📱 WhatsApp Business API
+
 ─────────────────────────────
+🤖 Sistema Cambio [10:05]
+💳 TRANSFERENCIA PENDIENTE
+
+Ubicación: Tindouf
+Empleado: Ahmed
+Cliente: Mohamed (628...)
+
+Esperando: €345 para 50,000 DZD
+Código: TP-0089
+
+Estado: ⏳ Pendiente confirmación
+
+[Ver detalles]
+─────────────────────────────
+
+🤖 Sistema Cambio [10:10]
+✅ TRANSFERENCIA CONFIRMADA
+
+Ubicación: Tindouf
+Empleado: Ahmed
+Cliente: Mohamed
+
+Recibido: €345 (transferencia)
+Entregado: 50,000 DZD (efectivo)
+Comisión: €6.90
+
+Tu cuenta bancaria: +€345
+
+[Ver detalles]
+─────────────────────────────
+
 🤖 Sistema Cambio [14:23]
-⚠️ TRANSACCIÓN GRANDE
+⚠️ TRANSACCIÓN GRANDE (EFECTIVO)
 
 Ubicación: Tindouf
 Empleado: Ahmed
@@ -201,6 +289,20 @@ Comisión: 6.88 EUR
 
 ¿Aprobar?
 [✅ Sí, aprobar] [❌ No, rechazar]
+─────────────────────────────
+
+🤖 Sistema Cambio [15:30]
+⚠️ TRANSFERENCIA PENDIENTE 1+ HORA
+
+Ubicación: Aaiún
+Esperando: €890
+Cliente: Sin nombre
+Código: TP-0091
+
+Registrada hace: 1h 20min
+¿Cancelar si no llega?
+
+[Cancelar] [Marcar recibida] [Más tiempo]
 ─────────────────────────────
 
 🤖 Sistema Cambio [18:30]
@@ -219,10 +321,23 @@ Diferencia: -€20 ⚠️
 🤖 Sistema Cambio [19:00]
 📊 REPORTE DIARIO
 
-Total transacciones: 156
-Total comisiones: €3,240
-Mejor ubicación: Aaiún (+15%)
-Empleado destacado: Mohamed (42 trans)
+TRANSACCIONES:
+• Total: 156 (€3,240 comisiones)
+• Efectivo: 134 (86%)
+• Transferencias: 22 (14%)
+
+CUENTAS BANCARIAS:
+• Tindouf: +€2,340 (15 transfers)
+• Aaiún: +€1,890 (7 transfers)
+
+EFECTIVO EN CAJA:
+• Tindouf: €18,300
+• Aaiún: €10,200
+
+MEJOR: Tindouf (+12%)
+EMPLEADO TOP: Ahmed (52 trans)
+
+⚠️ RECOMENDACIÓN: Retirar €6K Tindouf
 
 [Ver reporte completo]
 ─────────────────────────────
@@ -292,7 +407,38 @@ Desde tu teléfono puedes ver:
 ╚════════════════════════════════════════════════╝
 ```
 
-### Proceso de Transacción (5 pasos SÚPER SIMPLES)
+### Menú Principal para Empleado
+
+```
+╔════════════════════════════════════════════════╗
+║  🏢 TINDOUF - Usuario: Ahmed                   ║
+║  Hora: 14:30  |  Caja: ABIERTA                 ║
+╠════════════════════════════════════════════════╣
+║                                                ║
+║  ¿QUÉ TIPO DE OPERACIÓN?                       ║
+║                                                ║
+║  ┌──────────────────────────────────────────┐ ║
+║  │  💵 EFECTIVO → EFECTIVO                  │ ║
+║  │  (Cliente trae cash, le das cash)        │ ║
+║  │  [TOCA AQUÍ]                             │ ║
+║  └──────────────────────────────────────────┘ ║
+║                                                ║
+║  ┌──────────────────────────────────────────┐ ║
+║  │  💳 TRANSFERENCIA → EFECTIVO             │ ║
+║  │  (Cliente transfiere, le das cash)       │ ║
+║  │  [TOCA AQUÍ]                             │ ║
+║  └──────────────────────────────────────────┘ ║
+║                                                ║
+║  ┌──────────────────────────────────────────┐ ║
+║  │  📋 VER TRANSFERENCIAS PENDIENTES (3)    │ ║
+║  │  [TOCA AQUÍ]                             │ ║
+║  └──────────────────────────────────────────┘ ║
+║                                                ║
+║  [VER MI EFECTIVO] [CERRAR CAJA]              ║
+╚════════════════════════════════════════════════╝
+```
+
+### Proceso TIPO 1: Efectivo → Efectivo (5 pasos SÚPER SIMPLES)
 
 ```
 PASO 1: ¿Qué tiene el cliente?
@@ -349,6 +495,96 @@ PASO 5: ¡LISTO!
 │  [IMPRIMIR TICKET] [NUEVA TRANSACCIÓN]│
 └──────────────────────────────────────┘
 ```
+
+### Proceso TIPO 2: Transferencia → Efectivo (6 pasos SIMPLES)
+
+**Para clientes que QUIEREN DZD u otra divisa (hacen transferencia/Bizum)**
+
+```
+PASO 1: Cliente contacta
+┌──────────────────────────────────────┐
+│  Cliente llama/WhatsApp:             │
+│  "Quiero 50,000 DZD"                 │
+│                                      │
+│  Empleado:                           │
+│  • Abre tablet                       │
+│  • Selecciona "Transferencia→Efectivo│
+│  • Le dice al cliente cuánto transferir│
+└──────────────────────────────────────┘
+
+PASO 2: Registrar transferencia pendiente
+┌──────────────────────────────────────┐
+│  Cliente quiere: [50,000] [DZD ▼]   │
+│                                      │
+│  Sistema calcula automáticamente:    │
+│  Cliente debe transferir: €345       │
+│                                      │
+│  Tasa: 145.00 DZD/EUR                │
+│  Comisión: €6.90                     │
+│                                      │
+│  Datos cliente (opcional):           │
+│  Nombre: [Mohamed]                   │
+│  Teléfono: [628...]                  │
+│                                      │
+│  [REGISTRAR PENDIENTE]               │
+└──────────────────────────────────────┘
+
+Sistema genera código: TP-2026-0214-0089
+Empleado da IBAN al cliente
+
+PASO 3: Cliente hace transferencia
+┌──────────────────────────────────────┐
+│  Cliente:                            │
+│  • Hace Bizum o Transferencia        │
+│  • Envía €345                        │
+│  • Manda captura al empleado         │
+└──────────────────────────────────────┘
+
+PASO 4: Ver transferencias pendientes
+┌──────────────────────────────────────┐
+│  📋 TRANSFERENCIAS PENDIENTES        │
+│                                      │
+│  ┌────────────────────────────────┐ │
+│  │ TP-0089 | hace 3 min           │ │
+│  │ Mohamed (628...)               │ │
+│  │ Espera: €345 → 50,000 DZD     │ │
+│  │ [CONFIRMAR RECIBIDA]           │ │
+│  └────────────────────────────────┘ │
+│                                      │
+│  Total pendientes: 1 | €345          │
+└──────────────────────────────────────┘
+
+PASO 5: Verificar y confirmar
+┌──────────────────────────────────────┐
+│  Empleado verifica en banca online:  │
+│  ✓ Llegó €345                        │
+│                                      │
+│  ¿Cuánto llegó?                      │
+│  [345] EUR ☑ Correcto                │
+│                                      │
+│  [CONFIRMAR Y ENTREGAR EFECTIVO]     │
+└──────────────────────────────────────┘
+
+PASO 6: Entregar efectivo
+┌──────────────────────────────────────┐
+│  ✅ TRANSFERENCIA CONFIRMADA         │
+│                                      │
+│  Ahora ENTREGA el efectivo:          │
+│  50,000 DZD al cliente               │
+│                                      │
+│  ✓ Transfer verificada (+€345 banco)│
+│  ✓ Inventario actualizado (-50K DZD)│
+│  ✓ Comisión registrada (€6.90)      │
+│  ✓ Jefe notificado                  │
+│                                      │
+│  [IMPRIMIR TICKET] [COMPLETAR]       │
+└──────────────────────────────────────┘
+```
+
+**Importante:** 
+- ❌ NO se entrega efectivo hasta confirmar la transferencia
+- ✅ Sistema bloquea entrega hasta verificación
+- ⏰ Si pasa >1 hora sin confirmar, alerta automática al jefe
 
 ### Ver Efectivo (Simple)
 
@@ -545,7 +781,60 @@ PASO 3: Confirmación
 • TODO QUEDÓ REGISTRADO para auditoría
 ```
 
-### Escenario 3: Internet Caído en los Campamentos
+### Escenario 3: Cliente Quiere DZD (Transferencia)
+
+**10:00 AM** - Cliente contacta por WhatsApp
+```
+Cliente: "Necesito 100,000 DZD urgente"
+
+Empleado en Tindouf:
+├─ Abre tablet
+├─ Selecciona "Transferencia → Efectivo"
+├─ Ingresa: 100,000 DZD
+├─ Sistema calcula: Cliente debe transferir €690
+├─ Empleado da IBAN al cliente
+├─ Registra transferencia pendiente (código TP-0095)
+```
+
+**10:05 AM** - Cliente hace transferencia
+```
+Cliente:
+├─ Hace Bizum/Transferencia de €690
+├─ Envía captura al empleado por WhatsApp
+```
+
+**10:07 AM** - Empleado verifica y confirma
+```
+Empleado:
+├─ Ve "Transferencias pendientes" en tablet
+├─ Verifica en banca online que llegó €690
+├─ Toca "Confirmar recibida" → €690
+├─ Sistema procesa automáticamente:
+│   ✓ Cuenta bancaria: +€690
+│   ✓ Inventario: -100,000 DZD
+│   ✓ Comisión: +€13.80
+├─ Entrega 100,000 DZD en efectivo al cliente
+└─ Imprime ticket
+```
+
+**10:08 AM** - Tú recibes notificación
+```
+💬 WhatsApp al Jefe:
+"✅ TRANSFERENCIA CONFIRMADA
+Tindouf - Ahmed
+Cliente: Cliente (no registrado)
+Recibido: €690 (transfer)
+Entregado: 100,000 DZD
+Cuenta bancaria Tindouf: +€690"
+```
+
+**Ventajas de este sistema:**
+- ✅ No se puede entregar efectivo sin confirmar transferencia
+- ✅ Tú ves en tiempo real cada transferencia
+- ✅ Control total del dinero en bancos
+- ✅ Código único para cada operación (auditoría)
+
+### Escenario 4: Internet Caído en los Campamentos
 
 **12:00 PM** - Internet se cae en Aaiún
 ```
