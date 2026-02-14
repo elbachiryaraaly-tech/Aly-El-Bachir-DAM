@@ -14,11 +14,15 @@
   - Manejan el DZD y efectivo
   - Atienden directamente a los clientes
   - Procesan las transacciones
+- **Tus FLUJOS de trabajo:**
+  - 💳 Clientes que **quieren DZD**: hacen transferencia/Bizum → reciben efectivo
+  - 💵 Clientes que **quieren EUR**: traen efectivo → reciben efectivo
 - **TÚ necesitas:**
   - Controlar TODO desde tu teléfono
   - Recibir alertas por WhatsApp
   - Supervisar sin estar presente físicamente
   - Ver en tiempo real qué pasa en cada ubicación
+  - Controlar transferencias bancarias y efectivo
 
 ---
 
@@ -49,13 +53,16 @@ Controlas TODO:
 ```
 💻 Tablet ultra-simple
    ↓
-Solo 3 botones grandes:
-├─ 1. Nueva transacción
-├─ 2. Ver mi efectivo
-└─ 3. Cerrar caja
+Dos tipos de operaciones:
+├─ 1. 💵 Efectivo → Efectivo (cliente trae cash)
+├─ 2. 💳 Transferencia → Efectivo (cliente transfiere)
+├─ 3. Ver transferencias pendientes
+├─ 4. Ver mi efectivo
+└─ 5. Cerrar caja
 
 Capacitación: 1 día
 Muy fácil de usar
+No pueden entregar efectivo sin confirmar transferencia
 ```
 
 ---
@@ -203,11 +210,30 @@ SEMANA 13 → Tu capacitación personal (2 días)
 └─ Inventario: Todo OK ✓
 ```
 
-**11:00 AM** - Transacción grande
+**10:30 AM** - Cliente quiere DZD (transferencia)
 ```
 💬 Te llega WhatsApp:
-"🔔 Transacción €2,000 en Tindouf
-Empleado: Ahmed
+"💳 TRANSFERENCIA PENDIENTE
+Tindouf - Ahmed
+Cliente va a transferir €690
+Para recibir 100,000 DZD"
+```
+
+**10:35 AM** - Transferencia confirmada
+```
+💬 Te llega WhatsApp:
+"✅ TRANSFERENCIA CONFIRMADA
+Tindouf - Ahmed
+Recibido: €690 (transfer)
+Entregado: 100,000 DZD
+Tu cuenta bancaria: +€690"
+```
+
+**11:00 AM** - Transacción grande (efectivo)
+```
+💬 Te llega WhatsApp:
+"🔔 Transacción EFECTIVO €2,000
+Tindouf - Ahmed
 ¿Aprobar?
 [✅ Sí] [❌ No]"
 
@@ -218,7 +244,11 @@ Tocas [✅ Sí] → Listo
 ```
 📱 Abres app:
 ├─ Hoy: 87 transacciones
+│   ├─ Efectivo: 68
+│   └─ Transferencias: 19
 ├─ Comisiones: €1,840
+├─ Efectivo: €18,500
+├─ Bancos: €6,300 (19 transfers)
 ├─ Tindouf: 52 trans ✓
 └─ Aaiún: 35 trans ⚠️ EUR bajo
 ```
