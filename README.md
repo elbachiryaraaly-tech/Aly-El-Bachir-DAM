@@ -1,45 +1,40 @@
-# SARAF PRO - Propuesta de Sistema de Cambio de Divisas
+# SARAF ELITE - Propuesta de Sistema de Cambio de Divisas
 
-## Sistema Elite de Gestion de Cambio de Divisas para Tindouf, Argelia
+## Sistema de Gestion de Red de Cambio de Divisas para Tindouf y Aaioun, Argelia
 
 ---
+
+### El Proyecto
+
+**SARAF ELITE** es un sistema disenado para un operador de cambio de divisas en Tindouf, Argelia, que gestiona una red de empleados repartidos entre **Tindouf ciudad** y los **campamentos de Aaioun**. El sistema reemplaza completamente el metodo actual de papel, boli y WhatsApp por dos aplicaciones conectadas:
+
+- **App del Jefe**: Control total de todo el negocio desde el movil
+- **App del Empleado**: Operaciones de cambio en 3 toques, ultra-simplificada
 
 ### Documentos de la Propuesta
 
-Este repositorio contiene la propuesta completa del proyecto **SARAF PRO**, un sistema integral disenado para un operador de cambio de divisas en Tindouf, Argelia.
-
 | Documento | Descripcion |
 |---|---|
-| [PROPUESTA_SISTEMA_CAMBIO_TINDOUF.md](./PROPUESTA_SISTEMA_CAMBIO_TINDOUF.md) | **Propuesta principal completa** - Vision general, modulos, funcionalidades, presupuesto resumido, plan de implementacion |
-| [ESPECIFICACIONES_TECNICAS.md](./ESPECIFICACIONES_TECNICAS.md) | **Anexo tecnico** - Arquitectura, modelo de datos (SQL), API endpoints, estructura de proyecto, algoritmos, seguridad |
-| [PLANIFICACION_Y_PRESUPUESTO.md](./PLANIFICACION_Y_PRESUPUESTO.md) | **Anexo financiero** - Cronograma detallado semana a semana, presupuesto desglosado por horas, ROI, calendario de pagos |
-
----
-
-### Resumen del Proyecto
-
-**SARAF PRO** (del arabe صراف = cambiador) es una plataforma integral que incluye:
-
-- **App Movil Android** - Herramienta principal del operador
-- **Panel Web** - Dashboard de gestion y reportes avanzados
-- **Backend API** - Motor del sistema con sincronizacion offline
+| [PROPUESTA_SISTEMA_CAMBIO_TINDOUF.md](./PROPUESTA_SISTEMA_CAMBIO_TINDOUF.md) | **Propuesta principal** - Como funciona hoy vs como funcionara, flujos de trabajo reales, app del jefe, app del empleado, funcionalidades, presupuesto |
+| [ESPECIFICACIONES_TECNICAS.md](./ESPECIFICACIONES_TECNICAS.md) | **Anexo tecnico** - Arquitectura, modelo de datos SQL, endpoints API, estructura de proyecto, algoritmos, seguridad |
+| [PLANIFICACION_Y_PRESUPUESTO.md](./PLANIFICACION_Y_PRESUPUESTO.md) | **Anexo financiero** - Cronograma semana a semana (10 semanas), presupuesto desglosado por horas, ROI, calendario de pagos |
 
 ### Divisas Principales
 
-| Divisa | Codigo | Pais/Region |
+| Divisa | Codigo | Uso |
 |---|---|---|
-| Euro | EUR | Union Europea |
-| Dinar Argelino | DZD | Argelia |
-| Uguiya Mauritana | MRU | Mauritania |
-| Franco CFA Occidental | XOF | Senegal / Africa Occidental |
+| Euro | EUR | Principal - Emigrantes, comercio europeo |
+| Dinar Argelino | DZD | Moneda local - Lo que manejan los empleados |
+| Uguiya Mauritana | MRU | Comercio fronterizo con Mauritania |
+| Franco CFA | XOF | Comercio con Senegal y Africa Occidental |
 
-### Opciones de Proyecto
+### Opciones
 
 | Opcion | Precio | Plazo | Descripcion |
 |---|---|---|---|
-| **A - Premium** | 12,000 EUR | 12 semanas | Sistema completo con todas las funciones |
-| **B - Esencial** | 7,500 EUR | 8 semanas | App movil completa + Backend (sin panel web) |
-| **C - MVP** | 4,500 EUR | 5 semanas | Funcionalidades core basicas |
+| **A - ELITE** | 12,000 EUR | 10 semanas | Sistema completo con todo |
+| **B - ELITE sin Web** | 9,000 EUR | 9 semanas | Todo menos panel web |
+| **C - BASICO** | 5,500 EUR | 6 semanas | Lo esencial para empezar |
 
 ---
 

@@ -1,12 +1,12 @@
 # PROPUESTA DE PROYECTO
 
-## "SARAF PRO" - Sistema Elite de Gestion de Cambio de Divisas
+## "SARAF ELITE" - Sistema de Gestion de Red de Cambio de Divisas
 
-### Para Operador de Cambio en Tindouf, Argelia
+### Para Operador Principal de Cambio en Tindouf, Argelia
 
 ---
 
-**Version:** 1.0  
+**Version:** 2.0  
 **Fecha:** 13 de febrero de 2026  
 **Tipo de documento:** Propuesta Comercial y Tecnica  
 **Confidencialidad:** Documento confidencial - Solo para el destinatario
@@ -16,1263 +16,1409 @@
 ## INDICE
 
 1. [Resumen Ejecutivo](#1-resumen-ejecutivo)
-2. [Analisis de la Situacion Actual](#2-analisis-de-la-situacion-actual)
-3. [Solucion Propuesta: SARAF PRO](#3-solucion-propuesta-saraf-pro)
-4. [Modulos del Sistema](#4-modulos-del-sistema)
-5. [Divisas Soportadas](#5-divisas-soportadas)
-6. [Funcionalidades Clave](#6-funcionalidades-clave)
-7. [Arquitectura Tecnica](#7-arquitectura-tecnica)
-8. [Interfaz de Usuario](#8-interfaz-de-usuario)
-9. [Seguridad y Cumplimiento](#9-seguridad-y-cumplimiento)
+2. [Asi Trabajas Hoy (El Problema)](#2-asi-trabajas-hoy-el-problema)
+3. [Asi Vas a Trabajar con SARAF ELITE (La Solucion)](#3-asi-vas-a-trabajar-con-saraf-elite-la-solucion)
+4. [Estructura del Negocio en el Sistema](#4-estructura-del-negocio-en-el-sistema)
+5. [App del Jefe - Control Total](#5-app-del-jefe---control-total)
+6. [App del Empleado - Simplicidad Absoluta](#6-app-del-empleado---simplicidad-absoluta)
+7. [Flujos de Trabajo Reales](#7-flujos-de-trabajo-reales)
+8. [Funcionalidades Completas](#8-funcionalidades-completas)
+9. [Divisas Soportadas](#9-divisas-soportadas)
 10. [Modo Offline y Conectividad](#10-modo-offline-y-conectividad)
-11. [Automatizaciones Inteligentes](#11-automatizaciones-inteligentes)
-12. [Integraciones Externas](#12-integraciones-externas)
+11. [Seguridad](#11-seguridad)
+12. [Tecnologia](#12-tecnologia)
 13. [Plan de Implementacion](#13-plan-de-implementacion)
 14. [Presupuesto y Opciones](#14-presupuesto-y-opciones)
-15. [Soporte y Mantenimiento](#15-soporte-y-mantenimiento)
-16. [Beneficios Esperados](#16-beneficios-esperados)
-17. [Anexos](#17-anexos)
+15. [Soporte y Garantia](#15-soporte-y-garantia)
 
 ---
 
 ## 1. RESUMEN EJECUTIVO
 
-### El Problema
+### Quien eres
 
-Un operador de cambio de divisas reconocido en Tindouf, Argelia, gestiona diariamente un volumen significativo de transacciones involucrando multiples monedas: **Euro (EUR)**, **Dinar argelino (DZD)**, **Uguiya mauritana (MRU)**, **Franco CFA de Africa Occidental (XOF - Senegal)**, y otras divisas regionales. Actualmente, la gestion se realiza de forma manual o semi-manual, lo que conlleva:
+Eres un cambiador de moneda muy conocido y respetado en la zona de Tindouf. Llevas anos en el negocio. Trabajas con euros, dinares argelinos, uguiyas mauritanas, francos CFA y mas. Tienes una **red de empleados** repartidos entre **Tindouf ciudad** y los **campamentos de Aaioun**, que son los que reciben a los clientes cara a cara, manejan el efectivo en DZD y ejecutan los cambios.
 
-- Riesgo de errores en calculos de conversion
-- Dificultad para rastrear operaciones en tiempo real
-- Falta de control preciso del inventario de divisas (caja)
-- Perdida de tiempo en tareas repetitivas
-- Imposibilidad de analizar tendencias y rentabilidad
-- Riesgo de perdidas por variaciones de tipo de cambio no detectadas
+### Como trabajas hoy
 
-### La Solucion
+Todo se gestiona con **papel, boli y mensajes de WhatsApp**. Tus empleados te escriben por WhatsApp para cada operacion: "Jefe, un cliente quiere cambiar 500 euros". Tu respondes con la tasa, ellos hacen el cambio, y luego te confirman. Al final del dia, intentas cuadrar todo desde los mensajes. Muchas veces los mensajes se pierden entre otras conversaciones. Muchas veces hay errores. Muchas veces no sabes exactamente cuanto dinero tiene cada empleado en cada momento.
 
-**SARAF PRO** es un sistema integral de gestion de cambio de divisas disenado especificamente para operadores independientes en regiones como Tindouf. El sistema ofrece:
+### Lo que necesitas
 
-- **Automatizacion total** de calculos, registros y reportes
-- **Actualizacion de tasas** en tiempo real con modo offline inteligente
-- **Gestion completa de caja** multi-divisa
-- **Panel de control** con metricas de negocio en tiempo real
-- **Aplicacion movil y web** adaptada al contexto local
-- **Soporte multiidioma**: Arabe, Frances, Espanol
-- **Funcionamiento offline** completo con sincronizacion automatica
+Un sistema que **reemplace completamente** el papel, el boli y el caos de WhatsApp. Un sistema donde:
 
-### Propuesta de Valor
+- **Tu controlas todo desde tu movil** sin moverte
+- **Tus empleados operan con un solo toque** sin pensar
+- **Cada dinar, cada euro, cada uguiya queda registrado** automaticamente
+- **Sabes en tiempo real** cuanto dinero tiene cada empleado, en cada punto, en cada divisa
+- **Cero errores, cero olvidos, cero mensajes perdidos**
 
-> Un sistema que convierte horas de trabajo manual en segundos de operacion automatizada, eliminando errores, maximizando ganancias y proporcionando control total del negocio desde cualquier dispositivo.
+### La solucion: SARAF ELITE
+
+Dos aplicaciones conectadas:
+
+```
++==========================================+
+|                                          |
+|    APP DEL JEFE (Tu movil)               |
+|    - Ves TODO en tiempo real             |
+|    - Fijas las tasas                     |
+|    - Apruebas operaciones grandes        |
+|    - Ves la caja de cada empleado        |
+|    - Reportes automaticos                |
+|    - Control TOTAL sin moverte           |
+|                                          |
++==========================================+
+          |              |
+    (conexion en tiempo real)
+          |              |
++==========+    +==========+    +==========+
+| EMPLEADO |    | EMPLEADO |    | EMPLEADO |
+| Tindouf  |    | Aaioun 1 |    | Aaioun 2 |
+|          |    |          |    |          |
+| - Recibe |    | - Recibe |    | - Recibe |
+|   cliente|    |   cliente|    |   cliente|
+| - 1 toque|    | - 1 toque|    | - 1 toque|
+|   para   |    |   para   |    |   para   |
+|   operar |    |   operar |    |   operar |
+| - Cero   |    | - Cero   |    | - Cero   |
+|   calculo|    |   calculo|    |   calculo|
++==========+    +==========+    +==========+
+```
+
+> **En resumen**: Tu sigues siendo el jefe que controla todo, pero en vez de WhatsApp y papel, lo haces desde una app que te da superpoderes. Tus empleados, en vez de escribirte mensajes, tocan un boton y todo queda registrado. Tu lo ves al instante.
 
 ---
 
-## 2. ANALISIS DE LA SITUACION ACTUAL
+## 2. ASI TRABAJAS HOY (EL PROBLEMA)
 
-### 2.1 Contexto Geografico y Economico
+### 2.1 El Flujo Actual (Papel y WhatsApp)
 
-**Tindouf** se encuentra en el suroeste de Argelia, en una posicion estrategica fronteriza con:
-- **Marruecos** (al norte)
-- **Mauritania** (al sur/suroeste)
-- **Sahara Occidental** (al oeste)
+```
+COMO FUNCIONA HOY (un ejemplo real):
 
-Esta ubicacion convierte a Tindouf en un **nodo comercial** importante donde confluyen multiples monedas y flujos economicos:
+09:15 - Empleado Ahmed en Aaioun escribe por WhatsApp:
+        "Jefe, un cliente quiere cambiar 500 euros"
 
-| Flujo Comercial | Monedas Involucradas | Volumen Estimado |
+09:17 - Tu lees el mensaje (si lo ves, si no esta entre otros 50 mensajes)
+
+09:18 - Tu respondes: "187"
+
+09:19 - Ahmed busca el mensaje, calcula 500 x 187 = 93,500 DZD
+        (si no se equivoca con la calculadora)
+
+09:20 - Ahmed hace el cambio, le da 93,500 DZD al cliente
+
+09:21 - Ahmed te escribe: "Hecho, 500 euros a 187 = 93,500"
+
+09:22 - Tu lo apuntas en un papel (si te acuerdas, si no se te pasa)
+
+--- MIENTRAS TANTO ---
+
+09:18 - Empleado Omar en Tindouf te escribe: "Jefe, cliente con 200,000 DZD quiere euros"
+09:19 - Tu estas respondiendo a Ahmed, no ves el mensaje de Omar
+09:25 - Omar: "Jefe???"
+09:26 - Tu ves el mensaje de Omar, respondes "186"
+09:27 - Omar calcula 200,000 / 186 = 1,075.27 euros
+        (redondea a 1,075? 1,076? no sabe)
+
+--- Y ASI TODO EL DIA ---
+
+22:00 - Intentas cuadrar las cuentas del dia
+        - Buscas mensajes de WhatsApp entre 200 conversaciones
+        - Intentas sumar todo lo del papel
+        - No cuadra. Faltan 15,000 DZD en algun sitio
+        - Llamas a Ahmed: "cuantos euros tienes?"
+        - Ahmed cuenta... "creo que 2,300... no, espera, 2,350"
+        - No sabes si Ahmed se equivoca o falta algo
+        
+23:30 - Sigues intentando cuadrar...
+```
+
+### 2.2 Los Problemas Reales
+
+| Problema | Que pasa | Cuanto te cuesta |
 |---|---|---|
-| Comercio con Europa | EUR <-> DZD | Alto |
-| Comercio con Mauritania | MRU <-> DZD | Alto |
-| Comercio con Senegal/Africa Occidental | XOF <-> DZD | Medio-Alto |
-| Remesas familiares | EUR -> DZD | Alto |
-| Comercio fronterizo general | Multiple | Variable |
-| Transferencias informales | EUR, DZD, MRU | Alto |
+| **Mensajes perdidos** | Un empleado te escribe, no lo ves entre otros mensajes. El cliente se va o el empleado opera sin tu tasa. | Pierdes clientes o pierdes dinero |
+| **Errores de calculo** | El empleado calcula mal. 500 x 187 y pone 92,500 en vez de 93,500. Ni tu ni el se dan cuenta. | Miles de DZD al mes |
+| **No sabes la caja** | No sabes en ningun momento cuanto tiene cada empleado en cada divisa. Solo lo sabes cuando les preguntas (y puede que no sea exacto). | Imposible controlar |
+| **Cuadrar cuentas** | Al final del dia, intentas reconstruir todo desde WhatsApp y papeles. Siempre falta algo. | 1-2 horas CADA DIA |
+| **Tasas desactualizadas** | Cambias la tasa pero un empleado no ve el mensaje y sigue con la tasa vieja. | Perdida directa |
+| **Empleado deshonesto** | Si un empleado hace una operacion sin registrarla, no tienes forma de saberlo. | Perdida invisible |
+| **Deudas olvidadas** | Un cliente debe 300 EUR. Lo apuntaste en un papel. El papel se pierde o se te olvida. | Dinero que nunca cobras |
+| **Sin historial** | Un cliente dice "la semana pasada cambie a 185". No tienes forma de verificar. | Disputas, mala imagen |
+| **Multiples ubicaciones** | Tindouf y Aaioun estan separados. No puedes estar en los dos sitios. | Control limitado |
+| **Dependencia de ti** | Si tu movil se queda sin bateria o no tienes cobertura, todo se para. Los empleados no pueden operar. | Negocio parado |
 
-### 2.2 Problemas Identificados del Metodo Actual
+### 2.3 Lo que Gastas Hoy sin Darte Cuenta
 
-| Problema | Impacto | Nivel de Riesgo |
+```
+PERDIDAS ESTIMADAS MENSUALES (conservador):
+
+Errores de calculo de empleados:         ~30,000 DZD/mes  (~160 EUR)
+Operaciones no registradas/olvidadas:    ~50,000 DZD/mes  (~270 EUR)
+Clientes que se van por lentitud:        ~20,000 DZD/mes  (~110 EUR)
+Deudas no cobradas:                      ~40,000 DZD/mes  (~215 EUR)
+Tu tiempo cuadrando cuentas (60h/mes):   Incalculable
+Estres:                                  Incalculable
+
+TOTAL PERDIDAS ESTIMADAS:               ~140,000 DZD/mes  (~750 EUR/mes)
+                                         ~9,000 EUR/ano
+```
+
+---
+
+## 3. ASI VAS A TRABAJAR CON SARAF ELITE (LA SOLUCION)
+
+### 3.1 El Mismo Ejemplo, Pero con SARAF ELITE
+
+```
+COMO VA A FUNCIONAR:
+
+09:15 - Cliente llega donde Ahmed (Aaioun)
+        Ahmed abre la app, toca "Nueva Operacion"
+        Toca "EUR", escribe "500"
+        La app AUTOMATICAMENTE muestra:
+          "500 EUR = 93,500 DZD (tasa: 187.00)"
+          (la tasa la puso el jefe esta manana, no hay que preguntar)
+        Ahmed toca "CONFIRMAR"
+
+        LISTO. 3 segundos. Sin llamar al jefe. Sin WhatsApp. Sin calculadora.
+
+        EN TU MOVIL APARECE AL INSTANTE:
+        [NOTIFICACION] "Ahmed (Aaioun) - COMPRA 500 EUR por 93,500 DZD"
+
+--- AL MISMO TIEMPO ---
+
+09:15 - Cliente llega donde Omar (Tindouf)
+        Omar abre la app, toca "Nueva Operacion"
+        Toca "DZD", escribe "200,000"
+        La app muestra: "200,000 DZD = 1,075 EUR (tasa: 186.00)"
+        Omar toca "CONFIRMAR"
+
+        EN TU MOVIL:
+        [NOTIFICACION] "Omar (Tindouf) - VENTA 1,075 EUR por 200,000 DZD"
+
+--- TU, MIENTRAS TANTO ---
+
+09:16 - Abres tu app y ves EN TIEMPO REAL:
+
+        +------------------------------------------+
+        |  SARAF ELITE - Jefe                      |
+        +------------------------------------------+
+        |  HOY: 2 operaciones | +2,500 DZD gan.    |
+        +------------------------------------------+
+        |                                           |
+        |  AHMED (Aaioun)                           |
+        |    EUR: 2,850   DZD: 406,500              |
+        |    Ultima op: hace 1 min                  |
+        |                                           |
+        |  OMAR (Tindouf)                           |
+        |    EUR: 1,425   DZD: 800,000              |
+        |    Ultima op: hace 1 min                  |
+        |                                           |
+        |  KARIM (Aaioun)                           |
+        |    EUR: 1,000   DZD: 350,000              |
+        |    Ultima op: hace 23 min                 |
+        |                                           |
+        +------------------------------------------+
+
+        Ves exactamente cuanto tiene cada uno.
+        Sin preguntar. Sin WhatsApp. En tiempo real.
+
+--- FINAL DEL DIA ---
+
+22:00 - Abres la app. Toca "Cierre del dia"
+
+        RESUMEN AUTOMATICO:
+        - 47 operaciones totales
+        - Ahmed: 23 ops, +1,200 DZD ganancia
+        - Omar: 15 ops, +800 DZD ganancia
+        - Karim: 9 ops, +500 DZD ganancia
+        - Ganancia total: +2,500 DZD
+        - Todo cuadra. Cero errores.
+        
+        Tiempo: 5 SEGUNDOS en vez de 2 HORAS.
+```
+
+### 3.2 La Diferencia
+
+| Aspecto | ANTES (WhatsApp + Papel) | DESPUES (SARAF ELITE) |
 |---|---|---|
-| Calculos manuales de conversion | Errores frecuentes, perdida de dinero | CRITICO |
-| Sin registro digital de operaciones | Imposibilidad de auditar, disputas con clientes | ALTO |
-| Control de caja en papel/mental | Descuadres, dinero no contabilizado | CRITICO |
-| Sin seguimiento de tasas de mercado | Tasas desactualizadas, perdida de competitividad | ALTO |
-| Dependencia de la memoria | Olvido de operaciones pendientes, deudas | MEDIO |
-| Sin reportes de ganancias reales | Desconocimiento de la rentabilidad real | ALTO |
-| Comunicacion con clientes | Seguimiento manual, perdida de clientes | MEDIO |
-| Gestion de clientes habituales | Sin historial, sin fidelizacion | MEDIO |
-
-### 2.3 Necesidades Detectadas
-
-1. **Velocidad extrema** en cada operacion (el cliente no puede esperar)
-2. **Precision absoluta** en los calculos de conversion
-3. **Control de caja** en tiempo real para cada divisa
-4. **Historial completo** de todas las operaciones
-5. **Funcionamiento sin internet** (conectividad limitada en la zona)
-6. **Interfaz simple e intuitiva** (el sistema debe ser facil de usar)
-7. **Soporte en arabe** (idioma principal del usuario)
-8. **Seguridad de datos** (informacion financiera sensible)
-9. **Gestion de clientes** con saldos pendientes y confianza
-10. **Reportes automaticos** de ganancias, volumen y tendencias
+| Empleado recibe cliente | Escribe WhatsApp al jefe, espera respuesta | Abre app, la tasa ya esta, opera solo |
+| Tiempo por operacion | 5-15 minutos (esperando respuesta) | **5 segundos** |
+| Calculo | Manual con calculadora (errores) | **Automatico, cero errores** |
+| Jefe sabe la caja | Pregunta por WhatsApp | **Ve en tiempo real sin preguntar** |
+| Cuadrar cuentas | 1-2 horas buscando en WhatsApp | **Automatico, 5 segundos** |
+| Cambiar tasa | Envia mensaje a cada empleado (pueden no verlo) | **Un toque, llega a todos al instante** |
+| Operacion grande | Empleado espera aprobacion por WhatsApp | **Pide aprobacion en la app, jefe aprueba con 1 toque** |
+| Historial | Papel que se pierde | **Todo guardado para siempre, buscable** |
+| Control de empleados | Confianza ciega | **Cada operacion registrada, verificable** |
+| Si no hay internet | Todo se para | **App funciona offline, sincroniza despues** |
 
 ---
 
-## 3. SOLUCION PROPUESTA: SARAF PRO
+## 4. ESTRUCTURA DEL NEGOCIO EN EL SISTEMA
 
-### 3.1 Vision General
-
-**SARAF PRO** (del arabe "صراف" = cambiador) es una plataforma integral disenada para transformar completamente la operacion de cambio de divisas, llevandola de un modelo manual a un **ecosistema digital automatizado de nivel profesional**.
-
-### 3.2 Filosofia de Diseno
+### 4.1 Jerarquia de Usuarios
 
 ```
-VELOCIDAD + PRECISION + SIMPLICIDAD + AUTOMATIZACION = SARAF PRO
++========================================+
+|            JEFE (TU)                    |
+|  - Control total                       |
+|  - Fija las tasas                      |
+|  - Aprueba operaciones grandes         |
+|  - Ve todo en tiempo real              |
+|  - Unico que puede modificar config    |
+|  - Unico que ve las ganancias          |
++========================================+
+          |
+     +----+----+
+     |         |
++====+====+ +==+======+
+| PUNTO 1 | | PUNTO 2 |    (Se pueden anadir mas puntos)
+| TINDOUF | | AAIOUN  |
++=========+ +=========+
+     |           |
+  +--+--+     +--+--+--+
+  |     |     |     |   |
+ Omar  Ali  Ahmed Karim Fatima   (Se pueden anadir mas empleados)
 ```
 
-- **Velocidad**: Cualquier operacion en menos de 5 segundos
-- **Precision**: Cero errores en calculos, todo automatizado
-- **Simplicidad**: Interfaz limpia, botones grandes, flujo intuitivo
-- **Automatizacion**: El sistema hace el trabajo, el usuario solo confirma
+### 4.2 Roles y Permisos
 
-### 3.3 Plataformas
-
-| Plataforma | Tecnologia | Prioridad |
+| Permiso | JEFE | EMPLEADO |
 |---|---|---|
-| **Aplicacion Movil** (Android) | React Native / Flutter | MAXIMA - Herramienta principal |
-| **Aplicacion Web** (Panel de Control) | Next.js + React | ALTA - Gestion y reportes |
-| **API Backend** | Node.js + Express / NestJS | MAXIMA - Motor del sistema |
-| **Base de Datos** | PostgreSQL + SQLite (offline) | MAXIMA - Almacenamiento |
-
-### 3.4 Requisitos de Infraestructura
-
-| Componente | Especificacion | Coste Mensual Estimado |
-|---|---|---|
-| Servidor VPS | 2 vCPU, 4GB RAM, 80GB SSD | ~10-15 EUR/mes |
-| Dominio | sarafpro.com o similar | ~10 EUR/ano |
-| Certificado SSL | Let's Encrypt (gratuito) | 0 EUR |
-| Almacenamiento backup | 50GB Cloud | ~3 EUR/mes |
-| **Total infraestructura** | | **~15-20 EUR/mes** |
-
----
-
-## 4. MODULOS DEL SISTEMA
-
-### 4.1 MODULO 1: Motor de Cambio (Core)
-
-El corazon del sistema. Gestiona todas las operaciones de conversion.
-
-**Funcionalidades:**
-
-- **Calculadora de cambio instantanea**: Introduce un monto en cualquier divisa y obtiene automaticamente el equivalente en todas las demas
-- **Tasas personalizables**: El usuario define sus propias tasas de compra/venta
-- **Spread automatico**: Calculo automatico del margen de ganancia
-- **Tasas de referencia**: Conexion con fuentes de tasas de mercado para comparacion
-- **Conversion encadenada**: Soporte para conversiones indirectas (ej: MRU -> DZD -> EUR)
-- **Modo rapido**: Un solo toque para las operaciones mas frecuentes
-- **Historial de tasas**: Registro completo de todas las tasas aplicadas
-
-**Ejemplo de flujo de operacion:**
-
-```
-1. Cliente llega: "Quiero cambiar 500 EUR"
-2. El operador abre SARAF PRO (ya esta abierto en el movil)
-3. Toca "EUR" -> escribe "500"
-4. El sistema muestra INSTANTANEAMENTE:
-   - 500 EUR = 93,500 DZD (a tasa 187.00)
-   - 500 EUR = 201,500 MRU (a tasa 403.00)
-   - 500 EUR = 328,000 XOF (a tasa 656.00)
-5. El operador toca "DZD" (el cliente quiere dinares)
-6. Pantalla de confirmacion: "VENDER 500 EUR -> COMPRAR 93,500 DZD"
-7. Un toque para confirmar
-8. Operacion registrada. Caja actualizada automaticamente.
-   
-Tiempo total: < 10 segundos
-```
-
-### 4.2 MODULO 2: Gestion de Caja Multi-Divisa
-
-Control total de todo el efectivo disponible.
-
-**Funcionalidades:**
-
-- **Saldo en tiempo real** de cada divisa
-- **Alertas de nivel bajo**: Notificacion cuando una divisa baja del minimo configurado
-- **Alertas de nivel alto**: Notificacion cuando hay exceso de una divisa
-- **Movimientos de caja**: Entradas, salidas, ajustes con justificacion
-- **Cierre de caja diario**: Resumen automatico al final del dia
-- **Apertura de caja**: Verificacion de saldos al inicio del dia
-- **Valoracion total**: Valor total de la caja expresado en cualquier divisa de referencia
-
-**Panel de Caja (ejemplo visual):**
-
-```
-+--------------------------------------------------+
-|          CAJA - 13 Febrero 2026                   |
-+--------------------------------------------------+
-|                                                    |
-|  EUR    [======████████]     12,450.00 EUR        |
-|  DZD    [████████████==]  2,345,600.00 DZD        |
-|  MRU    [████======----]    456,780.00 MRU        |
-|  XOF    [██████========]  1,234,500.00 XOF        |
-|                                                    |
-|  VALOR TOTAL (en EUR): 48,230.50 EUR              |
-|                                                    |
-|  [Hoy: +23 operaciones | +1,245 EUR ganancia]    |
-+--------------------------------------------------+
-```
-
-### 4.3 MODULO 3: Gestion de Clientes (CRM)
-
-Base de datos completa de clientes con historial y saldos.
-
-**Funcionalidades:**
-
-- **Ficha de cliente**: Nombre, telefono, notas, nivel de confianza
-- **Historial de operaciones**: Todas las transacciones realizadas con cada cliente
-- **Saldos pendientes**: Control de deudas (cliente debe / se le debe)
-- **Clientes VIP**: Tasas preferenciales automaticas para clientes frecuentes
-- **Estadisticas por cliente**: Volumen operado, frecuencia, divisas preferidas
-- **Busqueda rapida**: Encontrar cliente por nombre o telefono en milisegundos
-- **Contacto directo**: Llamar o enviar WhatsApp desde la ficha del cliente
-
-**Sistema de Confianza:**
-
-```
-NIVEL 1 - Nuevo:        Operaciones solo al contado
-NIVEL 2 - Conocido:     Credito hasta 500 EUR equivalente
-NIVEL 3 - Confianza:    Credito hasta 2,000 EUR equivalente  
-NIVEL 4 - VIP:          Credito hasta 5,000 EUR equivalente + tasas especiales
-NIVEL 5 - Socio:        Sin limite + tasas preferenciales + prioridad
-```
-
-### 4.4 MODULO 4: Reportes y Analitica
-
-Informacion clave del negocio en tiempo real.
-
-**Reportes disponibles:**
-
-| Reporte | Frecuencia | Contenido |
-|---|---|---|
-| **Resumen diario** | Automatico cada noche | Operaciones, ganancias, caja |
-| **Informe semanal** | Cada lunes | Tendencias, mejores dias, volumen |
-| **Informe mensual** | Dia 1 de cada mes | Rentabilidad completa, comparativas |
-| **P&L por divisa** | Tiempo real | Ganancia/perdida por cada par de divisas |
-| **Top clientes** | Bajo demanda | Ranking de clientes por volumen |
-| **Flujo de caja** | Tiempo real | Entradas y salidas por divisa |
-| **Analisis de spreads** | Diario | Comparacion de tus spreads vs mercado |
-| **Prediccion de demanda** | Semanal | IA que predice que divisas se necesitaran |
-
-**Dashboard principal (ejemplo visual):**
-
-```
-+------------------------------------------------------------------+
-|  SARAF PRO - Dashboard                    13 Feb 2026 | 14:35    |
-+------------------------------------------------------------------+
-|                                                                    |
-|  GANANCIA HOY          OPERACIONES HOY        VOLUMEN HOY         |
-|  +2,345 DZD            47 operaciones         15,600 EUR eq.      |
-|  (+12% vs ayer)        (+5 vs ayer)           (+8% vs ayer)       |
-|                                                                    |
-+------------------------------------------------------------------+
-|  TASAS ACTUALES (mis tasas)                                        |
-|  EUR/DZD  Compra: 185.00  Venta: 187.00  Spread: 2.00 (1.08%)   |
-|  EUR/MRU  Compra: 400.00  Venta: 403.00  Spread: 3.00 (0.75%)   |
-|  EUR/XOF  Compra: 652.00  Venta: 656.00  Spread: 4.00 (0.61%)   |
-|  DZD/MRU  Compra: 2.15    Venta: 2.18    Spread: 0.03 (1.39%)   |
-+------------------------------------------------------------------+
-|  ULTIMAS OPERACIONES                                               |
-|  14:32  Ahmed M.    500 EUR -> 93,500 DZD      +1,000 DZD        |
-|  14:28  Fatima B.   200,000 DZD -> 1,069 EUR   +1,200 DZD        |
-|  14:15  Mohamed S.  1000 EUR -> 403,000 MRU     +3,000 MRU       |
-|  14:01  Ali K.      50,000 XOF -> 14,200 DZD    +200 DZD         |
-+------------------------------------------------------------------+
-```
-
-### 4.5 MODULO 5: Gestion de Tasas
-
-Control total sobre las tasas de cambio.
-
-**Funcionalidades:**
-
-- **Tasas manuales**: El operador define sus tasas de compra y venta
-- **Tasas de referencia en tiempo real**: Conexion con APIs de mercado (cuando hay internet)
-- **Alertas de variacion**: Notificacion cuando el mercado varia mas de X%
-- **Historial de tasas**: Grafico de evolucion de cada par de divisas
-- **Tasas por zona**: Comparacion con otros cambiadores de la region (si disponible)
-- **Ajuste rapido**: Subir/bajar tasas con un solo deslizamiento
-- **Tasas por volumen**: Tasas especiales para operaciones grandes
-- **Programacion de tasas**: Configurar cambios de tasa automaticos por horario
-
-**Fuentes de tasas de referencia:**
-
-1. Banco de Argelia (tasa oficial)
-2. Mercado paralelo (tasa real de la calle)
-3. APIs internacionales (ExchangeRate-API, Open Exchange Rates)
-4. Ingreso manual (tasas de contactos en la zona)
-
-### 4.6 MODULO 6: Sistema de Notificaciones
-
-Mantenerse informado sin esfuerzo.
-
-**Tipos de notificaciones:**
-
-- **Alerta de caja baja**: "Tu stock de EUR ha bajado a 500 EUR. Considera reabastecerte."
-- **Resumen automatico**: "Hoy: 47 operaciones, ganancia neta +2,345 DZD"
-- **Variacion de tasa**: "El EUR/DZD ha subido un 2% en el mercado. Tu tasa actual: 187, mercado: 190"
-- **Deuda pendiente**: "Ahmed tiene un saldo pendiente de 1,000 EUR desde hace 7 dias"
-- **Operacion grande**: "Mohamed quiere cambiar 5,000 EUR. Verificar disponibilidad de DZD"
-- **Cierre de caja**: "Es hora de cerrar caja. Toca aqui para el resumen del dia"
-
-**Canales de notificacion:**
-
-| Canal | Uso |
-|---|---|
-| Notificacion push (movil) | Alertas urgentes y operaciones |
-| SMS (opcional) | Backup cuando no hay datos |
-| WhatsApp (API) | Resumen diario, comunicacion con clientes |
-| Email | Reportes semanales/mensuales |
-| Dentro de la app | Todas las notificaciones |
-
-### 4.7 MODULO 7: Operaciones Pendientes y Reservas
-
-Gestion de operaciones que no se completan inmediatamente.
-
-**Funcionalidades:**
-
-- **Reserva de tasa**: Cliente reserva una tasa por X horas
-- **Operacion diferida**: Registrar operacion para completar mas tarde
-- **Cola de espera**: Cuando hay mucha demanda, gestionar el orden
-- **Promesas de pago**: Registrar compromisos de clientes
-- **Seguimiento automatico**: Recordatorios de operaciones pendientes
-- **Cancelacion controlada**: Historial de operaciones canceladas
-
-### 4.8 MODULO 8: Multi-Sucursal / Multi-Operador
-
-Para escalar el negocio.
-
-**Funcionalidades:**
-
-- **Multiples puntos de operacion**: Si tiene ayudantes o puntos secundarios
-- **Permisos por rol**: Administrador, Operador, Solo consulta
-- **Consolidacion de caja**: Ver la caja total de todos los puntos
-- **Transferencias internas**: Mover divisas entre puntos
-- **Auditoria por operador**: Saber quien hizo cada operacion
-
----
-
-## 5. DIVISAS SOPORTADAS
-
-### 5.1 Divisas Principales (Configuradas por defecto)
-
-| Divisa | Codigo | Simbolo | Pais/Region | Prioridad |
-|---|---|---|---|---|
-| Euro | EUR | euro | Union Europea | MAXIMA |
-| Dinar Argelino | DZD | DA / د.ج | Argelia | MAXIMA |
-| Uguiya Mauritana | MRU | UM | Mauritania | ALTA |
-| Franco CFA Occ. | XOF | CFA | Senegal, Mali, etc. | ALTA |
-
-### 5.2 Divisas Secundarias (Activables)
-
-| Divisa | Codigo | Simbolo | Pais/Region | Activacion |
-|---|---|---|---|---|
-| Dirham Marroqui | MAD | MAD | Marruecos | Manual |
-| Dinar Tunecino | TND | DT | Tunez | Manual |
-| Dinar Libio | LYD | LD | Libia | Manual |
-| Dolar Estadounidense | USD | $ | Internacional | Manual |
-| Libra Esterlina | GBP | lb | Reino Unido | Manual |
-| Franco CFA Central | XAF | FCFA | Africa Central | Manual |
-| Naira Nigeriana | NGN | naira | Nigeria | Manual |
-| Cedi Ghanes | GHS | GHS | Ghana | Manual |
-| Escudo Caboverdiano | CVE | $ | Cabo Verde | Manual |
-
-### 5.3 Pares de Divisas Pre-configurados
-
-Los pares mas operados por el cambiador estaran preconfigurados con tasas de referencia:
-
-```
-Pares principales:
-  EUR/DZD  -  El mas operado (euros a dinares y viceversa)
-  EUR/MRU  -  Euros a uguiyas mauritanas
-  EUR/XOF  -  Euros a francos CFA
-  DZD/MRU  -  Dinares a uguiyas  
-  DZD/XOF  -  Dinares a francos CFA
-  MRU/XOF  -  Uguiyas a francos CFA
-
-Pares secundarios (activables):
-  EUR/MAD  -  Euros a dirhams
-  DZD/MAD  -  Dinares a dirhams
-  USD/DZD  -  Dolares a dinares
-  GBP/DZD  -  Libras a dinares
-```
-
----
-
-## 6. FUNCIONALIDADES CLAVE
-
-### 6.1 Operacion de Cambio en 3 Toques
-
-```
-TOQUE 1: Seleccionar divisa de origen + monto
-TOQUE 2: Seleccionar divisa de destino (o cliente)
-TOQUE 3: Confirmar operacion
-
-El sistema automaticamente:
-  -> Calcula el monto convertido
-  -> Aplica la tasa configurada
-  -> Calcula la ganancia del spread
-  -> Registra la operacion
-  -> Actualiza la caja de ambas divisas
-  -> Genera recibo (si esta configurado)
-  -> Actualiza el historial del cliente (si se selecciono)
-```
-
-### 6.2 Calculadora Multi-Divisa Inteligente
-
-- Escribir un monto y ver la conversion a TODAS las divisas simultaneamente
-- Conversion inversa instantanea
-- Muestra ganancia estimada en cada conversion
-- Soporte para montos grandes con separadores de miles
-- Teclado numerico grande y rapido
-
-### 6.3 Cierre de Caja Automatico
-
-Cada dia a la hora configurada (o manualmente):
-
-```
-CIERRE DE CAJA - 13 Febrero 2026
-================================
-
-OPERACIONES DEL DIA:
-  Total operaciones:     47
-  Volumen total:         15,600 EUR equivalente
-  
-GANANCIA NETA DEL DIA:
-  En DZD:               +12,450 DZD
-  En EUR equivalente:    +66.58 EUR
-  
-MOVIMIENTO POR DIVISA:
-  EUR:  Inicio: 15,000  | Entradas: +3,500  | Salidas: -6,050  | Final: 12,450
-  DZD:  Inicio: 2,000,000 | Entradas: +1,132,350 | Salidas: -786,750 | Final: 2,345,600
-  MRU:  Inicio: 500,000 | Entradas: +56,780 | Salidas: -100,000 | Final: 456,780
-  XOF:  Inicio: 1,000,000 | Entradas: +334,500 | Salidas: -100,000 | Final: 1,234,500
-  
-VALOR TOTAL DE CAJA:
-  En EUR:  48,230.50 EUR
-  En DZD:  9,019,143.50 DZD
-  
-COMPARACION CON AYER:
-  Ganancia: +12% superior
-  Volumen:  +8% superior
-  Operaciones: +5 mas
-```
-
-### 6.4 Recibos Digitales
-
-- Generacion automatica de recibos por cada operacion
-- Envio por WhatsApp al cliente
-- Formato profesional con logo y datos del negocio
-- QR code para verificar autenticidad
-- Impresion en mini-impresora termica Bluetooth (opcional)
-
-### 6.5 Busqueda y Filtrado Avanzado
-
-- Buscar operaciones por fecha, cliente, monto, divisa
-- Filtros combinados: "Todas las operaciones EUR > 1000 del ultimo mes"
-- Exportar resultados a Excel/CSV
-- Busqueda por voz (en arabe)
-
-### 6.6 Backup y Recuperacion
-
-- **Backup automatico** diario en la nube
-- **Backup local** en el dispositivo
-- **Recuperacion total** desde cualquier punto de backup
-- **Exportacion completa** de datos en formato estandar
-- **Historial de cambios**: Registro de toda modificacion
-
----
-
-## 7. ARQUITECTURA TECNICA
-
-### 7.1 Diagrama de Arquitectura General
-
-```
-+------------------------------------------------------------------+
-|                        CAPA DE PRESENTACION                       |
-|                                                                    |
-|  +------------------+    +------------------+                      |
-|  |   App Movil      |    |   Panel Web      |                      |
-|  |   (Android)      |    |   (Dashboard)    |                      |
-|  |   React Native   |    |   Next.js        |                      |
-|  +--------+---------+    +--------+---------+                      |
-|           |                        |                               |
-+-----------+------------------------+-------------------------------+
-            |                        |
-            v                        v
-+------------------------------------------------------------------+
-|                        CAPA DE API (Backend)                      |
-|                                                                    |
-|  +------------------------------------------------------------+   |
-|  |              API REST + WebSockets (NestJS)                 |   |
-|  |                                                              |  |
-|  |  +----------+ +----------+ +----------+ +----------+        |  |
-|  |  | Auth &   | | Exchange | | Cash     | | Reports  |        |  |
-|  |  | Users    | | Engine   | | Manager  | | Engine   |        |  |
-|  |  +----------+ +----------+ +----------+ +----------+        |  |
-|  |  +----------+ +----------+ +----------+ +----------+        |  |
-|  |  | Client   | | Rate     | | Notif.   | | Backup   |        |  |
-|  |  | Manager  | | Manager  | | Service  | | Service  |        |  |
-|  |  +----------+ +----------+ +----------+ +----------+        |  |
-|  +------------------------------------------------------------+   |
-|                                                                    |
-+------------------------------------------------------------------+
-            |
-            v
-+------------------------------------------------------------------+
-|                        CAPA DE DATOS                              |
-|                                                                    |
-|  +------------------+    +------------------+                      |
-|  |   PostgreSQL     |    |   Redis          |                      |
-|  |   (BD principal) |    |   (Cache/Sesion) |                      |
-|  +------------------+    +------------------+                      |
-|                                                                    |
-|  +------------------+    +------------------+                      |
-|  |   SQLite Local   |    |   Cloud Storage  |                      |
-|  |   (Modo Offline) |    |   (Backups)      |                      |
-|  +------------------+    +------------------+                      |
-|                                                                    |
-+------------------------------------------------------------------+
-            |
-            v
-+------------------------------------------------------------------+
-|                    SERVICIOS EXTERNOS                              |
-|                                                                    |
-|  +------------+ +------------+ +------------+ +------------+      |
-|  | Exchange   | | WhatsApp   | | SMS        | | Push       |      |
-|  | Rate APIs  | | Business   | | Gateway    | | Notif.     |      |
-|  +------------+ +------------+ +------------+ +------------+      |
-|                                                                    |
-+------------------------------------------------------------------+
-```
-
-### 7.2 Stack Tecnologico Detallado
-
-| Capa | Tecnologia | Justificacion |
-|---|---|---|
-| **App Movil** | React Native (Expo) | Multiplataforma, rendimiento nativo, gran comunidad |
-| **Panel Web** | Next.js 14 + TailwindCSS | SSR, rendimiento, diseno moderno |
-| **Backend API** | NestJS (Node.js + TypeScript) | Robusto, escalable, bien estructurado |
-| **Base de Datos** | PostgreSQL 16 | Fiable, potente, gratuito |
-| **Cache** | Redis | Velocidad extrema para tasas y sesiones |
-| **BD Offline** | SQLite (WatermelonDB) | Sincronizacion offline robusta |
-| **Autenticacion** | JWT + PIN + Biometrico | Seguridad multicapa |
-| **Tiempo Real** | WebSockets (Socket.io) | Actualizaciones instantaneas |
-| **Notificaciones** | Firebase Cloud Messaging | Fiable, gratuito |
-| **Almacenamiento** | AWS S3 / Backblaze B2 | Backups economicos |
-| **CI/CD** | GitHub Actions | Despliegue automatizado |
-| **Servidor** | Docker + Nginx | Facil despliegue y mantenimiento |
-
-### 7.3 Modelo de Datos (Entidades Principales)
-
-```
-USUARIO (users)
-  - id, nombre, rol, pin_hash, telefono, idioma, config
-
-OPERACION (transactions)
-  - id, tipo, divisa_origen, divisa_destino, monto_origen, monto_destino
-  - tasa_aplicada, spread, ganancia, cliente_id, operador_id
-  - fecha, estado, notas, recibo_url
-
-CAJA (cash_registers)
-  - id, divisa, saldo_actual, saldo_minimo, saldo_maximo
-  - ultima_actualizacion
-
-MOVIMIENTO_CAJA (cash_movements)
-  - id, caja_id, tipo (entrada/salida/ajuste), monto, motivo
-  - operacion_id, fecha, operador_id
-
-CLIENTE (clients)
-  - id, nombre, telefono, whatsapp, nivel_confianza
-  - notas, fecha_registro, ultima_operacion
-  - saldo_pendiente, divisa_preferida
-
-TASA (rates)
-  - id, par_divisas, tasa_compra, tasa_venta, tasa_mercado
-  - fecha_actualizacion, fuente, activa
-
-HISTORIAL_TASA (rate_history)
-  - id, par_divisas, tasa, fuente, fecha
-
-CIERRE_CAJA (daily_closings)
-  - id, fecha, operaciones_total, ganancia_total
-  - snapshot_cajas, operador_id, notas
-
-NOTIFICACION (notifications)
-  - id, tipo, titulo, mensaje, leida, fecha, accion
-
-CONFIGURACION (settings)
-  - clave, valor, categoria, descripcion
-```
-
----
-
-## 8. INTERFAZ DE USUARIO
-
-### 8.1 Principios de Diseno
-
-1. **Minimalismo funcional**: Solo lo necesario, cero distracciones
-2. **Botones grandes**: Pensado para uso con una mano, incluso con guantes
-3. **Colores claros y alto contraste**: Visible bajo el sol del desierto
-4. **Tipografia grande**: Legible a distancia
-5. **RTL nativo**: Soporte completo de derecha a izquierda para arabe
-6. **Modo oscuro**: Para uso nocturno
-7. **Respuesta haptica**: Vibracion en confirmaciones
-8. **Animaciones sutiles**: Feedback visual sin ralentizar
-
-### 8.2 Pantallas Principales (App Movil)
-
-```
-PANTALLA PRINCIPAL (Home)
-+----------------------------------+
-|  SARAF PRO          14:35  [=]  |
-+----------------------------------+
-|                                   |
-|  CAJA TOTAL: 48,230 EUR equiv.   |
-|                                   |
-|  +----+ +----+ +----+ +----+    |
-|  |EUR | |DZD | |MRU | |XOF |    |
-|  |12.4K| |2.3M| |456K| |1.2M|    |
-|  +----+ +----+ +----+ +----+    |
-|                                   |
-|  +------------------------------+|
-|  |                              ||
-|  |     NUEVA OPERACION          ||
-|  |     [BOTON GRANDE VERDE]     ||
-|  |                              ||
-|  +------------------------------+|
-|                                   |
-|  ULTIMAS OPERACIONES:            |
-|  > Ahmed - 500 EUR -> DZD  14:32|
-|  > Fatima - 200K DZD->EUR  14:28|
-|  > Mohamed - 1K EUR->MRU   14:15|
-|                                   |
-|  [Caja] [Clientes] [Tasas] [+]  |
-+----------------------------------+
-
-
-PANTALLA NUEVA OPERACION
-+----------------------------------+
-|  <- NUEVA OPERACION              |
-+----------------------------------+
-|                                   |
-|  VENDO:          COMPRO:         |
-|  [EUR v]         [DZD v]        |
-|                                   |
-|  +------------------------------+|
-|  |                              ||
-|  |         500.00               ||
-|  |                              ||
-|  +------------------------------+|
-|                                   |
-|  TASA: 187.00  (Spread: 1.08%)  |
-|                                   |
-|  = 93,500.00 DZD                 |
-|  GANANCIA: +1,000 DZD            |
-|                                   |
-|  Cliente: [Ahmed M.        v]    |
-|                                   |
-|  +------------------------------+|
-|  |     CONFIRMAR OPERACION      ||
-|  |     [BOTON GRANDE AZUL]     ||
-|  +------------------------------+|
-|                                   |
-+----------------------------------+
-
-
-PANTALLA CLIENTES
-+----------------------------------+
-|  <- CLIENTES           [Buscar] |
-+----------------------------------+
-|                                   |
-|  [Buscar por nombre/telefono...] |
-|                                   |
-|  VIP:                            |
-|  > Ahmed M.    Vol: 45,000 EUR   |
-|  > Mohamed S.  Vol: 32,000 EUR   |
-|                                   |
-|  FRECUENTES:                     |
-|  > Fatima B.   Vol: 12,000 EUR   |
-|  > Ali K.      Vol: 8,500 EUR    |
-|  > Hassan T.   Vol: 6,200 EUR    |
-|                                   |
-|  RECIENTES:                      |
-|  > Youssef M.  Hoy 14:32        |
-|  > Sara L.     Hoy 11:15        |
-|                                   |
-|  [+ Nuevo Cliente]               |
-+----------------------------------+
-```
-
-### 8.3 Panel Web (Dashboard)
-
-El panel web es la herramienta de gestion avanzada con:
-
-- **Dashboard principal**: KPIs, graficos, actividad en tiempo real
-- **Gestion de tasas**: Configuracion avanzada con graficos historicos
-- **Reportes completos**: Descargables en PDF/Excel
-- **Configuracion del sistema**: Todos los ajustes
-- **Gestion de usuarios**: Si hay multiples operadores
-- **Auditoria**: Registro detallado de toda actividad
-
-### 8.4 Idiomas Soportados
-
-| Idioma | Codigo | Direccion | Estado |
+| Ver su propia caja | SI | SI |
+| Ver caja de TODOS | **SI** | NO |
+| Realizar operaciones de cambio | SI | SI (con limites) |
+| Fijar y cambiar tasas | **SI** | NO |
+| Aprobar operaciones grandes | **SI** | NO (debe pedir permiso) |
+| Ver ganancias y spreads | **SI** | NO |
+| Ver reportes completos | **SI** | NO |
+| Anadir/eliminar empleados | **SI** | NO |
+| Registrar entradas/salidas de caja | SI | SI (solo las suyas) |
+| Ver historial de todos | **SI** | NO (solo el suyo) |
+| Exportar datos | **SI** | NO |
+| Configurar el sistema | **SI** | NO |
+| Registrar clientes | SI | SI |
+| Ver clientes con deudas | **SI** | SI (solo sus clientes) |
+
+### 4.3 Puntos de Operacion (Sucursales)
+
+| Punto | Ubicacion | Empleados | Divisas Principales |
 |---|---|---|---|
-| Arabe (Argelia) | ar-DZ | RTL (derecha a izquierda) | Principal |
-| Frances | fr-FR | LTR | Secundario |
-| Espanol | es-ES | LTR | Opcioinal |
-| Hassania (dialecto) | ar-MR | RTL | Futuro |
+| **TINDOUF** | Tindouf ciudad | Configurable | EUR, DZD, MRU, XOF |
+| **AAIOUN** | Campamentos Aaioun | Configurable | EUR, DZD, MRU |
+| *(Ampliable)* | Donde sea | Configurable | Todas |
+
+Cada punto tiene:
+- Su propia caja separada por divisa
+- Sus propios empleados asignados
+- Las mismas tasas del jefe (o tasas especificas si el jefe lo decide)
+- Su propio historial de operaciones
+
+### 4.4 Gestion de Caja por Empleado
+
+Cada empleado tiene **su propia caja individual**:
+
+```
+AHMED (Aaioun):
+  EUR:    2,350.00   [barra visual ████████░░]
+  DZD:  456,000.00   [barra visual ██████████]
+  MRU:   12,000.00   [barra visual ███░░░░░░░]
+
+OMAR (Tindouf):
+  EUR:    1,425.00   [barra visual █████░░░░░]
+  DZD:  800,000.00   [barra visual ██████████]
+  MRU:   45,000.00   [barra visual ██████░░░░]
+  XOF:  350,000.00   [barra visual ████░░░░░░]
+```
+
+El jefe ve TODAS las cajas. El empleado solo ve la suya.
 
 ---
 
-## 9. SEGURIDAD Y CUMPLIMIENTO
+## 5. APP DEL JEFE - CONTROL TOTAL
 
-### 9.1 Seguridad de Acceso
+### 5.1 Pantalla Principal del Jefe
 
-| Capa | Metodo | Descripcion |
+```
++--------------------------------------------+
+|  SARAF ELITE          Jue 13 Feb    14:35  |
++--------------------------------------------+
+|                                              |
+|  GANANCIA HOY              OPERACIONES       |
+|  +12,450 DZD  (+8%)       47  (+5 vs ayer)  |
+|                                              |
++--------------------------------------------+
+|  CAJA TOTAL DE LA RED                        |
+|                                              |
+|  EUR    ████████████   15,775.00             |
+|  DZD    ██████████  3,456,000.00             |
+|  MRU    ██████        257,000.00             |
+|  XOF    ████          350,000.00             |
+|                                              |
++--------------------------------------------+
+|  EMPLEADOS AHORA                             |
+|                                              |
+|  [Circulo verde] Ahmed - Aaioun             |
+|     EUR: 2,350  DZD: 456,000                |
+|     Ultima op: hace 3 min                    |
+|                                              |
+|  [Circulo verde] Omar - Tindouf             |
+|     EUR: 1,425  DZD: 800,000                |
+|     Ultima op: hace 8 min                    |
+|                                              |
+|  [Circulo gris] Karim - Aaioun              |
+|     EUR: 1,000  DZD: 350,000                |
+|     Sin actividad hace 2 horas               |
+|                                              |
++--------------------------------------------+
+|  ULTIMAS OPERACIONES                         |
+|                                              |
+|  14:32  Ahmed  500 EUR->DZD    +1,000 DZD   |
+|  14:28  Omar   200K DZD->EUR   +1,200 DZD   |
+|  14:15  Ahmed  1K EUR->MRU     +3,000 MRU   |
+|  14:01  Karim  50K XOF->DZD    +200 DZD     |
+|                                              |
++--------------------------------------------+
+|  [Tasas] [Empleados] [Reportes] [Config]    |
++--------------------------------------------+
+```
+
+### 5.2 Funciones Exclusivas del Jefe
+
+#### A) Fijar Tasas - Un Solo Toque para Todos
+
+```
+PANTALLA: GESTIONAR TASAS
+
++--------------------------------------------+
+|  <- TASAS DE HOY                             |
++--------------------------------------------+
+|                                              |
+|  EUR / DZD                                   |
+|  Compra:  [- ] 185.00 [ +]                  |
+|  Venta:   [- ] 187.00 [ +]                  |
+|  Spread:  2.00 (1.08%)                       |
+|  Mercado: 186.50                             |
+|                                              |
+|  EUR / MRU                                   |
+|  Compra:  [- ] 400.00 [ +]                  |
+|  Venta:   [- ] 403.00 [ +]                  |
+|  Spread:  3.00 (0.75%)                       |
+|                                              |
+|  EUR / XOF                                   |
+|  Compra:  [- ] 652.00 [ +]                  |
+|  Venta:   [- ] 656.00 [ +]                  |
+|  Spread:  4.00 (0.61%)                       |
+|                                              |
+|  DZD / MRU                                   |
+|  Compra:  [- ] 2.15   [ +]                  |
+|  Venta:   [- ] 2.18   [ +]                  |
+|                                              |
+|  +--------------------------------------+    |
+|  |  APLICAR A TODOS LOS EMPLEADOS       |    |
+|  |  [BOTON GRANDE VERDE]                |    |
+|  +--------------------------------------+    |
+|                                              |
++--------------------------------------------+
+
+Al tocar "APLICAR":
+  -> Todos los empleados reciben la nueva tasa INMEDIATAMENTE
+  -> Les aparece una notificacion en su app:
+     "Nuevas tasas: EUR/DZD Compra 185 Venta 187"
+  -> Todas las operaciones futuras usan las nuevas tasas
+  -> NO hace falta enviar WhatsApp a cada uno
+  -> NO puede ser que un empleado use tasa vieja
+```
+
+#### B) Aprobar Operaciones Grandes
+
+El jefe configura un limite (ejemplo: 2,000 EUR). Si un empleado quiere hacer una operacion mayor, necesita aprobacion:
+
+```
+[NOTIFICACION EN MOVIL DEL JEFE]
+
+"Ahmed (Aaioun) pide aprobacion:
+ COMPRAR 5,000 EUR por 935,000 DZD
+ Cliente: Mohamed Ali
+ 
+ [APROBAR]  [RECHAZAR]  [LLAMAR]"
+
+El jefe toca APROBAR y Ahmed puede completar la operacion.
+Si el jefe toca RECHAZAR, Ahmed ve "Operacion rechazada por el jefe".
+Tiempo total: 3 segundos.
+```
+
+#### C) Transferencias entre Empleados
+
+Cuando un empleado se queda sin una divisa, el jefe ordena transferencia:
+
+```
+PANTALLA: TRANSFERIR ENTRE EMPLEADOS
+
+De: [Omar - Tindouf    v]     EUR disponible: 3,425
+A:  [Ahmed - Aaioun    v]     EUR disponible: 350
+
+Divisa: [EUR v]
+Monto:  [1,000          ]
+
+Omar entrega 1,000 EUR a Ahmed (o se envia por otro medio)
+
+[CONFIRMAR TRANSFERENCIA]
+
+-> La caja de Omar baja 1,000 EUR
+-> La caja de Ahmed sube 1,000 EUR
+-> Queda registrado con fecha, hora y motivo
+```
+
+#### D) Ver Todo en Tiempo Real
+
+```
+PANTALLA: MONITOR EN VIVO
+
++--------------------------------------------+
+|  ACTIVIDAD EN TIEMPO REAL                    |
++--------------------------------------------+
+|                                              |
+|  [AHORA] Ahmed esta haciendo una operacion   |
+|          300 EUR -> DZD ... esperando        |
+|                                              |
+|  [hace 2m] Omar completo: 500 EUR -> DZD    |
+|            Ganancia: +1,000 DZD              |
+|                                              |
+|  [hace 5m] Karim completo: 100K DZD -> EUR  |
+|            Ganancia: +600 DZD                |
+|                                              |
+|  [hace 12m] Ahmed completo: 200 EUR -> MRU  |
+|             Ganancia: +600 MRU               |
+|                                              |
++--------------------------------------------+
+```
+
+#### E) Reportes Automaticos
+
+Cada dia a las 22:00 (o cuando quieras), recibes un resumen automatico:
+
+```
+RESUMEN DIARIO - 13 Febrero 2026
+=================================
+
+TOTAL OPERACIONES: 47
+GANANCIA TOTAL: +12,450 DZD (+66.58 EUR)
+
+POR EMPLEADO:
+  Ahmed (Aaioun):  23 ops  |  +5,200 DZD ganancia
+  Omar (Tindouf):  15 ops  |  +4,800 DZD ganancia
+  Karim (Aaioun):   9 ops  |  +2,450 DZD ganancia
+
+POR DIVISA:
+  EUR/DZD: 30 ops | Vol: 12,000 EUR | +8,400 DZD
+  EUR/MRU:  8 ops | Vol: 2,800 EUR  | +2,100 DZD equiv.
+  DZD/MRU:  5 ops | Vol: 450K DZD   | +1,200 DZD
+  EUR/XOF:  4 ops | Vol: 800 EUR    | +750 DZD equiv.
+
+CAJA FINAL:
+  Ahmed:  EUR 2,350 | DZD 456,000 | MRU 12,000
+  Omar:   EUR 1,425 | DZD 800,000 | MRU 45,000 | XOF 350,000
+  Karim:  EUR 1,000 | DZD 350,000
+
+COMPARACION CON AYER:
+  Ops: +5 mas | Ganancia: +8% mas | Volumen: +12% mas
+
+Este resumen se puede recibir tambien por WhatsApp
+(generado automaticamente, no hay que escribir nada).
+```
+
+---
+
+## 6. APP DEL EMPLEADO - SIMPLICIDAD ABSOLUTA
+
+### 6.1 Filosofia: El Empleado NO Piensa
+
+La app del empleado esta disenada para que sea **imposible equivocarse**:
+
+- **No tiene que calcular nada** (la app calcula todo)
+- **No tiene que saber la tasa** (la app ya tiene la tasa del jefe)
+- **No tiene que llamar al jefe** (salvo operaciones grandes)
+- **No tiene que apuntar nada** (todo se registra solo)
+- **Botones enormes**, texto grande, colores claros
+- **Maximo 3 toques** para cualquier operacion
+
+### 6.2 Pantalla Principal del Empleado
+
+```
++--------------------------------------------+
+|  SARAF                Ahmed - Aaioun        |
++--------------------------------------------+
+|                                              |
+|  MI CAJA:                                    |
+|  EUR: 2,350     DZD: 456,000               |
+|  MRU: 12,000                                |
+|                                              |
++--------------------------------------------+
+|                                              |
+|  +--------------------------------------+    |
+|  |                                      |    |
+|  |    +---+   CLIENTE DA EUROS          |    |
+|  |    |EUR|   Quiere DZD, MRU u otro    |    |
+|  |    +---+                             |    |
+|  |                                      |    |
+|  +--------------------------------------+    |
+|                                              |
+|  +--------------------------------------+    |
+|  |                                      |    |
+|  |    +---+   CLIENTE DA DINARES        |    |
+|  |    |DZD|   Quiere EUR, MRU u otro    |    |
+|  |    +---+                             |    |
+|  |                                      |    |
+|  +--------------------------------------+    |
+|                                              |
+|  +--------------------------------------+    |
+|  |                                      |    |
+|  |    +---+   CLIENTE DA UGUIYAS        |    |
+|  |    |MRU|   Quiere EUR, DZD u otro    |    |
+|  |    +---+                             |    |
+|  |                                      |    |
+|  +--------------------------------------+    |
+|                                              |
+|  +--------------------------------------+    |
+|  |    +---+   OTRA DIVISA               |    |
+|  |    |...|   XOF, MAD, USD, etc.       |    |
+|  |    +---+                             |    |
+|  +--------------------------------------+    |
+|                                              |
+|  Tasas de hoy:                               |
+|  EUR/DZD: 185/187  EUR/MRU: 400/403         |
+|                                              |
++--------------------------------------------+
+```
+
+### 6.3 Flujo de Operacion del Empleado (3 Toques)
+
+```
+PASO 1 - TOCA "CLIENTE DA EUROS"
+
++--------------------------------------------+
+|  <- CLIENTE DA EUROS                         |
++--------------------------------------------+
+|                                              |
+|  Cuantos euros da el cliente?                |
+|                                              |
+|  +--------------------------------------+    |
+|  |                                      |    |
+|  |            500                       |    |
+|  |                                      |    |
+|  +--------------------------------------+    |
+|                                              |
+|  +----+ +----+ +----+                        |
+|  |100 | |200 | |500 |  <- Botones rapidos    |
+|  +----+ +----+ +----+                        |
+|  +----+ +----+ +----+                        |
+|  |1000| |2000| |5000|                        |
+|  +----+ +----+ +----+                        |
+|                                              |
+|  [7] [8] [9]                                 |
+|  [4] [5] [6]    <- Teclado numerico grande   |
+|  [1] [2] [3]                                 |
+|  [0] [00] [<-]                               |
+|                                              |
+|  [         SIGUIENTE ->          ]           |
+|                                              |
++--------------------------------------------+
+
+
+PASO 2 - SELECCIONA QUE QUIERE EL CLIENTE
+
++--------------------------------------------+
+|  <- 500 EUR -> ???                           |
++--------------------------------------------+
+|                                              |
+|  El cliente quiere:                          |
+|                                              |
+|  +--------------------------------------+    |
+|  |  DZD - Dinares                       |    |
+|  |  500 EUR = 93,500 DZD               |    |
+|  |  Tasa: 187.00                         |    |
+|  +--------------------------------------+    |
+|                                              |
+|  +--------------------------------------+    |
+|  |  MRU - Uguiyas                       |    |
+|  |  500 EUR = 201,500 MRU              |    |
+|  |  Tasa: 403.00                         |    |
+|  +--------------------------------------+    |
+|                                              |
+|  +--------------------------------------+    |
+|  |  XOF - Francos CFA                   |    |
+|  |  500 EUR = 328,000 XOF              |    |
+|  |  Tasa: 656.00                         |    |
+|  +--------------------------------------+    |
+|                                              |
+|  (el empleado toca DZD)                      |
+|                                              |
++--------------------------------------------+
+
+
+PASO 3 - CONFIRMAR
+
++--------------------------------------------+
+|  <- CONFIRMAR OPERACION                      |
++--------------------------------------------+
+|                                              |
+|  RECIBES del cliente:                        |
+|  +------------------+                        |
+|  |   500.00 EUR     |                        |
+|  +------------------+                        |
+|                                              |
+|  ENTREGAS al cliente:                        |
+|  +------------------+                        |
+|  |  93,500.00 DZD   |                        |
+|  +------------------+                        |
+|                                              |
+|  Tasa aplicada: 187.00                       |
+|                                              |
+|  Cliente: [Seleccionar o dejar vacio]        |
+|                                              |
+|                                              |
+|  +--------------------------------------+    |
+|  |                                      |    |
+|  |         CONFIRMAR                    |    |
+|  |       [BOTON ENORME VERDE]           |    |
+|  |                                      |    |
+|  +--------------------------------------+    |
+|                                              |
+|  [Cancelar]                                  |
+|                                              |
++--------------------------------------------+
+
+
+DESPUES DE CONFIRMAR:
+
++--------------------------------------------+
+|                                              |
+|              OPERACION OK                    |
+|                                              |
+|    Comprado: 500.00 EUR                      |
+|    Pagado:   93,500.00 DZD                   |
+|                                              |
+|    Tu caja ahora:                            |
+|    EUR: 2,850.00 (+500)                      |
+|    DZD: 362,500.00 (-93,500)                 |
+|                                              |
+|    [NUEVA OPERACION]  [INICIO]               |
+|                                              |
++--------------------------------------------+
+
+TIEMPO TOTAL: 5-8 SEGUNDOS
+EL EMPLEADO NO HA CALCULADO NADA
+EL EMPLEADO NO HA LLAMADO AL JEFE
+EL JEFE YA LO HA VISTO EN SU MOVIL
+```
+
+### 6.4 Que Puede Hacer el Empleado
+
+| Funcion | Descripcion |
+|---|---|
+| **Hacer operaciones de cambio** | Con las tasas del jefe, automatico |
+| **Ver su caja** | Cuanto tiene en cada divisa |
+| **Ver sus operaciones del dia** | Lista de lo que ha hecho |
+| **Registrar entrada de caja** | "El jefe me dio 5,000 EUR" |
+| **Registrar salida de caja** | "Entregue 2,000 EUR al jefe" |
+| **Buscar cliente** | Si es un cliente habitual |
+| **Pedir aprobacion** | Para operaciones grandes |
+| **Ver tasas actuales** | Las que puso el jefe |
+
+### 6.5 Que NO Puede Hacer el Empleado
+
+| Restriccion | Razon |
+|---|---|
+| No puede cambiar tasas | Solo el jefe cambia tasas |
+| No puede ver ganancias | Informacion solo del jefe |
+| No puede ver cajas de otros | Cada uno ve solo lo suyo |
+| No puede borrar operaciones | Todo queda registrado |
+| No puede operar sin limite | Operaciones grandes necesitan aprobacion |
+| No puede exportar datos | Solo el jefe exporta |
+| No puede modificar configuracion | Solo el jefe configura |
+
+---
+
+## 7. FLUJOS DE TRABAJO REALES
+
+### 7.1 Flujo: Inicio del Dia
+
+```
+JEFE (por la manana):
+  1. Abre la app
+  2. Revisa tasas de mercado (la app le muestra referencia)
+  3. Ajusta sus tasas de compra/venta con los botones +/-
+  4. Toca "APLICAR A TODOS"
+  -> Todos los empleados tienen las nuevas tasas al instante
+
+EMPLEADO (al empezar a trabajar):
+  1. Abre la app
+  2. Ve las tasas de hoy (ya actualizadas por el jefe)
+  3. Ve su caja (lo que tenia ayer al cerrar)
+  4. Si recibio dinero del jefe, toca "Entrada de caja" y lo registra
+  5. Listo para operar
+```
+
+### 7.2 Flujo: Operacion Normal (< 2,000 EUR)
+
+```
+EMPLEADO:
+  1. Cliente llega
+  2. Abre app -> "Cliente da EUR" -> escribe 500 -> toca DZD -> CONFIRMAR
+  3. Entrega 93,500 DZD al cliente, recibe 500 EUR
+  4. Siguiente cliente
+
+JEFE (automatico):
+  - Recibe notificacion silenciosa en su movil
+  - La caja de ese empleado se actualiza en tiempo real
+  - No tiene que hacer NADA
+```
+
+### 7.3 Flujo: Operacion Grande (> Limite)
+
+```
+EMPLEADO:
+  1. Cliente quiere cambiar 5,000 EUR
+  2. Abre app, escribe 5,000 EUR -> DZD
+  3. La app detecta que supera el limite (2,000 EUR)
+  4. Pantalla: "Esta operacion necesita aprobacion del jefe"
+  5. Toca "PEDIR APROBACION"
+  6. Espera (normalmente 10-30 segundos)
+
+JEFE:
+  1. Recibe notificacion con vibracion:
+     "Ahmed pide aprobar: 5,000 EUR -> 935,000 DZD"
+  2. Toca [APROBAR] o [RECHAZAR]
+
+EMPLEADO:
+  7. Ve "APROBADO" en su pantalla
+  8. Toca CONFIRMAR
+  9. Operacion registrada
+```
+
+### 7.4 Flujo: Cliente con Deuda
+
+```
+EMPLEADO:
+  1. Cliente habitual llega (Mohamed)
+  2. Empleado selecciona el cliente en la app
+  3. La app muestra: "Mohamed - Debe 300 EUR (desde hace 5 dias)"
+  4. El empleado puede:
+     a) Cobrar la deuda: Mohamed paga los 300 EUR
+     b) Hacer nueva operacion (la deuda sigue abierta)
+     c) Crear nueva deuda si el cliente pide credito
+
+JEFE:
+  - Ve todas las deudas pendientes de todos los clientes
+  - Recibe alerta si una deuda lleva mas de X dias
+  - Puede marcar deudas como cobradas desde su app
+```
+
+### 7.5 Flujo: El Jefe Cambia la Tasa a Mitad de Dia
+
+```
+JEFE:
+  1. Ve que el mercado ha cambiado
+  2. Abre "Tasas" en su app
+  3. Sube EUR/DZD de 187 a 189
+  4. Toca "APLICAR A TODOS"
+
+TODOS LOS EMPLEADOS AL INSTANTE:
+  - Reciben notificacion: "Nueva tasa EUR/DZD: Compra 187 / Venta 189"
+  - La app cambia automaticamente
+  - Todas las operaciones futuras usan la nueva tasa
+  - IMPOSIBLE que un empleado use la tasa vieja por error
+```
+
+### 7.6 Flujo: Transferencia de Dinero entre Empleados
+
+```
+SITUACION: Ahmed en Aaioun se quedo sin DZD, Omar en Tindouf tiene de sobra
+
+JEFE (desde su app):
+  1. Abre "Transferencias"
+  2. De: Omar (Tindouf) -> A: Ahmed (Aaioun)
+  3. Divisa: DZD, Monto: 500,000
+  4. Toca CONFIRMAR
+
+  -> Omar recibe notificacion: "Entrega 500,000 DZD a Ahmed. Orden del jefe."
+  -> Omar confirma cuando entrega el dinero (fisicamente o por envio)
+  -> Ahmed confirma cuando recibe
+  -> Las cajas se actualizan
+  -> Todo registrado
+```
+
+### 7.7 Flujo: Final del Dia (Cierre)
+
+```
+JEFE (22:00):
+  1. Recibe notificacion automatica: "Hora de cerrar el dia"
+  2. Abre "Cierre del dia"
+  3. Ve resumen completo automatico (operaciones, ganancias, cajas)
+  4. Puede pedir a cada empleado que confirme su caja contando efectivo
+  5. Si hay diferencia, se registra como ajuste con motivo
+  6. Toca "CERRAR DIA"
+  7. Se genera reporte. Se hace backup automatico.
+
+EMPLEADO:
+  1. Recibe notificacion: "El jefe ha cerrado el dia"
+  2. Si el jefe pide confirmacion de caja:
+     - "Cuenta tu efectivo y confirma:"
+     - EUR: [2,350] <- el empleado escribe lo que cuenta
+     - DZD: [456,000]
+     - Si coincide con la app: OK
+     - Si NO coincide: se marca como diferencia para revision
+```
+
+---
+
+## 8. FUNCIONALIDADES COMPLETAS
+
+### 8.1 Motor de Cambio
+
+| Funcion | Descripcion |
+|---|---|
+| Conversion instantanea | Calculo automatico al escribir el monto |
+| Tasas centralizadas | El jefe fija, empleados ejecutan |
+| Multi-divisa | EUR, DZD, MRU, XOF y mas |
+| Conversion directa e inversa | "Tengo 500 EUR" o "Necesito 100,000 DZD" |
+| Botones rapidos | 100, 200, 500, 1000, 2000, 5000 |
+| Confirmacion clara | Pantalla grande con resumen antes de confirmar |
+| Operacion en 3 toques | Divisa -> Monto -> Confirmar |
+| Limite de operacion | Operaciones grandes necesitan aprobacion del jefe |
+
+### 8.2 Gestion de Caja
+
+| Funcion | Descripcion |
+|---|---|
+| Caja por empleado | Cada empleado tiene su caja independiente |
+| Caja por punto | Totales por Tindouf, Aaioun, etc. |
+| Caja total de la red | El jefe ve el total de todo |
+| Actualizacion automatica | Se actualiza sola con cada operacion |
+| Entradas manuales | "Recibi 5,000 EUR del jefe" |
+| Salidas manuales | "Entregue 3,000 EUR al jefe" |
+| Alertas de nivel bajo | "Ahmed solo tiene 200 EUR, necesita mas" |
+| Transferencias entre empleados | Con autorizacion del jefe |
+| Cierre diario | Resumen automatico cada noche |
+| Verificacion de conteo | El empleado cuenta fisico y confirma |
+
+### 8.3 Gestion de Tasas
+
+| Funcion | Descripcion |
+|---|---|
+| Tasas de compra/venta | El jefe configura ambas por cada par |
+| Propagacion instantanea | Un toque y todos los empleados tienen la nueva tasa |
+| Tasas de referencia | Conexion con APIs de mercado (cuando hay internet) |
+| Historial de tasas | Ver como han cambiado las tasas en el tiempo |
+| Ajuste rapido | Botones +/- para subir o bajar con precision |
+| Spread visible | Ver margen de ganancia de cada par |
+| Notificacion de cambio | Empleados reciben alerta cuando la tasa cambia |
+
+### 8.4 Gestion de Clientes
+
+| Funcion | Descripcion |
+|---|---|
+| Registro rapido | Nombre + telefono, en 5 segundos |
+| Historial por cliente | Todas sus operaciones |
+| Saldos pendientes (deudas) | Lo que debe o se le debe |
+| Alertas de deuda | Recordatorio si una deuda lleva mucho tiempo |
+| Busqueda rapida | Por nombre o telefono |
+| Nivel de confianza | Del 1 al 5, configurable |
+| Limite de credito | Cuanto se le puede fiar segun su nivel |
+| Clientes compartidos | Todos los empleados ven los mismos clientes |
+| Notas | Apuntes sobre el cliente ("viene siempre los jueves") |
+
+### 8.5 Reportes y Analitica (Solo Jefe)
+
+| Reporte | Contenido | Frecuencia |
 |---|---|---|
-| 1 | PIN de 6 digitos | Acceso rapido al abrir la app |
-| 2 | Huella dactilar / Face ID | Autenticacion biometrica |
-| 3 | Contrasena maestra | Para operaciones sensibles (config, borrar datos) |
-| 4 | 2FA (opcional) | Doble factor via SMS o app |
-| 5 | Bloqueo automatico | Tras X minutos de inactividad |
-| 6 | Bloqueo por intentos | Tras 5 intentos fallidos |
+| **Resumen diario** | Operaciones, ganancias, cajas, por empleado | Automatico cada noche |
+| **Resumen semanal** | Tendencias, mejor dia, peor dia, por empleado | Cada lunes |
+| **Resumen mensual** | Rentabilidad completa, comparativa con mes anterior | Dia 1 |
+| **Rendimiento por empleado** | Volumen, operaciones, actividad de cada empleado | Bajo demanda |
+| **Rendimiento por punto** | Tindouf vs Aaioun, que punto rinde mas | Bajo demanda |
+| **Deudas pendientes** | Todos los clientes que deben | Bajo demanda |
+| **Flujo de caja** | Entrada y salida de cada divisa | Tiempo real |
+| **Historico de tasas** | Evolucion de las tasas en el tiempo | Bajo demanda |
 
-### 9.2 Seguridad de Datos
+Todos los reportes pueden:
+- Verse en la app
+- Recibirse como resumen por WhatsApp (automatico)
+- Exportarse a PDF o Excel
 
-- **Cifrado en reposo**: AES-256 para todos los datos almacenados
-- **Cifrado en transito**: TLS 1.3 para todas las comunicaciones
-- **Cifrado de backups**: Los backups en la nube estan cifrados
-- **Base de datos local cifrada**: SQLite con encryption (SQLCipher)
-- **Logs de acceso**: Registro de todo acceso al sistema
-- **Borrado remoto**: Posibilidad de borrar datos remotamente si el dispositivo se pierde
+### 8.6 Sistema de Notificaciones
 
-### 9.3 Privacidad
+| Notificacion | Quien recibe | Cuando |
+|---|---|---|
+| Nueva operacion realizada | JEFE | Cada operacion de cualquier empleado |
+| Solicitud de aprobacion | JEFE | Operacion grande de un empleado |
+| Nueva tasa aplicada | EMPLEADOS | El jefe cambia tasas |
+| Caja baja | JEFE | Un empleado tiene poca divisa |
+| Deuda pendiente antigua | JEFE | Deuda > X dias |
+| Resumen del dia | JEFE | Cada noche automatico |
+| Cierre de caja solicitado | EMPLEADOS | El jefe pide cierre |
+| Transferencia ordenada | EMPLEADOS | El jefe ordena transferencia |
+| Operacion aprobada/rechazada | EMPLEADO | Respuesta a su solicitud |
+| Empleado inactivo | JEFE | Empleado sin operar > X horas |
 
-- **Datos locales**: Los datos criticos se almacenan principalmente en el dispositivo
-- **Minimo en la nube**: Solo se sube a la nube lo estrictamente necesario para backup
-- **Sin terceros**: No se comparten datos con terceros
-- **Exportacion**: El usuario puede exportar todos sus datos en cualquier momento
-- **Borrado**: El usuario puede borrar todos sus datos permanentemente
+### 8.7 Automatizaciones
 
-### 9.4 Consideraciones Legales
+| Automatizacion | Descripcion |
+|---|---|
+| Auto-calculo | Todo calculo es automatico, cero error humano |
+| Auto-registro | Cada operacion se registra sola |
+| Auto-caja | La caja se actualiza sola |
+| Auto-tasa | Las tasas llegan solas a los empleados |
+| Auto-cierre | Cierre de caja automatico a las 22:00 |
+| Auto-backup | Backup cada noche a la nube |
+| Auto-alerta | Alertas de caja baja, deudas antiguas, inactividad |
+| Auto-reporte | Resumen diario/semanal/mensual generado solo |
+| Auto-resumen WhatsApp | El jefe recibe resumen por WhatsApp sin hacer nada |
 
-> **Nota importante**: El sistema es una herramienta de gestion. Es responsabilidad del usuario operar dentro del marco legal de Argelia. El sistema incluye:
+---
 
-- Registro de todas las operaciones para posibles auditorias
-- Limites configurables de operacion
-- Reportes que facilitan el cumplimiento normativo
-- Sin almacenamiento de documentos de identidad (a menos que sea requerido)
+## 9. DIVISAS SOPORTADAS
+
+### 9.1 Divisas Principales (Activas por defecto)
+
+| Divisa | Codigo | Pais/Region | Uso en el Negocio |
+|---|---|---|---|
+| Euro | EUR | Europa | Principal - Recibidos de emigrantes, comercio |
+| Dinar Argelino | DZD | Argelia | Principal - Moneda local, la que tienen los empleados |
+| Uguiya Mauritana | MRU | Mauritania | Alta frecuencia - Comercio fronterizo |
+| Franco CFA Occidental | XOF | Senegal, Mali, etc. | Frecuente - Comercio Africa Occidental |
+
+### 9.2 Divisas Secundarias (Activables por el Jefe)
+
+| Divisa | Codigo | Pais |
+|---|---|---|
+| Dirham Marroqui | MAD | Marruecos |
+| Dolar Americano | USD | Internacional |
+| Libra Esterlina | GBP | Reino Unido |
+| Dinar Tunecino | TND | Tunez |
+| Dinar Libio | LYD | Libia |
+| Franco CFA Central | XAF | Africa Central |
+
+### 9.3 Pares Pre-configurados
+
+```
+PARES PRINCIPALES (los mas usados):
+  EUR <-> DZD    (el mas comun)
+  EUR <-> MRU
+  EUR <-> XOF
+  DZD <-> MRU
+  DZD <-> XOF
+  MRU <-> XOF
+
+El jefe puede activar mas pares en cualquier momento.
+```
 
 ---
 
 ## 10. MODO OFFLINE Y CONECTIVIDAD
 
-### 10.1 Estrategia Offline-First
+### 10.1 Realidad de la Conectividad en la Zona
 
-Dado que la conectividad en Tindouf puede ser intermitente, **SARAF PRO** esta disenado con un enfoque "offline-first":
+La conectividad en Tindouf y especialmente en los campamentos de Aaioun es **limitada e intermitente**. El sistema TIENE que funcionar sin internet.
 
-```
-ONLINE                          OFFLINE
-  |                                |
-  | Todas las funciones            | Todas las funciones
-  | disponibles                    | disponibles
-  |                                |
-  | + Sincronizacion              | Datos guardados
-  |   en tiempo real               | localmente
-  |                                |
-  | + Tasas de mercado            | Ultima tasa conocida
-  |   actualizadas                 | (con indicador)
-  |                                |
-  | + Backup en la nube           | Backup local
-  |                                |
-  | + Notificaciones push         | Notificaciones locales
-  |                                |
-  | + WhatsApp integrado          | Cola de mensajes
-  |   (recibos)                    | (se envian al conectar)
-  |                                |
-```
+### 10.2 Que Funciona SIN Internet (TODO lo Importante)
 
-### 10.2 Sincronizacion Inteligente
-
-```
-1. OPERACION REALIZADA OFFLINE
-   -> Se guarda en SQLite local con timestamp
-   -> Se marca como "pendiente de sincronizar"
-   -> Icono de reloj en la operacion
-
-2. CONEXION DETECTADA
-   -> Se inicia sincronizacion automatica
-   -> Se suben operaciones pendientes
-   -> Se descargan tasas actualizadas
-   -> Se realiza backup incremental
-   -> Se resuelven conflictos (si los hay)
-
-3. CONFLICTO (raro pero posible)
-   -> Se mantiene la version local como principal
-   -> Se registra el conflicto para revision
-   -> Se notifica al usuario
-```
-
-### 10.3 Requisitos de Conectividad
-
-| Funcion | Requiere Internet | Sin Internet |
+| Funcion | Sin Internet | Con Internet |
 |---|---|---|
-| Realizar operaciones | NO | Funciona completo |
-| Calcular conversiones | NO | Funciona completo |
-| Gestionar caja | NO | Funciona completo |
-| Gestionar clientes | NO | Funciona completo |
-| Ver reportes | NO | Datos locales |
-| Actualizar tasas mercado | SI | Usa ultima tasa |
-| Enviar recibos WhatsApp | SI | Cola de espera |
-| Backup en nube | SI | Backup local |
-| Sincronizar multiples dispositivos | SI | Sincroniza al conectar |
+| Hacer operaciones de cambio | SI | SI |
+| Calcular conversiones | SI | SI |
+| Ver y gestionar caja | SI | SI |
+| Buscar clientes | SI | SI |
+| Registrar movimientos de caja | SI | SI |
+| Ver historial de operaciones | SI | SI |
+| Ver tasas actuales | SI (ultima recibida) | SI (actualizada) |
+
+### 10.3 Que Necesita Internet (Se Hace Cuando Hay)
+
+| Funcion | Sin Internet | Con Internet |
+|---|---|---|
+| Jefe recibe notificacion en tiempo real | Acumuladas, llegan al conectar | SI, al instante |
+| Jefe cambia tasas y llegan a empleados | Se aplican al conectar | SI, al instante |
+| Sincronizar operaciones entre todos | Se acumulan localmente | SI, automatico |
+| Backup en la nube | Pendiente | SI, automatico |
+| Tasas de referencia del mercado | Ultima conocida | SI, actualizadas |
+| Resumen por WhatsApp | Pendiente | SI |
+
+### 10.4 Como Funciona la Sincronizacion
+
+```
+ESCENARIO: Ahmed opera todo el dia sin internet en Aaioun
+
+  09:00 - Ahmed abre app. Tasas de ayer (las tiene guardadas).
+  09:15 - Hace operacion: 500 EUR -> DZD. Se guarda LOCAL.
+  10:30 - Hace operacion: 200 EUR -> MRU. Se guarda LOCAL.
+  11:00 - Hace 3 operaciones mas. Se guardan LOCAL.
+  
+  (Ahmed tiene 5 operaciones guardadas localmente)
+  
+  12:00 - Ahmed sale a una zona con cobertura 3G
+  
+  AUTOMATICAMENTE (sin que Ahmed haga nada):
+    -> Se suben las 5 operaciones al servidor
+    -> Se descargan las nuevas tasas que el jefe puso por la manana
+    -> Se descarga cualquier transferencia ordenada
+    -> Se hace backup
+    -> Las futuras operaciones usan las tasas nuevas
+  
+  El jefe ve las 5 operaciones de Ahmed aparecer de golpe.
+  Todo cuadra. Nada se pierde.
+```
 
 ---
 
-## 11. AUTOMATIZACIONES INTELIGENTES
+## 11. SEGURIDAD
 
-### 11.1 Automatizaciones de Operacion
+### 11.1 Acceso a la App
 
-| Automatizacion | Descripcion | Beneficio |
+| Medida | Jefe | Empleado |
 |---|---|---|
-| **Auto-calculo** | Conversion instantanea al escribir monto | Ahorra tiempo |
-| **Auto-registro** | Cada operacion se registra automaticamente | Cero olvidos |
-| **Auto-caja** | La caja se actualiza sola tras cada operacion | Precision total |
-| **Auto-ganancia** | Calcula ganancia de cada operacion | Control de rentabilidad |
-| **Auto-recibo** | Genera recibo al confirmar operacion | Profesionalismo |
-| **Auto-cierre** | Cierre de caja a hora programada | Disciplina financiera |
-| **Auto-backup** | Backup diario automatico | Seguridad de datos |
-| **Auto-alerta** | Alertas de caja baja/alta | Prevencion |
+| PIN de 6 digitos | SI | SI |
+| Huella dactilar (si el movil lo tiene) | SI | SI |
+| Bloqueo tras 5 intentos fallidos | SI | SI |
+| Bloqueo automatico tras 5 min inactivo | SI | SI |
 
-### 11.2 Inteligencia del Sistema
+### 11.2 Proteccion de Datos
 
-| Funcion IA | Descripcion |
+- **Todo cifrado** en el movil (nadie puede leer los datos sin el PIN)
+- **Conexion cifrada** (TLS/SSL) entre la app y el servidor
+- **Backups cifrados** en la nube
+- **El jefe puede desactivar** a un empleado a distancia si pierde el movil
+- **El jefe puede borrar datos** de un dispositivo a distancia
+
+### 11.3 Auditoria
+
+- **Cada operacion** queda registrada: quien, cuando, cuanto, a que tasa
+- **Cada cambio de tasa** queda registrado
+- **Cada movimiento de caja** queda registrado
+- **Imposible borrar** registros (ni el empleado ni el jefe)
+- **Exportable** para cualquier revision
+
+---
+
+## 12. TECNOLOGIA
+
+### 12.1 Stack Tecnico
+
+| Componente | Tecnologia | Por que |
+|---|---|---|
+| **App Movil** (Jefe y Empleados) | React Native (Android) | Funciona en moviles baratos, rapida |
+| **Servidor** | Node.js + NestJS | Robusto, eficiente |
+| **Base de Datos** (servidor) | PostgreSQL | Fiable, potente, gratuita |
+| **Base de Datos** (movil) | SQLite + WatermelonDB | Funciona offline perfectamente |
+| **Tiempo Real** | WebSockets | Notificaciones instantaneas |
+| **Notificaciones** | Firebase Cloud Messaging | Gratuito, fiable |
+| **WhatsApp** | API de WhatsApp Business | Resumenes automaticos |
+| **Cache** | Redis | Velocidad extrema |
+| **Hosting** | VPS (Hetzner/DigitalOcean) | Economico, fiable |
+
+### 12.2 Infraestructura Necesaria
+
+| Componente | Coste Mensual |
 |---|---|
-| **Prediccion de demanda** | Analiza patrones para predecir que divisas se necesitaran |
-| **Sugerencia de tasas** | Sugiere ajustes de tasa basados en el mercado y la competencia |
-| **Deteccion de anomalias** | Identifica operaciones inusuales para revision |
-| **Clasificacion de clientes** | Sugiere nivel de confianza basado en historial |
-| **Optimizacion de spread** | Sugiere spreads optimos para maximizar ganancia sin perder clientes |
-| **Resumen inteligente** | Genera resumenes en lenguaje natural: "Hoy has ganado un 15% mas que ayer, principalmente gracias a operaciones EUR/DZD" |
+| Servidor VPS (2 CPU, 4GB RAM) | ~12 EUR/mes |
+| Dominio (.com) | ~1 EUR/mes (12 EUR/ano) |
+| SSL (Let's Encrypt) | GRATIS |
+| Backup en la nube (50GB) | ~3 EUR/mes |
+| Firebase (notificaciones) | GRATIS |
+| API Tasas de mercado | GRATIS (plan basico) |
+| WhatsApp Business API | ~10 EUR/mes (opcional) |
+| **TOTAL** | **~26 EUR/mes** |
 
-### 11.3 Reglas Automaticas Configurables
+### 12.3 Requisitos de Dispositivos
 
-El usuario puede crear reglas como:
+| | Minimo | Recomendado |
+|---|---|---|
+| Sistema | Android 8.0+ | Android 12+ |
+| RAM | 2 GB | 4 GB |
+| Almacenamiento libre | 200 MB | 1 GB |
+| Pantalla | 5 pulgadas | 6 pulgadas |
+| Internet | NO obligatorio | 3G/4G para sincronizar |
 
-```
-REGLA 1: Si caja EUR < 1,000, enviar alerta por WhatsApp
-REGLA 2: Si operacion > 5,000 EUR equivalente, pedir doble confirmacion
-REGLA 3: Si cliente nuevo, limite maximo de 500 EUR
-REGLA 4: A las 22:00, cerrar caja automaticamente
-REGLA 5: Si tasa de mercado cambia > 2%, enviar notificacion
-REGLA 6: Cada lunes a las 9:00, enviar informe semanal
-REGLA 7: Si un cliente VIP llega, aplicar tasa preferencial automaticamente
-```
+> Los moviles mas baratos del mercado sirven perfectamente.
 
----
+### 12.4 Idiomas
 
-## 12. INTEGRACIONES EXTERNAS
-
-### 12.1 APIs de Tasas de Cambio
-
-| Servicio | Divisas | Actualizacion | Coste |
-|---|---|---|---|
-| ExchangeRate-API | +160 | Cada hora | Gratis (1500 req/mes) |
-| Open Exchange Rates | +170 | Cada hora | Gratis (1000 req/mes) |
-| Fixer.io | +170 | Diaria | Gratis (100 req/mes) |
-| CurrencyAPI | +150 | Cada 10min | Desde 10$/mes |
-| **Ingreso manual** | Todas | Inmediato | Gratis |
-
-### 12.2 WhatsApp Business API
-
-- Envio automatico de recibos al cliente
-- Resumen diario al operador
-- Respuesta automatica a consultas de tasas
-- Bot de WhatsApp: Clientes envian "EUR" y reciben la tasa actual
-
-### 12.3 Impresion
-
-- **Mini impresora termica Bluetooth**: Para recibos fisicos (opcional)
-- Modelos compatibles: Epson TM-T20III, Star SM-L200, genricas 58mm/80mm
-- Coste aproximado: 40-80 EUR
-
-### 12.4 Exportacion de Datos
-
-- **Excel/CSV**: Exportar operaciones, clientes, caja
-- **PDF**: Reportes formateados profesionalmente
-- **JSON**: Para integracion con otros sistemas
-- **Google Sheets**: Sincronizacion automatica (opcional)
+| Idioma | Soporte | Para |
+|---|---|---|
+| Arabe (ar) | Completo (RTL) | Idioma principal |
+| Frances (fr) | Completo | Alternativo |
+| Espanol (es) | Disponible | Opcional |
 
 ---
 
 ## 13. PLAN DE IMPLEMENTACION
 
-### 13.1 Fases del Proyecto
+### 13.1 Resumen: 10 Semanas
 
 ```
-FASE 1: FUNDACION (Semanas 1-3)
-  ├── Configuracion del entorno de desarrollo
-  ├── Diseno de base de datos
-  ├── API Backend: Autenticacion, Usuarios
-  ├── API Backend: Motor de cambio (core)
-  ├── API Backend: Gestion de caja
-  └── Tests unitarios del core
-
-FASE 2: FUNCIONALIDADES PRINCIPALES (Semanas 4-6)
-  ├── API Backend: Gestion de clientes
-  ├── API Backend: Gestion de tasas
-  ├── API Backend: Reportes basicos
-  ├── App Movil: Pantallas principales
-  ├── App Movil: Flujo de operacion completo
-  └── App Movil: Gestion de caja
-
-FASE 3: FUNCIONALIDADES AVANZADAS (Semanas 7-9)
-  ├── App Movil: Gestion de clientes
-  ├── App Movil: Modo offline completo
-  ├── App Movil: Notificaciones
-  ├── Panel Web: Dashboard principal
-  ├── Panel Web: Reportes avanzados
-  └── Integracion con APIs de tasas
-
-FASE 4: REFINAMIENTO (Semanas 10-11)
-  ├── Soporte multiidioma (AR, FR, ES)
-  ├── Soporte RTL completo
-  ├── Optimizacion de rendimiento
-  ├── Tests de integracion
-  ├── Integracion WhatsApp (recibos)
-  └── Sistema de backup automatico
-
-FASE 5: DESPLIEGUE Y FORMACION (Semana 12)
-  ├── Despliegue en servidor de produccion
-  ├── Publicacion en Google Play Store
-  ├── Configuracion inicial con datos reales
-  ├── Formacion al usuario (video + presencial/remoto)
-  ├── Periodo de prueba supervisada
-  └── Documentacion completa
-
-TOTAL: 12 SEMANAS (3 meses)
+Semana  1  2  3  4  5  6  7  8  9  10
+FASE 1  [========]                         Base del sistema
+FASE 2           [===========]             App del Empleado
+FASE 3                       [========]   App del Jefe
+FASE 4                               [====] Pulir y lanzar
 ```
 
-### 13.2 Cronograma Visual
+### 13.2 Fase 1: Cimientos (Semanas 1-3)
 
-```
-Semana  1  2  3  4  5  6  7  8  9  10 11 12
-FASE 1  [===========]
-FASE 2              [===========]
-FASE 3                          [===========]
-FASE 4                                   [======]
-FASE 5                                         [===]
-```
+**Resultado**: El motor del sistema funcionando.
 
-### 13.3 Entregables por Fase
+| Semana | Que se hace |
+|---|---|
+| S1 | Base de datos, servidor, arquitectura, autenticacion |
+| S2 | Motor de cambio (conversion, tasas), gestion de caja |
+| S3 | Gestion de empleados/puntos, sincronizacion offline |
 
-| Fase | Entregable | Verificacion |
-|---|---|---|
-| Fase 1 | Backend core funcionando, API documentada | Tests automaticos pasan |
-| Fase 2 | App movil con flujo principal, cambio completo | Demo en dispositivo real |
-| Fase 3 | App completa + Panel web + Modo offline | Prueba sin internet |
-| Fase 4 | Sistema en arabe, WhatsApp, backups | Prueba integral |
-| Fase 5 | Sistema en produccion, usuario formado | Usuario opera solo |
+### 13.3 Fase 2: App del Empleado (Semanas 4-6)
+
+**Resultado**: Los empleados pueden operar desde la app.
+
+| Semana | Que se hace |
+|---|---|
+| S4 | Pantallas del empleado: login, home, nueva operacion |
+| S5 | Flujo completo de cambio (3 toques), gestion de caja |
+| S6 | Modo offline completo, clientes, sincronizacion |
+
+**PRIMERA DEMO** al final de la semana 6: se puede probar la app del empleado.
+
+### 13.4 Fase 3: App del Jefe (Semanas 7-9)
+
+**Resultado**: El jefe tiene control total.
+
+| Semana | Que se hace |
+|---|---|
+| S7 | Dashboard del jefe, vision de todos los empleados/cajas |
+| S8 | Gestion de tasas centralizada, aprobacion de operaciones |
+| S9 | Reportes, cierre de caja, transferencias, alertas |
+
+**SEGUNDA DEMO** al final de la semana 9: sistema completo funcionando.
+
+### 13.5 Fase 4: Lanzamiento (Semana 10)
+
+| Dia | Que se hace |
+|---|---|
+| Lun | Despliegue en servidor de produccion |
+| Mar | Instalacion en moviles (jefe + empleados) |
+| Mie | Configuracion inicial: tasas, divisas, empleados, puntos |
+| Jue | Formacion al jefe (1 hora) + Formacion a empleados (30 min) |
+| Vie | Primer dia de uso real supervisado |
+
+### 13.6 Entregables
+
+| Fase | Entregable |
+|---|---|
+| Fase 1 | API funcionando, base de datos lista |
+| Fase 2 | App del empleado instalable y funcional |
+| Fase 3 | App del jefe con todo el control |
+| Fase 4 | Sistema en produccion, todo el mundo formado |
 
 ---
 
 ## 14. PRESUPUESTO Y OPCIONES
 
-### 14.1 Opcion A: Sistema Completo Premium
+### 14.1 Opcion A: SARAF ELITE - Sistema Completo
 
-**Incluye todo lo descrito en este documento.**
+**Todo lo descrito en este documento. Sin recortes.**
 
-| Concepto | Detalle | Precio |
-|---|---|---|
-| Desarrollo App Movil | Android, offline, multiidioma | 3,500 EUR |
-| Desarrollo Backend API | Todos los modulos, seguridad | 2,800 EUR |
-| Desarrollo Panel Web | Dashboard, reportes, config | 2,200 EUR |
-| Diseno UI/UX | Todas las pantallas, branding | 1,200 EUR |
-| Integraciones | WhatsApp, APIs tasas, impresora | 800 EUR |
-| Testing y QA | Tests automaticos, pruebas manuales | 600 EUR |
-| Despliegue y config | Servidor, dominio, SSL, Play Store | 400 EUR |
-| Formacion | Video-tutoriales + sesion remota | 300 EUR |
-| Documentacion | Manual de usuario + tecnica | 200 EUR |
-| **TOTAL** | | **12,000 EUR** |
+| Concepto | Precio |
+|---|---|
+| App del Jefe (Android) con todas las funciones | Incluido |
+| App del Empleado (Android) ultra-simplificada | Incluido |
+| Backend completo (servidor, API, base de datos) | Incluido |
+| Modo offline total con sincronizacion | Incluido |
+| Gestion de tasas centralizada con propagacion | Incluido |
+| Gestion de caja por empleado en tiempo real | Incluido |
+| Sistema de aprobacion de operaciones grandes | Incluido |
+| Gestion de clientes y deudas | Incluido |
+| Reportes automaticos (diario/semanal/mensual) | Incluido |
+| Transferencias entre empleados | Incluido |
+| Notificaciones push | Incluido |
+| Resumen diario por WhatsApp | Incluido |
+| Soporte arabe (RTL) + frances | Incluido |
+| Cierre de caja automatico | Incluido |
+| Panel web (dashboard avanzado) | Incluido |
+| 3 meses de soporte post-lanzamiento | Incluido |
+| Formacion (jefe + empleados) | Incluido |
+| Codigo fuente entregado | Incluido |
+| **PRECIO TOTAL** | **12,000 EUR** |
 
-### 14.2 Opcion B: Sistema Esencial
+### 14.2 Opcion B: SARAF ELITE - Sin Panel Web
 
-**App movil + Backend. Sin panel web. Reportes basicos.**
+**Todo igual pero sin el panel web (solo apps moviles).**
 
-| Concepto | Detalle | Precio |
-|---|---|---|
-| Desarrollo App Movil | Android, offline, arabe/frances | 3,500 EUR |
-| Desarrollo Backend API | Core, caja, clientes, tasas | 2,200 EUR |
-| Diseno UI/UX | Pantallas de app | 800 EUR |
-| Integraciones basicas | API tasas | 300 EUR |
-| Testing, despliegue, formacion | | 700 EUR |
-| **TOTAL** | | **7,500 EUR** |
+| Concepto | Precio |
+|---|---|
+| Todo lo de la Opcion A | Incluido |
+| Panel web | NO incluido |
+| **PRECIO TOTAL** | **9,000 EUR** |
 
-### 14.3 Opcion C: MVP (Producto Minimo Viable)
+### 14.3 Opcion C: SARAF BASICO - MVP para Empezar
 
-**Solo app movil con funcionalidades core. Ideal para empezar rapido.**
+**Lo esencial para digitalizar el negocio. Se puede ampliar despues.**
 
-| Concepto | Detalle | Precio |
-|---|---|---|
-| App Movil (core) | Cambio, caja, clientes basico | 2,500 EUR |
-| Backend basico | API minima, almacenamiento | 1,200 EUR |
-| Diseno basico | UI funcional | 500 EUR |
-| Despliegue y formacion | | 300 EUR |
-| **TOTAL** | | **4,500 EUR** |
+| Incluido | NO Incluido (se anade despues) |
+|---|---|
+| App Jefe (basica) | Panel web |
+| App Empleado (flujo de cambio) | Reportes avanzados |
+| Tasas centralizadas | Resumen por WhatsApp |
+| Caja por empleado | Sistema de aprobacion |
+| Operaciones de cambio | Gestion de clientes avanzada |
+| Modo offline | Transferencias entre empleados |
+| Sincronizacion | Automatizaciones |
+| Arabe + frances | Cierre de caja automatico |
+| **PRECIO TOTAL** | **5,500 EUR** |
 
-### 14.4 Costes Recurrentes (Mensuales)
-
-| Concepto | Opcion A | Opcion B | Opcion C |
-|---|---|---|---|
-| Servidor VPS | 15 EUR | 10 EUR | 8 EUR |
-| Dominio (anual / 12) | 1 EUR | 1 EUR | 1 EUR |
-| APIs de tasas (plan gratis) | 0 EUR | 0 EUR | 0 EUR |
-| WhatsApp API (opcional) | 10 EUR | - | - |
-| Almacenamiento backup | 3 EUR | 2 EUR | 1 EUR |
-| **Total mensual** | **29 EUR** | **13 EUR** | **10 EUR** |
-
-### 14.5 Comparativa Rapida
-
-```
-                    OPCION A         OPCION B         OPCION C
-                    Premium          Esencial         MVP
-Precio              12,000 EUR       7,500 EUR        4,500 EUR
-Coste mensual       29 EUR           13 EUR           10 EUR
-Tiempo              12 semanas       8 semanas        5 semanas
-App Movil           SI (completa)    SI (completa)    SI (basica)
-Panel Web           SI               NO               NO
-Modo Offline        SI               SI               SI (basico)
-Multiidioma         AR, FR, ES       AR, FR           AR
-WhatsApp            SI               NO               NO
-Reportes            Avanzados        Basicos          Minimos
-IA / Prediccion     SI               NO               NO
-Multi-operador      SI               NO               NO
-Clientes CRM        Avanzado         Basico           Basico
-```
-
-### 14.6 Forma de Pago Sugerida
+### 14.4 Comparativa Visual
 
 ```
-Pago en 4 hitos:
-  1. Inicio del proyecto:        30% del total
-  2. Fin de Fase 2 (demo):       25% del total
-  3. Fin de Fase 4 (pre-prod):   25% del total
-  4. Entrega final (produccion):  20% del total
+                         OPCION A       OPCION B       OPCION C
+                         ELITE          ELITE SIN WEB  BASICO
+                         
+Precio                   12,000 EUR     9,000 EUR      5,500 EUR
+Plazo                    10 semanas     9 semanas      6 semanas
 
-Metodos de pago aceptados:
+App Jefe completa        SI             SI             BASICA
+App Empleado             SI             SI             SI
+Panel Web                SI             NO             NO
+Modo Offline             SI             SI             SI
+Tasas centralizadas      SI             SI             SI
+Caja por empleado        SI             SI             SI
+Aprobacion operaciones   SI             SI             NO
+Clientes y deudas        AVANZADO       AVANZADO       BASICO
+Reportes                 AVANZADOS      AVANZADOS      BASICOS
+WhatsApp automatico      SI             SI             NO
+Transferencias           SI             SI             NO
+Cierre automatico        SI             SI             NO
+Arabe + Frances          SI             SI             SI
+Panel web reportes       SI             NO             NO
+
+RECOMENDACION:           IDEAL          MUY BUENA      PARA EMPEZAR
+```
+
+### 14.5 Costes Mensuales (Despues del Desarrollo)
+
+| Concepto | Coste |
+|---|---|
+| Servidor + infraestructura | ~26 EUR/mes |
+| Mantenimiento (opcional) | 50-150 EUR/mes |
+| **Total minimo** | **~26 EUR/mes** |
+
+> **26 EUR/mes** es lo que cuesta mantener el sistema funcionando. Menos de lo que gastas en credito de telefono.
+
+### 14.6 Forma de Pago
+
+```
+OPCION A (12,000 EUR) - 4 pagos:
+  1. Inicio:           3,600 EUR (30%)
+  2. Demo empleado:    3,000 EUR (25%)  <- Semana 6
+  3. Demo jefe:        3,000 EUR (25%)  <- Semana 9
+  4. Lanzamiento:      2,400 EUR (20%)  <- Semana 10
+
+OPCION B (9,000 EUR) - 3 pagos:
+  1. Inicio:           2,700 EUR (30%)
+  2. Demo:             3,150 EUR (35%)  <- Semana 6
+  3. Lanzamiento:      3,150 EUR (35%)  <- Semana 9
+
+OPCION C (5,500 EUR) - 2 pagos:
+  1. Inicio:           2,200 EUR (40%)
+  2. Lanzamiento:      3,300 EUR (60%)  <- Semana 6
+
+Metodos de pago:
   - Transferencia bancaria
   - Western Union / MoneyGram
   - CCP (Argelia)
-  - Efectivo (si es posible presencialmente)
+  - Efectivo
+```
+
+### 14.7 Retorno de Inversion
+
+```
+PERDIDAS ACTUALES ESTIMADAS:     ~750 EUR/mes (errores, olvidos, tiempo)
+COSTE DEL SISTEMA (Opcion A):    12,000 EUR
+COSTE MENSUAL:                   26 EUR/mes
+
+RECUPERACION DE LA INVERSION:    12,000 / (750 - 26) = 16.6 meses
+
+A PARTIR DEL MES 17:  Todo es ganancia neta.
+
+EN 3 ANOS:
+  Ahorro total:  750 x 36 = 27,000 EUR
+  Coste total:   12,000 + (26 x 36) = 12,936 EUR
+  BENEFICIO NETO: +14,064 EUR
 ```
 
 ---
 
-## 15. SOPORTE Y MANTENIMIENTO
+## 15. SOPORTE Y GARANTIA
 
-### 15.1 Soporte Post-Lanzamiento (Incluido)
+### 15.1 Incluido en el Precio
 
-| Servicio | Duracion | Detalle |
-|---|---|---|
-| Correccion de bugs | 3 meses | Cualquier error se corrige gratis |
-| Soporte tecnico | 3 meses | Asistencia por WhatsApp/llamada |
-| Actualizaciones menores | 3 meses | Mejoras pequenas incluidas |
-| Formacion adicional | 2 sesiones | Si el usuario necesita refrescar |
+| Servicio | Duracion |
+|---|---|
+| Correccion de cualquier error/bug | 6 meses |
+| Soporte tecnico (WhatsApp/llamada) | 3 meses |
+| Actualizaciones menores | 3 meses |
+| Formacion al jefe (1 sesion de 1 hora) | Incluida |
+| Formacion a empleados (1 sesion de 30 min) | Incluida |
+| Codigo fuente completo | Entregado al 100% |
+| Manual de uso | Incluido |
+| Video-tutorial | Incluido |
 
-### 15.2 Plan de Mantenimiento (Opcional)
+### 15.2 Mantenimiento Opcional (Despues de los 3 Meses)
 
 | Plan | Mensual | Incluye |
 |---|---|---|
-| **Basico** | 50 EUR/mes | Hosting + correccion bugs + 2h soporte |
-| **Profesional** | 100 EUR/mes | Basico + actualizaciones + mejoras menores + 5h soporte |
-| **Premium** | 200 EUR/mes | Profesional + nuevas funciones + soporte prioritario ilimitado |
+| Basico | 50 EUR/mes | Hosting + bugs + 2h soporte |
+| Pro | 100 EUR/mes | Basico + mejoras menores + 5h soporte |
+| Premium | 150 EUR/mes | Pro + nuevas funciones + soporte ilimitado |
 
-### 15.3 Garantia
+### 15.3 Garantias
 
-- **Garantia de funcionamiento**: 6 meses desde la entrega
-- **Garantia de datos**: Los datos del usuario siempre le pertenecen
-- **Codigo fuente**: Entregado al usuario (es suyo)
-- **Sin dependencia**: El sistema puede funcionar sin nosotros
+- **El codigo es tuyo**: Te lo entrego completo. Es de tu propiedad.
+- **Sin dependencia**: El sistema puede funcionar sin mi.
+- **Garantia de bugs**: 6 meses de correccion gratuita.
+- **Garantia de satisfaccion**: Si al ver la primera demo (Semana 6) no te convence, se reembolsa el 50% de lo pagado.
+- **Confidencialidad total**: Tus datos, tu negocio, tu informacion. Nadie mas tiene acceso.
 
 ---
 
-## 16. BENEFICIOS ESPERADOS
-
-### 16.1 Beneficios Cuantificables
-
-| Beneficio | Antes (manual) | Con SARAF PRO | Mejora |
-|---|---|---|---|
-| Tiempo por operacion | 2-5 minutos | < 10 segundos | 95% mas rapido |
-| Errores de calculo | 3-5% de operaciones | 0% | 100% eliminados |
-| Tiempo cierre de caja | 30-60 minutos | 2 minutos (automatico) | 95% menos |
-| Operaciones perdidas/olvidadas | ~5% | 0% | 100% registradas |
-| Tiempo buscar historial | 10-30 minutos | < 5 segundos | 99% mas rapido |
-| Deudas no cobradas | ~10% se olvidan | 0% (alertas) | 100% controladas |
-
-### 16.2 Beneficios No Cuantificables
-
-- **Profesionalismo**: Imagen de negocio moderno y confiable
-- **Tranquilidad**: Todo esta registrado y respaldado
-- **Escalabilidad**: Listo para crecer (mas operadores, mas puntos)
-- **Competitividad**: Tasas optimizadas, servicio mas rapido
-- **Control total**: Saber exactamente cuanto se gana cada dia
-- **Libertad**: Gestionar el negocio desde cualquier lugar
-
-### 16.3 Retorno de Inversion (ROI)
+## PROXIMOS PASOS
 
 ```
-Suponiendo (estimaciones conservadoras):
-  - 40 operaciones diarias
-  - Ganancia media de 50 DZD por operacion por errores evitados
-  - 5% de operaciones con errores eliminados
-  - 10% de deudas recuperadas gracias al seguimiento
+1. Eliges la opcion que prefieres (A, B o C)
 
-Ahorro mensual estimado:
-  - Errores evitados: 40 ops x 50 DZD x 30 dias = 60,000 DZD (~320 EUR)
-  - Deudas recuperadas: ~200 EUR/mes
-  - Tiempo ahorrado (valor): ~150 EUR/mes
-  - Clientes adicionales (por rapidez): ~100 EUR/mes
-  
-  TOTAL AHORRO/GANANCIA ADICIONAL: ~770 EUR/mes
+2. Nos reunimos (llamada/video/presencial) para:
+   - Confirmar las divisas y pares exactos
+   - Definir los puntos (Tindouf, Aaioun, otros?)
+   - Definir cuantos empleados
+   - Definir limites de operacion
+   - Definir tasas iniciales
+   - Resolver cualquier duda
 
-Retorno de inversion:
-  - Opcion A (12,000 EUR): ROI en ~16 meses
-  - Opcion B (7,500 EUR):  ROI en ~10 meses
-  - Opcion C (4,500 EUR):  ROI en ~6 meses
+3. Firmamos el acuerdo
+
+4. Primer pago
+
+5. Empezamos a construir tu sistema
+
+TIEMPO HASTA TENER EL SISTEMA FUNCIONANDO: 10 SEMANAS
 ```
 
 ---
 
-## 17. ANEXOS
-
-### Anexo A: Glosario
-
-| Termino | Definicion |
-|---|---|
-| **Saraf (صراف)** | Cambiador de moneda en arabe |
-| **Spread** | Diferencia entre precio de compra y venta de una divisa |
-| **Par de divisas** | Dos monedas que se intercambian (ej: EUR/DZD) |
-| **Tasa de cambio** | Precio de una divisa expresado en otra |
-| **Caja** | Stock de efectivo disponible en cada divisa |
-| **Offline-first** | Diseno que prioriza funcionar sin internet |
-| **RTL** | Right-to-Left, escritura de derecha a izquierda (arabe) |
-| **API** | Interfaz de programacion entre sistemas |
-| **MVP** | Producto Minimo Viable |
-| **CRM** | Gestion de relaciones con clientes |
-
-### Anexo B: Requisitos Minimos del Dispositivo
-
-| Componente | Requisito Minimo | Recomendado |
-|---|---|---|
-| Sistema Operativo | Android 8.0+ | Android 12+ |
-| RAM | 2 GB | 4 GB+ |
-| Almacenamiento | 200 MB libre | 1 GB libre |
-| Pantalla | 5 pulgadas | 6+ pulgadas |
-| Internet | No requerido (offline) | 3G/4G para sync |
-
-### Anexo C: Competidores y Diferenciacion
-
-| Solucion | Problema | SARAF PRO |
-|---|---|---|
-| Apps genericas de cambio | No gestionan caja, no offline, no local | Disenado para el contexto exacto |
-| Excel/Google Sheets | Lento, errores, no movil, no automatico | Todo automatizado y movil |
-| Cuaderno de papel | Sin calculo, sin busqueda, se pierde | Digital, respaldado, buscable |
-| Software bancario | Caro, complejo, no adaptado | Economico, simple, adaptado |
-
-### Anexo D: Casos de Uso Detallados
-
-**Caso 1: Operacion rapida EUR -> DZD**
-```
-Actor: Operador
-Precondicion: App abierta, tasas configuradas
-1. Cliente pide cambiar 200 EUR a DZD
-2. Operador toca "Nueva Operacion"
-3. Selecciona EUR, escribe 200
-4. Toca DZD como destino
-5. Sistema muestra: 200 EUR = 37,400 DZD (tasa 187)
-6. Operador toca "Confirmar"
-7. Sistema registra, actualiza caja, genera recibo
-Postcondicion: EUR +200, DZD -37,400, ganancia registrada
-```
-
-**Caso 2: Cliente con saldo pendiente**
-```
-Actor: Operador
-1. Cliente habitual quiere cambiar 1,000 EUR pero solo trae 800
-2. Operador hace operacion por 800 EUR
-3. Registra 200 EUR como "pendiente" en ficha del cliente
-4. Sistema muestra alerta de saldo pendiente
-5. Cuando el cliente vuelve, el sistema recuerda la deuda
-6. Se completa la operacion y se cierra el pendiente
-```
-
-**Caso 3: Cierre de caja al final del dia**
-```
-Actor: Operador
-1. A las 22:00, el sistema envia notificacion: "Hora de cerrar caja"
-2. Operador toca "Cerrar Caja"
-3. Sistema muestra resumen completo del dia
-4. Operador verifica contando efectivo fisico
-5. Si hay diferencia, registra ajuste con motivo
-6. Confirma cierre
-7. Sistema genera reporte, envia copia por WhatsApp
-8. Backup automatico realizado
-```
-
-**Caso 4: Actualizacion de tasas por la manana**
-```
-Actor: Operador
-1. Operador abre la app por la manana
-2. Sistema muestra tasas de ayer con indicador de "desactualizado"
-3. Si hay internet: muestra tasa de mercado actual para referencia
-4. Operador ajusta sus tasas de compra/venta deslizando
-5. Confirma nuevas tasas
-6. Todas las operaciones del dia usaran las nuevas tasas
-7. Puede cambiar tasas en cualquier momento durante el dia
-```
+> **SARAF ELITE** - Tu controlas. Tus empleados operan. El sistema hace el resto.
 
 ---
 
-### Anexo E: Informacion de Contacto del Desarrollador
-
-```
-Para consultas sobre esta propuesta:
-  
-  Disponibilidad: Lunes a Viernes, 9:00 - 18:00 (CET)
-  Idiomas: Espanol, Frances, Arabe
-  
-  Respuesta garantizada en menos de 24 horas
-```
-
----
-
-### Anexo F: Proximos Pasos
-
-Para iniciar el proyecto, se necesita:
-
-1. **Aprobacion de la propuesta** y seleccion de opcion (A, B o C)
-2. **Reunion inicial** (presencial o videollamada) para:
-   - Definir prioridades exactas
-   - Configurar divisas y pares principales
-   - Entender flujo de trabajo actual en detalle
-   - Definir tasas iniciales y spreads
-3. **Firma de acuerdo** con condiciones y plazos
-4. **Primer pago** (30%) para iniciar el desarrollo
-5. **Inicio del desarrollo** en la semana siguiente
-
----
-
-> **SARAF PRO** - Porque tu tiempo vale mas que cualquier divisa.
-
----
-
-*Documento preparado con la maxima atencion al detalle para ofrecer una solucion integral y profesional adaptada a las necesidades especificas del operador de cambio en Tindouf, Argelia.*
-
-*Todos los precios son orientativos y pueden ajustarse segun los requisitos finales acordados.*
+*Propuesta preparada exclusivamente para el operador de cambio en Tindouf, Argelia.*  
+*Todos los precios son negociables. Lo importante es construir la mejor herramienta para tu negocio.*  
+*Febrero 2026*

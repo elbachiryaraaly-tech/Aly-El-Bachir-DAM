@@ -1,456 +1,476 @@
-# ESPECIFICACIONES TECNICAS DETALLADAS
+# ESPECIFICACIONES TECNICAS
 
-## SARAF PRO - Sistema Elite de Gestion de Cambio de Divisas
+## SARAF ELITE - Sistema de Red de Cambio de Divisas
 
 ---
 
-**Version:** 1.0  
+**Version:** 2.0  
 **Fecha:** 13 de febrero de 2026  
-**Documento:** Anexo Tecnico de la Propuesta
+**Documento:** Anexo Tecnico
 
 ---
 
 ## 1. ARQUITECTURA DEL SISTEMA
 
-### 1.1 Patron Arquitectonico
+### 1.1 Vision General
 
-El sistema sigue una **arquitectura de microservicios ligeros** con un enfoque **offline-first**:
-
-```
-                    +-----------------------+
-                    |    LOAD BALANCER      |
-                    |    (Nginx Reverse     |
-                    |     Proxy + SSL)      |
-                    +-----------+-----------+
-                                |
-                    +-----------+-----------+
-                    |     API GATEWAY       |
-                    |   (Rate Limiting,     |
-                    |    Auth, Logging)     |
-                    +-----------+-----------+
-                                |
-              +-----------------+-----------------+
-              |                 |                 |
-    +---------+------+ +-------+--------+ +------+---------+
-    | EXCHANGE       | | USER & CLIENT  | | REPORTING      |
-    | SERVICE        | | SERVICE        | | SERVICE        |
-    |                | |                | |                |
-    | - Conversiones | | - Auth/Login   | | - Reportes     |
-    | - Tasas        | | - Clientes CRM | | - Analitica    |
-    | - Caja         | | - Permisos     | | - Exportacion  |
-    | - Operaciones  | | - Perfiles     | | - Graficos     |
-    +--------+-------+ +-------+--------+ +-------+--------+
-             |                 |                   |
-             +--------+--------+--------+----------+
-                      |                 |
-            +---------+-------+ +-------+---------+
-            |   PostgreSQL    | |     Redis       |
-            |   (Persistente) | |   (Cache +      |
-            |                 | |    Sesiones)    |
-            +-----------------+ +-----------------+
-```
-
-### 1.2 Flujo de Datos Offline-First
+El sistema tiene dos actores principales con apps distintas pero conectadas:
 
 ```
-+-------------------+     +-------------------+     +-------------------+
-|   APP MOVIL       |     |   SYNC ENGINE     |     |   SERVIDOR        |
-|                   |     |                   |     |                   |
-|  SQLite Local     |<--->|  Cola de Cambios  |<--->|  PostgreSQL       |
-|  (WatermelonDB)   |     |  (Conflict Res.)  |     |  (Fuente verdad)  |
-|                   |     |                   |     |                   |
-|  Estado Local     |     |  Sync Protocol    |     |  API REST         |
-|  (Zustand/Redux)  |     |  (WebSocket +     |     |  (NestJS)         |
-|                   |     |   HTTP Fallback)  |     |                   |
-+-------------------+     +-------------------+     +-------------------+
++================================================================+
+|                                                                  |
+|                     SERVIDOR CENTRAL                             |
+|               (VPS en la nube - siempre activo)                  |
+|                                                                  |
+|  +-----------------------------------------------------------+  |
+|  |  API REST + WebSockets (NestJS / Node.js)                 |  |
+|  |                                                            |  |
+|  |  +--------+ +--------+ +--------+ +--------+ +--------+  |  |
+|  |  | Auth   | |Exchange| | Cash   | | Rates  | |Reports |  |  |
+|  |  | Module | | Engine | |Manager | |Manager | | Engine |  |  |
+|  |  +--------+ +--------+ +--------+ +--------+ +--------+  |  |
+|  |  +--------+ +--------+ +--------+ +--------+ +--------+  |  |
+|  |  |Client  | |Employee| |Approval| | Sync   | | Notif  |  |  |
+|  |  |Manager | |Manager | | System | | Engine | |Service |  |  |
+|  |  +--------+ +--------+ +--------+ +--------+ +--------+  |  |
+|  +-----------------------------------------------------------+  |
+|  |  PostgreSQL  |  Redis  |  S3/Backblaze (backups)          |  |
+|  +-----------------------------------------------------------+  |
+|                                                                  |
++================================================================+
+         |                    |                    |
+    (Internet / 3G / 4G - cuando haya)
+         |                    |                    |
++========+======+   +========+======+   +========+======+
+| APP JEFE      |   | APP EMPLEADO  |   | APP EMPLEADO  |
+| (Tu movil)    |   | (Ahmed-Aaioun)|   | (Omar-Tindouf)|
+|               |   |               |   |               |
+| SQLite local  |   | SQLite local  |   | SQLite local  |
+| (funciona sin |   | (funciona sin |   | (funciona sin |
+|  internet)    |   |  internet)    |   |  internet)    |
++===============+   +===============+   +===============+
 ```
 
-### 1.3 Capas de la Aplicacion Movil
+### 1.2 Principio Offline-First
+
+Cada app movil es **autonoma**. Tiene su propia base de datos local (SQLite) y puede operar al 100% sin internet. Cuando hay conexion, sincroniza automaticamente.
 
 ```
-+----------------------------------------------------------+
-|                  CAPA DE PRESENTACION                     |
-|  React Native + React Navigation + NativeWind (Tailwind) |
-|                                                            |
-|  Screens -> Components -> Hooks -> Context                |
-+----------------------------------------------------------+
-|                  CAPA DE LOGICA DE NEGOCIO                |
-|  Services -> UseCases -> Validators -> Calculators        |
-|                                                            |
-|  ExchangeService | CashService | ClientService | etc.    |
-+----------------------------------------------------------+
-|                  CAPA DE DATOS                            |
-|  Repositories -> Models -> Sync -> Storage                |
-|                                                            |
-|  WatermelonDB (SQLite) | AsyncStorage | SecureStore       |
-+----------------------------------------------------------+
-|                  CAPA DE INFRAESTRUCTURA                  |
-|  API Client -> WebSocket -> Push Notifications -> I18n    |
-|                                                            |
-|  Axios | Socket.io-client | FCM | i18next                |
-+----------------------------------------------------------+
+SIN INTERNET:                        CON INTERNET:
++------------------+                 +------------------+
+| App Movil        |                 | App Movil        |
+|                  |                 |                  |
+| [SQLite Local]   |                 | [SQLite Local] <-+-> [Servidor]
+|                  |                 |                  |
+| Todo funciona:   |                 | Todo funciona +  |
+| - Operaciones    |                 | - Sincroniza     |
+| - Caja           |                 | - Nuevas tasas   |
+| - Clientes       |                 | - Notificaciones |
+| - Historial      |                 | - Backup         |
++------------------+                 +------------------+
+```
+
+### 1.3 Flujo de Datos en Tiempo Real
+
+```
+EMPLEADO hace operacion
+    |
+    v
+[Guarda en SQLite local] -> [App actualiza caja local]
+    |
+    v (si hay internet)
+[Envia al servidor via API/WebSocket]
+    |
+    v
+[Servidor registra en PostgreSQL]
+    |
+    v
+[Servidor envia push al Jefe via WebSocket/FCM]
+    |
+    v
+[App del Jefe recibe y muestra notificacion]
+[Dashboard del Jefe se actualiza en tiempo real]
 ```
 
 ---
 
-## 2. MODELO DE BASE DE DATOS COMPLETO
+## 2. MODELO DE BASE DE DATOS
 
-### 2.1 Esquema Relacional (PostgreSQL)
+### 2.1 Esquema Completo (PostgreSQL)
 
 ```sql
--- ============================================
--- TABLA: users (Operadores del sistema)
--- ============================================
+-- ================================================================
+-- ORGANIZACION: Puntos de operacion y empleados
+-- ================================================================
+
+-- Puntos de operacion (Tindouf, Aaioun, etc.)
+CREATE TABLE branches (
+    id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    name            VARCHAR(100) NOT NULL,         -- "Tindouf", "Aaioun"
+    location        VARCHAR(200),                  -- Descripcion ubicacion
+    is_active       BOOLEAN DEFAULT TRUE,
+    created_at      TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- Usuarios (Jefe + Empleados)
 CREATE TABLE users (
     id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     username        VARCHAR(50) UNIQUE NOT NULL,
     full_name       VARCHAR(100) NOT NULL,
     phone           VARCHAR(20),
-    pin_hash        VARCHAR(255) NOT NULL,
-    password_hash   VARCHAR(255) NOT NULL,
-    role            VARCHAR(20) DEFAULT 'operator',  -- admin, operator, viewer
-    language        VARCHAR(5) DEFAULT 'ar-DZ',
+    pin_hash        VARCHAR(255) NOT NULL,         -- PIN de 6 digitos (bcrypt)
+    password_hash   VARCHAR(255),                  -- Solo para el jefe
+    role            VARCHAR(20) NOT NULL,           -- 'boss' o 'employee'
+    branch_id       UUID REFERENCES branches(id),  -- Punto asignado
     is_active       BOOLEAN DEFAULT TRUE,
+    language        VARCHAR(5) DEFAULT 'ar',
     last_login      TIMESTAMPTZ,
-    config_json     JSONB DEFAULT '{}',
+    last_sync       TIMESTAMPTZ,
+    fcm_token       VARCHAR(500),                  -- Token notificaciones push
     created_at      TIMESTAMPTZ DEFAULT NOW(),
     updated_at      TIMESTAMPTZ DEFAULT NOW()
 );
 
--- ============================================
--- TABLA: currencies (Divisas configuradas)
--- ============================================
+CREATE INDEX idx_users_role ON users(role);
+CREATE INDEX idx_users_branch ON users(branch_id);
+
+-- ================================================================
+-- DIVISAS Y TASAS
+-- ================================================================
+
 CREATE TABLE currencies (
-    code            VARCHAR(3) PRIMARY KEY,        -- EUR, DZD, MRU, XOF
+    code            VARCHAR(3) PRIMARY KEY,
     name_ar         VARCHAR(100) NOT NULL,
     name_fr         VARCHAR(100) NOT NULL,
-    name_es         VARCHAR(100),
     symbol          VARCHAR(10) NOT NULL,
     decimal_places  SMALLINT DEFAULT 2,
     is_active       BOOLEAN DEFAULT TRUE,
     display_order   SMALLINT DEFAULT 0,
-    country         VARCHAR(100),
     flag_emoji      VARCHAR(10),
     created_at      TIMESTAMPTZ DEFAULT NOW()
 );
 
--- ============================================
--- TABLA: exchange_rates (Tasas de cambio actuales)
--- ============================================
+-- Tasas de cambio (las que fija el JEFE)
 CREATE TABLE exchange_rates (
     id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     base_currency   VARCHAR(3) REFERENCES currencies(code),
     quote_currency  VARCHAR(3) REFERENCES currencies(code),
-    buy_rate        DECIMAL(18,6) NOT NULL,        -- Tasa de compra (operador compra)
-    sell_rate       DECIMAL(18,6) NOT NULL,         -- Tasa de venta (operador vende)
-    market_rate     DECIMAL(18,6),                  -- Tasa de referencia del mercado
-    spread_pct      DECIMAL(8,4) GENERATED ALWAYS AS 
-                    (((sell_rate - buy_rate) / buy_rate) * 100) STORED,
+    buy_rate        DECIMAL(18,6) NOT NULL,        -- Tasa de compra
+    sell_rate       DECIMAL(18,6) NOT NULL,         -- Tasa de venta
+    market_rate     DECIMAL(18,6),                  -- Referencia mercado
     is_active       BOOLEAN DEFAULT TRUE,
-    source          VARCHAR(50) DEFAULT 'manual',   -- manual, api, contact
-    updated_by      UUID REFERENCES users(id),
+    updated_by      UUID REFERENCES users(id),     -- Siempre el jefe
     updated_at      TIMESTAMPTZ DEFAULT NOW(),
     UNIQUE(base_currency, quote_currency)
 );
 
--- ============================================
--- TABLA: rate_history (Historial de tasas)
--- ============================================
+-- Historial de cambios de tasa
 CREATE TABLE rate_history (
     id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     base_currency   VARCHAR(3) REFERENCES currencies(code),
     quote_currency  VARCHAR(3) REFERENCES currencies(code),
     buy_rate        DECIMAL(18,6) NOT NULL,
     sell_rate       DECIMAL(18,6) NOT NULL,
-    market_rate     DECIMAL(18,6),
-    source          VARCHAR(50),
+    changed_by      UUID REFERENCES users(id),
     recorded_at     TIMESTAMPTZ DEFAULT NOW()
 );
 
--- Indice para consultas rapidas de historial
-CREATE INDEX idx_rate_history_pair_date 
-    ON rate_history(base_currency, quote_currency, recorded_at DESC);
+CREATE INDEX idx_rate_history_pair ON rate_history(base_currency, quote_currency, recorded_at DESC);
 
--- ============================================
--- TABLA: clients (Clientes del cambiador)
--- ============================================
+-- ================================================================
+-- CAJA POR EMPLEADO (cada empleado tiene su caja)
+-- ================================================================
+
+CREATE TABLE cash_registers (
+    id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    user_id         UUID REFERENCES users(id),     -- EMPLEADO dueno de esta caja
+    currency_code   VARCHAR(3) REFERENCES currencies(code),
+    current_balance DECIMAL(18,2) NOT NULL DEFAULT 0,
+    min_threshold   DECIMAL(18,2) DEFAULT 0,       -- Alerta si baja de aqui
+    last_updated    TIMESTAMPTZ DEFAULT NOW(),
+    UNIQUE(user_id, currency_code)
+);
+
+CREATE INDEX idx_cash_registers_user ON cash_registers(user_id);
+
+-- Movimientos de caja
+CREATE TABLE cash_movements (
+    id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    cash_register_id UUID REFERENCES cash_registers(id),
+    user_id         UUID REFERENCES users(id),     -- Empleado
+    currency_code   VARCHAR(3) REFERENCES currencies(code),
+    movement_type   VARCHAR(20) NOT NULL,           -- 'credit','debit','adjustment','transfer_in','transfer_out'
+    amount          DECIMAL(18,2) NOT NULL,
+    balance_before  DECIMAL(18,2) NOT NULL,
+    balance_after   DECIMAL(18,2) NOT NULL,
+    reason          VARCHAR(200),                   -- "Recibido del jefe", "Entregado al jefe", etc.
+    related_transaction_id UUID,                    -- Si viene de una operacion
+    related_transfer_id UUID,                       -- Si viene de una transferencia
+    operator_id     UUID REFERENCES users(id),     -- Quien hizo el movimiento
+    local_id        VARCHAR(100),                  -- Para sync offline
+    synced          BOOLEAN DEFAULT TRUE,
+    created_at      TIMESTAMPTZ DEFAULT NOW()
+);
+
+CREATE INDEX idx_cash_movements_user ON cash_movements(user_id, created_at DESC);
+
+-- ================================================================
+-- OPERACIONES DE CAMBIO
+-- ================================================================
+
+CREATE TABLE transactions (
+    id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    
+    -- Quien y donde
+    employee_id     UUID REFERENCES users(id) NOT NULL,  -- Empleado que opero
+    branch_id       UUID REFERENCES branches(id),         -- Punto de operacion
+    
+    -- Que se cambio
+    source_currency VARCHAR(3) REFERENCES currencies(code),  -- Divisa que DA el cliente
+    source_amount   DECIMAL(18,2) NOT NULL,
+    target_currency VARCHAR(3) REFERENCES currencies(code),  -- Divisa que RECIBE el cliente
+    target_amount   DECIMAL(18,2) NOT NULL,
+    
+    -- Tasa
+    applied_rate    DECIMAL(18,6) NOT NULL,
+    rate_direction  VARCHAR(20),                  -- 'buy' o 'sell' desde perspectiva del negocio
+    
+    -- Ganancia (solo visible para el jefe)
+    profit_amount   DECIMAL(18,2) DEFAULT 0,
+    profit_currency VARCHAR(3) REFERENCES currencies(code),
+    
+    -- Cliente (opcional)
+    client_id       UUID REFERENCES clients(id),
+    
+    -- Estado
+    status          VARCHAR(20) DEFAULT 'completed',  -- 'completed','pending_approval','approved','rejected','cancelled'
+    
+    -- Aprobacion (para operaciones grandes)
+    requires_approval BOOLEAN DEFAULT FALSE,
+    approved_by     UUID REFERENCES users(id),
+    approved_at     TIMESTAMPTZ,
+    rejection_reason VARCHAR(200),
+    
+    -- Credito/Deuda
+    is_credit       BOOLEAN DEFAULT FALSE,
+    
+    -- Notas
+    notes           TEXT,
+    
+    -- Sync offline
+    local_id        VARCHAR(100) UNIQUE,           -- ID generado localmente
+    synced          BOOLEAN DEFAULT TRUE,
+    device_id       VARCHAR(100),
+    
+    created_at      TIMESTAMPTZ DEFAULT NOW(),
+    updated_at      TIMESTAMPTZ DEFAULT NOW()
+);
+
+CREATE INDEX idx_transactions_employee ON transactions(employee_id, created_at DESC);
+CREATE INDEX idx_transactions_branch ON transactions(branch_id, created_at DESC);
+CREATE INDEX idx_transactions_date ON transactions(created_at DESC);
+CREATE INDEX idx_transactions_status ON transactions(status);
+CREATE INDEX idx_transactions_client ON transactions(client_id);
+CREATE INDEX idx_transactions_local ON transactions(local_id);
+
+-- ================================================================
+-- CLIENTES
+-- ================================================================
+
 CREATE TABLE clients (
     id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     full_name       VARCHAR(150) NOT NULL,
     phone           VARCHAR(20),
-    whatsapp        VARCHAR(20),
     trust_level     SMALLINT DEFAULT 1 CHECK (trust_level BETWEEN 1 AND 5),
     credit_limit    DECIMAL(18,2) DEFAULT 0,
-    credit_currency VARCHAR(3) DEFAULT 'EUR' REFERENCES currencies(code),
-    preferred_currency VARCHAR(3) REFERENCES currencies(code),
     notes           TEXT,
-    total_volume    DECIMAL(18,2) DEFAULT 0,       -- Volumen total en EUR equiv.
+    total_volume_eur DECIMAL(18,2) DEFAULT 0,
     transaction_count INTEGER DEFAULT 0,
-    last_transaction TIMESTAMPTZ,
+    last_transaction_at TIMESTAMPTZ,
+    registered_by   UUID REFERENCES users(id),     -- Empleado que lo registro
     is_active       BOOLEAN DEFAULT TRUE,
-    tags            TEXT[],
     created_at      TIMESTAMPTZ DEFAULT NOW(),
     updated_at      TIMESTAMPTZ DEFAULT NOW()
 );
 
-CREATE INDEX idx_clients_name ON clients(full_name);
+CREATE INDEX idx_clients_name ON clients USING gin(full_name gin_trgm_ops);
 CREATE INDEX idx_clients_phone ON clients(phone);
-CREATE INDEX idx_clients_trust ON clients(trust_level);
 
--- ============================================
--- TABLA: cash_registers (Caja por divisa)
--- ============================================
-CREATE TABLE cash_registers (
+-- Deudas de clientes
+CREATE TABLE client_debts (
     id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    currency_code   VARCHAR(3) UNIQUE REFERENCES currencies(code),
-    current_balance DECIMAL(18,2) NOT NULL DEFAULT 0,
-    min_threshold   DECIMAL(18,2) DEFAULT 0,
-    max_threshold   DECIMAL(18,2),
-    last_updated    TIMESTAMPTZ DEFAULT NOW()
-);
-
--- ============================================
--- TABLA: transactions (Operaciones de cambio)
--- ============================================
-CREATE TABLE transactions (
-    id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    transaction_type VARCHAR(20) NOT NULL,          -- exchange, deposit, withdrawal, adjustment
-    
-    -- Divisa que el operador COMPRA del cliente
-    source_currency VARCHAR(3) REFERENCES currencies(code),
-    source_amount   DECIMAL(18,2),
-    
-    -- Divisa que el operador VENDE al cliente
-    target_currency VARCHAR(3) REFERENCES currencies(code),
-    target_amount   DECIMAL(18,2),
-    
-    -- Tasa aplicada
-    applied_rate    DECIMAL(18,6),
-    market_rate_at_time DECIMAL(18,6),
-    
-    -- Ganancia
-    profit_amount   DECIMAL(18,2),
-    profit_currency VARCHAR(3) REFERENCES currencies(code),
-    
-    -- Referencias
-    client_id       UUID REFERENCES clients(id),
-    operator_id     UUID REFERENCES users(id) NOT NULL,
-    
-    -- Estado
-    status          VARCHAR(20) DEFAULT 'completed', -- completed, pending, cancelled, reversed
-    
-    -- Metadatos
-    notes           TEXT,
-    receipt_url     VARCHAR(500),
-    is_credit       BOOLEAN DEFAULT FALSE,
-    credit_status   VARCHAR(20),                    -- null, pending, paid
-    
-    -- Sync
-    local_id        VARCHAR(100),                   -- ID local para sync offline
-    synced          BOOLEAN DEFAULT TRUE,
-    
-    created_at      TIMESTAMPTZ DEFAULT NOW(),
-    updated_at      TIMESTAMPTZ DEFAULT NOW()
-);
-
-CREATE INDEX idx_transactions_date ON transactions(created_at DESC);
-CREATE INDEX idx_transactions_client ON transactions(client_id);
-CREATE INDEX idx_transactions_status ON transactions(status);
-CREATE INDEX idx_transactions_currencies ON transactions(source_currency, target_currency);
-CREATE INDEX idx_transactions_operator ON transactions(operator_id, created_at DESC);
-
--- ============================================
--- TABLA: cash_movements (Movimientos de caja)
--- ============================================
-CREATE TABLE cash_movements (
-    id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    cash_register_id UUID REFERENCES cash_registers(id),
+    client_id       UUID REFERENCES clients(id) NOT NULL,
     currency_code   VARCHAR(3) REFERENCES currencies(code),
-    movement_type   VARCHAR(20) NOT NULL,           -- credit, debit, adjustment
-    amount          DECIMAL(18,2) NOT NULL,
-    balance_before  DECIMAL(18,2) NOT NULL,
-    balance_after   DECIMAL(18,2) NOT NULL,
-    reason          VARCHAR(200),
-    transaction_id  UUID REFERENCES transactions(id),
-    operator_id     UUID REFERENCES users(id),
-    created_at      TIMESTAMPTZ DEFAULT NOW()
-);
-
-CREATE INDEX idx_cash_movements_register ON cash_movements(cash_register_id, created_at DESC);
-CREATE INDEX idx_cash_movements_date ON cash_movements(created_at DESC);
-
--- ============================================
--- TABLA: daily_closings (Cierres de caja diarios)
--- ============================================
-CREATE TABLE daily_closings (
-    id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    closing_date    DATE NOT NULL UNIQUE,
-    
-    -- Resumen
-    total_transactions  INTEGER DEFAULT 0,
-    total_volume_eur    DECIMAL(18,2) DEFAULT 0,
-    total_profit_dzd    DECIMAL(18,2) DEFAULT 0,
-    total_profit_eur    DECIMAL(18,2) DEFAULT 0,
-    
-    -- Snapshot de cajas al cierre
-    cash_snapshot   JSONB NOT NULL,
-    /*  Formato:
-        {
-            "EUR": {"opening": 15000, "closing": 12450, "movements": "+3500/-6050"},
-            "DZD": {"opening": 2000000, "closing": 2345600, "movements": "+1132350/-786750"},
-            ...
-        }
-    */
-    
-    -- Detalles por par
-    pair_details    JSONB,
-    /*  Formato:
-        {
-            "EUR/DZD": {"count": 25, "volume": 8000, "profit": 6200},
-            "EUR/MRU": {"count": 12, "volume": 4500, "profit": 3100},
-            ...
-        }
-    */
-    
-    operator_id     UUID REFERENCES users(id),
-    notes           TEXT,
-    adjustments     JSONB,
-    is_verified     BOOLEAN DEFAULT FALSE,
-    created_at      TIMESTAMPTZ DEFAULT NOW()
-);
-
--- ============================================
--- TABLA: pending_operations (Operaciones pendientes/reservas)
--- ============================================
-CREATE TABLE pending_operations (
-    id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    client_id       UUID REFERENCES clients(id),
-    operation_type  VARCHAR(30) NOT NULL,           -- rate_lock, deferred, promise
-    source_currency VARCHAR(3) REFERENCES currencies(code),
-    source_amount   DECIMAL(18,2),
-    target_currency VARCHAR(3) REFERENCES currencies(code),
-    locked_rate     DECIMAL(18,6),
-    expires_at      TIMESTAMPTZ,
-    status          VARCHAR(20) DEFAULT 'active',   -- active, completed, expired, cancelled
-    notes           TEXT,
-    transaction_id  UUID REFERENCES transactions(id), -- Se llena al completar
-    created_at      TIMESTAMPTZ DEFAULT NOW(),
-    updated_at      TIMESTAMPTZ DEFAULT NOW()
-);
-
--- ============================================
--- TABLA: client_balances (Saldos pendientes con clientes)
--- ============================================
-CREATE TABLE client_balances (
-    id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    client_id       UUID REFERENCES clients(id),
-    currency_code   VARCHAR(3) REFERENCES currencies(code),
-    amount          DECIMAL(18,2) NOT NULL,         -- Positivo = cliente debe, Negativo = se le debe
+    original_amount DECIMAL(18,2) NOT NULL,
+    remaining_amount DECIMAL(18,2) NOT NULL,
+    direction       VARCHAR(10) NOT NULL,           -- 'owes_us' o 'we_owe'
     reason          TEXT,
     due_date        DATE,
-    status          VARCHAR(20) DEFAULT 'pending',  -- pending, partial, paid, written_off
+    status          VARCHAR(20) DEFAULT 'pending',  -- 'pending','partial','paid','written_off'
     transaction_id  UUID REFERENCES transactions(id),
+    created_by      UUID REFERENCES users(id),
     created_at      TIMESTAMPTZ DEFAULT NOW(),
     updated_at      TIMESTAMPTZ DEFAULT NOW()
 );
 
-CREATE INDEX idx_client_balances_client ON client_balances(client_id, status);
+CREATE INDEX idx_client_debts_client ON client_debts(client_id, status);
 
--- ============================================
--- TABLA: notifications (Notificaciones)
--- ============================================
+-- ================================================================
+-- TRANSFERENCIAS ENTRE EMPLEADOS
+-- ================================================================
+
+CREATE TABLE transfers (
+    id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    from_user_id    UUID REFERENCES users(id),     -- Empleado que entrega
+    to_user_id      UUID REFERENCES users(id),     -- Empleado que recibe
+    currency_code   VARCHAR(3) REFERENCES currencies(code),
+    amount          DECIMAL(18,2) NOT NULL,
+    reason          VARCHAR(200),
+    ordered_by      UUID REFERENCES users(id),     -- El jefe
+    status          VARCHAR(20) DEFAULT 'pending',  -- 'pending','confirmed_sender','confirmed_receiver','completed','cancelled'
+    confirmed_by_sender_at   TIMESTAMPTZ,
+    confirmed_by_receiver_at TIMESTAMPTZ,
+    created_at      TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- ================================================================
+-- APROBACIONES (operaciones grandes)
+-- ================================================================
+
+CREATE TABLE approval_requests (
+    id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    transaction_id  UUID REFERENCES transactions(id),
+    employee_id     UUID REFERENCES users(id),
+    branch_id       UUID REFERENCES branches(id),
+    source_currency VARCHAR(3),
+    source_amount   DECIMAL(18,2),
+    target_currency VARCHAR(3),
+    target_amount   DECIMAL(18,2),
+    applied_rate    DECIMAL(18,6),
+    client_id       UUID REFERENCES clients(id),
+    status          VARCHAR(20) DEFAULT 'pending',  -- 'pending','approved','rejected','expired'
+    responded_by    UUID REFERENCES users(id),
+    responded_at    TIMESTAMPTZ,
+    rejection_reason VARCHAR(200),
+    expires_at      TIMESTAMPTZ,                   -- Expira si el jefe no responde
+    created_at      TIMESTAMPTZ DEFAULT NOW()
+);
+
+CREATE INDEX idx_approvals_status ON approval_requests(status, created_at DESC);
+
+-- ================================================================
+-- CIERRES DE CAJA DIARIOS
+-- ================================================================
+
+CREATE TABLE daily_closings (
+    id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    closing_date    DATE NOT NULL,
+    
+    -- Resumen general
+    total_transactions  INTEGER DEFAULT 0,
+    total_profit_dzd    DECIMAL(18,2) DEFAULT 0,
+    
+    -- Resumen por empleado (JSON)
+    employee_summary    JSONB NOT NULL,
+    /* Formato:
+    {
+      "ahmed-uuid": {
+        "name": "Ahmed",
+        "branch": "Aaioun",
+        "transactions": 23,
+        "profit_dzd": 5200,
+        "cash": {"EUR": 2350, "DZD": 456000, "MRU": 12000}
+      },
+      "omar-uuid": { ... }
+    }
+    */
+    
+    -- Resumen por par de divisas (JSON)
+    pair_summary        JSONB,
+    
+    -- Diferencias de caja (si las hay)
+    discrepancies       JSONB,
+    
+    closed_by           UUID REFERENCES users(id),
+    notes               TEXT,
+    created_at          TIMESTAMPTZ DEFAULT NOW(),
+    
+    UNIQUE(closing_date)
+);
+
+-- ================================================================
+-- NOTIFICACIONES
+-- ================================================================
+
 CREATE TABLE notifications (
     id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    user_id         UUID REFERENCES users(id),
-    type            VARCHAR(50) NOT NULL,
+    user_id         UUID REFERENCES users(id),     -- Destinatario
+    type            VARCHAR(50) NOT NULL,           -- 'new_transaction','approval_request','rate_change','low_cash','daily_summary'
     title           VARCHAR(200) NOT NULL,
     message         TEXT NOT NULL,
     data_json       JSONB,
     is_read         BOOLEAN DEFAULT FALSE,
-    channel         VARCHAR(20) DEFAULT 'app',      -- app, push, sms, whatsapp, email
-    sent_at         TIMESTAMPTZ,
-    read_at         TIMESTAMPTZ,
     created_at      TIMESTAMPTZ DEFAULT NOW()
 );
 
 CREATE INDEX idx_notifications_user ON notifications(user_id, is_read, created_at DESC);
 
--- ============================================
--- TABLA: automation_rules (Reglas automaticas)
--- ============================================
-CREATE TABLE automation_rules (
-    id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    name            VARCHAR(100) NOT NULL,
-    description     TEXT,
-    trigger_type    VARCHAR(50) NOT NULL,            -- cash_threshold, rate_change, schedule, transaction
-    trigger_config  JSONB NOT NULL,
-    action_type     VARCHAR(50) NOT NULL,            -- notification, rate_adjust, block, report
-    action_config   JSONB NOT NULL,
-    is_active       BOOLEAN DEFAULT TRUE,
-    last_triggered  TIMESTAMPTZ,
-    created_by      UUID REFERENCES users(id),
-    created_at      TIMESTAMPTZ DEFAULT NOW()
-);
+-- ================================================================
+-- REGISTRO DE AUDITORIA
+-- ================================================================
 
--- ============================================
--- TABLA: audit_log (Registro de auditoria)
--- ============================================
 CREATE TABLE audit_log (
     id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     user_id         UUID REFERENCES users(id),
     action          VARCHAR(100) NOT NULL,
     entity_type     VARCHAR(50),
     entity_id       UUID,
-    old_values      JSONB,
-    new_values      JSONB,
-    ip_address      INET,
-    user_agent      TEXT,
+    details         JSONB,
     created_at      TIMESTAMPTZ DEFAULT NOW()
 );
 
-CREATE INDEX idx_audit_log_date ON audit_log(created_at DESC);
-CREATE INDEX idx_audit_log_user ON audit_log(user_id, created_at DESC);
-CREATE INDEX idx_audit_log_entity ON audit_log(entity_type, entity_id);
+CREATE INDEX idx_audit_date ON audit_log(created_at DESC);
 
--- ============================================
--- TABLA: settings (Configuracion del sistema)
--- ============================================
+-- ================================================================
+-- CONFIGURACION
+-- ================================================================
+
 CREATE TABLE settings (
     key             VARCHAR(100) PRIMARY KEY,
     value           JSONB NOT NULL,
     category        VARCHAR(50),
-    description     TEXT,
     updated_at      TIMESTAMPTZ DEFAULT NOW()
 );
 
--- ============================================
+-- ================================================================
 -- DATOS INICIALES
--- ============================================
+-- ================================================================
+
+-- Puntos de operacion
+INSERT INTO branches (id, name, location) VALUES
+('b1000000-0000-0000-0000-000000000001', 'Tindouf', 'Tindouf ciudad'),
+('b2000000-0000-0000-0000-000000000002', 'Aaioun', 'Campamentos de Aaioun');
 
 -- Divisas principales
-INSERT INTO currencies (code, name_ar, name_fr, name_es, symbol, decimal_places, display_order, country, flag_emoji) VALUES
-('EUR', 'يورو', 'Euro', 'Euro', '€', 2, 1, 'Union Europea', '🇪🇺'),
-('DZD', 'دينار جزائري', 'Dinar Algerien', 'Dinar Argelino', 'د.ج', 2, 2, 'Argelia', '🇩🇿'),
-('MRU', 'أوقية موريتانية', 'Ouguiya Mauritanien', 'Uguiya Mauritana', 'UM', 2, 3, 'Mauritania', '🇲🇷'),
-('XOF', 'فرنك غرب أفريقي', 'Franc CFA Ouest', 'Franco CFA Occidental', 'CFA', 0, 4, 'Africa Occidental', '🇸🇳');
+INSERT INTO currencies (code, name_ar, name_fr, symbol, decimal_places, display_order, flag_emoji) VALUES
+('EUR', 'يورو', 'Euro', '€', 2, 1, '🇪🇺'),
+('DZD', 'دينار جزائري', 'Dinar Algerien', 'د.ج', 2, 2, '🇩🇿'),
+('MRU', 'أوقية موريتانية', 'Ouguiya', 'UM', 2, 3, '🇲🇷'),
+('XOF', 'فرنك غرب أفريقي', 'Franc CFA', 'CFA', 0, 4, '🇸🇳');
 
--- Divisas secundarias
-INSERT INTO currencies (code, name_ar, name_fr, name_es, symbol, decimal_places, display_order, country, flag_emoji, is_active) VALUES
-('MAD', 'درهم مغربي', 'Dirham Marocain', 'Dirham Marroqui', 'MAD', 2, 5, 'Marruecos', '🇲🇦', FALSE),
-('USD', 'دولار أمريكي', 'Dollar Americain', 'Dolar Estadounidense', '$', 2, 6, 'Estados Unidos', '🇺🇸', FALSE),
-('GBP', 'جنيه إسترليني', 'Livre Sterling', 'Libra Esterlina', '£', 2, 7, 'Reino Unido', '🇬🇧', FALSE),
-('TND', 'دينار تونسي', 'Dinar Tunisien', 'Dinar Tunecino', 'DT', 3, 8, 'Tunez', '🇹🇳', FALSE),
-('LYD', 'دينار ليبي', 'Dinar Libyen', 'Dinar Libio', 'LD', 3, 9, 'Libia', '🇱🇾', FALSE);
+-- Divisas secundarias (desactivadas)
+INSERT INTO currencies (code, name_ar, name_fr, symbol, decimal_places, display_order, flag_emoji, is_active) VALUES
+('MAD', 'درهم مغربي', 'Dirham', 'MAD', 2, 5, '🇲🇦', FALSE),
+('USD', 'دولار أمريكي', 'Dollar', '$', 2, 6, '🇺🇸', FALSE),
+('GBP', 'جنيه إسترليني', 'Livre', '£', 2, 7, '🇬🇧', FALSE);
 
 -- Configuracion inicial
-INSERT INTO settings (key, value, category, description) VALUES
-('business_name', '"صراف تندوف"', 'general', 'Nombre del negocio'),
-('default_language', '"ar-DZ"', 'general', 'Idioma por defecto'),
-('auto_close_time', '"22:00"', 'cash', 'Hora de cierre automatico de caja'),
-('max_idle_minutes', '5', 'security', 'Minutos de inactividad antes de bloquear'),
-('backup_frequency', '"daily"', 'backup', 'Frecuencia de backup automatico'),
-('receipt_enabled', 'true', 'operations', 'Generar recibos automaticamente'),
-('whatsapp_receipts', 'false', 'operations', 'Enviar recibos por WhatsApp');
+INSERT INTO settings (key, value, category) VALUES
+('approval_threshold_eur', '2000', 'operations'),
+('auto_close_time', '"22:00"', 'cash'),
+('daily_summary_whatsapp', 'true', 'notifications'),
+('idle_lock_minutes', '5', 'security'),
+('backup_frequency', '"daily"', 'backup');
 ```
 
 ---
@@ -460,103 +480,122 @@ INSERT INTO settings (key, value, category, description) VALUES
 ### 3.1 Autenticacion
 
 ```
-POST   /api/auth/login              Iniciar sesion (PIN o password)
-POST   /api/auth/refresh            Renovar token JWT
-POST   /api/auth/logout             Cerrar sesion
-POST   /api/auth/change-pin         Cambiar PIN de acceso
+POST   /api/auth/login           Login con PIN (empleados) o password (jefe)
+POST   /api/auth/refresh         Renovar token JWT
+POST   /api/auth/logout          Cerrar sesion
+PUT    /api/auth/change-pin      Cambiar PIN
 ```
 
-### 3.2 Operaciones de Cambio (Core)
+### 3.2 Tasas de Cambio (Solo Jefe puede modificar)
 
 ```
-POST   /api/transactions            Crear nueva operacion de cambio
-GET    /api/transactions            Listar operaciones (con filtros)
-GET    /api/transactions/:id        Detalle de una operacion
-PUT    /api/transactions/:id        Actualizar operacion (solo notas/estado)
-POST   /api/transactions/:id/cancel Cancelar/revertir operacion
-GET    /api/transactions/summary    Resumen de operaciones (hoy/semana/mes)
-POST   /api/transactions/calculate  Calcular conversion (sin registrar)
+GET    /api/rates                Obtener todas las tasas activas
+PUT    /api/rates/:id            Modificar tasa (solo jefe)
+POST   /api/rates/apply-all      Aplicar tasas a todos los empleados (solo jefe)
+GET    /api/rates/history        Historial de cambios de tasas
+GET    /api/rates/market         Tasas de referencia del mercado (APIs externas)
 ```
 
-### 3.3 Tasas de Cambio
+### 3.3 Operaciones de Cambio
 
 ```
-GET    /api/rates                   Listar todas las tasas activas
-PUT    /api/rates/:id               Actualizar tasa de un par
-POST   /api/rates/bulk-update       Actualizar multiples tasas
-GET    /api/rates/history           Historial de tasas
-GET    /api/rates/market            Obtener tasas de mercado (APIs externas)
-POST   /api/rates/sync-market       Sincronizar con tasas de mercado
+POST   /api/transactions                  Nueva operacion
+GET    /api/transactions                  Listar (filtros: empleado, fecha, divisa, estado)
+GET    /api/transactions/:id              Detalle
+POST   /api/transactions/:id/cancel       Cancelar (solo jefe)
+POST   /api/transactions/calculate        Calcular sin registrar (preview)
+GET    /api/transactions/summary/today     Resumen de hoy
+GET    /api/transactions/summary/employee/:id  Resumen por empleado
 ```
 
-### 3.4 Caja
+### 3.4 Aprobaciones (Operaciones Grandes)
 
 ```
-GET    /api/cash                    Estado actual de todas las cajas
-GET    /api/cash/:currency          Estado de una caja especifica
-POST   /api/cash/movement           Registrar movimiento manual
-GET    /api/cash/movements          Historial de movimientos
-POST   /api/cash/close              Cerrar caja del dia
-GET    /api/cash/closings           Historial de cierres
-GET    /api/cash/closings/:date     Detalle de cierre de un dia
-GET    /api/cash/total              Valor total en divisa de referencia
+POST   /api/approvals                     Solicitar aprobacion (empleado)
+GET    /api/approvals/pending              Aprobaciones pendientes (jefe)
+PUT    /api/approvals/:id/approve          Aprobar (jefe)
+PUT    /api/approvals/:id/reject           Rechazar (jefe)
 ```
 
-### 3.5 Clientes
+### 3.5 Caja
 
 ```
-GET    /api/clients                 Listar clientes (con busqueda/filtros)
-POST   /api/clients                 Crear nuevo cliente
-GET    /api/clients/:id             Detalle de cliente
-PUT    /api/clients/:id             Actualizar cliente
-GET    /api/clients/:id/transactions Operaciones del cliente
-GET    /api/clients/:id/balances    Saldos pendientes del cliente
-POST   /api/clients/:id/balances    Crear saldo pendiente
-PUT    /api/clients/balances/:id    Actualizar saldo (pagar/ajustar)
-GET    /api/clients/top             Top clientes por volumen
+GET    /api/cash                           Todas las cajas (jefe: todas, empleado: solo suya)
+GET    /api/cash/employee/:id              Caja de un empleado (jefe)
+GET    /api/cash/branch/:id                Caja total de un punto (jefe)
+GET    /api/cash/total                     Caja total de la red (jefe)
+POST   /api/cash/movement                  Registrar entrada/salida manual
+GET    /api/cash/movements                 Historial de movimientos
+POST   /api/cash/close-day                 Cerrar caja del dia (jefe)
+POST   /api/cash/verify                    Empleado confirma conteo fisico
+GET    /api/cash/closings                  Historial de cierres
 ```
 
-### 3.6 Reportes
+### 3.6 Transferencias entre Empleados
 
 ```
-GET    /api/reports/daily/:date     Reporte diario
-GET    /api/reports/weekly          Reporte semanal
-GET    /api/reports/monthly/:month  Reporte mensual
-GET    /api/reports/profit          Reporte de ganancias
-GET    /api/reports/volume          Reporte de volumen
-GET    /api/reports/export          Exportar datos (CSV/Excel/PDF)
-GET    /api/reports/dashboard       Datos del dashboard
+POST   /api/transfers                      Crear transferencia (jefe)
+GET    /api/transfers                      Listar transferencias
+PUT    /api/transfers/:id/confirm-send     Emisor confirma que entrego
+PUT    /api/transfers/:id/confirm-receive  Receptor confirma que recibio
+PUT    /api/transfers/:id/cancel           Cancelar transferencia (jefe)
 ```
 
-### 3.7 Configuracion y Sistema
+### 3.7 Empleados y Puntos (Solo Jefe)
 
 ```
-GET    /api/settings                Obtener configuracion
-PUT    /api/settings                Actualizar configuracion
-GET    /api/currencies              Listar divisas
-PUT    /api/currencies/:code        Activar/desactivar divisa
-POST   /api/backup                  Crear backup manual
-GET    /api/backup/list             Listar backups disponibles
-POST   /api/backup/restore          Restaurar desde backup
-GET    /api/audit                   Consultar log de auditoria
+GET    /api/employees                      Lista de empleados
+POST   /api/employees                      Crear empleado
+PUT    /api/employees/:id                  Modificar empleado
+PUT    /api/employees/:id/deactivate       Desactivar empleado
+GET    /api/employees/:id/activity         Actividad reciente del empleado
+GET    /api/branches                       Lista de puntos
+POST   /api/branches                       Crear punto
+PUT    /api/branches/:id                   Modificar punto
 ```
 
-### 3.8 Sincronizacion (Offline)
+### 3.8 Clientes
 
 ```
-POST   /api/sync/push               Enviar cambios locales al servidor
-GET    /api/sync/pull               Descargar cambios del servidor
-GET    /api/sync/status             Estado de sincronizacion
-POST   /api/sync/resolve-conflict    Resolver conflicto de sincronizacion
+GET    /api/clients                        Buscar/listar clientes
+POST   /api/clients                        Registrar cliente
+PUT    /api/clients/:id                    Modificar cliente
+GET    /api/clients/:id/transactions       Operaciones del cliente
+GET    /api/clients/:id/debts              Deudas del cliente
+POST   /api/clients/:id/debts              Crear deuda
+PUT    /api/clients/debts/:id              Actualizar deuda (pagar/ajustar)
+GET    /api/clients/debts/pending          Todas las deudas pendientes (jefe)
 ```
 
-### 3.9 Notificaciones
+### 3.9 Reportes (Solo Jefe)
 
 ```
-GET    /api/notifications            Listar notificaciones
-PUT    /api/notifications/:id/read   Marcar como leida
-PUT    /api/notifications/read-all   Marcar todas como leidas
-POST   /api/notifications/register   Registrar token push del dispositivo
+GET    /api/reports/daily/:date            Reporte de un dia
+GET    /api/reports/weekly                 Reporte semanal
+GET    /api/reports/monthly/:month         Reporte mensual
+GET    /api/reports/employee/:id           Rendimiento de un empleado
+GET    /api/reports/branch/:id             Rendimiento de un punto
+GET    /api/reports/profit                 Ganancias
+GET    /api/reports/dashboard              Datos del dashboard del jefe
+GET    /api/reports/export                 Exportar (CSV/PDF)
+```
+
+### 3.10 Sincronizacion Offline
+
+```
+POST   /api/sync/push                     Subir cambios locales al servidor
+GET    /api/sync/pull                     Descargar cambios desde servidor
+GET    /api/sync/status                   Estado de sincronizacion
+POST   /api/sync/resolve                  Resolver conflicto
+```
+
+### 3.11 Notificaciones
+
+```
+GET    /api/notifications                  Mis notificaciones
+PUT    /api/notifications/:id/read         Marcar como leida
+PUT    /api/notifications/read-all         Marcar todas como leidas
+POST   /api/notifications/register-device  Registrar token FCM
 ```
 
 ---
@@ -566,530 +605,510 @@ POST   /api/notifications/register   Registrar token push del dispositivo
 ### 4.1 Backend (NestJS)
 
 ```
-saraf-pro-api/
+saraf-elite-api/
 ├── src/
-│   ├── app.module.ts
 │   ├── main.ts
+│   ├── app.module.ts
 │   ├── config/
 │   │   ├── database.config.ts
 │   │   ├── redis.config.ts
-│   │   ├── jwt.config.ts
 │   │   └── app.config.ts
 │   ├── common/
-│   │   ├── decorators/
-│   │   ├── filters/
 │   │   ├── guards/
+│   │   │   ├── jwt-auth.guard.ts
+│   │   │   ├── roles.guard.ts          # Jefe vs Empleado
+│   │   │   └── boss-only.guard.ts      # Solo jefe
+│   │   ├── decorators/
+│   │   │   ├── roles.decorator.ts
+│   │   │   └── current-user.decorator.ts
 │   │   ├── interceptors/
-│   │   ├── pipes/
+│   │   │   └── audit.interceptor.ts    # Log de auditoria automatico
 │   │   └── utils/
+│   │       ├── currency-calculator.ts  # Motor de conversion
+│   │       └── formatters.ts
 │   ├── modules/
 │   │   ├── auth/
 │   │   │   ├── auth.module.ts
 │   │   │   ├── auth.controller.ts
 │   │   │   ├── auth.service.ts
-│   │   │   ├── strategies/
 │   │   │   └── dto/
 │   │   ├── exchange/
 │   │   │   ├── exchange.module.ts
 │   │   │   ├── exchange.controller.ts
-│   │   │   ├── exchange.service.ts
-│   │   │   ├── exchange-calculator.service.ts
-│   │   │   ├── entities/
-│   │   │   └── dto/
-│   │   ├── cash/
-│   │   │   ├── cash.module.ts
-│   │   │   ├── cash.controller.ts
-│   │   │   ├── cash.service.ts
-│   │   │   ├── cash-closing.service.ts
+│   │   │   ├── exchange.service.ts      # Logica de operaciones
+│   │   │   ├── calculator.service.ts    # Motor de calculo
 │   │   │   ├── entities/
 │   │   │   └── dto/
 │   │   ├── rates/
 │   │   │   ├── rates.module.ts
 │   │   │   ├── rates.controller.ts
 │   │   │   ├── rates.service.ts
-│   │   │   ├── market-rates.service.ts
-│   │   │   ├── entities/
+│   │   │   ├── market-rates.service.ts  # APIs externas
+│   │   │   └── dto/
+│   │   ├── cash/
+│   │   │   ├── cash.module.ts
+│   │   │   ├── cash.controller.ts
+│   │   │   ├── cash.service.ts
+│   │   │   ├── closing.service.ts       # Cierre diario
+│   │   │   └── dto/
+│   │   ├── approval/
+│   │   │   ├── approval.module.ts
+│   │   │   ├── approval.controller.ts
+│   │   │   ├── approval.service.ts      # Sistema de aprobacion
+│   │   │   └── dto/
+│   │   ├── employees/
+│   │   │   ├── employees.module.ts
+│   │   │   ├── employees.controller.ts
+│   │   │   ├── employees.service.ts
+│   │   │   └── dto/
+│   │   ├── transfers/
+│   │   │   ├── transfers.module.ts
+│   │   │   ├── transfers.controller.ts
+│   │   │   ├── transfers.service.ts     # Transferencias entre empleados
 │   │   │   └── dto/
 │   │   ├── clients/
 │   │   │   ├── clients.module.ts
 │   │   │   ├── clients.controller.ts
 │   │   │   ├── clients.service.ts
-│   │   │   ├── client-balance.service.ts
-│   │   │   ├── entities/
+│   │   │   ├── debts.service.ts
 │   │   │   └── dto/
 │   │   ├── reports/
 │   │   │   ├── reports.module.ts
 │   │   │   ├── reports.controller.ts
 │   │   │   ├── reports.service.ts
-│   │   │   ├── export.service.ts
-│   │   │   └── dto/
+│   │   │   ├── export.service.ts        # PDF/Excel
+│   │   │   └── whatsapp-summary.service.ts
 │   │   ├── notifications/
 │   │   │   ├── notifications.module.ts
-│   │   │   ├── notifications.controller.ts
 │   │   │   ├── notifications.service.ts
-│   │   │   ├── channels/
-│   │   │   │   ├── push.channel.ts
-│   │   │   │   ├── sms.channel.ts
-│   │   │   │   └── whatsapp.channel.ts
-│   │   │   └── dto/
-│   │   ├── sync/
-│   │   │   ├── sync.module.ts
-│   │   │   ├── sync.controller.ts
-│   │   │   ├── sync.service.ts
-│   │   │   ├── sync.gateway.ts (WebSocket)
-│   │   │   └── conflict-resolver.service.ts
-│   │   ├── automation/
-│   │   │   ├── automation.module.ts
-│   │   │   ├── automation.service.ts
-│   │   │   ├── rule-engine.service.ts
-│   │   │   └── entities/
-│   │   └── settings/
-│   │       ├── settings.module.ts
-│   │       ├── settings.controller.ts
-│   │       └── settings.service.ts
+│   │   │   ├── push.service.ts          # Firebase FCM
+│   │   │   └── whatsapp.service.ts      # WhatsApp Business API
+│   │   └── sync/
+│   │       ├── sync.module.ts
+│   │       ├── sync.controller.ts
+│   │       ├── sync.service.ts
+│   │       ├── sync.gateway.ts          # WebSocket
+│   │       └── conflict-resolver.ts
 │   └── database/
 │       ├── migrations/
 │       └── seeds/
-├── test/
 ├── docker-compose.yml
 ├── Dockerfile
 ├── package.json
-├── tsconfig.json
 └── .env.example
 ```
 
 ### 4.2 App Movil (React Native / Expo)
 
+La app es una sola, pero muestra pantallas diferentes segun el rol (jefe o empleado):
+
 ```
-saraf-pro-mobile/
-├── app/                          # Expo Router (file-based routing)
+saraf-elite-mobile/
+├── app/                              # Expo Router
 │   ├── (auth)/
-│   │   ├── login.tsx
-│   │   └── pin.tsx
-│   ├── (tabs)/
+│   │   └── login.tsx                 # Login con PIN
+│   ├── (boss)/                       # PANTALLAS SOLO JEFE
 │   │   ├── _layout.tsx
-│   │   ├── index.tsx             # Home / Dashboard
-│   │   ├── exchange.tsx          # Nueva operacion
-│   │   ├── cash.tsx              # Estado de caja
-│   │   ├── clients.tsx           # Lista de clientes
-│   │   └── more.tsx              # Menu adicional
-│   ├── transaction/
-│   │   ├── [id].tsx              # Detalle de operacion
-│   │   └── new.tsx               # Flujo nueva operacion
-│   ├── client/
-│   │   ├── [id].tsx              # Detalle de cliente
-│   │   └── new.tsx               # Nuevo cliente
-│   ├── rates/
-│   │   └── index.tsx             # Gestion de tasas
-│   ├── reports/
-│   │   ├── index.tsx
-│   │   ├── daily.tsx
-│   │   └── profit.tsx
-│   ├── settings/
-│   │   ├── index.tsx
-│   │   ├── profile.tsx
-│   │   ├── currencies.tsx
-│   │   ├── rules.tsx
-│   │   └── backup.tsx
-│   └── _layout.tsx
+│   │   ├── index.tsx                 # Dashboard del jefe
+│   │   ├── employees.tsx             # Ver empleados y sus cajas
+│   │   ├── employee/[id].tsx         # Detalle de un empleado
+│   │   ├── rates.tsx                 # Gestionar tasas
+│   │   ├── approvals.tsx             # Aprobaciones pendientes
+│   │   ├── transfers.tsx             # Transferencias entre empleados
+│   │   ├── reports.tsx               # Reportes
+│   │   ├── reports/daily.tsx
+│   │   ├── reports/employee.tsx
+│   │   ├── clients.tsx               # Todos los clientes
+│   │   ├── clients/debts.tsx         # Deudas pendientes
+│   │   ├── live.tsx                  # Monitor en tiempo real
+│   │   └── settings.tsx              # Configuracion
+│   ├── (employee)/                   # PANTALLAS EMPLEADO
+│   │   ├── _layout.tsx
+│   │   ├── index.tsx                 # Home del empleado (caja + botones)
+│   │   ├── exchange.tsx              # NUEVA OPERACION (flujo 3 toques)
+│   │   ├── exchange/confirm.tsx      # Confirmar operacion
+│   │   ├── exchange/approval.tsx     # Esperando aprobacion
+│   │   ├── history.tsx               # Mis operaciones de hoy
+│   │   ├── cash.tsx                  # Mi caja
+│   │   ├── cash/movement.tsx         # Registrar entrada/salida
+│   │   ├── clients.tsx               # Buscar/registrar cliente
+│   │   └── client/[id].tsx           # Detalle cliente
+│   └── _layout.tsx                   # Router raiz (redirige segun rol)
 ├── src/
 │   ├── components/
-│   │   ├── ui/                   # Componentes base reutilizables
-│   │   │   ├── Button.tsx
-│   │   │   ├── Card.tsx
-│   │   │   ├── Input.tsx
-│   │   │   ├── Modal.tsx
-│   │   │   ├── Badge.tsx
-│   │   │   └── ...
-│   │   ├── exchange/
-│   │   │   ├── CurrencySelector.tsx
-│   │   │   ├── AmountInput.tsx
-│   │   │   ├── ConversionResult.tsx
-│   │   │   ├── QuickExchange.tsx
-│   │   │   └── TransactionCard.tsx
-│   │   ├── cash/
-│   │   │   ├── CashOverview.tsx
-│   │   │   ├── CurrencyBalance.tsx
-│   │   │   └── CashMovementItem.tsx
-│   │   ├── clients/
-│   │   │   ├── ClientCard.tsx
-│   │   │   ├── ClientSearch.tsx
-│   │   │   └── BalanceIndicator.tsx
-│   │   ├── rates/
-│   │   │   ├── RateCard.tsx
-│   │   │   ├── RateSlider.tsx
-│   │   │   └── RateChart.tsx
-│   │   └── dashboard/
-│   │       ├── StatsCard.tsx
-│   │       ├── RecentTransactions.tsx
-│   │       └── ProfitChart.tsx
+│   │   ├── ui/                       # Botones grandes, inputs, cards
+│   │   │   ├── BigButton.tsx         # Boton ENORME para empleados
+│   │   │   ├── NumericPad.tsx        # Teclado numerico grande
+│   │   │   ├── CurrencyPicker.tsx    # Selector de divisa
+│   │   │   ├── AmountDisplay.tsx     # Mostrar montos grande
+│   │   │   ├── ConfirmModal.tsx      # Modal de confirmacion
+│   │   │   └── StatusBadge.tsx
+│   │   ├── boss/                     # Componentes del jefe
+│   │   │   ├── EmployeeCard.tsx      # Tarjeta de empleado con caja
+│   │   │   ├── ApprovalCard.tsx      # Tarjeta de aprobacion
+│   │   │   ├── RateEditor.tsx        # Editor de tasa (+/-)
+│   │   │   ├── LiveFeed.tsx          # Feed en tiempo real
+│   │   │   ├── DailySummary.tsx
+│   │   │   └── TransferForm.tsx
+│   │   └── employee/                 # Componentes del empleado
+│   │       ├── CashOverview.tsx      # Vista de mi caja
+│   │       ├── QuickExchange.tsx     # Botones rapidos de divisa
+│   │       ├── ExchangeResult.tsx    # Resultado de conversion
+│   │       └── OperationCard.tsx     # Tarjeta de operacion
 │   ├── services/
-│   │   ├── api.ts                # Axios instance configurado
+│   │   ├── api.ts                    # Cliente HTTP (Axios)
 │   │   ├── exchange.service.ts
-│   │   ├── cash.service.ts
-│   │   ├── clients.service.ts
 │   │   ├── rates.service.ts
+│   │   ├── cash.service.ts
+│   │   ├── employees.service.ts
+│   │   ├── approvals.service.ts
+│   │   ├── transfers.service.ts
+│   │   ├── clients.service.ts
 │   │   ├── reports.service.ts
 │   │   ├── sync.service.ts
-│   │   └── notification.service.ts
-│   ├── stores/                   # Zustand stores
+│   │   └── notifications.service.ts
+│   ├── stores/                       # Zustand (estado global)
 │   │   ├── auth.store.ts
-│   │   ├── exchange.store.ts
-│   │   ├── cash.store.ts
 │   │   ├── rates.store.ts
-│   │   ├── clients.store.ts
-│   │   └── settings.store.ts
-│   ├── database/                 # WatermelonDB (offline)
+│   │   ├── cash.store.ts
+│   │   ├── exchange.store.ts
+│   │   └── notifications.store.ts
+│   ├── database/                     # WatermelonDB (offline)
 │   │   ├── schema.ts
 │   │   ├── models/
-│   │   │   ├── Transaction.ts
-│   │   │   ├── Client.ts
-│   │   │   ├── CashRegister.ts
-│   │   │   ├── Rate.ts
-│   │   │   └── ...
 │   │   └── sync/
-│   │       ├── syncAdapter.ts
-│   │       └── conflictResolver.ts
 │   ├── hooks/
-│   │   ├── useExchange.ts
+│   │   ├── useExchange.ts            # Logica de operacion
 │   │   ├── useCash.ts
-│   │   ├── useClients.ts
-│   │   ├── useRates.ts
-│   │   ├── useOffline.ts
-│   │   └── useNotifications.ts
+│   │   ├── useSync.ts
+│   │   └── useRole.ts                # Detectar si es jefe o empleado
 │   ├── utils/
-│   │   ├── calculator.ts         # Motor de calculo de divisas
-│   │   ├── formatter.ts          # Formateo de numeros/monedas
-│   │   ├── validators.ts
-│   │   ├── dateUtils.ts
+│   │   ├── calculator.ts             # Motor de conversion local
+│   │   ├── formatter.ts              # Formateo montos
 │   │   └── constants.ts
 │   ├── i18n/
-│   │   ├── index.ts
-│   │   ├── ar.json               # Traducciones arabe
-│   │   ├── fr.json               # Traducciones frances
-│   │   └── es.json               # Traducciones espanol
+│   │   ├── ar.json                   # Arabe
+│   │   ├── fr.json                   # Frances
+│   │   └── es.json                   # Espanol
 │   └── theme/
 │       ├── colors.ts
-│       ├── typography.ts
-│       ├── spacing.ts
-│       └── index.ts
-├── assets/
+│       ├── typography.ts             # Fuentes grandes, legibles
+│       └── boss-theme.ts             # Tema visual del jefe (diferente)
 ├── app.json
 ├── package.json
-├── tsconfig.json
-├── tailwind.config.js
-└── babel.config.js
-```
-
-### 4.3 Panel Web (Next.js)
-
-```
-saraf-pro-web/
-├── src/
-│   ├── app/
-│   │   ├── layout.tsx
-│   │   ├── page.tsx                # Dashboard
-│   │   ├── login/
-│   │   ├── transactions/
-│   │   ├── cash/
-│   │   ├── clients/
-│   │   ├── rates/
-│   │   ├── reports/
-│   │   └── settings/
-│   ├── components/
-│   ├── lib/
-│   ├── hooks/
-│   └── styles/
-├── public/
-├── package.json
-└── next.config.js
+└── tailwind.config.js
 ```
 
 ---
 
 ## 5. ALGORITMOS CLAVE
 
-### 5.1 Motor de Conversion
+### 5.1 Motor de Conversion (Local - Funciona Offline)
 
 ```typescript
-interface ConversionResult {
-  sourceAmount: number;
-  sourceCurrency: string;
-  targetAmount: number;
-  targetCurrency: string;
-  appliedRate: number;
-  spreadPct: number;
-  profitAmount: number;
-  profitCurrency: string;
-}
-
+/**
+ * Calcula la conversion entre dos divisas.
+ * Las tasas estan pre-cargadas localmente.
+ * No necesita internet.
+ */
 function calculateExchange(
-  sourceAmount: number,
-  sourceCurrency: string,
-  targetCurrency: string,
-  direction: 'buy' | 'sell',  // Desde perspectiva del operador
-  rates: Map<string, ExchangeRate>
-): ConversionResult {
+  amount: number,
+  fromCurrency: string,    // Divisa que DA el cliente
+  toCurrency: string,      // Divisa que QUIERE el cliente
+  rates: LocalRateStore
+): ExchangeResult {
   
-  const pairKey = `${sourceCurrency}/${targetCurrency}`;
-  const inversePairKey = `${targetCurrency}/${sourceCurrency}`;
+  // Buscar par directo: ej EUR/DZD
+  const directPair = rates.find(fromCurrency, toCurrency);
   
-  let rate: number;
-  let marketRate: number;
-  
-  // Buscar tasa directa o inversa
-  if (rates.has(pairKey)) {
-    const pair = rates.get(pairKey);
-    rate = direction === 'buy' ? pair.buyRate : pair.sellRate;
-    marketRate = pair.marketRate;
-  } else if (rates.has(inversePairKey)) {
-    const pair = rates.get(inversePairKey);
-    rate = direction === 'buy' ? (1 / pair.sellRate) : (1 / pair.buyRate);
-    marketRate = pair.marketRate ? (1 / pair.marketRate) : null;
-  } else {
-    // Conversion encadenada via EUR (divisa puente)
-    const toEur = calculateExchange(sourceAmount, sourceCurrency, 'EUR', direction, rates);
-    return calculateExchange(toEur.targetAmount, 'EUR', targetCurrency, direction, rates);
+  if (directPair) {
+    // Cliente da EUR, quiere DZD => nosotros COMPRAMOS EUR => usamos buy_rate
+    const rate = directPair.sell_rate; // sell_rate = lo que damos por cada unidad
+    const targetAmount = round(amount * rate, getDecimals(toCurrency));
+    
+    return {
+      sourceAmount: amount,
+      sourceCurrency: fromCurrency,
+      targetAmount,
+      targetCurrency: toCurrency,
+      appliedRate: rate,
+      // Ganancia = diferencia entre lo que compramos y lo que vale en mercado
+      profit: directPair.market_rate 
+        ? round(amount * Math.abs(rate - directPair.market_rate), 2)
+        : 0
+    };
   }
   
-  const targetAmount = round(sourceAmount * rate, getCurrencyDecimals(targetCurrency));
+  // Buscar par inverso: ej si buscamos DZD/EUR pero tenemos EUR/DZD
+  const inversePair = rates.find(toCurrency, fromCurrency);
   
-  // Calcular ganancia (diferencia entre tasa aplicada y tasa de mercado)
-  const profitAmount = marketRate 
-    ? round(Math.abs(sourceAmount * (rate - marketRate)), 2) 
-    : 0;
+  if (inversePair) {
+    const rate = 1 / inversePair.buy_rate;
+    const targetAmount = round(amount * rate, getDecimals(toCurrency));
+    
+    return {
+      sourceAmount: amount,
+      sourceCurrency: fromCurrency,
+      targetAmount,
+      targetCurrency: toCurrency,
+      appliedRate: rate,
+      profit: 0 // Se calcula en el servidor
+    };
+  }
+  
+  // Conversion encadenada via EUR (puente)
+  const toEur = calculateExchange(amount, fromCurrency, 'EUR', rates);
+  const fromEur = calculateExchange(toEur.targetAmount, 'EUR', toCurrency, rates);
   
   return {
-    sourceAmount,
-    sourceCurrency,
-    targetAmount,
-    targetCurrency,
-    appliedRate: rate,
-    spreadPct: marketRate ? ((rate - marketRate) / marketRate * 100) : 0,
-    profitAmount,
-    profitCurrency: targetCurrency
+    ...fromEur,
+    sourceAmount: amount,
+    sourceCurrency: fromCurrency,
+    appliedRate: fromEur.targetAmount / amount
   };
 }
 ```
 
-### 5.2 Sistema de Cierre de Caja Automatico
+### 5.2 Sistema de Aprobacion (Tiempo Real)
 
 ```typescript
-async function performDailyClosing(date: Date, operatorId: string): Promise<DailyClosing> {
-  const startOfDay = setHours(date, 0, 0, 0);
-  const endOfDay = setHours(date, 23, 59, 59);
-  
-  // 1. Obtener todas las transacciones del dia
-  const transactions = await getTransactions(startOfDay, endOfDay);
-  
-  // 2. Calcular resumen
-  const summary = {
-    totalTransactions: transactions.length,
-    totalVolumeEur: 0,
-    totalProfitDzd: 0,
-    totalProfitEur: 0,
-    byPair: {},
-    byCurrency: {}
-  };
-  
-  for (const tx of transactions) {
-    // Acumular volumen en EUR equivalente
-    summary.totalVolumeEur += convertToEur(tx.sourceAmount, tx.sourceCurrency);
-    
-    // Acumular ganancia
-    if (tx.profitCurrency === 'DZD') {
-      summary.totalProfitDzd += tx.profitAmount;
-    }
-    summary.totalProfitEur += convertToEur(tx.profitAmount, tx.profitCurrency);
-    
-    // Agrupar por par
-    const pair = `${tx.sourceCurrency}/${tx.targetCurrency}`;
-    if (!summary.byPair[pair]) {
-      summary.byPair[pair] = { count: 0, volume: 0, profit: 0 };
-    }
-    summary.byPair[pair].count++;
-    summary.byPair[pair].volume += tx.sourceAmount;
-    summary.byPair[pair].profit += tx.profitAmount;
-  }
-  
-  // 3. Snapshot de cajas
-  const cashRegisters = await getAllCashRegisters();
-  const cashSnapshot = {};
-  for (const cr of cashRegisters) {
-    const movements = await getCashMovements(cr.currencyCode, startOfDay, endOfDay);
-    cashSnapshot[cr.currencyCode] = {
-      opening: movements[0]?.balanceBefore ?? cr.currentBalance,
-      closing: cr.currentBalance,
-      totalIn: movements.filter(m => m.type === 'credit').reduce((s, m) => s + m.amount, 0),
-      totalOut: movements.filter(m => m.type === 'debit').reduce((s, m) => s + m.amount, 0)
-    };
-  }
-  
-  // 4. Guardar cierre
-  return await saveDailyClosing({
-    closingDate: date,
-    ...summary,
-    cashSnapshot,
-    operatorId
+/**
+ * Flujo cuando un empleado quiere hacer una operacion que supera el limite.
+ */
+
+// EMPLEADO: Solicita aprobacion
+async function requestApproval(transaction: PendingTransaction) {
+  // 1. Guardar operacion como 'pending_approval' localmente
+  await localDb.saveTransaction({
+    ...transaction,
+    status: 'pending_approval'
   });
+  
+  // 2. Si hay internet, enviar solicitud al servidor
+  if (isOnline()) {
+    const response = await api.post('/approvals', {
+      ...transaction,
+      employee_id: currentUser.id,
+      branch_id: currentUser.branch_id
+    });
+    
+    // 3. Esperar respuesta via WebSocket
+    return waitForApprovalResponse(response.data.id);
+  } else {
+    // Sin internet: mostrar mensaje de que necesita internet para esto
+    throw new Error('Se necesita conexion para operaciones grandes');
+  }
+}
+
+// JEFE: Recibe y responde
+async function handleApprovalRequest(request: ApprovalRequest) {
+  // El jefe recibe notificacion push
+  // En la app ve los detalles y decide
+  
+  // Si aprueba:
+  await api.put(`/approvals/${request.id}/approve`);
+  // -> El servidor envia push al empleado: "APROBADO"
+  // -> El empleado puede confirmar la operacion
+  
+  // Si rechaza:
+  await api.put(`/approvals/${request.id}/reject`, {
+    reason: 'Monto muy alto para hoy'
+  });
+  // -> El servidor envia push al empleado: "RECHAZADO: Monto muy alto para hoy"
 }
 ```
 
 ### 5.3 Sincronizacion Offline
 
 ```typescript
-interface SyncPacket {
-  lastSyncTimestamp: string;
-  pendingChanges: ChangeRecord[];
-}
-
-interface ChangeRecord {
-  table: string;
-  id: string;
-  action: 'create' | 'update' | 'delete';
-  data: any;
-  localTimestamp: string;
-}
-
-async function syncWithServer(localDb: WatermelonDB, apiClient: ApiClient) {
-  // 1. Recoger cambios locales pendientes
-  const pendingChanges = await localDb.getPendingChanges();
+/**
+ * Sincronizacion automatica cuando se detecta internet.
+ * Prioridad: las operaciones del empleado SIEMPRE se suben primero.
+ */
+async function autoSync() {
+  // 1. PUSH: Subir operaciones locales no sincronizadas
+  const pendingOps = await localDb.getUnsyncedTransactions();
+  const pendingMovements = await localDb.getUnsyncedCashMovements();
   
-  if (pendingChanges.length === 0 && !needsPull()) {
-    return { status: 'up_to_date' };
+  if (pendingOps.length > 0 || pendingMovements.length > 0) {
+    const pushResult = await api.post('/sync/push', {
+      transactions: pendingOps,
+      cashMovements: pendingMovements,
+      lastSyncTimestamp: getLastSync()
+    });
+    
+    // Marcar como sincronizadas
+    for (const op of pushResult.synced) {
+      await localDb.markSynced(op.local_id);
+    }
   }
   
-  // 2. Enviar cambios al servidor (PUSH)
-  const pushResult = await apiClient.post('/sync/push', {
-    lastSyncTimestamp: getLastSyncTimestamp(),
-    pendingChanges
+  // 2. PULL: Descargar cambios del servidor
+  const pullResult = await api.get('/sync/pull', {
+    params: { since: getLastSync() }
   });
   
-  // 3. Manejar conflictos
-  for (const conflict of pushResult.conflicts) {
-    const resolution = resolveConflict(conflict);
-    await apiClient.post('/sync/resolve-conflict', resolution);
+  // Aplicar nuevas tasas (lo mas importante para empleados)
+  if (pullResult.newRates.length > 0) {
+    await localDb.updateRates(pullResult.newRates);
+    showNotification('Tasas actualizadas por el jefe');
   }
   
-  // 4. Descargar cambios del servidor (PULL)
-  const pullResult = await apiClient.get('/sync/pull', {
-    since: getLastSyncTimestamp()
-  });
+  // Aplicar transferencias pendientes
+  for (const transfer of pullResult.pendingTransfers) {
+    await localDb.saveTransfer(transfer);
+    showNotification(`Transferencia: ${transfer.description}`);
+  }
   
-  // 5. Aplicar cambios del servidor localmente
-  await localDb.applyChanges(pullResult.changes);
-  
-  // 6. Actualizar timestamp de sincronizacion
-  setLastSyncTimestamp(pullResult.serverTimestamp);
-  
-  // 7. Marcar cambios locales como sincronizados
-  await localDb.markSynced(pendingChanges.map(c => c.id));
-  
-  return {
-    status: 'synced',
-    pushed: pendingChanges.length,
-    pulled: pullResult.changes.length,
-    conflicts: pushResult.conflicts.length
-  };
+  // Actualizar timestamp
+  setLastSync(pullResult.serverTimestamp);
 }
 
-function resolveConflict(conflict: SyncConflict): Resolution {
-  // Estrategia: El cambio local siempre gana (el operador tiene razon)
-  // Excepto para tasas de mercado (el servidor tiene la verdad)
-  if (conflict.table === 'rate_history' && conflict.source === 'market') {
-    return { winner: 'server', record: conflict.serverVersion };
+// Se ejecuta automaticamente cada vez que hay internet
+NetInfo.addEventListener(state => {
+  if (state.isConnected) {
+    autoSync();
   }
-  return { winner: 'local', record: conflict.localVersion };
+});
+```
+
+### 5.4 Propagacion de Tasas (Jefe -> Empleados)
+
+```typescript
+/**
+ * Cuando el jefe cambia las tasas, llegan a todos los empleados.
+ */
+
+// SERVIDOR: Al recibir nuevas tasas del jefe
+async function propagateRates(newRates: RateUpdate[], bossId: string) {
+  // 1. Guardar en base de datos
+  for (const rate of newRates) {
+    await db.exchangeRates.update(rate);
+    await db.rateHistory.insert({ ...rate, changed_by: bossId });
+  }
+  
+  // 2. Enviar a todos los empleados conectados via WebSocket
+  websocketServer.broadcast('rate_update', {
+    rates: newRates,
+    timestamp: new Date()
+  });
+  
+  // 3. Enviar push notification a empleados offline
+  const employees = await db.users.findAll({ role: 'employee', is_active: true });
+  
+  for (const emp of employees) {
+    await pushService.send(emp.fcm_token, {
+      title: 'تحديث الأسعار',  // "Actualizacion de tasas" en arabe
+      body: formatRateSummary(newRates),
+      data: { type: 'rate_update', rates: JSON.stringify(newRates) }
+    });
+  }
 }
 ```
 
 ---
 
-## 6. SEGURIDAD - DETALLES TECNICOS
+## 6. SEGURIDAD TECNICA
 
-### 6.1 Autenticacion y Autorizacion
+### 6.1 Autenticacion
 
 ```
-Flujo de autenticacion:
+EMPLEADO:
+  - PIN de 6 digitos (bcrypt, 12 rounds)
+  - Opcion de huella dactilar
+  - JWT token (expira en 7 dias, se renueva automaticamente)
+  - Bloqueo tras 5 intentos fallidos (30 minutos)
 
-1. APERTURA APP
-   └─> PIN de 6 digitos O huella dactilar
-       └─> Token JWT emitido (expira en 24h)
-           └─> Acceso a funciones de operador
-
-2. OPERACIONES SENSIBLES (borrar datos, config, exportar)
-   └─> Contrasena maestra requerida
-       └─> Token temporal de 5 minutos
-
-3. PANEL WEB
-   └─> Email/usuario + contrasena
-       └─> 2FA opcional (TOTP)
-           └─> Token JWT (expira en 8h)
+JEFE:
+  - PIN de 6 digitos + contrasena para operaciones sensibles
+  - JWT token (expira en 24h)
+  - Puede desactivar cualquier empleado remotamente
 ```
 
 ### 6.2 Cifrado
 
 ```
-DATOS EN REPOSO:
-  - SQLite local: SQLCipher (AES-256-CBC)
-  - PostgreSQL: pgcrypto para campos sensibles
-  - Backups: AES-256-GCM antes de subir a la nube
+Local (movil):
+  - SQLite cifrado con SQLCipher (AES-256)
+  - Clave derivada del PIN + ID del dispositivo
+  - SecureStore para tokens y credenciales
 
-DATOS EN TRANSITO:
-  - TLS 1.3 para todas las conexiones HTTPS
-  - WebSocket sobre WSS (TLS)
-  - Certificate pinning en la app movil
+Transito:
+  - TLS 1.3 para todas las conexiones
+  - WebSocket sobre WSS
+  - Certificate pinning
 
-CLAVES:
-  - PIN: bcrypt con salt (12 rounds)
-  - Password: Argon2id
-  - Clave de cifrado local: derivada del PIN + device ID
+Servidor:
+  - PostgreSQL con campos sensibles cifrados (pgcrypto)
+  - Backups cifrados antes de subir a la nube (AES-256-GCM)
+```
+
+### 6.3 Control de Acceso
+
+```
+Middleware de roles:
+  /api/rates/* (PUT/POST)     -> Solo 'boss'
+  /api/employees/*            -> Solo 'boss'
+  /api/reports/*              -> Solo 'boss'
+  /api/transfers/*            -> Solo 'boss'
+  /api/approvals/*/approve    -> Solo 'boss'
+  /api/approvals/*/reject     -> Solo 'boss'
+  /api/cash/close-day         -> Solo 'boss'
+  /api/settings/*             -> Solo 'boss'
+  
+  /api/transactions (POST)    -> 'boss' o 'employee'
+  /api/cash/movement          -> 'boss' o 'employee' (solo su caja)
+  /api/clients (POST)         -> 'boss' o 'employee'
+  /api/approvals (POST)       -> Solo 'employee' (solicitar)
+
+Filtro de datos:
+  Empleado solo ve:
+    - Sus propias operaciones
+    - Su propia caja
+    - Clientes compartidos (sin ver volumen total)
+  
+  Jefe ve todo.
 ```
 
 ---
 
-## 7. RENDIMIENTO ESPERADO
+## 7. RENDIMIENTO
 
-| Metrica | Objetivo | Medicion |
-|---|---|---|
-| Tiempo de apertura app | < 2 segundos | Splash -> Home |
-| Tiempo de calculo conversion | < 100ms | Instantaneo al escribir |
-| Tiempo de registro operacion | < 500ms | Confirmar -> Registrado |
-| Tiempo de busqueda cliente | < 200ms | Escribir -> Resultados |
-| Tiempo de carga dashboard | < 1 segundo | Tap -> Dashboard completo |
-| Sincronizacion (100 ops) | < 5 segundos | Push + Pull completado |
-| Generacion reporte diario | < 3 segundos | Solicitar -> PDF listo |
-| Uso de memoria (app) | < 150MB | En uso normal |
-| Tamano de la app | < 50MB | Instalacion |
-| Almacenamiento local 1 ano | < 500MB | ~15,000 operaciones/ano |
-
----
-
-## 8. TESTING
-
-### 8.1 Estrategia de Testing
-
-| Tipo | Cobertura | Herramientas |
-|---|---|---|
-| Unit Tests | > 80% del core | Jest, Testing Library |
-| Integration Tests | APIs completas | Supertest, TestContainers |
-| E2E Tests (movil) | Flujos principales | Detox |
-| E2E Tests (web) | Flujos principales | Playwright |
-| Performance Tests | Endpoints criticos | k6 |
-| Security Tests | OWASP Top 10 | OWASP ZAP |
-
-### 8.2 Escenarios de Test Criticos
-
-1. Conversion exacta para todos los pares de divisas
-2. Actualizacion correcta de caja tras operacion
-3. Cierre de caja con operaciones multiples
-4. Sincronizacion offline -> online sin perdida de datos
-5. Conflicto de sincronizacion resuelto correctamente
-6. Acceso con PIN correcto/incorrecto
-7. Bloqueo tras 5 intentos fallidos
-8. Generacion de reportes con datos grandes
-9. Rendimiento con 10,000+ operaciones en base de datos
+| Metrica | Objetivo |
+|---|---|
+| Apertura de la app | < 1.5 segundos |
+| Calculo de conversion | Instantaneo (< 50ms) |
+| Registrar operacion | < 300ms (local) |
+| Sincronizar 50 operaciones | < 3 segundos |
+| Notificacion push al jefe | < 2 segundos |
+| Cargar dashboard del jefe | < 1 segundo |
+| Buscar cliente | < 200ms |
+| Tamano de la app instalada | < 40 MB |
+| Consumo de bateria | Minimo (sin GPS, sin polling agresivo) |
 
 ---
 
-*Este documento complementa la Propuesta Principal (PROPUESTA_SISTEMA_CAMBIO_TINDOUF.md) con los detalles tecnicos necesarios para la implementacion del sistema SARAF PRO.*
+## 8. WHATSAPP: RESUMEN AUTOMATICO
+
+El sistema puede enviar automaticamente un resumen al WhatsApp del jefe:
+
+```
+RESUMEN DIARIO - SARAF ELITE
+13 Febrero 2026
+
+47 operaciones | +12,450 DZD ganancia
+
+AHMED (Aaioun): 23 ops | +5,200 DZD
+OMAR (Tindouf): 15 ops | +4,800 DZD  
+KARIM (Aaioun): 9 ops | +2,450 DZD
+
+Caja total: EUR 15,775 | DZD 3,456,000 | MRU 257,000
+
+Todo cuadra. Buen dia!
+```
+
+Este mensaje se genera y envia **automaticamente** cada noche. El jefe no tiene que hacer nada.
+
+---
+
+*Este documento complementa la Propuesta Principal (PROPUESTA_SISTEMA_CAMBIO_TINDOUF.md) con los detalles tecnicos necesarios para la implementacion de SARAF ELITE.*
