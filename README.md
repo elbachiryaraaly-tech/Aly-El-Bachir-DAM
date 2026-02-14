@@ -2,16 +2,74 @@
 
 ## 📌 Descripción
 
-Este repositorio contiene la **propuesta completa y profesional** para el desarrollo de un **Sistema Elite de Gestión de Cambio de Moneda** diseñado específicamente para operaciones en **Tindouf, Argelia**.
+Este repositorio contiene **DOS propuestas profesionales** para el desarrollo de un **Sistema Elite de Gestión de Cambio de Moneda** diseñado específicamente para operaciones en **Tindouf y Aaiún, Argelia**.
+
+### ⚠️ IMPORTANTE: Hay 2 Propuestas Diferentes
+
+1. **Propuesta Genérica** - Para operador que trabaja directamente
+2. **Propuesta Elite Multi-Ubicación** ⭐ - Para jefe con empleados en múltiples ubicaciones
+
+**→ Lee primero: [CUAL_PROPUESTA_LEER.md](./CUAL_PROPUESTA_LEER.md)** para saber cuál es para ti.
 
 El sistema está optimizado para manejar múltiples monedas de la región (EUR, DZD, MRU, XOF, MAD, USD, etc.) con características avanzadas de automatización, control en tiempo real y seguridad de nivel bancario.
 
 ---
 
+## 🎯 ¿QUÉ PROPUESTA LEER PRIMERO?
+
+### Lee Esto Primero: [CUAL_PROPUESTA_LEER.md](./CUAL_PROPUESTA_LEER.md)
+
+Este documento te ayuda a identificar cuál propuesta es para tu caso específico.
+
+### Propuesta 1: Sistema Genérico
+**Para:** Operador que trabaja directamente en el negocio  
+**Archivo:** [PROPUESTA_SISTEMA_CAMBIO_MONEDA.md](./PROPUESTA_SISTEMA_CAMBIO_MONEDA.md)
+
+### Propuesta 2: Sistema Elite Multi-Ubicación ⭐ **RECOMENDADA**
+**Para:** Jefe con empleados en múltiples ubicaciones (Tindouf + Aaiún)  
+**Archivo:** [PROPUESTA_SISTEMA_ELITE_MULTIUBICACION.md](./PROPUESTA_SISTEMA_ELITE_MULTIUBICACION.md)
+
+**Características específicas:**
+- ✅ Control remoto total desde tu teléfono
+- ✅ WhatsApp Business API integrado
+- ✅ Multi-ubicación (Tindouf + Aaiún)
+- ✅ Empleados con tablets ultra-simples
+- ✅ Modo offline robusto para campamentos
+- ✅ Alertas automáticas por WhatsApp
+- ✅ Dashboard en tiempo real
+- ✅ Bloqueo remoto de empleados
+
+---
+
 ## 📄 Documentos Incluidos
 
-### 1. [PROPUESTA_SISTEMA_CAMBIO_MONEDA.md](./PROPUESTA_SISTEMA_CAMBIO_MONEDA.md)
-**Documento principal completo (18 secciones, ~100 páginas)**
+### 0. [CUAL_PROPUESTA_LEER.md](./CUAL_PROPUESTA_LEER.md) ⭐ **EMPIEZA AQUÍ**
+**Guía para identificar qué propuesta es para tu caso**
+
+Te ayuda a decidir entre:
+- Propuesta Genérica (operador único)
+- Propuesta Elite Multi-Ubicación (jefe con empleados)
+
+### 1. [PROPUESTA_SISTEMA_ELITE_MULTIUBICACION.md](./PROPUESTA_SISTEMA_ELITE_MULTIUBICACION.md) ⭐ **RECOMENDADA**
+**Propuesta específica para jefe con empleados en múltiples ubicaciones**
+
+Características únicas:
+- ✅ Control remoto total desde app móvil
+- ✅ WhatsApp Business API integrado
+- ✅ Multi-ubicación (Tindouf + Aaiún + más)
+- ✅ Sistema ultra-simple para empleados (3 botones)
+- ✅ Alertas automáticas por WhatsApp
+- ✅ Dashboard en tiempo real
+- ✅ Modo offline robusto para campamentos
+- ✅ Gestión remota de tasas y empleados
+
+**Inversión:** $35,622 (todo incluido)  
+**Costos mensuales:** $95
+
+### 2. [PROPUESTA_SISTEMA_CAMBIO_MONEDA.md](./PROPUESTA_SISTEMA_CAMBIO_MONEDA.md)
+**Propuesta genérica (18 secciones, ~100 páginas)**
+
+Para operadores que trabajan directamente en el negocio.
 
 Incluye:
 - ✅ Análisis exhaustivo de necesidades
@@ -27,8 +85,8 @@ Incluye:
 - ✅ Escalabilidad y roadmap futuro
 - ✅ Anexos técnicos
 
-### 2. [RESUMEN_EJECUTIVO.md](./RESUMEN_EJECUTIVO.md)
-**Resumen conciso para toma de decisiones rápidas**
+### 3. [RESUMEN_EJECUTIVO.md](./RESUMEN_EJECUTIVO.md)
+**Resumen conciso para toma de decisiones rápidas (Propuesta Genérica)**
 
 Perfecto para:
 - Revisión rápida de los puntos clave
@@ -36,8 +94,8 @@ Perfecto para:
 - Comparación de opciones de inversión
 - Visión general del proyecto en 10-15 minutos
 
-### 3. [ESPECIFICACIONES_TECNICAS.md](./ESPECIFICACIONES_TECNICAS.md)
-**Documentación técnica detallada**
+### 4. [ESPECIFICACIONES_TECNICAS.md](./ESPECIFICACIONES_TECNICAS.md)
+**Documentación técnica detallada (aplica a ambas propuestas)**
 
 Incluye:
 - Arquitectura completa del sistema
@@ -48,63 +106,158 @@ Incluye:
 - Configuraciones de despliegue (Docker, cloud)
 - Código de ejemplo y snippets
 
----
+### 5. [COMPARATIVA_OPCIONES.md](./COMPARATIVA_OPCIONES.md)
+**Comparativa detallada de opciones (Propuesta Genérica)**
 
-## 💡 Características Destacadas del Sistema
-
-### 🚀 Automatización Total
-- Actualización automática de tasas de cambio en tiempo real
-- Cálculos automáticos de comisiones y conversiones
-- Generación automática de reportes
-- Alertas inteligentes de inventario y tasas
-
-### 💰 Gestión Financiera Completa
-- Control de inventario en tiempo real por moneda
-- Gestión de transacciones con múltiples monedas
-- Reconciliación automática de caja
-- Dashboard con métricas de negocio
-
-### 👥 Gestión de Clientes
-- Base de datos completa de clientes
-- Programa de fidelización con niveles (Regular, VIP, Premium)
-- Historial detallado de transacciones
-- Tasas preferenciales personalizadas
-
-### 📊 Reportes y Análisis
-- Dashboards interactivos en tiempo real
-- 7 tipos de reportes profesionales
-- Exportación en múltiples formatos (PDF, Excel, CSV)
-- Análisis de tendencias y proyecciones
-
-### 🔒 Seguridad de Nivel Bancario
-- Cifrado AES-256 de datos sensibles
-- Autenticación de dos factores (2FA)
-- Registro de auditoría completo
-- Backups automáticos cada hora
-
-### 🌐 Acceso Multi-plataforma
-- Aplicación de escritorio (Windows/macOS/Linux)
-- Panel web de administración remota
-- App móvil (iOS/Android)
-- Modo offline robusto
+### 6. [GUIA_DE_LECTURA.md](./GUIA_DE_LECTURA.md)
+**Guía de navegación de la documentación (Propuesta Genérica)**
 
 ---
 
-## 💵 Opciones de Inversión
+## 💡 Características Destacadas - Sistema Elite Multi-Ubicación ⭐
 
-| Paquete | Inversión Inicial | Características | Mensual (post-soporte) |
-|---------|-------------------|-----------------|------------------------|
-| **BÁSICO** | $19,070 | Sistema core local | $0 |
-| **COMPLETO** ⭐ | $26,660 | Todo + cloud + remoto | $55 |
-| **PREMIUM** | $34,460 | Todo + app móvil | $55 |
+### 📱 Para Ti (El Jefe) - Control Total Remoto
+- **App móvil prioritaria** (iOS/Android) - todo en tu teléfono
+- **WhatsApp Business integrado** - alertas automáticas a tu WhatsApp
+- **Dashboard en tiempo real** - ves TODAS las ubicaciones simultáneamente
+- **Aprobación remota** - aprueba/rechaza transacciones desde WhatsApp
+- **Cambio de tasas remoto** - actualiza tasas desde donde estés
+- **Bloqueo de empleados** - bloquea/desbloquea con un toque
+- **Reportes automáticos** - reporte diario a tu WhatsApp sin pedirlo
+- **Gestión de inventario** - ves efectivo de cada ubicación en tiempo real
 
-### Retorno de Inversión (ROI)
+### 💻 Para Tus Empleados - Ultra Simple
+- **Tablets con 3 botones gigantes:**
+  1. Nueva transacción
+  2. Ver mi efectivo
+  3. Cerrar caja
+- **Proceso de 5 pasos** súper simple
+- **Capacitación: 1 día** por empleado
+- **NO ven información sensible** (solo su trabajo)
+- **Aprobación automática** para transacciones normales
+- **Alertas si necesitan tu aprobación**
+
+### 🌐 Multi-Ubicación Diseñado Desde Cero
+- **2+ ubicaciones** incluidas (Tindouf + Aaiún)
+- **Sincronización automática** entre ubicaciones
+- **Control por ubicación** - ves cada una separadamente
+- **Inventario por ubicación** - efectivo de cada punto
+- **Empleados por ubicación** - quién trabaja dónde
+- **Comparativas** - rendimiento entre ubicaciones
+
+### 📡 Modo Offline Robusto (Crítico para Campamentos)
+- **Funciona 100% sin internet** - cero interrupciones
+- **Sincronización automática** cuando internet vuelve
+- **Cola inteligente** - guarda todas las transacciones
+- **Indicador visual** - empleados saben si están offline
+- **Sin pérdida de datos** - todo se sincroniza después
+
+### 💬 WhatsApp Business API Integrado
+- **Alertas automáticas:**
+  - Transacciones grandes (>€500) - pides tu aprobación
+  - Inventario bajo - te avisa cuando reponer
+  - Cierre de caja - resumen automático
+  - Diferencias en efectivo - te alerta discrepancias
+  - Empleado inactivo - si no trabaja en 2+ horas
+- **Aprobaciones desde WhatsApp:**
+  - Botones [✅ Aprobar] [❌ Rechazar]
+  - Respuesta instantánea al empleado
+  - Todo queda registrado
+- **Reportes diarios automáticos:**
+  - Cada día a las 19:00
+  - Resumen completo del día
+  - Comparativa con día anterior
+
+### 🔒 Seguridad y Control Anti-Fraude
+- **Límites por empleado** - transacciones grandes requieren aprobación
+- **Auditoría total** - cada acción queda registrada
+- **Detección de patrones** - sistema alerta comportamientos sospechosos
+- **Bloqueo remoto** - bloqueas empleados instantáneamente
+- **Geolocalización** - verifica que tablet esté en ubicación correcta
+- **Video opcional** - snapshot de cada transacción
+- **Imposible manipular** - histórico no se puede borrar/modificar
+
+### 📊 Dashboard Inteligente Para Ti
 ```
-Inversión:           €24,500
-Beneficios/año:      €48,000
-ROI:                 196% (primer año)
-Recuperación:        ~6 meses
+HOY:
+├─ Total transacciones: 156 (+23 vs ayer)
+├─ Total comisiones: €3,240 (+12%)
+├─ Efectivo total: €48,500
+│
+├─ TINDOUF:
+│   ├─ 89 transacciones
+│   ├─ €1,840 comisiones
+│   ├─ €28,300 efectivo
+│   └─ 3 empleados activos ✓
+│
+└─ AAIÚN:
+    ├─ 67 transacciones
+    ├─ €1,400 comisiones
+    ├─ €20,200 efectivo
+    └─ 2 empleados activos ⚠️ EUR bajo
 ```
+
+---
+
+## 💵 Inversión - Sistema Elite Multi-Ubicación
+
+### Paquete Único: Todo Incluido
+
+```
+╔═══════════════════════════════════════════════════╗
+║  SISTEMA ELITE MULTI-UBICACIÓN                    ║
+╠═══════════════════════════════════════════════════╣
+║  Inversión inicial:         $39,580               ║
+║  Descuento pago único:      -$3,958 (10%)         ║
+║  ─────────────────────────────────────────        ║
+║  PRECIO FINAL:              $35,622               ║
+║                          (≈ €32,760)              ║
+╠═══════════════════════════════════════════════════╣
+║  INCLUYE TODO:                                    ║
+║  ✓ App móvil para ti (iOS/Android)               ║
+║  ✓ WhatsApp Business API (1 año)                 ║
+║  ✓ 2 tablets para empleados                      ║
+║  ✓ Sistema multi-ubicación                       ║
+║  ✓ Servidor cloud (1 año)                        ║
+║  ✓ Hardware completo (impresoras, UPS)           ║
+║  ✓ 6 meses soporte ilimitado                     ║
+║  ✓ Capacitación completa                         ║
+║  ✓ Instalación en ambas ubicaciones              ║
+╠═══════════════════════════════════════════════════╣
+║  Costos mensuales (después año 1):   $95/mes     ║
+╚═══════════════════════════════════════════════════╝
+```
+
+### Retorno de Inversión (ROI) - Tu Caso Real
+
+**Con 70 transacciones/día actuales:**
+
+```
+╔═══════════════════════════════════════════════════╗
+║  INGRESOS ANUALES                                 ║
+║  70 trans/día × €2.50 × 25 días = €52,500/año    ║
+║                                                   ║
+║  CON EL SISTEMA:                                  ║
+║  • +30% transacciones (más rápido)  +€15,750     ║
+║  • Reducción errores (-95%)         +€3,420      ║
+║  • Eliminación fraude               +€1,200      ║
+║  • Tu tiempo ahorrado (2.5h/día)    +€15,000     ║
+║  • Optimización de tasas            +€2,400      ║
+║  ─────────────────────────────────────────        ║
+║  BENEFICIO TOTAL:                   €37,770/año  ║
+║                                                   ║
+║  Inversión:                         €32,760      ║
+║  ═══════════════════════════════════════          ║
+║  ROI AÑO 1:                         115%         ║
+║  RECUPERACIÓN:                      10 meses     ║
+╚═══════════════════════════════════════════════════╝
+```
+
+**Proyección 3 años:**
+- Año 1: +€5,010
+- Año 2: +€43,456  
+- Año 3: +€50,956
+- **Total 3 años: +€99,422**
 
 ---
 
